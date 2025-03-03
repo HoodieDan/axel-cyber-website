@@ -1,1 +1,102 @@
 @import "tailwindcss" important;
+
+.trapezium {
+    width: 250px;
+    height: 50px;
+    background-color: #f9f9f9;
+    clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 0% 100%);
+    transform: rotateX(180deg);
+    border-radius: 12px;
+  
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.swiper{
+    position: relative !important;
+    overflow: hidden !important;
+}
+.swiper-wrapper{
+    width: 100% !important;
+    display: flex !important;
+    flex-direction:row !important;
+    gap: 20px !important;
+}
+.swiper-slide{
+    margin-right: 0px !important;
+    width: 90% !important;
+}
+@media (min-width: 640px){
+    .swiper-slide{
+        width: 45% !important;
+    }
+}
+
+@media (min-width: 1280px) {
+    .swiper-slide{
+        width: 410px !important;
+    }
+}
+
+.swiper-slide img{
+    width: 100% !important;
+    height: 90% !important;
+    border-radius: 8px !important;
+    object-fit: cover !important;
+}
+
+
+ .swiper-pagination{
+    display: flex !important;
+}
+
+.swiper-pagination-bullet{
+    display: inline-block !important;
+    background-color: #d9d9d9 !important;
+    width: 25px !important;
+    height: 3px !important;
+    border-radius: 0 !important;
+    margin-inline: 0 !important;
+}
+
+@media (min-width: 640px){
+    .swiper-pagination-bullet{
+        width: 35px !important;
+    }
+}
+
+@media (min-width: 1280px) {
+    .swiper-pagination-bullet{
+        width: 100px !important;
+    }
+}
+
+.swiper-pagination-bullet-active{
+    background: linear-gradient(90deg, #B860ff 0%, #077adf 86%) !important;
+}
+
+.swiper-button-prev, .swiper-rtl .swiper-button-next{
+    left: auto !important;
+    right: 7% !important;
+    top: 95% !important;
+}
+@media (min-width: 640px){
+    .swiper-button-prev, .swiper-rtl .swiper-button-next{
+        right: 5% !important;
+    }
+    
+}
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+    right: 0 !important;
+    top: 95% !important;
+    left: auto;
+}
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
+    content: url(../src/assets/arrow-narrow-left.png) !important;
+}
+
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+    content: url(../src/assets/arrow-narrow-right.png) !important;
+}
