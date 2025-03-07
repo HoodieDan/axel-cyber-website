@@ -1,5 +1,5 @@
+import ExcludeDesktop from "@/assets/exclude-desktop.png";
 import ExcludeMobile from "@/assets/exclude-mobile.png";
-import Exclude from "@/assets/exclude.png";
 import HeroAvatars from "@/assets/hero-avatars.png";
 import Building from "@/assets/ultimate-itinerary.png";
 import VideoImg from "@/assets/video-img.png";
@@ -39,7 +39,11 @@ const IWSHero = () => {
                         <div className="z-10 pt-6 px-6 md:pb-6 pb-24">
                             <img src={VideoImg} alt="Video image" className="object-fill" />
                         </div>
-                        <img src={Exclude} alt="Exclude" className="md:block hidden object-fill size-full absolute" />
+                        <img
+                            src={ExcludeDesktop}
+                            alt="Exclude"
+                            className="md:block hidden object-fill size-full absolute"
+                        />
                         <img
                             src={ExcludeMobile}
                             alt="Exclude mobile"
@@ -57,7 +61,12 @@ const IWSHero = () => {
                 <div className="relative">
                     <div className="flex items-center gap-x-4 whitespace-nowrap animate-marquee-left">
                         {partnersImages.map(({ src, title }, i) => (
-                            <img key={title + i} src={src} alt={title} className="object-fill md:w-auto w-12.5 md:h-auto h-7.5" />
+                            <img
+                                key={title + i}
+                                src={src}
+                                alt={title}
+                                className="object-fill md:w-auto w-12.5 md:h-auto h-7.5"
+                            />
                         ))}
                     </div>
                     <MarqueeOverlay />
