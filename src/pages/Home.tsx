@@ -30,8 +30,6 @@ import AdditionalServices from "../components/AdditionalServices";
 import Blogs from "../components/Blogs";
 import Clientele from "../components/Clientele";
 import Cta from "../components/Cta";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Service from "../components/Service";
 import Solution from "../components/Solution";
@@ -39,7 +37,6 @@ import Solution from "../components/Solution";
 export default function Home() {
     return (
         <main>
-            <Header />
             <Hero />
             <section className="px-[5%] bg-[#f9f9f9] py-6 sm:py-8 md:py-10 lg:py-12">
                 <div className="flex justify-center mb-8 lg:mb-10">
@@ -283,7 +280,6 @@ export default function Home() {
             <Cta title="Secure your company's furture by Partering with Axel Cyber" action="Book a call">
                 <HiArrowNarrowRight className="inline" />
             </Cta>
-            <Footer />
         </main>
     );
 }
