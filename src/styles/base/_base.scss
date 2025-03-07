@@ -8,7 +8,7 @@
 html,
 body {
     line-height: 1;
-    font-family: $font-cabinet !important;
+    // font-family: $font-cabinet !important;
     background-color: $color-white;
     color: $color-black;
     scroll-behavior: smooth;
@@ -73,7 +73,7 @@ small {
 
 h1 {
     line-height: 1.2;
-    font-family: $font-cabinet;
+    // font-family: $font-cabinet;
     $vw: 100vw;
     font-size: calc($vw / 1440px * 55px);
 
@@ -89,7 +89,7 @@ h1 {
 
 h2 {
     $vw: 100vw;
-    font-family: $font-cabinet;
+    // font-family: $font-cabinet;
     font-size: calc($vw / 1440px * 48px);
 
     @include media('<phone') {
@@ -103,7 +103,7 @@ h2 {
 
 h3 {
     $vw: 100vw;
-    font-family: $font-cabinet;
+    // font-family: $font-cabinet;
     font-size: calc($vw / 1440px * 40px);
 
     @include media('<phone') {
@@ -117,7 +117,7 @@ h3 {
 
 h4 {
     $vw: 100vw;
-    font-family: $font-cabinet;
+    // font-family: $font-cabinet;
     font-size: calc($vw / 1440px * 35px);
 
     @include media('<phone') {
@@ -131,7 +131,7 @@ h4 {
 
 h5 {
     $vw: 100vw;
-    font-family: $font-cabinet;
+    // font-family: $font-cabinet;
     font-size: calc($vw / 1440px * 28px);
 
     @include media('<phone') {
@@ -145,7 +145,7 @@ h5 {
 
 h6 {
     $vw: 100vw;
-    font-family: $font-cabinet;
+    // font-family: $font-cabinet;
     font-size: calc($vw / 1440px * 20px);
 
     @include media('<phone') {
@@ -174,7 +174,7 @@ textarea {
     border-radius: 8px;
     padding: 12px;
     color: $color-gray;
-    font-family: $font-cabinet;
+    // font-family: $font-cabinet;
     $vw: 100vw;
     font-size: calc($vw / 1440px * 16px);
     background: transparent;

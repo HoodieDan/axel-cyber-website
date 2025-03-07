@@ -5,6 +5,7 @@ import Aboutus from "./pages/Aboutus";
 import Home from "./pages/Home";
 import IndustriesWeService from "./pages/IndustriesWeService";
 import Services from "./pages/Services";
+import Works from "./pages/Works";
 import "./styles/index.scss";
 
 function App() {
@@ -17,6 +18,10 @@ function App() {
                         <Route path="/about" element={<Aboutus />} />
                         <Route path="/service" element={<Services />} />
                         <Route path="/industries-we-service" element={<IndustriesWeService />} />
+                        <Route path="/works">
+                            <Route index element={<Works />} />
+                            <Route path=":project" element={<Works />} />
+                        </Route>
                     </Route>
                 </Routes>
             </Router>
