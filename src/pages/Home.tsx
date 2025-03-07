@@ -1,28 +1,23 @@
-import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import React from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import accurate from "../assets/accurate.png";
 import energy from "../assets/energy.png";
 import engineering from "../assets/engineering.png";
 import finanacial from "../assets/financial_services.png";
-import goldfrapp from "../assets/goldfrapp.png";
 import healthcare from "../assets/health_center.png";
-import hulu from "../assets/hulu.png";
-import ibm from "../assets/ibm.png";
 import image1 from "../assets/image1.png";
 import image2 from "../assets/image2.png";
 import image3 from "../assets/image3.png";
-import information from "../assets/information.png";
 import laptop from "../assets/laptop-02.png";
-import leftbottom from "../assets/leftbottom.png";
 import lightbulb from "../assets/lightbulb.png";
-import pencil from "../assets/pencil.png";
 import project1 from "../assets/project1.png";
 import project2 from "../assets/project2.png";
 import project3 from "../assets/project3.png";
 import publicSector from "../assets/public_sector.png";
-import righttop from "../assets/righttop.png";
 import scale from "../assets/scalable.png";
 import seamless from "../assets/seamless.png";
 import secure from "../assets/secure.png";
@@ -31,19 +26,20 @@ import service2 from "../assets/service2.png";
 import service3 from "../assets/service22.png";
 import stars from "../assets/stars.png";
 import user from "../assets/users.png";
-import volume from "../assets/volume.png";
 import AdditionalServices from "../components/AdditionalServices";
 import Blogs from "../components/Blogs";
+import Clientele from "../components/Clientele";
+import Cta from "../components/Cta";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Service from "../components/Service";
 import Solution from "../components/Solution";
-// import 'swiper/css';
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 export default function Home() {
     return (
         <main>
+            <Header />
             <Hero />
             <section className="px-[5%] bg-[#f9f9f9] py-6 sm:py-8 md:py-10 lg:py-12">
                 <div className="flex justify-center mb-8 lg:mb-10">
@@ -134,42 +130,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section className="px-[5%] py-6 sm:py-8 md:py-10 lg:py-12 flex flex-col md:flex-row gap-6 md:gap-0">
-                <div className="flex-1">
-                    <div className="flex justify-start mb-8 lg:mb-10">
-                        <div className="flex rounded-lg flex-row py-2 px-4 gap-2 items-center border-2 border-[#e1e5e7]">
-                            <img src={user} alt="user" />
-                            <p>OUR CLIENTS</p>
-                        </div>
-                    </div>
-                    <p className="w-auto lg:w-[400px] text-black text-3xl font-semibold">
-                        Several companies have trusted Axel Cyber for their solutions
-                    </p>
-                    <div className="mt-10 md:mt-12">
-                        <p className="mb-4 text-base text-[#666666] w-auto lg:w-[300px]">
-                            <FaQuoteLeft className="text-xs inline -translate-y-1" /> Working with us will unlock
-                            results that your deserves to experience{" "}
-                            <FaQuoteRight className="text-xs inline -translate-y-1" />
-                        </p>
-                        <p className="text-base">
-                            <span className="text-[#0081f1]">Olayinka</span> <span className="font-bold">-</span>{" "}
-                            <span className="text-[#d7d7d7d]">Co-founder at Axel Cyber</span>
-                        </p>
-                    </div>
-                </div>
-                <div className="flex-1 grid grid-cols-2 md:grid-cols-3 content-around gap-4 md:gap-0">
-                    <img src={goldfrapp} className="w-[125px] h-[30px]" alt="goldfrapp" />
-                    <img className="w-[125px] h-[30px] place-self-end md:place-self-center" src={pencil} alt="pencil" />
-                    <img className="w-[125px] h-[30px] md:place-self-end" src={volume} alt="volume" />
-                    <img
-                        className="w-[125px] h-[30px] place-self-end md:place-self-start"
-                        src={information}
-                        alt="information"
-                    />
-                    <img className="w-[125px] h-[30px]  md:place-self-center" src={ibm} alt="ibm" />
-                    <img className="w-[125px] h-[30px] place-self-end" src={hulu} alt="hulu" />
-                </div>
-            </section>
+            <Clientele />
             <section className="px-[5%] bg-[#f9f9f9] py-6 sm:py-8 md:py-10 lg:py-12">
                 <div className="flex justify-center mb-8 lg:mb-10">
                     <div className="flex rounded-lg flex-row py-2 px-4 gap-2 items-center border-2 border-[#e1e5e7]">
@@ -290,8 +251,6 @@ export default function Home() {
                 </p>
                 <Swiper
                     modules={[Navigation, Pagination]}
-                    // spaceBetween={30}
-                    // slidesPerView={3}
                     breakpoints={{
                         0: {
                             slidesPerView: 1,
@@ -305,9 +264,7 @@ export default function Home() {
                     }}
                     navigation
                     pagination={{ clickable: true }}
-                    // onSlideChange={() => console.log('slide change')}
-                    // onSwiper={(swiper) => console.log(swiper)}
-                    className="flex flex-row overflow-x-hidden"
+                    className="home-swiper flex flex-row overflow-x-hidden"
                 >
                     <SwiperSlide className="shrink-0">
                         <img src={project1} alt="project1" />
@@ -321,23 +278,12 @@ export default function Home() {
                     <SwiperSlide className="shrink-0">
                         <img src={project1} alt="project1" />
                     </SwiperSlide>
-                    {/* <div className='shrink-0'>
-            <img src={project2} alt="project2" />
-          </div> */}
                 </Swiper>
             </section>
-            <section className="px-[5%] py-6 sm:py-8 md:py-10 lg:py-12">
-                <div className="relative flex justify-center flex-col gap-4 items-center w-full h-[400px] rounded-xl bg-[linear-gradient(45deg,#090328,#0046cc)] text-white">
-                    <img className="absolute right-0 top-0" src={leftbottom} alt="leftbottom" />
-                    <img className="absolute left-0 bottom-0" src={righttop} alt="righttop" />
-                    <p className="text-2xl text-center w-[400px] font-semibold">
-                        Secure your company's furture by Partering with Axel Cyber
-                    </p>
-                    <button className="p-2 bg-white text-black rounded-md">
-                        Book a call <HiArrowNarrowRight className="inline" />
-                    </button>
-                </div>
-            </section>
+            <Cta title="Secure your company's furture by Partering with Axel Cyber" action="Book a call">
+                <HiArrowNarrowRight className="inline" />
+            </Cta>
+            <Footer />
         </main>
     );
 }
