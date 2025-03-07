@@ -9,38 +9,132 @@
     border-radius: 12px;
   
 }
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
 
 body {
     overflow-x: hidden;
 }
 
-.swiper{
+.swiper.home-swiper, .service-swipper.swiper{
     position: relative !important;
     overflow: hidden !important;
 }
-.swiper-wrapper{
+.service-swipper.swiper{
+    height: 250px !important;
+}
+
+.home-swiper .swiper-wrapper, .service-swipper .swiper-wrapper{
     width: 100% !important;
     display: flex !important;
     flex-direction:row !important;
     gap: 20px !important;
 }
-.swiper-slide{
+.service-swipper .swiper-wrapper{
+    gap: 0px !important
+}
+.home-swiper .swiper-slide{
     margin-right: 0px !important;
     width: 90% !important;
 }
+.service-swipper .swiper-slide{
+    flex-shrink: 0;
+    width: 70% !important;
+    margin-right: 0px !important;
+}
+@media screen and (max-width: 1025px) {
+    .service-swipper.swiper{
+        height: 265px !important;
+    }
+    .service-swipper .swiper-slide{
+        width: 90% !important;
+    }
+}
+
+
+.service-swipper .swiper-slide-active{
+    transform: translateX(0%) !important;
+} 
+.service-swipper .swiper-slide-prev +  .swiper-slide-active{
+    transform: translateX(50%) !important;
+}
+.service-swipper .swiper-slide-prev + .swiper-slide-active + .swiper-slide-next{
+    transform: translateX(50%) scale(0.9) !important;
+}
+
+.service-swipper .swiper-slide + .swiper-slide-prev + .swiper-slide-active{
+    transform: translateX(100%) !important;
+}
+
+.service-swipper .swiper-slide-next{
+    transform: scale(0.9) !important;
+}
+@media screen and (max-width: 1025px) {
+    .service-swipper .swiper-slide-active{
+    transform: translateX(0%) !important;
+} 
+.service-swipper .swiper-slide-prev +  .swiper-slide-active{
+    transform: translateX(17%) !important;
+}
+.service-swipper .swiper-slide-prev + .swiper-slide-active + .swiper-slide-next{
+    transform: translateX(17%) scale(0.9) !important;
+}
+
+.service-swipper .swiper-slide + .swiper-slide-prev + .swiper-slide-active{
+    transform: translateX(35%) !important;
+}
+
+.service-swipper .swiper-slide-next{
+    transform: scale(0.9) !important;
+}
+}
+
+@media screen and (max-width: 769px) {
+    .service-swipper .swiper-slide-prev + .swiper-slide-active {
+        transform: translateX(20%) !important;
+    }
+    .service-swipper .swiper-slide-prev + .swiper-slide-active + .swiper-slide-next {
+        transform: translateX(20%) scale(0.9) !important;
+    }
+    .service-swipper .swiper-slide + .swiper-slide-prev + .swiper-slide-active {
+        transform: translateX(40%) !important;
+    }
+}
+@media screen and (max-width: 426px) {
+    .service-swipper.swiper{
+        height: 200px !important;
+    }
+    .service-swipper .swiper-slide-prev + .swiper-slide-active {
+        transform: translateX(26%) !important;
+    }
+    .service-swipper .swiper-slide-prev + .swiper-slide-active + .swiper-slide-next {
+        transform: translateX(25%) scale(0.9) !important;
+    }
+    .service-swipper .swiper-slide-prev + .swiper-slide-active + .swiper-slide-next {
+        transform: translateX(27%) scale(0.9) !important;
+    }
+    .service-swipper .swiper-slide + .swiper-slide-prev + .swiper-slide-active {
+        transform: translateX(52%) !important;
+    }
+}
+
 @media (min-width: 640px){
-    .swiper-slide{
+    .home-swiper .swiper-slide{
         width: 45% !important;
     }
 }
 
 @media (min-width: 1280px) {
-    .swiper-slide{
+    .home-swiper .swiper-slide{
         width: 410px !important;
     }
 }
 
-.swiper-slide img{
+.home-swiper .swiper-slide img{
     width: 100% !important;
     height: 90% !important;
     border-radius: 8px !important;
@@ -48,7 +142,7 @@ body {
 }
 
 
- .swiper-pagination{
+.home-swiper .swiper-pagination, .service-swipper .swiper-pagination{
     display: flex !important;
 }
 
@@ -60,6 +154,9 @@ body {
     border-radius: 0 !important;
     margin-inline: 0 !important;
 }
+.service-swipper .swiper-pagination{
+    margin-left: 50px !important;
+} 
 
 @media (min-width: 640px){
     .swiper-pagination-bullet{
@@ -92,7 +189,7 @@ body {
     right: 0 !important;
     top: 95% !important;
     left: auto;
-}
+} 
 .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
     content: url(../src/assets/arrow-narrow-left.png) !important;
 }
