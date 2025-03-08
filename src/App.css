@@ -197,3 +197,10 @@ body {
 .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
     content: url(../src/assets/arrow-narrow-right.png) !important;
 }
+
+.border-gradient {
+    border: 2px solid;
+    border-image-slice: 1;
+    border-width: 2px;
+    border-image-source: linear-gradient(to right, #022366, #0046cc);
+  }

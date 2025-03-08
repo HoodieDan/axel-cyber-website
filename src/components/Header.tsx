@@ -19,10 +19,10 @@ export default function Header() {
                 <li><a href="#">Solutions</a></li>
                 <li className='relative group'>
                     <a href="#">Company</a>
-                    <ul className='hidden group-hover:flex shadow-md list-none z-10 absolute top-[110%] left-0 bg-white text-black py-6 flex-col space-y-3 rounded-lg text-lg'>
+                    <ul className='hidden group-hover:flex shadow-md list-none z-80 absolute top-[110%] left-0 bg-white text-black py-6 flex-col space-y-3 rounded-lg text-lg'>
                         <li className='pl-4 pr-24 whitespace-nowrap font-semibold hover:text-base hover:font-normal'><Link to="/about">About Us</Link></li>
                         <li className='pl-4 pr-24 font-semibold hover:text-base hover:font-normal'><a href="#">Career</a></li>
-                        <li className='pl-4 pr-24 font-semibold hover:text-base hover:font-normal'><a href="#">Blogs</a></li>
+                        <li className='pl-4 pr-24 font-semibold hover:text-base hover:font-normal'><Link to="/blogs">Blogs</Link></li>
                     </ul>
                 </li>
             </ul>
