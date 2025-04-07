@@ -1,7 +1,7 @@
-import React from 'react'
 import { FaBars } from "react-icons/fa";
-import Logo from '../assets/axel-logo.svg'
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import Logo from "../assets/axel-logo.svg";
+
 export default function Header() {
   return (
     <header>

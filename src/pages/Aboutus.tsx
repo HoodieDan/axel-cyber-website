@@ -1,6 +1,3 @@
-import React from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import Clientele from '../components/Clientele'
 import { BsArrowUpRight } from "react-icons/bs";
 import { RiArrowRightSLine } from "react-icons/ri";
@@ -32,7 +29,6 @@ function TeamMember({name, role, img}: TeamMemberProps) {
 export default function Aboutus() {
   return (
     <main>
-        <Header />
         <section className='relative px-[5%] my-8 sm:my-10 md:my-12 lg:my-16'>
             <div className='block lg:hidden bg-white'>
             <p className='text-2xl text-center font-semibold text-black mb-1 xl:mb-2 w-auto xl:w-[70%]'>
@@ -241,7 +237,6 @@ export default function Aboutus() {
         >
             <BsArrowUpRight className='inline' />
         </Cta>
-        <Footer />
     </main>
   )
 }

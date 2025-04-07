@@ -10,7 +10,7 @@ export default function Footer() {
         <div className='relative pb-20 flex flex-row justify-between border-b-2 border-b-[#3084da] mb-8'>
             <p className='text-2xl w-[250px] font-semibold'>Let's Connects and work together</p>
             <BsArrowDownRight  className='text-3xl -translate-x-12 md:-translate-x-20 lg:-translate-x-24'/>
-            <div className='absolute bottom-0 right-0 translate-y-[50%] w-[100px] h-[100px] text-center rounded-full bg-[#3084d4] text-white flex justtify-center items-center'>
+            <div className='absolute bottom-0 right-0 translate-y-[50%] w-[75px] lg:w-[100px] h-[75px] lg:h-[100px] text-center rounded-full bg-[#3084d4] text-white flex justify-center items-center'>
                 <p>Reach out to us</p>
             </div>
         </div>

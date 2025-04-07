@@ -1,13 +1,9 @@
 import React from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import Cta from '../components/Cta'
 import { BsArrowUpRight } from "react-icons/bs";
 import stars from "../assets/stars.png"
 import rocket from "../assets/rocket.png"
 import ai1 from "../assets/ai1.png"
-import ai2 from "../assets/ai2.png"
-import ai3 from "../assets/ai3.png"
 import { RiArrowRightSLine } from "react-icons/ri";
 import laptop from "../assets/laptop-02.png"
 import bi1 from "../assets/bi1.png"
@@ -110,7 +106,6 @@ function Testimonial({name,position,content,profilePic,companyLogo}:TestimonialP
 export default function Services() {
   return (
     <main>
-        <Header />
         <section className='px-[5%] bg-[#f9f9f9] py-6 sm:py-8 md:py-10 lg:py-12'>
             <div className='flex justify-center mb-8 lg:mb-10'>
                 <div className='flex rounded-lg flex-row py-2 px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
@@ -240,7 +235,6 @@ export default function Services() {
         >
             <BsArrowUpRight className='inline' />
         </Cta>
-        <Footer />
     </main>
   )
 }
