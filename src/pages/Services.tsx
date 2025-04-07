@@ -1,4 +1,3 @@
-import React from 'react'
 import Cta from '../components/Cta'
 import { BsArrowUpRight } from "react-icons/bs";
 import stars from "../assets/stars.png"
