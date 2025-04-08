@@ -1,4 +1,3 @@
-import React from 'react'
 import { BsArrowDownRight } from "react-icons/bs";
 import { CiInstagram } from "react-icons/ci"
 import { FaXTwitter } from "react-icons/fa6"
