@@ -1,4 +1,3 @@
-import React from 'react'
 import { RiArrowRightUpLine } from "react-icons/ri";
 interface Props{
     service: string,

@@ -6,6 +6,9 @@ import Home from "./pages/Home";
 import IndustriesWeService from "./pages/IndustriesWeService";
 import Services from "./pages/Services";
 import "./styles/index.scss";
+import Blog from "./pages/Blog";
+import Contact from "./pages/Contact";
+import BlogPage from "./pages/BlogPage";
 
 function App() {
     return (
@@ -17,6 +20,10 @@ function App() {
                         <Route path="/about" element={<Aboutus />} />
                         <Route path="/service" element={<Services />} />
                         <Route path="/industries-we-service" element={<IndustriesWeService />} />
+                        <Route path="/blog" element={<Blog />} />
+                        <Route path="/contact" element={<Contact />} />
+                        <Route path="*" element={<Home />} />
+                        <Route path="/blogpage" element={<BlogPage />} />
                     </Route>
                 </Routes>
             </Router>

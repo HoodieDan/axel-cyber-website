@@ -1,4 +1,3 @@
-import React from 'react'
 import Clientele from '../components/Clientele'
 import { BsArrowUpRight } from "react-icons/bs";
 import { RiArrowRightSLine } from "react-icons/ri";

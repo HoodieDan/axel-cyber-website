@@ -1,4 +1,3 @@
-import React from 'react'
 import { BsArrowUpRight } from "react-icons/bs";
 import heroImg from "../assets/hero-img.svg"
 import face1 from "../assets/face1.png"

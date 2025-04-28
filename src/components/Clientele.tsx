@@ -1,4 +1,3 @@
-import React from 'react'
 import goldfrapp from "../assets/goldfrapp.png"
 import pencil from "../assets/pencil.png"
 import volume from "../assets/volume.png"

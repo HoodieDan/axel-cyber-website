@@ -1,11 +1,8 @@
-import React from 'react'
 import Cta from '../components/Cta'
 import { BsArrowUpRight } from "react-icons/bs";
 import stars from "../assets/stars.png"
 import rocket from "../assets/rocket.png"
 import ai1 from "../assets/ai1.png"
-import ai2 from "../assets/ai2.png"
-import ai3 from "../assets/ai3.png"
 import { RiArrowRightSLine } from "react-icons/ri";
 import laptop from "../assets/laptop-02.png"
 import bi1 from "../assets/bi1.png"
