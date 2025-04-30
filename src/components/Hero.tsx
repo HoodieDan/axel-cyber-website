@@ -1,9 +1,5 @@
 import { BsArrowUpRight } from "react-icons/bs";
 import heroImg from "../assets/hero-img.svg"
-import face1 from "../assets/face1.png"
-import face2 from "../assets/face2.png"
-import face3 from "../assets/face3.png"
-import face4 from "../assets/face4.png"
 
 export default function Hero() {
   return (

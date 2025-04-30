@@ -4,27 +4,11 @@ import { RiArrowRightSLine } from "react-icons/ri";
 import Cta from '../components/Cta';
 import heroImg from "../assets/about-hero.png"
 import stars from "../assets/stars.png"
-import teamImg from "../assets/teammember.png"
 import abt1 from "../assets/abt-exl.png"
 import abt2 from "../assets/abt-exl1.png"
 import user from "../assets/users.png"
 import abt3 from "../assets/Exclude.png"
 
-interface TeamMemberProps{
-    name: string;
-    role: string;
-    img: string;
-}
-
-function TeamMember({name, role, img}: TeamMemberProps) {
-    return (
-        <div>
-            <img className='block mb-2 w-full' src={img} alt={name} />
-            <p className='mb-2 text-xl font-semibold'>{name}</p>
-            <p className='text-[#0081f1] text-base font-normal'>{role}</p>
-        </div>
-    )
-}
 
 export default function Aboutus() {
   return (
@@ -80,59 +64,6 @@ export default function Aboutus() {
                 <p className='text-xs font-normal'>Monthly revenue made from Lexxa AI Agency at average</p>
             </div>
           </div>
-        {/* <section className='px-[5%] py-6 sm:py-8 md:py-10 lg:py-12'>
-            <div className='flex justify-center mb-8 lg:mb-10'>
-                <div className='flex rounded-lg flex-row py-2 px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
-                    <img src={stars} alt="stars" />
-                    <p>OUR TEAM</p>
-                </div>
-            </div>
-            <p className='w-auto md:w-[550px] text-center text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-10 lg:mb-12'>
-                Meet the team behind Lexxa
-            </p>
-            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
-                <TeamMember
-                    name='Olivia Rhye'
-                    role='Founder & CEO'
-                    img={teamImg}
-                />
-                <TeamMember
-                    name='Olivia Rhye'
-                    role='Founder & CEO'
-                    img={teamImg}
-                />
-                <TeamMember
-                    name='Olivia Rhye'
-                    role='Founder & CEO'
-                    img={teamImg}
-                />
-                <TeamMember
-                    name='Olivia Rhye'
-                    role='Founder & CEO'
-                    img={teamImg}
-                />
-                <TeamMember
-                    name='Olivia Rhye'
-                    role='Founder & CEO'
-                    img={teamImg}
-                />
-                <TeamMember
-                    name='Olivia Rhye'
-                    role='Founder & CEO'
-                    img={teamImg}
-                />
-                <TeamMember
-                    name='Olivia Rhye'
-                    role='Founder & CEO'
-                    img={teamImg}
-                />
-                <TeamMember
-                    name='Olivia Rhye'
-                    role='Founder & CEO'
-                    img={teamImg}
-                />
-            </div>
-        </section> */}
         <section className='px-[5%] bg-[#f9f9f9] py-6 sm:py-8 md:py-10 lg:py-12'>
             <div className='flex justify-center mb-8 lg:mb-10'>
                 <div className='flex rounded-lg flex-row py-2 px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
