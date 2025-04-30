@@ -38,19 +38,19 @@ export default function Home() {
         <main>
             <Hero />
             <section className="px-[5%] bg-[#f9f9f9] py-6 sm:py-8 md:py-10 lg:py-12">
-                <div className="flex justify-center mb-8 lg:mb-10">
-                    <div className="flex rounded-lg flex-row py-2 px-4 gap-2 items-center border-2 border-[#e1e5e7]">
+                <div className="flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10">
+                    <div className="flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img src={stars} alt="stars" />
-                        <p>OUR APPROACH TO BUILDING SOLUTIONS</p>
+                        <p className="text-sm sm:text-base">OUR APPROACH TO BUILDING SOLUTIONS</p>
                     </div>
                 </div>
-                <p className="w-auto md:w-[550px] text-center text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-10 lg:mb-12">
+                <p className="w-auto md:w-[550px] text-center text-2xl md:text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
                     Partner with us and build a better company
                 </p>
                 <div className="px-[5%] md:px-[3%] lg:px-[5%] pb-4 relative rounded-xl bg-[linear-gradient(45deg,#014594,#0181f1)] text-white h-auto md:h-[300px]">
                     <div className="absolute -top-[2px] -left-[2px] trapezium hidden md:block"></div>
-                    <div className="flex flex-row md:gap-x-8 lg:gap-x-16 xl:gap-x-20 py-4 md:py-12 mb-4">
-                        <p className="text-xl whitespace-nowrap lg:text-2xl font-semibold md:self-end text-center md:text-start flex-1 md:flex-initial">
+                    <div className="flex flex-row gap-x-16 xl:gap-x-20 md:pt-24 md:pb-12 lg:py-12 mb-4">
+                        <p className="text-xl whitespace-nowrap lg:text-2xl font-semibold md:self-end text-center md:text-start flex-1 md:flex-initial mt-4">
                             We offer leading <br /> solutions such as:
                         </p>
                         <div className="hidden md:block">
@@ -86,7 +86,7 @@ export default function Home() {
                             </div>
                         </Solution>
                         <Solution
-                            title="Seamless Integration"
+                            title="Maximized Value"
                             description="By combining AI tools and integrating them with your current systems"
                         >
                             <div className="flex justify-center">
@@ -96,17 +96,17 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section className="px-[5%] mt-6 md:mt-36 lg:mt-28 py-6 sm:py-8 md:py-10 lg:py-12">
-                <div className="flex justify-center mb-8 lg:mb-10">
-                    <div className="flex rounded-lg flex-row py-2 px-4 gap-2 items-center border-2 border-[#e1e5e7]">
+            <section className="px-[5%] mt-4 md:mt-36 lg:mt-28 py-6 sm:py-8 md:py-10 lg:py-12">
+                <div className="flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10">
+                    <div className="flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img src={laptop} alt="laptop" />
-                        <p>SOME INDUSTRIES WE SERVICE</p>
+                        <p className="text-sm sm:text-base">PEOPLE WE WORK WITH </p>
                     </div>
                 </div>
-                <p className="w-auto md:w-[500px] mx-auto text-center text-3xl lg:text-4xl xl:text-5xl font-semibold mb-10 lg:mb-12">
+                <p className="w-auto md:w-[500px] mx-auto text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
                     We Use our AI solutions for all industries
                 </p>
-                <div className="flex w-full flex-col lg:flex-row justify-between gap-6 mb-6">
+                <div className="flex w-full flex-col lg:flex-row justify-between gap-4 md:gap-6 mb-4 md:mb-6">
                     <div className="flex-1 h-auto">
                         <img className="block w-full" src={publicSector} alt="public sector" />
                     </div>
@@ -114,7 +114,7 @@ export default function Home() {
                         <img className="block w-full" src={energy} alt="energy" />
                     </div>
                 </div>
-                <div className="flex flex-col lg:flex-row justify-between gap-6 mb-6">
+                <div className="flex flex-col lg:flex-row justify-between gap-6 mb-2 md:mb-6">
                     <div className="flex-1 h-auto">
                         <img className="block w-full" src={healthcare} alt="healthcare" />
                     </div>
@@ -128,16 +128,16 @@ export default function Home() {
             </section>
             <Clientele />
             <section className="px-[5%] bg-[#f9f9f9] py-6 sm:py-8 md:py-10 lg:py-12">
-                <div className="flex justify-center mb-8 lg:mb-10">
-                    <div className="flex rounded-lg flex-row py-2 px-4 gap-2 items-center border-2 border-[#e1e5e7]">
+                <div className="flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10">
+                    <div className="flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img src={stars} alt="stars" />
-                        <p>What we offer</p>
+                        <p className="text-sm md:text-base">What we offer</p>
                     </div>
                 </div>
-                <p className="w-auto md:w-[450px] mx-auto text-center text-3xl lg:text-4xl xl:text-5xl font-semibold mb-10 lg:mb-12">
+                <p className="w-auto md:w-[450px] mx-auto text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
                     Tailored Services for your company
                 </p>
-                <p className="text-xl text-[#4c5c75] w-auto md:w-[400px] mx-auto text-center mb-8">
+                <p className="text-base sm:text-xl text-[#4c5c75] w-auto md:w-[400px] mx-auto text-center mb-4 sm:mb-6 md:mb-8">
                     We support you in adapting AI technologies, ensuring a smooth transition in your business
                 </p>
                 <div className="flex flex-col md:flex-row gap-12">
@@ -154,24 +154,24 @@ export default function Home() {
                         image={service2}
                     />
                     <Service
-                        topic="VOICE AI"
-                        title="SEO"
+                        topic="SEO"
+                        title="OPTIMIZATION"
                         desc="We offer great search engine optimization by helping search understand your content"
                         image={service3}
                     />
                 </div>
             </section>
             <section className="px-[5%] py-6 sm:py-8 md:py-10 lg:py-12">
-                <div className="flex justify-center mb-8 lg:mb-10">
+                <div className="flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10">
                     <div className="flex rounded-lg flex-row py-2 px-4 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img src={stars} alt="stars" />
-                        <p>ADDITIONAL SERVICES</p>
+                        <p className="leading-none text-sm sm:text-base">ADDITIONAL SERVICES</p>
                     </div>
                 </div>
-                <p className="w-auto md:w-[475px] mx-auto text-center text-3xl lg:text-4xl xl:text-5xl font-semibold mb-10 lg:mb-12">
+                <p className="w-auto md:w-[475px] mx-auto text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
                     Additional Service we offer for your need
                 </p>
-                <p className="text-xl text-[#4c5c75] w-auto md:w-[480px] mx-auto text-center mb-8">
+                <p className="text-xl text-[#4c5c75] w-auto md:w-[480px] mx-auto text-center mb-4 md:mb-6 lg:mb-8">
                     We also offer leading solutions in this services. Always get the bonus solutions needed for your
                     company
                 </p>
@@ -195,14 +195,14 @@ export default function Home() {
                 </div>
             </section>
             <section className="px-[5%] py-6 sm:py-8 md:py-10 lg:py-12">
-                <div className="flex justify-start mb-8 lg:mb-10">
-                    <div className="flex rounded-lg flex-row py-2 px-4 gap-2 items-center border-2 border-[#e1e5e7]">
+                <div className="flex justify-start mb-4 sm:mb-6 md:mb-8 lg:mb-10">
+                    <div className="flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img src={user} alt="user" />
-                        <p>BLOGS</p>
+                        <p className="leading-none text-sm sm:text-base">BLOGS</p>
                     </div>
                 </div>
-                <p className="text-4xl font-semibold mb-3">Latest Blogs & Resources</p>
-                <p className="text-xl text-[#4c5c75] mb-6 w-[350px]">
+                <p className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-3">Latest Blogs & Resources</p>
+                <p className="text-base md:text-xl text-[#4c5c75] mb-6 w-[350px]">
                     Stay Informed on Developments in AI and our insights on problem solving with AI
                 </p>
                 <div className="flex flex-col md:flex-row justify-between gap-6">
@@ -217,7 +217,7 @@ export default function Home() {
                     />
                     <Blogs
                         image={image2}
-                        title="How to Navigate Your COmpany To The Right Direction Using AI"
+                        title="How to Navigate Your Company To The Right Direction Using AI"
                         description="Studying abroad can be an exciting journey, but it comes with its fair share of challenges --one of..."
                         date="Thu Dec 19, 2024"
                         author="Esther Ebere"
@@ -236,13 +236,13 @@ export default function Home() {
                 </div>
             </section>
             <section className="px-[5%] py-6 sm:py-8 md:py-10 lg:py-12">
-                <div className="flex justify-center mb-8 lg:mb-10">
-                    <div className="flex rounded-lg flex-row py-2 px-4 gap-2 items-center border-2 border-[#e1e5e7]">
+                <div className="flex justify-center mb-6 md:mb-8 lg:mb-10">
+                    <div className="flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img src={lightbulb} alt="stars" />
-                        <p>CASE STUDY</p>
+                        <p className="text-sm sm:text-base">CASE STUDY</p>
                     </div>
                 </div>
-                <p className="w-auto md:w-[475px] mx-auto text-center text-3xl lg:text-4xl xl:text-5xl font-semibold mb-10 lg:mb-12">
+                <p className="w-auto md:w-[475px] mx-auto text-center text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
                     Check out a few of our AI Solutions
                 </p>
                 <Swiper

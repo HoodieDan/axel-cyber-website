@@ -15,7 +15,7 @@ export default function Blog() {
                 <IoIosSearch className='absolute text-2xl left-3 top-[50%] -translate-y-[50%]' />
             </div>
         </div>
-        <div className='w-[700px] overflow-scroll md:w-[90%] ml-[5%] md:mx-[5%] mb-4 md:mb-6 lg:mb-10 flex rounded-full flex-row px-2 py-2 justify-between items-center bg-[#e3e7ea] '>
+        <div className='w-[700px] overflow-scroll lg:overflow-hidden md:w-[90%] ml-[5%] md:mx-[5%] mb-4 md:mb-6 lg:mb-10 flex rounded-full flex-row px-2 py-2 justify-between items-center bg-[#e3e7ea] '>
             <p className='shrink-0 flex-1 text-center rounded-full hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] p-4 text-xs hover:text-white text-[#4c5c75]'>Financial Services Sector</p>
             <p className='shrink-0 flex-1 text-center rounded-full hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] p-4 text-xs hover:text-white text-[#4c5c75]'>Healthcare and Med Sciences Sector </p>
             <p className='shrink-0 flex-1 text-center rounded-full hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] p-4 text-xs hover:text-white text-[#4c5c75]'>Manufacturing Sector</p>
