@@ -14,7 +14,7 @@ export default function CaseStudy() {
                     <p className='absolute top-4 md:top-6 left-0 text-3xl sm:text-4xl md:text-5xl font-semibold'>Prompt Plumber AI</p>
                     <img className='w-full h-full block' src={caseimage1} alt="case study image" />
                 </div>
-                <div className='flex-1'>
+                <div className='flex flex-col flex-1'>
                     <p className='text-xl my-4 md:my-6 flex flex-row gap-2 items-center'>
                         <span>UI design</span>
                         <FaArrowRightLong />
@@ -26,14 +26,14 @@ export default function CaseStudy() {
                         A prompt engineering platform that allows for Beginners and intermediate level prompt Engineers and AI
                         enthusiasts to create very effective prompts that gets them expacted outcomes using  Popular Large Language Model
                     </p>
-                    <img  src={caseimage2} alt="case study image" />
+                    <img className="flex-1" src={caseimage2} alt="case study image" />
                 </div>
             </div>
             <div style={{aspectRatio: '2/0.9'}}>
                 <img className='w-full h-full block' src={caseimage3} alt="case study image" />
             </div>
         </section>
-        <section className='h-[550px] px-[5%] flex flex-col md:flex-row gap-8'>
+        <section className='h-[550px] 2xl:h-[900px] px-[5%] flex flex-col md:flex-row gap-8'>
             <div className='flex-1 rounded-2xl bg-[linear-gradient(90deg,#012772,#0046cc)]'></div>
             <div className='flex-1 flex flex-col gap-8'>
                 <div className='flex-1 rounded-2xl bg-[linear-gradient(90deg,#012772,#0046cc)]'></div>

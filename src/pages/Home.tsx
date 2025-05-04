@@ -32,8 +32,25 @@ import Cta from "../components/Cta";
 import Hero from "../components/Hero";
 import Service from "../components/Service";
 import Solution from "../components/Solution";
+import axios from "axios"
+import { useEffect, useState } from "react";
 
 export default function Home() {
+    const endpoint = "https://veoc-tech-cms.vercel.app/api/article"
+    const [, setArticles] = useState([])
+
+    const getArticles = async () => {
+        try {
+            const response = await axios.get(endpoint)
+            setArticles(response.data)
+        } catch (error) {
+            console.error("Error fetching articles:", error);
+        }
+    }
+
+    useEffect(()=>{
+        getArticles()
+    },[])
     return (
         <main>
             <Hero />
@@ -41,13 +58,13 @@ export default function Home() {
                 <div className="flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10">
                     <div className="flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img src={stars} alt="stars" />
-                        <p className="text-sm sm:text-base">OUR APPROACH TO BUILDING SOLUTIONS</p>
+                        <p className="text-sm sm:text-base 2xl:text-xl">Features</p>
                     </div>
                 </div>
-                <p className="w-auto md:w-[550px] text-center text-2xl md:text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+                <p className="w-auto md:w-[550px] 2xl:w-auto text-center text-2xl md:text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
                     Partner with us and build a better company
                 </p>
-                <div className="px-[5%] md:px-[3%] lg:px-[5%] pb-4 relative rounded-xl bg-[linear-gradient(45deg,#014594,#0181f1)] text-white h-auto md:h-[300px]">
+                <div className="px-[5%] md:px-[3%] lg:px-[5%] pb-4 relative rounded-xl bg-[linear-gradient(45deg,#014594,#0181f1)] text-white h-auto md:h-[300px] 2xl:h-[550px]">
                     <div className="absolute -top-[2px] -left-[2px] trapezium hidden md:block"></div>
                     <div className="flex flex-row gap-x-16 xl:gap-x-20 md:pt-24 md:pb-12 lg:py-12 mb-4">
                         <p className="text-xl whitespace-nowrap lg:text-2xl font-semibold md:self-end text-center md:text-start flex-1 md:flex-initial mt-4">
@@ -57,7 +74,9 @@ export default function Home() {
                             <p className="mb-6 lg:mb-8 text-2xl">
                                 Building high-impact applications grounded in your proprietary data
                             </p>
-                            <button className="bg-white rounded-lg py-2 px-6 text-black">Gets Started</button>
+                            <button className="bg-white active:bg-transparent hover:bg-transparent active:text-white hover:text-white active:border-2 hover:border-2 active:border-white hover:border-white rounded-md w-[120px] 2xl:w-[200px] h-[36px] 2xl:h-[72px] text-black transition-all duration-300 ease-linear cursor-pointer">
+                                Gets Started
+                            </button>
                         </div>
                     </div>
                     <div className="md:absolute md:left-[3%] lg:left-[5%] md:top-[65%] w-full md:w-[94%] lg:w-[90%] flex flex-col md:flex-row justify-between gap-4 lg:gap-6">
@@ -100,28 +119,28 @@ export default function Home() {
                 <div className="flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10">
                     <div className="flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img src={laptop} alt="laptop" />
-                        <p className="text-sm sm:text-base">PEOPLE WE WORK WITH </p>
+                        <p className="text-sm sm:text-base 2xl:text-xl">PEOPLE WE WORK WITH </p>
                     </div>
                 </div>
-                <p className="w-auto md:w-[500px] mx-auto text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+                <p className="w-auto md:w-[470px] 2xl:w-auto mx-auto text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
                     We Use our AI solutions for all industries
                 </p>
                 <div className="flex w-full flex-col lg:flex-row justify-between gap-4 md:gap-6 mb-4 md:mb-6">
-                    <div className="flex-1 h-auto">
-                        <img className="block w-full" src={publicSector} alt="public sector" />
+                    <div className="filter active:grayscale hover:grayscale transition-all duration-300 ease-linear flex-1 h-auto">
+                        <img className="block h-full w-full" src={publicSector} alt="public sector" />
                     </div>
-                    <div className="flex-1 h-auto">
+                    <div className="filter active:grayscale hover:grayscale transition-all duration-300 ease-linear flex-1 h-auto">
                         <img className="block w-full" src={energy} alt="energy" />
                     </div>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between gap-6 mb-2 md:mb-6">
-                    <div className="flex-1 h-auto">
+                    <div className="filter active:grayscale hover:grayscale transition-all duration-300 ease-linear flex-1 h-auto">
                         <img className="block w-full" src={healthcare} alt="healthcare" />
                     </div>
-                    <div className="flex-1 h-auto">
+                    <div className="filter active:grayscale hover:grayscale transition-all duration-300 ease-linear flex-1 h-auto">
                         <img className="block w-full" src={finanacial} alt="financial services" />
                     </div>
-                    <div className="flex-1 h-auto">
+                    <div className="filter active:grayscale hover:grayscale transition-all duration-300 ease-linear flex-1 h-auto">
                         <img className="block w-full" src={engineering} alt="engineering" />
                     </div>
                 </div>
@@ -130,14 +149,14 @@ export default function Home() {
             <section className="px-[5%] bg-[#f9f9f9] py-6 sm:py-8 md:py-10 lg:py-12">
                 <div className="flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10">
                     <div className="flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]">
-                        <img src={stars} alt="stars" />
-                        <p className="text-sm md:text-base">What we offer</p>
+                        <img className="shrink-0 text-base 2xl:text-2xl" src={stars} alt="stars" />
+                        <p className="text-sm md:text-base 2xl:text-xl">What we offer</p>
                     </div>
                 </div>
-                <p className="w-auto md:w-[450px] mx-auto text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+                <p className="w-auto md:w-[450px] 2xl:w-auto mx-auto text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
                     Tailored Services for your company
                 </p>
-                <p className="text-base sm:text-xl text-[#4c5c75] w-auto md:w-[400px] mx-auto text-center mb-4 sm:mb-6 md:mb-8">
+                <p className="text-base sm:text-xl 2xl:w-auto text-[#4c5c75] w-auto md:w-[400px] mx-auto text-center mb-4 sm:mb-6 md:mb-8">
                     We support you in adapting AI technologies, ensuring a smooth transition in your business
                 </p>
                 <div className="flex flex-col md:flex-row gap-12">
@@ -164,14 +183,14 @@ export default function Home() {
             <section className="px-[5%] py-6 sm:py-8 md:py-10 lg:py-12">
                 <div className="flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10">
                     <div className="flex rounded-lg flex-row py-2 px-4 gap-2 items-center border-2 border-[#e1e5e7]">
-                        <img src={stars} alt="stars" />
-                        <p className="leading-none text-sm sm:text-base">ADDITIONAL SERVICES</p>
+                        <img className="text-base 2xl:text-xl shrink-0" src={stars} alt="stars" />
+                        <p className="leading-none text-sm sm:text-base 2xl:text-xl">ADDITIONAL SERVICES</p>
                     </div>
                 </div>
-                <p className="w-auto md:w-[475px] mx-auto text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+                <p className="w-auto md:w-[475px] 2xl:w-auto mx-auto text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
                     Additional Service we offer for your need
                 </p>
-                <p className="text-xl text-[#4c5c75] w-auto md:w-[480px] mx-auto text-center mb-4 md:mb-6 lg:mb-8">
+                <p className="text-xl text-[#4c5c75] w-auto md:w-[425px] 2xl:w-auto mx-auto text-center mb-4 md:mb-6 lg:mb-8">
                     We also offer leading solutions in this services. Always get the bonus solutions needed for your
                     company
                 </p>
@@ -197,12 +216,12 @@ export default function Home() {
             <section className="px-[5%] py-6 sm:py-8 md:py-10 lg:py-12">
                 <div className="flex justify-start mb-4 sm:mb-6 md:mb-8 lg:mb-10">
                     <div className="flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]">
-                        <img src={user} alt="user" />
-                        <p className="leading-none text-sm sm:text-base">BLOGS</p>
+                        <img className="shrink-0 text-base 2xl:text-xl" src={user} alt="user" />
+                        <p className="leading-none text-sm sm:text-base 2xl:text-xl">BLOGS</p>
                     </div>
                 </div>
                 <p className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-3">Latest Blogs & Resources</p>
-                <p className="text-base md:text-xl text-[#4c5c75] mb-6 w-[350px]">
+                <p className="text-base md:text-xl text-[#4c5c75] mb-6 w-[350px] 2xl:w-[650px]">
                     Stay Informed on Developments in AI and our insights on problem solving with AI
                 </p>
                 <div className="flex flex-col md:flex-row justify-between gap-6">
@@ -238,11 +257,11 @@ export default function Home() {
             <section className="px-[5%] py-6 sm:py-8 md:py-10 lg:py-12">
                 <div className="flex justify-center mb-6 md:mb-8 lg:mb-10">
                     <div className="flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]">
-                        <img src={lightbulb} alt="stars" />
-                        <p className="text-sm sm:text-base">CASE STUDY</p>
+                        <img className="shrink-0 text-base 2xl:text-xl" src={lightbulb} alt="stars" />
+                        <p className="text-sm sm:text-base 2xl:text-xl">CASE STUDY</p>
                     </div>
                 </div>
-                <p className="w-auto md:w-[475px] mx-auto text-center text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+                <p className="w-auto md:w-[475px] 2xl:w-auto mx-auto text-center text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
                     Check out a few of our AI Solutions
                 </p>
                 <Swiper

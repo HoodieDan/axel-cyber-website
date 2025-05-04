@@ -144,10 +144,10 @@
 }
 
 @layer base {
-    * {
+    /* * {
         @apply border-border outline-ring/50;
 
-    }
+    } */
 
     body {
         @apply bg-background text-foreground;
@@ -215,6 +215,13 @@ body {
 
 .service-swipper.swiper {
     height: 250px !important;
+}
+
+@media screen and (min-width: 2559px) {
+    .service-swipper.swiper {
+        height: 450px !important;
+    }
+    
 }
 
 .home-swiper .swiper-wrapper,
@@ -379,6 +386,12 @@ body {
     }
 }
 
+@media (min-width: 2559px) {
+    .swiper-pagination-bullet {
+        width: 200px !important;
+        height: 5px !important;
+    }
+}
 .swiper-pagination-bullet-active {
     background: linear-gradient(90deg, #B860ff 0%, #077adf 86%) !important;
 }
@@ -388,6 +401,14 @@ body {
     left: auto !important;
     right: 7% !important;
     top: 95% !important;
+}
+
+@media screen and (min-width: 2559px) {
+    .swiper-button-prev,
+    .swiper-button-next {
+        transform: scale(2.0) !important;
+    }
+    
 }
 
 @media (min-width: 640px) {
@@ -401,7 +422,7 @@ body {
 
 .swiper-button-next,
 .swiper-rtl .swiper-button-prev {
-    right: 0 !important;
+    right: 0.325% !important;
     top: 95% !important;
     left: auto;
 }

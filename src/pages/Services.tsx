@@ -103,7 +103,7 @@ function AiServices({ title, image, list,icon }: AiServicesProps) {
                         <li className='text-[#4c5c57]' key={index}>{item}</li>
                     ))}
                 </ul>
-                <button className='p-3 text-white rounded-xl text-base flex flex-row items-center gap-1 bg-[linear-gradient(45deg,#032D7F,#0241BA)]'>
+                <button className='w-[120px] 2xl:w-[208px] h-[40px] 2xl:h-[86px] text-white rounded-xl text-base flex flex-row items-center justify-center gap-1 bg-[linear-gradient(45deg,#032D7F,#0241BA)] active:bg-none hover:bg-none active:bg-white hover:bg-white active:border-2 hover:border-2 active:border-[#032D7F] hover:border-[#032D7F] hover:text-[#032D7F] active:text-[#032D7F] transition-all duration-300 ease-linear cursor-pointer leading-none'>
                     Reach Out 
                     <RiArrowRightSLine />
                 </button>
@@ -157,19 +157,19 @@ export default function Services() {
         <section className='px-[5%] bg-[#f9f9f9] py-6 sm:py-8 md:py-10 lg:py-12'>
             <div className='flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10'>
                 <div className='flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center justify-center border-2 border-[#e1e5e7]'>
-                    <img src={stars} alt="stars" />
-                    <p >CAPBILITIES</p>
+                    <img className='shrink-0 text-base 2xl:text-xl' src={stars} alt="stars" />
+                    <p className='text-sm sm:text-base 2xl:text-xl' >CAPBILITIES</p>
                 </div>
             </div>
-            <p className='w-auto md:w-[600px] text-center text-2xl md:text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
+            <p className='w-auto md:w-[600px] 2xl:w-auto text-center text-2xl md:text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
                 Our AI-powered Assistant solutions for your business
             </p>
             <div className='mb-4 md:mb-6 lg:mb-10 flex rounded-xl flex-col md:flex-row px-2 py-2 justify-between items-center bg-[#e3e7ea]'>
-                <p onClick={()=>setIndex(0)} className='flex-1 text-center rounded-md hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] py-2 px-2 text-sm hover:text-white text-[#4c5c75]'>Boost Operational Efficiency</p>
-                <p onClick={()=>setIndex(1)} className='flex-1 text-center rounded-md hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] py-2 px-2 text-sm hover:text-white text-[#4c5c75]'>Enrich Customer Experiences</p>
-                <p onClick={()=>setIndex(2)} className='flex-1 text-center rounded-md hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] py-2 px-2 text-sm hover:text-white text-[#4c5c75]'>Optimize Risk Management Processes</p>
-                <p onClick={()=>setIndex(3)} className='flex-1 text-center rounded-md hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] py-2 px-2 text-sm hover:text-white text-[#4c5c75]'>Custom LLM's</p>
-                <p onClick={()=>setIndex(4)} className='flex-1 text-center rounded-md hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] py-2 px-2 text-sm hover:text-white text-[#4c5c75]'>Web App</p>
+                <p onClick={()=>setIndex(0)} className={`${index == 0 ? "bg-[linear-gradient(45deg,#032D7F,#0241BA)] text-white" : "bg-transparent"} flex-1 text-center rounded-md active:bg-[linear-gradient(45deg,#032D7F,#0241BA)] hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] py-2 px-2 text-sm hover:text-white text-[#4c5c75]`}>Boost Operational Efficiency</p>
+                <p onClick={()=>setIndex(1)} className={`${index == 1 ? "bg-[linear-gradient(45deg,#032D7F,#0241BA)] text-white" : "bg-transparent"} flex-1 text-center rounded-md active:bg-[linear-gradient(45deg,#032D7F,#0241BA)] hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] py-2 px-2 text-sm hover:text-white text-[#4c5c75]`}>Enrich Customer Experiences</p>
+                <p onClick={()=>setIndex(2)} className={`${index == 2 ? "bg-[linear-gradient(45deg,#032D7F,#0241BA)] text-white" : "bg-transparent"} flex-1 text-center rounded-md active:bg-[linear-gradient(45deg,#032D7F,#0241BA)] hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] py-2 px-2 text-sm hover:text-white text-[#4c5c75]`}>Optimize Risk Management Processes</p>
+                <p onClick={()=>setIndex(3)} className={`${index == 3 ? "bg-[linear-gradient(45deg,#032D7F,#0241BA)] text-white" : "bg-transparent"} flex-1 text-center rounded-md active:bg-[linear-gradient(45deg,#032D7F,#0241BA)] hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] py-2 px-2 text-sm hover:text-white text-[#4c5c75]`}>Custom LLM's</p>
+                <p onClick={()=>setIndex(4)} className={`${index == 4 ? "bg-[linear-gradient(45deg,#032D7F,#0241BA)] text-white" : "bg-transparent"} flex-1 text-center rounded-md active:bg-[linear-gradient(45deg,#032D7F,#0241BA)] hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] py-2 px-2 text-sm hover:text-white text-[#4c5c75]`}>Web App</p>
             </div>
             <AiServices 
                 title={solution[index].title}
@@ -181,11 +181,11 @@ export default function Services() {
         <section className='px-[5%] py-6 sm:py-8 md:py-10 lg:py-12'>
             <div className='flex justify-center mb-8 lg:mb-10'>
                 <div className='flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
-                    <img src={laptop} alt="stars" />
-                    <p>BENEFITS</p>
+                    <img className='shrink-0' src={laptop} alt="stars" />
+                    <p className='text-sm sm:text-base 2xl:text-xl'>BENEFITS</p>
                 </div>
             </div>
-            <p className='w-auto md:w-[500px] text-center text-2xl md:text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-10 lg:mb-12'>
+            <p className='w-auto md:w-[500px] 2xl:w-auto text-center text-2xl md:text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-10 lg:mb-12'>
                 Enterprise-grade AI Benefits
             </p>
             <div className='flex flex-col md:flex-row gap-6'>
@@ -214,8 +214,8 @@ export default function Services() {
         <section className='px-[5%] bg-[#f9f9f9] py-6 sm:py-8 md:py-10 lg:py-12'>
             <div className='flex justify-center mb-6 sm:mb-8 md:mb-10 lg:mb-14'>
                 <div className='flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
-                    <img src={stars} alt="stars" />
-                    <p>DEPLOYMENT OPTIONS</p>
+                    <img className='shrink-0' src={stars} alt="stars" />
+                    <p className='text-sm sm:text-base 2xl:text-xl'>DEPLOYMENT OPTIONS</p>
                 </div>
             </div>
             <div className='mb-4 md:mb-6 lg:mb-10'>
@@ -233,8 +233,8 @@ export default function Services() {
         <section className='px-[5%] bg-[#f9f9f9] py-6 sm:py-8 md:py-10 lg:py-12'>
             <div className='flex justify-center mb-6 sm:mb-8 md:mb-10 lg:mb-14'>
                 <div className='flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
-                    <img src={stars} alt="stars" />
-                    <p>CUSTOMER STORIES</p>
+                    <img className='shrink-0' src={stars} alt="stars" />
+                    <p className='text-sm sm:text-base 2xl:text-xl'>CUSTOMER STORIES</p>
                 </div>
             </div>
             <Swiper 
