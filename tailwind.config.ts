@@ -4,6 +4,7 @@ export default {
   theme: { 
     extend: {
       'trapezium': 'polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%)',
+      grayscale: ['hover', 'active'],
     } 
   },
   plugins: [

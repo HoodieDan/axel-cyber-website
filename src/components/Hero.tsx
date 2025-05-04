@@ -3,19 +3,19 @@ import heroImg from "../assets/hero-img.svg"
 
 export default function Hero() {
   return (
-    <section className='px-[5%] my-8 sm:my-10 md:my-12 lg:my-16 flex flex-col md:flex-row justify-between items-center gap-x-16 gap-y-8'>
-        <div className='lg:flex-[1.5] lg:flex-1 xl:flex-[1.5]'>
-            <p className='mb-3 md:mb-4 lg:mb-6 text-xl md:text-2xl w-auto md:w-[250px] xl:w-[375px] md:text-3xl xl:text-4xl font-bold text-black'>
+    <section className='px-[5%] my-8 sm:my-10 md:my-12 lg:my-16 flex flex-col md:flex-row justify-between items-center gap-x-6 lg:gap-x-10 gap-y-8'>
+        <div className='flex-1 lg:flex-[1.5] lg:flex-1 xl:flex-[1.5]'>
+            <p className='mb-3 md:mb-4 lg:mb-6 text-2xl sm:text-3xl w-auto md:w-[95%] md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black'>
                 <span className='text-[#3084da]'>The All-in-One</span> Platform For Private And Secure AI
             </p>
-            <p className='mb-6 md:mb-8 lg:mb-10 text-base md:text-xl font-normal text-black w-auto md:w-[300px] lg:w-[375px] xl:w-[470px]'>
+            <p className='mb-6 md:mb-8 lg:mb-10 text-base md:text-xl lg:text-2xl font-normal text-black w-auto md:w-[90%]'>
                 Lexxa brings you cutting-edge multilingual models, advanced retrieval and an AI
             </p>
             <div className='flex flex-row gap-6 mb-6 md:mb-8 lg:mb-10'>
-                <button className='p-3 text-white rounded-xl text-base bg-[linear-gradient(45deg,#010101,#515151)]'>
+                <button className='w-[198px] 2xl:w-[300px] h-[48px] 2xl:h-[84px] text-white hover:text-[#010101] active:text-[#010101] rounded-md text-base bg-[linear-gradient(45deg,#010101,#515151)] hover:bg-none active:bg-none hover:bg-white active:bg-white hover:border-2 active:border-2 hover:border-[#010101] actvie:border-[#01101] transitilon-all duration-300 ease-linear cursor-pointer leading-none'>
                     Try the Playground
                 </button>
-                <button className='p-3 text-black text-base border border-[#0081f1] rounded-xl flex flex-row items-center gap-1 bg-[#e8eaf2]'>
+                <button className='w-[198px] 2xl:w-[300px] h-[48px] 2xl:h-[84px] text-black hover:text-black active:text-black text-base rounded-md flex flex-row items-center justify-center gap-1 bg-[#e8eaf2] hover:bg-transparent active:bg-white hover:border-2 active:border-2 hover:border-[#e8eaf2] hover:border-[#e8eaf2] transitilon-all duration-300 ease-linear cursor-pointer leading-none'>
                     Request a Demo <BsArrowUpRight />
                 </button>
             </div>
