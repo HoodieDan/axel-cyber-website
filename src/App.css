@@ -239,6 +239,7 @@ body {
 .home-swiper .swiper-slide {
     margin-right: 0px !important;
     width: 90% !important;
+    height: 90% !important ;
 }
 
 .service-swipper .swiper-slide {
@@ -350,7 +351,7 @@ body {
 
 .home-swiper .swiper-slide img {
     width: 100% !important;
-    height: 90% !important;
+    height: 100% !important;
     border-radius: 8px !important;
     object-fit: cover !important;
 }
@@ -443,3 +444,25 @@ body {
     border-width: 2px;
     border-image-source: linear-gradient(to right, #022366, #0046cc);
   }
+
+/* @media screen and (max-width: 767px) {
+    .service-section{
+        aspect-ratio: 2/2.25
+    }
+   
+    
+} */
+
+.about-hero-img{
+    aspect-ratio: 3 / 1.30;
+}
+@media screen and (min-width: 640px) {
+    .about-hero-img{
+        aspect-ratio: 3 / 1.5;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .about-hero-img{
+        aspect-ratio: 3/1.06
+    }
+} 

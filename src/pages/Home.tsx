@@ -8,13 +8,10 @@ import energy from "../assets/energy.png";
 import engineering from "../assets/engineering.png";
 import finanacial from "../assets/financial_services.png";
 import healthcare from "../assets/health_center.png";
-import image1 from "../assets/image1.png";
-import image2 from "../assets/image2.png";
-import image3 from "../assets/image3.png";
 import laptop from "../assets/laptop-02.png";
 import lightbulb from "../assets/lightbulb.png";
 import project1 from "../assets/project1.png";
-import project2 from "../assets/project2.png";
+// import project2 from "../assets/project2.png";
 import project3 from "../assets/project3.png";
 import publicSector from "../assets/public_sector.png";
 import scale from "../assets/scalable.png";
@@ -34,18 +31,49 @@ import Service from "../components/Service";
 import Solution from "../components/Solution";
 import axios from "axios"
 import { useEffect, useState } from "react";
+import { useContextValue } from "@/context";
+import oceanView from "../assets/ocean-view.png"
+import { BsArrowUpRightCircleFill } from "react-icons/bs";
 
 export default function Home() {
     const endpoint = "https://veoc-tech-cms.vercel.app/api/article"
-    const [, setArticles] = useState([])
+    const {articles, setArticles} = useContextValue()
+    const [loading, setLoading] = useState<boolean>(false)
 
     const getArticles = async () => {
+        setLoading(true)
         try {
             const response = await axios.get(endpoint)
-            setArticles(response.data)
+            setLoading(false)
+            setArticles(response.data.articles)
+            sessionStorage.setItem("articles", JSON.stringify(response.data.articles))
         } catch (error) {
+            setLoading(false)
             console.error("Error fetching articles:", error);
         }
+    }
+
+    const calculateReadingTime = (text: string, wordPerMinute: number = 200): string =>{
+        if(!text) return "0 min read"
+        const words = text.trim().split(/\s+/).length
+        const readingTime = Math.ceil(words / wordPerMinute)
+
+        return `${readingTime} min read`
+
+    }
+
+    const SkeletonLoader = () => {
+        return (
+            <div className='flex-1 rounded-lg h-auto rounded-lg'>
+                <div className='rounded-tl-lg rounded-tr-lg w-full h-[208px] bg-[#e0e0e0] animate-pulse'>
+                </div>
+                <div className='mt-2'>
+                    <p className='text-xl font-semibold py-2 h-4 bg-[#e0e0e0] animate-pulse mb-2 w-full'></p>
+                    <p className='bg-[#e0e0e0] h-4 animate-pulse'></p>
+                    <p className='bg-[#e0e0e0] h-2 animate-pulse'></p>
+                </div>
+            </div>
+        )
     }
 
     useEffect(()=>{
@@ -54,27 +82,30 @@ export default function Home() {
     return (
         <main>
             <Hero />
-            <section className="px-[5%] bg-[#f9f9f9] py-6 sm:py-8 md:py-10 lg:py-12">
+            <div className="bg-[#f9f9f9]">
+            <section className="w-[90%] max-w-screen-xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12">
                 <div className="flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10">
                     <div className="flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img src={stars} alt="stars" />
-                        <p className="text-sm sm:text-base 2xl:text-xl">Features</p>
+                        <p className="text-sm sm:text-base 2xl:text-xl">
+                            OUR APPROACH TO BUILDING SOLUTIONS
+                        </p>
                     </div>
                 </div>
                 <p className="w-auto md:w-[550px] 2xl:w-auto text-center text-2xl md:text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
                     Partner with us and build a better company
                 </p>
-                <div className="px-[5%] md:px-[3%] lg:px-[5%] pb-4 relative rounded-xl bg-[linear-gradient(45deg,#014594,#0181f1)] text-white h-auto md:h-[300px] 2xl:h-[550px]">
+                <div className="md:px-[3%] lg:px-[5%] pb-8 md:pb-10 lg:pb-12 relative rounded-xl bg-[linear-gradient(45deg,#014594,#0181f1)] text-white h-auto md:h-[300px] 2xl:h-[550px]">
                     <div className="absolute -top-[2px] -left-[2px] trapezium hidden md:block"></div>
-                    <div className="flex flex-row gap-x-16 xl:gap-x-20 md:pt-24 md:pb-12 lg:py-12 mb-4">
+                    <div className="flex flex-col md:flex-row gap-x-16 xl:gap-x-20 py-6 sm:py-8 md:py-10 lg:py-12 mb-4">
                         <p className="text-xl whitespace-nowrap lg:text-2xl font-semibold md:self-end text-center md:text-start flex-1 md:flex-initial mt-4">
                             We offer leading <br /> solutions such as:
                         </p>
-                        <div className="hidden md:block">
-                            <p className="mb-6 lg:mb-8 text-2xl">
+                        <div>
+                            <p className="text-center mb-6 lg:mb-8 text-base md:text-xl">
                                 Building high-impact applications grounded in your proprietary data
                             </p>
-                            <button className="bg-white active:bg-transparent hover:bg-transparent active:text-white hover:text-white active:border-2 hover:border-2 active:border-white hover:border-white rounded-md w-[120px] 2xl:w-[200px] h-[36px] 2xl:h-[72px] text-black transition-all duration-300 ease-linear cursor-pointer">
+                            <button className="bg-white active:bg-transparent hover:bg-transparent active:text-white hover:text-white active:border-2 hover:border-2 active:border-white hover:border-white rounded-md w-full md:w-[120px] 2xl:w-[200px] h-[36px] 2xl:h-[72px] text-black transition-all duration-300 ease-linear cursor-pointer">
                                 Gets Started
                             </button>
                         </div>
@@ -115,11 +146,14 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section className="px-[5%] mt-4 md:mt-36 lg:mt-28 py-6 sm:py-8 md:py-10 lg:py-12">
+            </div>
+            <section className="w-[90%] max-w-screen-xl mx-auto mt-4 md:mt-36 lg:mt-28 py-6 sm:py-8 md:py-10 lg:py-12">
                 <div className="flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10">
                     <div className="flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img src={laptop} alt="laptop" />
-                        <p className="text-sm sm:text-base 2xl:text-xl">PEOPLE WE WORK WITH </p>
+                        <p className="text-sm sm:text-base 2xl:text-xl">
+                            SOME INDUSTRIES WE SERVICE 
+                        </p>
                     </div>
                 </div>
                 <p className="w-auto md:w-[470px] 2xl:w-auto mx-auto text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
@@ -145,8 +179,11 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+            <div className="w-[90%] max-w-screen-xl mx-auto">
             <Clientele />
-            <section className="px-[5%] bg-[#f9f9f9] py-6 sm:py-8 md:py-10 lg:py-12">
+            </div>
+            <div className="bg-[#f9f9f9]">
+            <section className="w-[90%] max-w-screen-xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12">
                 <div className="flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10">
                     <div className="flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img className="shrink-0 text-base 2xl:text-2xl" src={stars} alt="stars" />
@@ -160,27 +197,29 @@ export default function Home() {
                     We support you in adapting AI technologies, ensuring a smooth transition in your business
                 </p>
                 <div className="flex flex-col md:flex-row gap-12">
+    
                     <Service
                         topic="AI CHATBOT"
                         title="Chatbot Development"
-                        desc="We create, and maintain personalized AI Chatbot for your company for custom solutions and lead generations"
+                        desc="We create, and maintain personalized AI Chatbot for your company for custom solutions of multiple purpose"
                         image={service1}
                     />
                     <Service
                         topic="AUTOMATION"
                         title="AI Automation"
-                        desc="We create workflow and social media automations, we also do weel with CRM management"
+                        desc="We create workflow and Automations, that, are focused on efficiency and improving results while reducing time spent"
                         image={service2}
                     />
                     <Service
-                        topic="SEO"
-                        title="OPTIMIZATION"
-                        desc="We offer great search engine optimization by helping search understand your content"
+                        topic="AGENTICS"
+                        title="AI Agents"
+                        desc="We create Agentic AI systems can make decisions and take actions without constant human supervision"
                         image={service3}
                     />
                 </div>
             </section>
-            <section className="px-[5%] py-6 sm:py-8 md:py-10 lg:py-12">
+            </div>
+            <section className="w-[90%] max-w-screen-xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12">
                 <div className="flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10">
                     <div className="flex rounded-lg flex-row py-2 px-4 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img className="text-base 2xl:text-xl shrink-0" src={stars} alt="stars" />
@@ -196,24 +235,24 @@ export default function Home() {
                 </p>
                 <div>
                     <AdditionalServices
-                        service="Mobile & Website Design"
-                        desc="We build functional website and apps (desktop & mobile), maintaining brand consistency and enjoyable experience"
+                        service="Natural Languge Processing (NLP)"
+                        desc="We deliver instant, intelligent customer support and engagement 24/7. Our AI chatbots understand context, handle complex queries, and scale effortlessly across platforms."
                     />
                     <AdditionalServices
-                        service="Web Development"
-                        desc="After designing we obviously need to bring the designs to life, our experienced team brings designs to life with precision"
+                        service="Recommendation Systems"
+                        desc="We streamline repetitive tasks and optimize operations with AI-driven workflows, freeing up your team for higher-value work."
                     />
                     <AdditionalServices
-                        service="Brand Guidelines"
-                        desc="We build brand guidelines and identity for your company to maintain consistency among all design systems"
+                        service="AI Strategy Consulting"
+                        desc="Our Agentic AI Systems can make decisions and take actions eithout constant human supervision. Deploy smart AI agents that act, learn, and adapt like human assistants."
                     />
                     <AdditionalServices
-                        service="Product Design"
-                        desc="We build brand guidelines and identity for your company to maintain consistency among all design systems"
+                        service="AI Feature Implement"
+                        desc="Integrate AI Features and Engineer sophisticated Artificial Intelligence and AUtomated processes into your company's existing software"
                     />
                 </div>
             </section>
-            <section className="px-[5%] py-6 sm:py-8 md:py-10 lg:py-12">
+            <section className="w-[90%] max-w-screen-xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12">
                 <div className="flex justify-start mb-4 sm:mb-6 md:mb-8 lg:mb-10">
                     <div className="flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img className="shrink-0 text-base 2xl:text-xl" src={user} alt="user" />
@@ -224,37 +263,36 @@ export default function Home() {
                 <p className="text-base md:text-xl text-[#4c5c75] mb-6 w-[350px] 2xl:w-[650px]">
                     Stay Informed on Developments in AI and our insights on problem solving with AI
                 </p>
-                <div className="flex flex-col md:flex-row justify-between gap-6">
-                    <Blogs
-                        image={image1}
-                        title="How to Navigate Your Company To The Right Direction Using AI"
-                        description="Studying abroad can be an exciting journey, but it comes with its fair share of challenges --one of..."
-                        date="Thu Dec 19, 2024"
-                        author="Esther Ebere"
-                        topic="Automation"
-                        timeStamp="5 min read"
-                    />
-                    <Blogs
-                        image={image2}
-                        title="How to Navigate Your Company To The Right Direction Using AI"
-                        description="Studying abroad can be an exciting journey, but it comes with its fair share of challenges --one of..."
-                        date="Thu Dec 19, 2024"
-                        author="Esther Ebere"
-                        topic="Chatbot developmeent"
-                        timeStamp="7 min read"
-                    />
-                    <Blogs
-                        image={image3}
-                        title="How to Navigate Your COmpany To The Right Direction Using AI"
-                        description="Studying abroad can be an exciting journey, but it comes with its fair share of challenges --one of..."
-                        date="Thu Dec 19, 2024"
-                        author="Esther Ebere"
-                        topic="Automation"
-                        timeStamp="5 min read"
-                    />
+                <div className={`flex flex-col md:flex-row ${articles.length == 0 && !loading ? "justify-center items-center border border-[#4c5c75] rounded-md" : "justify-between items-center"} gap-6 min-h-[380px]`}>
+                    {
+                        loading ?
+                            <>
+                                <SkeletonLoader />
+                                <SkeletonLoader />
+                                <SkeletonLoader />
+                            </>
+                        : articles.length > 0 ?
+                        articles.slice(0,3).map(({author,title,coverImage,description,date,tags,content, _id},idx)=>{
+                            return (
+                                <Blogs
+                                    key={idx}
+                                    index={idx}
+                                    image={coverImage}
+                                    title={title}
+                                    description={description ? description : "no description"}
+                                    date={date}
+                                    author={author}
+                                    topic={tags}
+                                    timeStamp={content[0]!== undefined ? calculateReadingTime(content[0].paragraphText) : calculateReadingTime("")}
+                                    id={_id}
+                                />           
+                            )
+                        })
+                        : <p className="text-xl md:text-2xl lg:text-3xl text-[#4c5c75]">No blogs</p>
+                    }
                 </div>
             </section>
-            <section className="px-[5%] py-6 sm:py-8 md:py-10 lg:py-12">
+            <section className="w-[90%] max-w-screen-xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12">
                 <div className="flex justify-center mb-6 md:mb-8 lg:mb-10">
                     <div className="flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img className="shrink-0 text-base 2xl:text-xl" src={lightbulb} alt="stars" />
@@ -281,23 +319,45 @@ export default function Home() {
                     pagination={{ clickable: true }}
                     className="home-swiper flex flex-row overflow-x-hidden"
                 >
-                    <SwiperSlide className="shrink-0">
+                    <SwiperSlide className="shrink-0 relative group">
                         <img src={project1} alt="project1" />
+                        <div className="absolute  top-0 left-0 w-full h-full bg-[linear-gradient(45deg,#014594,#0181f1)] opacity-0 group-hover:opacity-50 rounded-lg transition-all duration-300 ease-linear"></div>
+                        <div className="absolute hidden top-[50%] left-[50%] -translate-[50%] group-hover:flex z-10 flex-col justify-center items-center gap-2 text-white">
+                            <BsArrowUpRightCircleFill className="text-2xl md:text-3xl lg:text-4xl" />
+                            <p className="text-xl md:text-2xl">project name</p>
+                        </div>
                     </SwiperSlide>
-                    <SwiperSlide className="shrink-0">
-                        <img src={project2} alt="project2" />
+                    <SwiperSlide className="shrink-0 relative group">
+                        <img src={oceanView} alt="project2" />
+                        <div className="absolute  top-0 left-0 w-full h-full bg-[linear-gradient(45deg,#014594,#0181f1)] opacity-0 group-hover:opacity-50 rounded-lg transition-all duration-300 ease-linear"></div>
+                        <div className="absolute hidden top-[50%] left-[50%] -translate-[50%] group-hover:flex z-10 flex-col justify-center items-center gap-2 text-white">
+                            <BsArrowUpRightCircleFill className="text-2xl md:text-3xl lg:text-4xl" />
+                            <p className="text-xl md:text-2xl">project name</p>
+                        </div>
                     </SwiperSlide>
-                    <SwiperSlide className="shrink-0">
+                    <SwiperSlide className="shrink-0 relative group">
                         <img src={project3} alt="project3" />
+                        <div className="absolute  top-0 left-0 w-full h-full bg-[linear-gradient(45deg,#014594,#0181f1)] opacity-0 group-hover:opacity-50 rounded-lg transition-all duration-300 ease-linear"></div>
+                        <div className="absolute hidden top-[50%] left-[50%] -translate-[50%] group-hover:flex z-10 flex-col justify-center items-center gap-2 text-white">
+                            <BsArrowUpRightCircleFill className="text-2xl md:text-3xl lg:text-4xl" />
+                            <p className="text-xl md:text-2xl">project name</p>
+                        </div>
                     </SwiperSlide>
-                    <SwiperSlide className="shrink-0">
+                    <SwiperSlide className="shrink-0 relative group">
                         <img src={project1} alt="project1" />
+                        <div className="absolute  top-0 left-0 w-full h-full bg-[linear-gradient(45deg,#014594,#0181f1)] opacity-0 group-hover:opacity-50 rounded-lg transition-all duration-300 ease-linear"></div>
+                        <div className="absolute hidden top-[50%] left-[50%] -translate-[50%] group-hover:flex z-10 flex-col justify-center items-center gap-2 text-white">
+                            <BsArrowUpRightCircleFill className="text-2xl md:text-3xl lg:text-4xl" />
+                            <p className="text-xl md:text-2xl">project name</p>
+                        </div>
                     </SwiperSlide>
                 </Swiper>
             </section>
+            <div className="w-[90%] max-w-screen-xl mx-auto">
             <Cta title="Secure your company's furture by Partering with Axel Cyber" action="Book a call">
                 <HiArrowNarrowRight className="inline" />
             </Cta>
+            </div>
         </main>
     );
 }
