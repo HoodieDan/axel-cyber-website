@@ -8,6 +8,11 @@ import Project from "./pages/Project";
 import Services from "./pages/Services";
 import Works from "./pages/Works";
 import "./styles/index.scss";
+// import Blog from "./pages/Blog";
+import Contact from "./pages/Contact";
+// import BlogPage from "./pages/BlogPage";
+import Solutions from "./pages/Solutions";
+import CaseStudy from "./pages/CaseStudy";
 
 function App() {
     return (
@@ -17,8 +22,14 @@ function App() {
                     <Route path="/" element={<AppLayout />}>
                         <Route index element={<Home />} />
                         <Route path="/about" element={<Aboutus />} />
-                        <Route path="/service" element={<Services />} />
+                        <Route path="/services" element={<Services />} />
                         <Route path="/industries-we-service" element={<IndustriesWeService />} />
+                        {/* <Route path="/blog" element={<Blog />} /> */}
+                        <Route path="/contact" element={<Contact />} />
+                        <Route path="*" element={<Home />} />
+                        {/* <Route path="/blogpage" element={<BlogPage />} /> */}
+                        <Route path="/solutions" element={<Solutions />} />
+                        <Route path="/casestudy" element={<CaseStudy />} />
                         <Route path="/works">
                             <Route index element={<Works />} />
                             <Route path=":project" element={<Project />} />

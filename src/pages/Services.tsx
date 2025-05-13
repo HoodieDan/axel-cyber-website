@@ -1,11 +1,8 @@
-import React from 'react'
 import Cta from '../components/Cta'
 import { BsArrowUpRight } from "react-icons/bs";
 import stars from "../assets/stars.png"
 import rocket from "../assets/rocket.png"
 import ai1 from "../assets/ai1.png"
-import ai2 from "../assets/ai2.png"
-import ai3 from "../assets/ai3.png"
 import { RiArrowRightSLine } from "react-icons/ri";
 import laptop from "../assets/laptop-02.png"
 import bi1 from "../assets/bi1.png"
@@ -17,14 +14,18 @@ import companylogo from "../assets/companylogo.png"
 import profilepic from "../assets/profilepic.png"
 import { Swiper, SwiperSlide, } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import customer from "../assets/cuastomer-exp.png"
+import optimization from "../assets/optimization.png"
 // import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { useState } from 'react';
 
 
 interface AiServicesProps {
     title: string;
     image: string;
+    icon:string;
     list: string[]
 }
 interface AiBenefitProps{
@@ -41,15 +42,63 @@ interface TestimonialProps{
     companyLogo: string;  
 }
 
-function AiServices({ title, image, list }: AiServicesProps) {
+const solution = [
+    {
+        title: "Boost Operational Efficiency",
+        image: ai1,
+        icon: rocket,
+        list: [
+            "Automate routine tasks",
+            "Summarize financial reports",
+            "Instantly surface actionable insights from unstructured data"
+        ]
+    },
+    {
+        title: "Enrich Customer Experiences",
+        image: customer,
+        icon: rocket,
+        list: [
+            "Deliver fast, accurate and personalized responses to inquiries in multiple languages"
+        ]
+    },
+    {
+        title: "Optimize Riosk Management Processes",
+        image: optimization,
+        icon: stars,    
+        list: [
+            "Streamline complice workflows",
+            "Prevent fraud by analyzing vast datasets for anomalies"
+        ]
+    },
+    {
+        title: "Custom LLM's",
+        image: optimization,
+        icon: stars,    
+        list: [
+            "Streamline complice workflows",
+            "Prevent fraud by analyzing vast datasets for anomalies"
+        ]
+    },
+    {
+        title: "Web App",
+        image: optimization,
+        icon: stars,    
+        list: [
+            "Streamline complice workflows",
+            "Prevent fraud by analyzing vast datasets for anomalies"
+        ]
+    }
+]
+
+function AiServices({ title, image, list,icon }: AiServicesProps) {
     return (
         <div className='p-4 md:p-6 lg:p-8 shadow-md border border-[#e3e7ea] rounded-2xl bg-white flex flex-col md:flex-row'>
             <div className='flex-[1.5]'>
                 <div className='mb-2 md:mb-4 lg:mb-6 h-[48px] w-[48px] flex justify-center items-center bg-[#f4f6f8] rounded-full'>
-                    <img src={rocket} alt="rocket" />
+                    <img src={icon} alt="rocket" />
                 </div>
                 <p className='text-3xl font-semibold mb-2 md:mb-4 lg:mb-6'>{title}</p>
-                <ul className='mg-6 md-mb-8 lg:mb-14 list-disc flex flex-col gap-6'>
+                <ul className='mb-6 md:mb-8 lg:mb-14 list-disc flex flex-col gap-6'>
                     {list.map((item, index) => (
                         <li className='text-[#4c5c57]' key={index}>{item}</li>
                     ))}
@@ -69,18 +118,14 @@ function AiServices({ title, image, list }: AiServicesProps) {
 function AiBenefit({title,icon,desc}:AiBenefitProps){
     return (
         <div className='relative rounded-2xl flex-1'>
-            {/* <div className='flex h-[50px] w-full'>
-                <div className='flex-1 h-[50px] bg-[linear-gradient(45deg,#032D7F,#0241BA)] rounded-t-2xl'>
-                </div>
-                <div className=' h-[50px] w-[50px] bg-white rounded-2xl'>
-                </div>
-            </div> */}
-            <div className='h-auto px-12 pt-4 pb-8 flex flex-col items-center gap-4 bg-[linear-gradient(45deg,#032D7F,#0241BA)] rounded-2xl rounded-2xl'>
+            <div className="absolute top-0 right-0 w-10 h-10 bg-white rounded-bl-[12px]"></div>
+            <div className='h-full px-8 md:px-10 lg:px-12 pt-10 md:pt-12 lg:pt-14 xl:pt-16 pb-8 sm:pb-12 lg:pb-16 flex flex-col items-center gap-4 bg-[linear-gradient(45deg,#032D7F,#0241BA)] rounded-2xl rounded-2xl'>
                 <img src={icon} alt="icon" />
                 <p className='text-xl text-center text-white fontsemibold'>{title}</p>
                 <p className='text-xs text-center text-[#d5d5d5]'>{desc}</p>
             </div>
         </div>
+
     )
 }
 
@@ -106,43 +151,41 @@ function Testimonial({name,position,content,profilePic,companyLogo}:TestimonialP
 }
 
 export default function Services() {
+    const [index,setIndex] = useState(0)
   return (
     <main>
         <section className='px-[5%] bg-[#f9f9f9] py-6 sm:py-8 md:py-10 lg:py-12'>
-            <div className='flex justify-center mb-8 lg:mb-10'>
-                <div className='flex rounded-lg flex-row py-2 px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
+            <div className='flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10'>
+                <div className='flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center justify-center border-2 border-[#e1e5e7]'>
                     <img src={stars} alt="stars" />
-                    <p>CAPBILITIES</p>
+                    <p >CAPBILITIES</p>
                 </div>
             </div>
-            <p className='w-auto md:w-[600px] text-center text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-10 lg:mb-12'>
+            <p className='w-auto md:w-[600px] text-center text-2xl md:text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
                 Our AI-powered Assistant solutions for your business
             </p>
             <div className='mb-4 md:mb-6 lg:mb-10 flex rounded-xl flex-col md:flex-row px-2 py-2 justify-between items-center bg-[#e3e7ea]'>
-                <p className='flex-1 text-center rounded-md hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] p-4 text-sm hover:text-white text-[#4c5c75]'>Boost Operational Efficiency</p>
-                <p className='flex-1 text-center rounded-md hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] p-4 text-sm hover:text-white text-[#4c5c75]'>Enrich Customer Experiences</p>
-                <p className='flex-1 text-center rounded-md hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] p-4 text-sm hover:text-white text-[#4c5c75]'>Optimize Risk Management Processes</p>
-                <p className='flex-1 text-center rounded-md hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] p-4 text-sm hover:text-white text-[#4c5c75]'>Custom LLM's</p>
-                <p className='flex-1 text-center rounded-md hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] p-4 text-sm hover:text-white text-[#4c5c75]'>Web App</p>
+                <p onClick={()=>setIndex(0)} className='flex-1 text-center rounded-md hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] py-2 px-2 text-sm hover:text-white text-[#4c5c75]'>Boost Operational Efficiency</p>
+                <p onClick={()=>setIndex(1)} className='flex-1 text-center rounded-md hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] py-2 px-2 text-sm hover:text-white text-[#4c5c75]'>Enrich Customer Experiences</p>
+                <p onClick={()=>setIndex(2)} className='flex-1 text-center rounded-md hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] py-2 px-2 text-sm hover:text-white text-[#4c5c75]'>Optimize Risk Management Processes</p>
+                <p onClick={()=>setIndex(3)} className='flex-1 text-center rounded-md hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] py-2 px-2 text-sm hover:text-white text-[#4c5c75]'>Custom LLM's</p>
+                <p onClick={()=>setIndex(4)} className='flex-1 text-center rounded-md hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] py-2 px-2 text-sm hover:text-white text-[#4c5c75]'>Web App</p>
             </div>
             <AiServices 
-                title={"Boost Operational Efficiency"}
-                image={ai1}
-                list={[
-                    "Automate routine tasks",
-                    "Summarize financial reports",
-                    "Instantly surface actionable insights from unstructured data"
-                ]}
+                title={solution[index].title}
+                image={solution[index].image}
+                icon={solution[index].icon}
+                list={solution[index].list}
             />
         </section>
         <section className='px-[5%] py-6 sm:py-8 md:py-10 lg:py-12'>
             <div className='flex justify-center mb-8 lg:mb-10'>
-                <div className='flex rounded-lg flex-row py-2 px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
+                <div className='flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
                     <img src={laptop} alt="stars" />
                     <p>BENEFITS</p>
                 </div>
             </div>
-            <p className='w-auto md:w-[500px] text-center text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-10 lg:mb-12'>
+            <p className='w-auto md:w-[500px] text-center text-2xl md:text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-10 lg:mb-12'>
                 Enterprise-grade AI Benefits
             </p>
             <div className='flex flex-col md:flex-row gap-6'>
@@ -169,8 +212,8 @@ export default function Services() {
             </div>
         </section>
         <section className='px-[5%] bg-[#f9f9f9] py-6 sm:py-8 md:py-10 lg:py-12'>
-            <div className='flex justify-center mb-10 lg:mb-14'>
-                <div className='flex rounded-lg flex-row py-2 px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
+            <div className='flex justify-center mb-6 sm:mb-8 md:mb-10 lg:mb-14'>
+                <div className='flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
                     <img src={stars} alt="stars" />
                     <p>DEPLOYMENT OPTIONS</p>
                 </div>
@@ -179,7 +222,7 @@ export default function Services() {
                 <img className='w-full' src={deployment} alt="deployment" />
             </div>
             <div className='flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-12'>
-                <p className='flex-1 text-2xl lg:text-3xl font-semibold'>
+                <p className='flex-1 text-xl md:text-2xl lg:text-3xl font-semibold'>
                     Private Deploymwents for Ultimate Security and Data Sovereignty 
                 </p>
                 <p className='text-sm lg:text-base text-[#4c5c57] flex-[1.5]'>
@@ -188,8 +231,8 @@ export default function Services() {
             </div>
         </section>
         <section className='px-[5%] bg-[#f9f9f9] py-6 sm:py-8 md:py-10 lg:py-12'>
-            <div className='flex justify-center mb-10 lg:mb-14'>
-                <div className='flex rounded-lg flex-row py-2 px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
+            <div className='flex justify-center mb-6 sm:mb-8 md:mb-10 lg:mb-14'>
+                <div className='flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
                     <img src={stars} alt="stars" />
                     <p>CUSTOMER STORIES</p>
                 </div>

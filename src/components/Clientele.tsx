@@ -1,4 +1,3 @@
-import React from 'react'
 import goldfrapp from "../assets/goldfrapp.png"
 import pencil from "../assets/pencil.png"
 import volume from "../assets/volume.png"
@@ -12,19 +11,19 @@ export default function Clientele() {
   return (
     <section className='px-[5%] py-6 sm:py-8 md:py-10 lg:py-12 flex flex-col md:flex-row gap-6 md:gap-0'>
         <div className='flex-1'>
-          <div className='flex justify-start mb-8 lg:mb-10'>
-            <div className='flex rounded-lg flex-row py-2 px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
+          <div className='flex justify-start mb-4 sm:mb-6 md:mb-8 lg:mb-10'>
+            <div className='flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
               <img src={user} alt="user" />
               <p>OUR CLIENTS</p>
             </div>
           </div>
-          <p className='w-auto lg:w-[400px] text-black text-3xl font-semibold'>
-            Several companies have trusted Axel Cyber for their solutions 
+          <p className='w-auto lg:w-[400px] text-black text-2xl md:text-3xl font-semibold'>
+             More than 30+ companies trust Lexxa 
           </p>
-          <div className='mt-10 md:mt-12'>
+          <div className='mt-6 sm:mt-8 md:mt-10 lg:mt-12'>
           <p className='mb-4 text-base text-[#666666] w-auto lg:w-[300px]'>
             <FaQuoteLeft  className='text-xs inline -translate-y-1'/>{" "}
-            Working with us will unlock results that your deserves to experience 
+              Working with us will might just be the best push your company has been lacking 
             {" "}<FaQuoteRight className='text-xs inline -translate-y-1' />
           </p>
           <p className='text-base'>
