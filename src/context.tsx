@@ -32,14 +32,10 @@ interface articleObj{
 }
 
 export const ContextProvider = ({children}: ContextProviderProps) => {
-    const stringifiedArticles = sessionStorage.getItem("articles")
+   
     const [activeIndex, setActiveIndex] = useState<number>(0);
     const [articles, setArticles] = useState<articleObj[]>([])
 
-    if(articles.length == 0 && stringifiedArticles){
-        const parsedArticles = JSON.parse(stringifiedArticles)
-        setArticles(parsedArticles)
-    }
     return (
         <context.Provider value={{activeIndex, setActiveIndex,articles, setArticles}}>
             {children}

@@ -14,7 +14,8 @@ export default function Blog() {
     const endpoint = "https://veoc-tech-cms.vercel.app/api/article"
     const {articles, setArticles} = useContextValue()
     const [loading,setLoading] = useState<boolean>(false)
-    const stringifiedArticles = sessionStorage.getItem("articles")
+    const [keyword,setKeyWord] = useState<string>("")
+
 
     const SkeletonLoader = () => {
         return (
@@ -57,9 +58,7 @@ export default function Blog() {
     }
 
     useEffect(()=>{
-        if(!stringifiedArticles){
-            fetchArticles()
-        }
+        fetchArticles()
     },[])
 
   return (
@@ -69,7 +68,9 @@ export default function Blog() {
             <div className='relative w-full md:w-[300px]'>
                 <input 
                     className='w-full py-2 pr-2 md:py-3 md:pr-3 text-xl leading-none pl-6 md:pl-10 rounded-md border border-[#0046cc]' 
-                    type='text' 
+                    type='text'
+                    value={keyword}
+                    onChange={(e) => setKeyWord(e.target.value)}
                     placeholder='search'
                 />
                 <IoIosSearch className='absolute text-2xl left-3 top-[50%] -translate-y-[50%]' />

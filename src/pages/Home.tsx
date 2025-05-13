@@ -36,6 +36,7 @@ import oceanView from "../assets/ocean-view.png"
 import { BsArrowUpRightCircleFill } from "react-icons/bs";
 
 export default function Home() {
+    // const stringifiedArticles = sessionStorage.getItem("articles")
     const endpoint = "https://veoc-tech-cms.vercel.app/api/article"
     const {articles, setArticles} = useContextValue()
     const [loading, setLoading] = useState<boolean>(false)
@@ -78,6 +79,7 @@ export default function Home() {
 
     useEffect(()=>{
         getArticles()
+
     },[])
     return (
         <main>
