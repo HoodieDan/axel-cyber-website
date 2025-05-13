@@ -425,4 +425,13 @@ body {
     border-image-slice: 1;
     border-width: 2px;
     border-image-source: linear-gradient(to right, #022366, #0046cc);
-  }
+}
+
+@utility hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

@@ -13,7 +13,10 @@ const IndustriesWeService = () => {
             <IWSWhatWeDo />
             <IWSPrivateDeployments />
             <IWSCustomersSay />
-            <BookACall text="Ready to put AI to work?" />
+            <BookACall
+                buttonText="Request a Demo"
+                text={`Secure your company's future by\nPartnering with Axel Cyber`}
+            />
         </>
     );
 };
