@@ -7,7 +7,7 @@ import BlogsComp from '@/components/BlogsComp';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useContextValue } from '@/context';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 
 
 export default function Blog() {
@@ -16,6 +16,14 @@ export default function Blog() {
     const [loading,setLoading] = useState<boolean>(false)
     const [keyword,setKeyWord] = useState<string>("")
 
+    const handleSearch = (e: ChangeEvent<(HTMLInputElement)>) => {
+        const value = e.target.value
+        setKeyWord(value)
+        const filteredArticles = articles.filter((article:any)=>{
+            return article.title.toLowerCase().includes(value.toLowerCase())
+        })
+        setArticles(filteredArticles)
+    }
 
     const SkeletonLoader = () => {
         return (
@@ -70,7 +78,7 @@ export default function Blog() {
                     className='w-full py-2 pr-2 md:py-3 md:pr-3 text-xl leading-none pl-6 md:pl-10 rounded-md border border-[#0046cc]' 
                     type='text'
                     value={keyword}
-                    onChange={(e) => setKeyWord(e.target.value)}
+                    onChange={handleSearch}
                     placeholder='search'
                 />
                 <IoIosSearch className='absolute text-2xl left-3 top-[50%] -translate-y-[50%]' />
