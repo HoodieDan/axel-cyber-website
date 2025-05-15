@@ -136,8 +136,8 @@ export default function Services() {
   return (
     <main className='w-[90%] max-w-screen-xl mx-auto'>
         <section className="service-section relative mt-6 mb-48 sm:mt-8 sm:mb-40 md:mt-10 md:mb-32 lg:mt-12 lg:mb-24 bg-white">
-            <img  src={serviceHeroImg} alt="hero image" className='hidden sm:block w-full h-full' />
-            <img  src={serviceHeroImg1} alt="hero image" className='block sm:hidden w-full h-full' />
+            <img  src={serviceHeroImg} alt="hero image" className='hidden sm:block w-full min-h-[500px] bg-[#e3e7ea] rounded-3xl' />
+            <img  src={serviceHeroImg1} alt="hero image" className='block sm:hidden w-full h-full bg-[#e3e7ea] rounded-xl min-h-[380px]' />
             <div className='absolute left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] w-[85%] sm:w-auto'>
             <p className='mx-auto text-white text-xl md:text-2xl lg:text-3xl font-semibold w-full md:w-[200px] lg:w-[425px] 2xl:w-auto text-center mb-4 lg:mb-8'>Unlocking new efficiencies across Major International sectors</p>
             <p className='text-center text-white text-sm md:text-xl mb-6 md:mb-10'>At Axel Cyber we have a focus on delivering Maximum Impact using with a focus on Aiding Humans and Organizations with our expertise in Artificial Intelligence Consulting and Integration</p>

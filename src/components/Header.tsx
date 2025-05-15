@@ -38,9 +38,9 @@ export default function Header() {
                 <li className='relative text-[#4c5c75] group text-sm md:text-base'>
                     <span className="group-hover:scale-105 transition duration-500 ease-linear">Company</span>
                     <ul className='hidden group-hover:flex shadow-md list-none z-80 absolute top-[110%] left-0 bg-white text-black py-6 flex-col space-y-3 rounded-lg text-lg'>
-                        <li className='pl-4 pr-24 whitespace-nowrap font-semibold hover:text-base hover:font-normal transition-all duration-300 ease-linear'><Link to="/about">About Us</Link></li>
-                        <li className='pl-4 pr-24 font-semibold hover:text-base hover:font-normal transition-all duration-300 ease-linear'><Link to="/career">Career</Link></li>
-                        <li className='pl-4 pr-24 font-semibold hover:text-base hover:font-normal transition-all duration-300 ease-linear'><Link to="/blog">Blogs</Link></li>
+                        <li className={`pl-4 pr-24 whitespace-nowrap font-semibold hover:opacity-65 ${location.pathname === "/about" && 'opacity-65'}  transition-all duration-300 ease-linear`}><Link to="/about">About Us</Link></li>
+                        <li className={`pl-4 pr-24 font-semibold hover:opacity-65 ${location.pathname === "/career" && 'opacity-65'} transition-all duration-300 ease-linear`}><Link to="/career">Career</Link></li>
+                        <li className={`pl-4 pr-24 font-semibold hover:opacity-65 ${location.pathname === "/blog" && 'opacity-65'}  transition-all duration-300 ease-linear`}><Link to="/blog">Blogs</Link></li>
                     </ul>
                 </li>
             </ul>
