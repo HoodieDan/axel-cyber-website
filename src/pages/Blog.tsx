@@ -4,7 +4,7 @@ import { IoIosSearch } from "react-icons/io"
 // import coverPic from "../assets/coverpic.png"
 import avatar from "../assets/Avatar.png"
 import BlogsComp from '@/components/BlogsComp';
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+// import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useContextValue } from '@/context';
 import axios from 'axios';
 import { ChangeEvent, useEffect, useState } from 'react';
@@ -85,11 +85,11 @@ export default function Blog() {
             </div>
         </div>
         <div className='overflow-scroll lg:overflow-hidden md:w-full mb-4 md:mb-6 lg:mb-10 flex rounded-tl-full rounded-bl-full md:rounded-full flex-row px-2 md:px-2 py-1 md:py-2 justify-between items-center bg-[#e3e7ea] '>
-            <p className='shrink-0 md:flex-1 text-center rounded-full hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] p-2 md:p-3 text-xs hover:text-white text-[#4c5c75]'>Financial Services Sector</p>
-            <p className='shrink-0 md:flex-1 text-center rounded-full hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] p-2 md:p-3 text-xs hover:text-white text-[#4c5c75]'>Healthcare and Med Sciences Sector </p>
-            <p className='shrink-0 md:flex-1 text-center rounded-full hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] p-2 md:p-3 text-xs hover:text-white text-[#4c5c75]'>Manufacturing Sector</p>
-            <p className='shrink-0 md:flex-1 text-center rounded-full hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] p-2 md:p-3 text-xs hover:text-white text-[#4c5c75]'>Energy and Utilities Sector</p>
-            <p className='shrink-0 md:flex-1 text-center rounded-full hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] p-2 md:p-3 text-xs hover:text-white text-[#4c5c75]'>Public Sector</p>
+            <p className='cursor-pointer shrink-0 md:flex-1 text-center rounded-full hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] p-2 md:p-3 text-xs hover:text-white text-[#4c5c75]'>Financial Services Sector</p>
+            <p className='cursor-pointer shrink-0 md:flex-1 text-center rounded-full hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] p-2 md:p-3 text-xs hover:text-white text-[#4c5c75]'>Healthcare and Med Sciences Sector </p>
+            <p className='cursor-pointer shrink-0 md:flex-1 text-center rounded-full hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] p-2 md:p-3 text-xs hover:text-white text-[#4c5c75]'>Manufacturing Sector</p>
+            <p className='cursor-pointer shrink-0 md:flex-1 text-center rounded-full hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] p-2 md:p-3 text-xs hover:text-white text-[#4c5c75]'>Energy and Utilities Sector</p>
+            <p className='cursor-pointer shrink-0 md:flex-1 text-center rounded-full hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] p-2 md:p-3 text-xs hover:text-white text-[#4c5c75]'>Public Sector</p>
         </div>
             {
                 loading ? (
@@ -125,7 +125,7 @@ export default function Blog() {
                     </div>
                 )
             }
-        <div className='flex flex-row justify-between items-center py-6 md:py-8 lg:py-10'>
+        {/* <div className='flex flex-row justify-between items-center py-6 md:py-8 lg:py-10'>
             <div className='flex flex-row gap-2 items-center'>
                 <FaArrowLeft className='text-[#475467]' />
                 <p className='text-base sm:text-xl text-[#475467]'>Previous</p>
@@ -143,7 +143,7 @@ export default function Blog() {
                 <p className='text-base sm:text-xl text-[#475467]'>Next</p>
                 <FaArrowRight className='text-[#475467]' />
             </div>
-        </div>
+        </div> */}
         <Cta 
             title="Secure your company's future by Partnering with Axel Cyber" 
             action='Book a call'

@@ -27,7 +27,7 @@ export default function Cta({title, action, children}: Props) {
             <p className='text-base sm:text-xl md:text-2xl lg:text-3xl text-center w-auto md:w-[400px] 2xl:w-auto font-semibold'>{title}</p>
             <button
               onClick={() => handleNavigation("/contact")} 
-              className='w-[135px] 2xl:w-[260px] h-[40px] 2xl:h-[70px] hover:border-2 active:border-2 hover:border-white active:border-white bg-white hover:bg-transparent active:bg-transparent text-black active:text-white hover:text-white rounded-md transition-all duration-300 ease-linear cursor-pointer'>
+              className='py-2 md:py-3 px-4 md:px-6 lg:px-8 bg-white text-black rounded-md hover:opacity-85 transition-all duration-300 ease-linear cursor-pointer'>
               {action}
               {" "}{children}
             </button>

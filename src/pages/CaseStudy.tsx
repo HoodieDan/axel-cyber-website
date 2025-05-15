@@ -29,8 +29,8 @@ export default function CaseStudy() {
                     <img className="flex-1" src={caseimage2} alt="case study image" />
                 </div>
             </div>
-            <div style={{aspectRatio: '2/0.9'}}>
-                <img className='w-full h-full block' src={caseimage3} alt="case study image" />
+            <div>
+                <img className='aspect-[16/12] lg:aspect-[16/9] w-full h-full block' src={caseimage3} alt="case study image" />
             </div>
         </section>
         <section className='h-[550px] 2xl:h-[900px] flex flex-col md:flex-row gap-8'>

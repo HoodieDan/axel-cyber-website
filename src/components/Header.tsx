@@ -32,11 +32,11 @@ export default function Header() {
               <img src={Logo} className='block w-[150px] h-[45px] md:w-[185px] md:h-[54px]' alt="" />        
             </Link>
             <ul className='list-none text-sm sm:flex hidden flex-row space-x-4 md:space-x-6 lg:space-x-8 xl:space-x-10 text-[#4c5c75]'>
-                <li className={`text-sm text-[#4c5c75] hover:font-semibold transition duration-500 ease-linear ${location.pathname === '/services'? 'font-semibold' : 'font-normal'} md:text-base`}><Link to="/services">Services</Link></li>
-                <li className={`text-sm text-[#4c5c75] hover:font-semibold transition duration-500 ease-linear ${location.pathname === '/casestudy'? 'font-semibold' : 'font-normal'} md:text-base`}><Link to="/casestudy">Case study</Link></li>
-                <li className={`text-sm text-[#4c5c75] hover:font-semibold transition duration-500 ease-linear ${location.pathname === '/solutions'? 'font-semibold' : 'font-normal'} md:text-base`}><Link to="/solutions">Solutions</Link></li>
+                <li className={`text-sm text-[#4c5c75] hover:scale-105 transition duration-500 ease-linear ${location.pathname === '/services'? 'scale-105' : 'scale-100'} md:text-base`}><Link to="/services">Services</Link></li>
+                <li className={`text-sm text-[#4c5c75] hover:scale-105 transition duration-500 ease-linear ${location.pathname === '/casestudy'? 'scale-105' : 'scale-100'} md:text-base`}><Link to="/casestudy">Case study</Link></li>
+                <li className={`text-sm text-[#4c5c75] hover:scale-105 transition duration-500 ease-linear ${location.pathname === '/solutions'? 'scale-105' : 'scale-100'} md:text-base`}><Link to="/solutions">Solutions</Link></li>
                 <li className='relative text-[#4c5c75] group text-sm md:text-base'>
-                    <a className="hover:font-semibold transition duration-500 ease-linear" href="#">Company</a>
+                    <span className="group-hover:scale-105 transition duration-500 ease-linear">Company</span>
                     <ul className='hidden group-hover:flex shadow-md list-none z-80 absolute top-[110%] left-0 bg-white text-black py-6 flex-col space-y-3 rounded-lg text-lg'>
                         <li className='pl-4 pr-24 whitespace-nowrap font-semibold hover:text-base hover:font-normal transition-all duration-300 ease-linear'><Link to="/about">About Us</Link></li>
                         <li className='pl-4 pr-24 font-semibold hover:text-base hover:font-normal transition-all duration-300 ease-linear'><Link to="/career">Career</Link></li>
@@ -46,7 +46,7 @@ export default function Header() {
             </ul>
             <button 
               onClick={() => navigate('/contact')}
-              className='outline-none w-[110px] md:w-[90px] sm:h-[25px] lg:h-[40px] 2xl:h-[64px] lg:w-[125px] 2xl:w-[250px] rounded-md text-white bg-[linear-gradient(45deg,#0146cc,#012d82)] hover:bg-none active:bg-none hover:bg-white active:bg-white hover:border-2 active:border-2 hover:border-[#0146cc] active:border-[#0146cc] hover:text-[#0146cc] active-text-[#0146cc] text-sm  md:text-base sm:block hidden transition-all duration-500 ease-linear cursor-pointer'>
+              className='outline-none w-[110px] md:w-[90px] sm:h-[25px] lg:h-[40px] 2xl:h-[64px] lg:w-[125px] 2xl:w-[250px] rounded-md text-white bg-[linear-gradient(45deg,#0146cc,#012d82)] hover:bg-[linear-gradient(45deg,#025aff,#0146cc)] text-sm  md:text-base sm:block hidden transition-all duration-500 ease-linear cursor-pointer'>
                 Book a meeting
             </button>
             <div className='text-2xl sm:hidden block cursor-pointer' onClick={() => setMenuOpen(!menuOpen)}>
