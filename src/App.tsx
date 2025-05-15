@@ -4,7 +4,9 @@ import AppLayout from "./components/layouts/AppLayout";
 import Aboutus from "./pages/Aboutus";
 import Home from "./pages/Home";
 import IndustriesWeService from "./pages/IndustriesWeService";
+import Project from "./pages/Project";
 import Services from "./pages/Services";
+import Works from "./pages/Works";
 import "./styles/index.scss";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
@@ -30,6 +32,10 @@ function App() {
                         <Route path="/solutions" element={<Solutions />} />
                         <Route path="/casestudy" element={<CaseStudy />} />
                         <Route path="/career" element={<Jobs />} />
+                        <Route path="/works">
+                            <Route index element={<Works />} />
+                            <Route path=":project" element={<Project />} />
+                        </Route>
                     </Route>
                 </Routes>
             </Router>
