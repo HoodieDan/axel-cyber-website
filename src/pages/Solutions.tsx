@@ -57,7 +57,7 @@ export default function Solutions() {
 
     const Project = ({img}:{img: string}) =>{
         return (
-            <div className='relative'>
+            <div className='relative h-auto'>
                 <img className="w-full" src={img} alt="project image" />
                 <IoIosArrowDroprightCircle className='absolute bottom-0 right-0 text-7xl cursor-pointer' />
             </div>

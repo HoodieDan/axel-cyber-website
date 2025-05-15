@@ -97,9 +97,9 @@ export default function Home() {
                 <p className="w-auto md:w-[550px] 2xl:w-auto text-center text-2xl md:text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
                     Partner with us and build a better company
                 </p>
-                <div className="md:px-[3%] lg:px-[5%] pb-8 md:pb-10 lg:pb-12 relative rounded-xl bg-[linear-gradient(45deg,#014594,#0181f1)] text-white h-auto md:h-[300px] 2xl:h-[550px]">
-                    <div className="absolute -top-[2px] -left-[2px] trapezium hidden md:block"></div>
-                    <div className="flex flex-col md:flex-row gap-x-16 xl:gap-x-20 py-6 sm:py-8 md:py-10 lg:py-12 mb-4">
+                <div className="md:px-[3%] lg:px-[5%] pb-8 md:pb-10 lg:pb-12 relative rounded-xl bg-[linear-gradient(45deg,#014594,#0181f1)] text-white h-auto md:h-[250px] lg:h-[300px] 2xl:h-[550px]">
+                    <div className="h-[35px] lg:h-[50px] md:w-[175px] lg:w-[250px] absolute -top-[2px] -left-[2px] trapezium hidden md:block"></div>
+                    <div className="flex flex-col md:flex-row gap-x-20 lg:gap-x-16 xl:gap-x-20 px-2 sm:px-3 md:px-0 py-6 sm:py-8 md:py-12 lg:py-12 mb-4">
                         <p className="text-xl whitespace-nowrap lg:text-2xl font-semibold md:self-end text-center md:text-start flex-1 md:flex-initial mt-4">
                             We offer leading <br /> solutions such as:
                         </p>
@@ -107,12 +107,12 @@ export default function Home() {
                             <p className="text-center mb-6 lg:mb-8 text-base md:text-xl">
                                 Building high-impact applications grounded in your proprietary data
                             </p>
-                            <button className="bg-white active:bg-transparent hover:bg-transparent active:text-white hover:text-white active:border-2 hover:border-2 active:border-white hover:border-white rounded-md w-full md:w-[120px] 2xl:w-[200px] h-[36px] 2xl:h-[72px] text-black transition-all duration-300 ease-linear cursor-pointer">
+                            <button className="w-full md:w-auto bg-white rounded-md px-4 lg:px-6 py-2 lg:py-3 text-black hover:opacity-80 active:opacity-85 transition-all duration-300 ease-linear cursor-pointer">
                                 Gets Started
                             </button>
                         </div>
                     </div>
-                    <div className="md:absolute md:left-[3%] lg:left-[5%] md:top-[65%] w-full md:w-[94%] lg:w-[90%] flex flex-col md:flex-row justify-between gap-4 lg:gap-6">
+                    <div className="px-2 sm:px-3 md:px-0 md:absolute md:left-[3%] lg:left-[5%] md:top-[65%] w-full md:w-[94%] lg:w-[90%] flex flex-col md:flex-row justify-between gap-4 lg:gap-6">
                         <Solution
                             title="Scalable"
                             description="From proof of concept to full production with compressed, entreprise-focused models"
@@ -321,7 +321,7 @@ export default function Home() {
                     pagination={{ clickable: true }}
                     className="home-swiper flex flex-row overflow-x-hidden"
                 >
-                    <SwiperSlide className="shrink-0 relative group">
+                    <SwiperSlide className="shrink-0 relative group cursor-pointer">
                         <img src={project1} alt="project1" />
                         <div className="absolute  top-0 left-0 w-full h-full bg-[linear-gradient(45deg,#014594,#0181f1)] opacity-0 group-hover:opacity-50 rounded-lg transition-all duration-300 ease-linear"></div>
                         <div className="absolute hidden top-[50%] left-[50%] -translate-[50%] group-hover:flex z-10 flex-col justify-center items-center gap-2 text-white">
@@ -329,7 +329,7 @@ export default function Home() {
                             <p className="text-xl md:text-2xl">project name</p>
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide className="shrink-0 relative group">
+                    <SwiperSlide className="shrink-0 relative group cursor-pointer">
                         <img src={oceanView} alt="project2" />
                         <div className="absolute  top-0 left-0 w-full h-full bg-[linear-gradient(45deg,#014594,#0181f1)] opacity-0 group-hover:opacity-50 rounded-lg transition-all duration-300 ease-linear"></div>
                         <div className="absolute hidden top-[50%] left-[50%] -translate-[50%] group-hover:flex z-10 flex-col justify-center items-center gap-2 text-white">
@@ -337,7 +337,7 @@ export default function Home() {
                             <p className="text-xl md:text-2xl">project name</p>
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide className="shrink-0 relative group">
+                    <SwiperSlide className="shrink-0 relative group cursor-pointer">
                         <img src={project3} alt="project3" />
                         <div className="absolute  top-0 left-0 w-full h-full bg-[linear-gradient(45deg,#014594,#0181f1)] opacity-0 group-hover:opacity-50 rounded-lg transition-all duration-300 ease-linear"></div>
                         <div className="absolute hidden top-[50%] left-[50%] -translate-[50%] group-hover:flex z-10 flex-col justify-center items-center gap-2 text-white">
@@ -345,7 +345,7 @@ export default function Home() {
                             <p className="text-xl md:text-2xl">project name</p>
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide className="shrink-0 relative group">
+                    <SwiperSlide className="shrink-0 relative group cursor-pointer">
                         <img src={project1} alt="project1" />
                         <div className="absolute  top-0 left-0 w-full h-full bg-[linear-gradient(45deg,#014594,#0181f1)] opacity-0 group-hover:opacity-50 rounded-lg transition-all duration-300 ease-linear"></div>
                         <div className="absolute hidden top-[50%] left-[50%] -translate-[50%] group-hover:flex z-10 flex-col justify-center items-center gap-2 text-white">

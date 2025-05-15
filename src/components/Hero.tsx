@@ -29,15 +29,16 @@ import { useNavigate } from "react-router-dom";
             <p className='text-center md:text-left mb-6 md:mb-8 lg:mb-10 text-base md:text-xl lg:text-2xl font-normal text-black w-auto md:w-[90%]'>
                 Axel Cyber is Dedicated team of Experts from acrosss the globe commited to building Solutions that Business Effficency and Growth with AI   
             </p>
-            <div className='flex flex-col md:flex-row gap-6 mb-6 md:mb-8 lg:mb-10'>
+            <div className='flex flex-col md:flex-row gap-4 md:gap-6 mb-6 md:mb-8 lg:mb-10'>
                 <button 
                     onClick={() => handleNavigation("/casestudy")} 
-                    className='w-full md:w-[198px] 2xl:w-[300px] h-[48px] 2xl:h-[84px] text-white hover:text-[#0146cc] active:text-[#0146cc] rounded-md text-base bg-[linear-gradient(45deg,#0146cc,#012d82)]  hover:bg-none active:bg-none hover:bg-white active:bg-white hover:border-2 active:border-2 hover:border-[#0146cc] actvie:border-[#0146cc] transitilon-all duration-300 ease-linear cursor-pointer leading-none'>
+                    className='py-3 lg:py-4 px-4 md:px-6 lg:px-8 text-white rounded-md text-base bg-[linear-gradient(45deg,#0146cc,#012d82)] hover:bg-[linear-gradient(45deg,#025aff,#0146cc)] cursor-pointer leading-none transition-all duration-300 ease-linear'>
                     Check our Case studies
                 </button>
                 <button
-                    onClick={() => handleNavigation("/contact")} 
-                    className='w-full md:w-[198px] 2xl:w-[300px] h-[48px] 2xl:h-[84px] text-black text-base border border-[#0081f1] rounded-md flex flex-row items-center justify-center gap-1 bg-[#edf1fa] active:bg-[#0081f1] hover:bg-[#0081f1] active:border-0 hover:border-0 active:text-white hover:text-white transition-all duration-300 ease-linear cursor-pointer leading-none'>
+                    onClick={() => handleNavigation("/contact")}
+                    className='py-3 lg:py-4 px-4 lg:px-6 text-black text-base border border-[#0081f1] rounded-md flex flex-row items-center justify-center gap-1 bg-[#edf1fa] hover:opacity-70 transition-all duration-300 ease-linear cursor-pointer leading-none'
+                >
                     Discuss a Project <BsArrowUpRight />
                 </button>
             </div>

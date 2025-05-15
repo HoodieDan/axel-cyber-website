@@ -33,19 +33,19 @@ export default function Footer() {
         <div className='flex flex-col md:flex-row gap-6 items-start md:items-center'>
             <a
                 href="mailto:info@axelcyber.com"
-                className="w-[225px] h-[45px] rounded-2xl flex flex-row items-center justify-center gap-2 border-[1.5px] hover:border-0 active:border-0 text-[#404040] hover:text-white active:text-white border-[#404040] hover:bg-[#404040] active:bg-[#404040] transition-all duration-300 ease-linear cursor-pointer"
+                className="hover:opacity-85 active:opacity-85 w-[225px] h-[45px] rounded-2xl flex flex-row items-center justify-center gap-2 border-[1.5px] text-[#404040] border-[#404040] transition-all duration-300 ease-linear cursor-pointer"
             >
                 <MdEmail />
                 <p>info@axelcyber.com</p>
             </a> 
             <a target="_blank"  href="https://www.instagram.com/axelcyberltd">
-                <div className='w-[145px] h-[45px] rounded-2xl flex flex-row items-center justify-center gap-2 border-[1.5px] hover:border-0 active:border-0 text-[#404040] hover:text-white active:text-white border-[#404040] hover:bg-[#404040] active:bg-[#404040] transition-all duration-300 ease-linear cursor-pointer'>
+                <div className='hover:opacity-85 active:opacity-85 w-[145px] h-[45px] rounded-2xl flex flex-row items-center justify-center gap-2 border-[1.5px] text-[#404040] border-[#404040] transition-all duration-300 ease-linear cursor-pointer'>
                     <CiInstagram  />
                     <p>axelcyberltd</p>
                 </div>
             </a>
             <a target="_blank" href="https://www.twitter.com/axelcyberltd">
-                <div className='w-[145px] h-[45px] rounded-2xl flex flex-row items-center justify-center gap-2 border-[1.5px] hover:border-0 active:border-0 text-[#404040] hover:text-white active:text-white border-[#404040] hover:bg-[#404040] active:bg-[#404040] transition-all duration-300 ease-linear cursor-pointer'>
+                <div className='hover:opacity-85 active:opacity-85 w-[145px] h-[45px] rounded-2xl flex flex-row items-center justify-center gap-2 border-[1.5px] text-[#404040] border-[#404040] transition-all duration-300 ease-linear cursor-pointer'>
                     <FaXTwitter />
                     <p>lexxadesigns</p>
                 </div>
