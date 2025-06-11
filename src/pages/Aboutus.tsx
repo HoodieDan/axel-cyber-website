@@ -1,17 +1,23 @@
 import Clientele from '../components/Clientele'
-import { BsArrowUpRight } from "react-icons/bs";
-import { RiArrowRightSLine } from "react-icons/ri";
 import Cta from '../components/Cta';
-import heroImg from "../assets/about-hero.png"
-import stars from "../assets/stars.png"
-import abt1 from "../assets/abt-exl.png"
-import abt2 from "../assets/abt-exl1.png"
-import user from "../assets/users.png"
-import abt3 from "../assets/Exclude.png"
-import teamImg from "../assets/teammember.png"
-import heroImg2 from "../assets/aboutus-image.png"
-import { useNavigate } from 'react-router-dom';
+import heroImg from "../assets/about-hero.webp"
+import abt1 from "../assets/abt-exl.webp"
+import abt2 from "../assets/abt-exl1.webp"
 
+import abt3 from "../assets/Exclude.webp"
+import teamImg from "../assets/teammember.webp"
+import heroImg2 from "../assets/aboutus-image.webp"
+import { useNavigate } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+
+
+const BsArrowUpRight = lazy(() =>
+    import("lucide-react").then(module => ({ default: module.MoveUpRight  }))
+)
+
+const RiArrowRightSLine = lazy(() =>
+    import("lucide-react").then(module => ({ default: module.ChevronRight }))
+)
 
 export default function Aboutus() {
     const navigate = useNavigate()
@@ -32,7 +38,14 @@ export default function Aboutus() {
     function TeamMember({name, role, img}: TeamMemberProps) {
         return (
             <div>
-                <img className='block mb-2 w-full' src={img} alt={name} />
+                <img 
+                    className='block mb-2 w-full' 
+                    src={img} 
+                    alt={name} 
+                    loading='lazy'
+                    width={302}
+                    height={320}
+                />
                 <p className='mb-2 text-xl font-semibold'>{name}</p>
                 <p className='text-[#0081f1] text-base font-normal'>{role}</p>
             </div>
@@ -61,7 +74,7 @@ export default function Aboutus() {
                 Lexxa empowers every enterprose to build amazing products and capture true business value with AI language
             </p>
           </div>
-          <div className='flex w-[85%] sm:w-auto gap-[5%] sm:gap-2 md:gap-4 xl:gap-6 absolute top-[5%] sm:top-[7%] right-[2.5%] sm:right-[2%]'>
+          <div className='flex w-[90%] sm:w-auto gap-[5%] sm:gap-2 md:gap-4 xl:gap-6 absolute top-[5%] sm:top-[7%] right-[5%] sm:right-[2%]'>
              <div className='flex-[3] glassmorphism h-[25vw] sm:h-[75px] lg:h-[100px] xl:h-[125px] w-[50%] sm:w-[200px] md:w-[250px] lg:w-[325px] xl:w-[400px] rounded-2xl'></div>
              <div className='flex-1 h-[25vw] sm:h-[75px] lg:h-[100px] xl:h-[125px] w-[20%] sm:w-[75px] md:w-[85px] lg:w-[125px] xl:w-[150px] bg-white rounded-2xl'></div>
            </div>
@@ -72,17 +85,32 @@ export default function Aboutus() {
             </p>
           </div>
           <div className='bg-white hidden md:flex flex-row gap-2 xl:gap-4 2xl:gap-6 absolute bottom-0 right-0'>
-            <div className='text-white p-1 md:p-3 h-[90px] md:h-[75px] lg:h-[100px] 2xl:h-[200px] w-[92.5px] lg:w-[150px] 2xl:w-[290px] bg-[linear-gradient(45deg,#0146cc,#012a7a)] rounded-2xl'>
+            <div className='text-white p-1 md:p-3 h-[90px] md:h-[75px] lg:h-[107.5px]  w-[92.5px] lg:w-[165px] bg-[linear-gradient(45deg,#0146cc,#012a7a)] rounded-2xl'>
                 <p className='text-sm md:text-2xl xl:text-3xl font-semibold mb-0 md:mb-1'>200K+</p>
                 <p className='text-xs font-normal'>People have been using our product daily on a monthly basis</p>
             </div>
-            <div className='text-white p-1 md:p-3 h-[90px] md:h-[65px] md:h-[75px] lg:h-[100px] 2xl:h-[200px] w-[92.5px] lg:w-[150px] 2xl:w-[290px] bg-[linear-gradient(45deg,#0146cc,#012a7a)] rounded-2xl'>
+            <div className='text-white p-1 md:p-3 h-[90px] md:h-[65px] md:h-[75px] lg:h-[107.5px] w-[92.5px] lg:w-[165px] bg-[linear-gradient(45deg,#0146cc,#012a7a)] rounded-2xl'>
                 <p className='text-sm md:text-2xl xl:text-3xl font-semibold mb-0 md:mb-1'>$700K</p>
                 <p className='text-xs font-normal'>Monthly revenue made from Lexxa AI Agency at average</p>
             </div>
           </div>
-          <img className="hidden sm:block w-full about-hero-img"  src={heroImg} alt="hero image"  />
-          <img className="block sm:hidden w-full" src={heroImg2} />    
+          <img 
+            className="hidden sm:block w-full about-hero-img"  
+            src={heroImg} 
+            alt="hero image"
+            loading='eager'
+            fetchPriority='high'
+            width={1280}
+            height={452}  
+        />
+          <img 
+            className="block sm:hidden w-full" 
+            src={heroImg2} 
+            loading='eager'
+            fetchPriority='high'
+            width={576}
+            height={780}
+            />    
         </section>
         <div className='w-[90%] max-w-screen-xl mx-auto bg-white flex md:hidden flex-row gap-4'>
             <div className='flex-1 text-white p-4 h-[120px] w-[185px] bg-[linear-gradient(45deg,#0146cc,#012a7a)] rounded-2xl'>
@@ -97,8 +125,14 @@ export default function Aboutus() {
         <section className='w-[90%] max-w-screen-xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12'>
              <div className='flex justify-center mb-8 lg:mb-10'>
                  <div className='flex rounded-lg flex-row py-2 px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
-                     <img src={stars} alt="stars" />
-                     <p>OUR TEAM</p>
+                    <img 
+                        src={"/stars.png"} 
+                        alt="stars" 
+                        loading='lazy'
+                        width={16}
+                        height={16}
+                    />
+                    <p>OUR TEAM</p>
                  </div>
              </div>
              <p className='w-auto md:w-[550px] text-center text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-10 lg:mb-12'>
@@ -151,7 +185,14 @@ export default function Aboutus() {
         <section className='w-[90%] max-w-screen-xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12'>
             <div className='flex justify-center mb-8 lg:mb-10'>
                 <div className='flex rounded-lg flex-row py-2 px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
-                    <img className='shrink-0' src={stars} alt="stars" />
+                    <img 
+                        className='shrink-0' 
+                        src={"/stars.png"} 
+                        alt="stars" 
+                        loading='lazy'
+                        width={16}
+                        height={16}
+                        />
                     <p className='text-sm sm:text-base 2xl:text-xl'>ABOUT US</p>
                 </div>
             </div>
@@ -160,13 +201,34 @@ export default function Aboutus() {
             </p>
             <div className='relative flex flex-col md:flex-row gap-6'>
                 <div className='flex-1 flex justify-center item-center lg:hidden'>
-                    <img className='w-full h-full object-cover' src={abt3} alt='abt3' />
+                    <img 
+                        className='w-full h-full object-cover' 
+                        src={abt3} 
+                        alt='abt3'
+                        loading='lazy'
+                        width={900}
+                        height={820} 
+                    />
                 </div>
                 <div className='hidden lg:block flex-[1.5] h-[475px] 2xl:h-[775px]'>
-                    <img className='w-full h-full block' src={abt1} alt={"abt 1"} />
+                    <img 
+                        className='w-full h-full block' 
+                        src={abt1} 
+                        alt={"abt 1"}
+                        loading='lazy'
+                        width={753}
+                        height={475} 
+                    />
                 </div>
                 <div className='hidden lg:block flex-1 h-[250px] 2xl:h-[415px]'>
-                    <img className='w-full h-full block' src={abt2} alt={"abt 2"} />
+                    <img 
+                        className='w-full h-full block' 
+                        src={abt2} 
+                        alt={"abt 2"} 
+                        loading='lazy'
+                        width={500}
+                        height={250}    
+                    />
                 </div>
                 <div className='hidden lg:block absolute bottom-0 right-0 bg-white w-[50%] xl:w-[45%]'>
                     <p className='text-2xl xl:text-3xl font-semibold mb-3 xl:mb-2'>We're driven by cutting-edge research</p>
@@ -178,13 +240,17 @@ export default function Aboutus() {
                             onClick={() => handleNavigation('/solutions')}  
                             className='h-[50px] 2xl:h-[75px] w-[160px] 2xl:w-[285px] text-white rounded-xl text-base flex flex-row items-center justify-center gap-1  bg-[linear-gradient(45deg,#0146cc,#012d82)] active:by-none hover:bg-none active:bg-white hover:bg-white hover:text-[#0146cc] active:text-[#0146cc] hover:border-2 active:border-2 hover:border-[#0146cc] active:border-[#0146cc] transition-all duration-300 ease-linear cursor-pointer'>
                             Check Our Work
-                            <RiArrowRightSLine />
+                            <Suspense fallback={<span className="w-3 h-3 inline-block animate-pulse bg-gray-300 rounded-full" />}>
+                                <RiArrowRightSLine />
+                            </Suspense>
                         </button>
                         <button 
                             onClick={() => handleNavigation('/contact')}
                             className='h-[50px] 2xl:h-[87px] w-[180px] 2xl:w-[330px] text-black text-base border border-[#0081f1] rounded-xl flex flex-row items-center justify-center gap-1 bg-[#edf1fa] active:bg-[#0081f1] hover:bg-[#0081f1] active:border-0 hover:border-0 active:text-white hover:text-white transition-all duration-300 ease-linear cursor-pointer'>
                             Discuss Your Project
-                            <BsArrowUpRight />
+                            <Suspense fallback={<span className="w-3 h-3 inline-block animate-pulse bg-gray-300 rounded-full" />}>
+                                <BsArrowUpRight />
+                            </Suspense>
                         </button>
                     </div>
                 </div>
@@ -197,11 +263,15 @@ export default function Aboutus() {
                     <div className='flex flex-col sm:flex-row gap-4 md:gap-6'>
                         <button  className='flex justify-center items-center flex-1 p-2 md:p-3 text-white rounded-xl text-sm md:text-base flex flex-row items-center gap-1  bg-[linear-gradient(45deg,#0146cc,#012d82)]'>
                             Check Our Work
-                            <RiArrowRightSLine />
+                            <Suspense fallback={<span className="w-3 h-3 inline-block animate-pulse bg-gray-300 rounded-full" />}>
+                                <RiArrowRightSLine />
+                            </Suspense>
                         </button>
                         <button className='flex justify-center items-center flex-1 text-sm md:text-base p-2 md:p-3 text-black text-base border border-[#0081f1] rounded-xl flex flex-row items-center gap-1 bg-[#edf1fa]'>
                             Discuss Your Project
-                            <BsArrowUpRight />
+                            <Suspense fallback={<span className="w-3 h-3 inline-block animate-pulse bg-gray-300 rounded-full" />}>
+                                <BsArrowUpRight />
+                            </Suspense>
                         </button>
                     </div>
                 </div>
@@ -210,7 +280,14 @@ export default function Aboutus() {
         <section className='w-[90%] max-w-screen-xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12'>
             <div className='flex justify-start mb-4 sm:mb-6 md:mb-8 lg:mb-10'>
                 <div className='flex rounded-lg flex-row py-1 md:py-2 px-2 md:px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
-                    <img className='shrink-0' src={user} alt="user" />
+                    <img 
+                        className='shrink-0' 
+                        src={"/users.png"} 
+                        alt="user" 
+                        loading='lazy'
+                        width={16}
+                        height={16}    
+                    />
                     <p className='text-sm sm:text-base 2xl:text-xl'>OUR STORY</p>
                 </div>
             </div>
@@ -258,7 +335,9 @@ export default function Aboutus() {
             title="Secure your compay's future by Partnering with Axel Cyber" 
             action='Request a Demo'
         >
-            <BsArrowUpRight className='inline' />
+            <Suspense fallback={<span className="w-3 h-3 inline-block animate-pulse bg-gray-300 rounded-full" />}>
+                <BsArrowUpRight className='inline' />
+            </Suspense>
         </Cta>
         </div>
     </main>

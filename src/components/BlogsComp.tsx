@@ -1,6 +1,11 @@
 import { useContextValue } from "@/context";
-import { BsArrowUpRightCircleFill } from "react-icons/bs";
+import { lazy, Suspense } from "react";
 import { useNavigate } from "react-router-dom";
+
+
+const BsArrowUpRightCircleFill = lazy(() =>
+    import("lucide-react").then(module => ({ default: module.ArrowUpRight }))
+  )
 
 interface blogsCompProps{
     coverPic: string,
@@ -45,7 +50,9 @@ export default function BlogsComp({coverPic, title, profilePic, name, date, time
         <img style={{aspectRatio: "2/1.15"}} className="w-full rounded-sm md:rounded-md lg:rounded-lg" src={coverPic} />
       </div>
       <div className='relative'>
-        <BsArrowUpRightCircleFill onClick={handleNavigate} className='cursor-pointer text-[#032d74] absolute right-0 top-0 text-3xl' />
+        <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
+          <BsArrowUpRightCircleFill onClick={handleNavigate} className='cursor-pointer text-[#032d74] absolute right-0 top-0 text-3xl' />
+        </Suspense>
         <p className='text-2xl mb-2 font-semibold'>{title}</p>
         <div className='flex items-center mb-2 gap-4'>
             <img src={profilePic} />

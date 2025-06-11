@@ -1,12 +1,17 @@
-import { BsArrowUpRight } from "react-icons/bs";
-import heroImg from "../assets/hero-img.svg"
+import heroImg from "/hero-img.webp"
 import face1 from "../assets/face1.png"
 import face2 from "../assets/face2.png"
 import face3 from "../assets/face3.png"
 import face4 from "../assets/face4.png"
 import { useNavigate } from "react-router-dom";
+import { lazy,Suspense } from "react";
 
- export default function Hero() {
+
+const BsArrowUpRight = lazy(()=>
+    import("lucide-react").then((module) => ({ default: module.MoveUpRight }))
+)
+
+export default function Hero() {
     const navigate = useNavigate()
 
     const handleNavigation = (route: string) => {
@@ -39,7 +44,11 @@ import { useNavigate } from "react-router-dom";
                     onClick={() => handleNavigation("/contact")}
                     className='py-3 lg:py-4 px-4 lg:px-6 text-black text-base border border-[#0081f1] rounded-md flex flex-row items-center justify-center gap-1 bg-[#edf1fa] hover:opacity-70 transition-all duration-300 ease-linear cursor-pointer leading-none'
                 >
-                    Discuss a Project <BsArrowUpRight />
+                    Discuss a Project 
+                    <Suspense fallback={<span className="w-3 h-3 inline-block animate-pulse bg-gray-300 rounded-full" />}>
+                        <BsArrowUpRight />
+                    </Suspense>
+                    
                 </button>
             </div>
             <div className='flex flex-row items-center'>
@@ -54,13 +63,21 @@ import { useNavigate } from "react-router-dom";
         </div>
         <div style={{aspectRatio: "3/2.75"}} className='flex-1 w-full'>
             <div className='w-full h-full relative'>
-                <div className='absolute top-0 left-0 z-10 h-[38.5%] w-[39%] text-white bg-[linear-gradient(45deg,#0146cc,#012d82)] rounded-3xl px-6 py-4 justify-between flex flex flex-col'>
+                <div className='absolute top-0 left-0 z-10 h-[38.5%] w-[39%] text-white bg-[linear-gradient(45deg,#0146cc,#012d82)] rounded-3xl px-6 py-4 justify-between flex flex-col'>
                     <p className='text-3xl md:text-5xl leading-none lg:text-7xl font-semibold'>11+</p>
                     <p className='text-xs'>
                         Years plus of experience in solving probelms with AI and Machnice Learning Solutions
                     </p>
                 </div>
-                <img className='h-full w-full block' src={heroImg} alt="hero image" />
+                <img 
+                    className='h-full w-full block' 
+                    src={heroImg} 
+                    alt="hero image" 
+                    width={500}
+                    height={455}
+                    loading="eager" 
+                    fetchPriority="high"
+                    />
                 <div className='absolute bottom-0 right-0 z-10 h-[38.5%] w-[39%] text-white bg-[linear-gradient(45deg,#0146cc,#012d82)] rounded-3xl p-4 flex flex-col justify-center items-start'>
                     <p className='text-3xl xl:text-4xl font-semibold'>5+</p>
                     <p className='text-xs'>

@@ -1,19 +1,13 @@
-import { FaArrowLeftLong} from "react-icons/fa6"
-// import {FaXTwitter, FaFacebook, FaLinkedin } from "react-icons/fa6"
-
-import {useNavigate, useParams } from 'react-router-dom'
-// import blogImg from "../assets/blogPage.png"
-// import { LuCopy } from "react-icons/lu";
-import { RiArrowRightUpLine } from "react-icons/ri";
-// import blogImg2 from "../assets/blog-content-image.png" 
-// import avatar from "../assets/blog-avatar.png"
-// import rightImg from "../assets/right-image.png"
+import { lazy, Suspense } from "react";
+import {useNavigate, useParams } from "react-router-dom"
 import BlogsComp from "@/components/BlogsComp";
-// import coverPic from "../assets/coverpic.png"
 import avatar2 from "../assets/Avatar.png";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useContextValue } from "@/context";
+
+const FaArrowLeftLong = lazy(() => import("lucide-react").then(module => ({ default: module.ArrowLeft })))
+const RiArrowRightUpLine = lazy(() => import("lucide-react").then(module => ({ default: module.MoveUpRight })))
 
 interface Blog {
     _id: string,
@@ -122,7 +116,9 @@ export default function BlogPage() {
         ?
         <>
         <div onClick={()=> navigate(-1)} className="cursor-pointer mt-6 md:mt-8 lg:mt-10 flex gap-3">
-            <FaArrowLeftLong /> 
+            <Suspense fallback={<span className="w-3 h-3 inline-block animate-pulse bg-gray-300 rounded-full" />}>
+                <FaArrowLeftLong className="h-6 w-6" />
+            </Suspense>
             <span className="underline hover:no-underline activea;no-underline">Bact to blogs</span>
         </div>
         <section className="mt-6 md:mt-8 lg:mt-10 xl:mt-12">
@@ -261,7 +257,9 @@ export default function BlogPage() {
                     <p className="text-2xl text-white text-center w-[125px] mx-auto mb-2">Get started with Lexxa</p>
                     <button className="block mx-auto px-6 py-2 text-white text-base flex flex-row gap-2 bg-black items-center rounded-md">
                         <p>Book a call</p> 
-                        <RiArrowRightUpLine className="text-xl" />
+                        <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
+                            <RiArrowRightUpLine className="w-5 h-5" />
+                        </Suspense>
                     </button>
                 </div>
             </div>

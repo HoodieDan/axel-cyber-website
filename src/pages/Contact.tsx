@@ -1,15 +1,35 @@
-import heroImg from "../assets/contactHeroImg.png"
-import { FaXTwitter, FaYoutube,FaLinkedin } from "react-icons/fa6";
-import map from "../assets/map.png"
-import axelCyer from "../assets/axel-cyber-transparent-logo.png"
+import heroImg from "../assets/contactHeroImg.webp"
+import map from "../assets/map.webp"
+import axelCyer from "../assets/axel-cyber-transparent-logo.webp"
+import { lazy, Suspense } from "react";
+
+const FaXTwitter = lazy(() => import("lucide-react").then(module => ({ default: module.Twitter })))
+const FaYoutube = lazy(() => import("lucide-react").then(module => ({ default: module.Youtube })))
+const FaLinkedin = lazy(() => import("lucide-react").then(module => ({ default: module.Linkedin })))
 
 export default function Contact() {
   return (
     <main className="w-[90%] max-w-screen-xl mx-auto">
         <section className='relative my-8 sm:my-10 md:my-12 lg:my-16'>
-            <img src={axelCyer} className='absolute top-[50%] w-[70%] max-width-[800px] left-[50%] -translate-x-[50%] -translate-y-[50%]' alt="" />
-            <img style={{aspectRatio: "2/0.70"}} src={heroImg} className='w-full' alt="" />
-            <p className='absolute -bottom-1 sm:bottom-2 right-[20%] sm:right-[25%] text-sm sm:text-xl text-[#566edc] font-semibold'>Contact us</p>
+            <img 
+                src={axelCyer} 
+                className='absolute top-[50%] w-[70%] max-width-[800px] left-[50%] -translate-x-[50%] -translate-y-[50%]' 
+                alt="axel cyber logo"
+                loading="lazy"
+                width={896}
+                height={260} 
+            />
+            <img 
+                style={{aspectRatio: "2/0.70"}} 
+                src={heroImg} 
+                className='w-full' 
+                alt="hero image for contact page"
+                loading="eager"
+                fetchPriority="high"
+                width={1280}
+                height={450} 
+            />
+            <p className='absolute -bottom-1 sm:bottom-2 right-[17.5%] sm:right-[25%] text-sm sm:text-xl text-[#566edc] font-semibold'>Contact us</p>
         </section>
         <section className='my-8 sm:my-10 md:my-12 lg:my-16 flex flex-col md:flex-row  gap-6 sm:gap-8 md:gap-12 lg:gap-16'>
             <div className='flex-1'>
@@ -36,9 +56,15 @@ export default function Contact() {
                     <div className='md:justify-self-end'>
                         <p className='text-xl md:text-2xl font-semibold mb-2 md:mb-4'>Social Network</p>
                     <div className='flex flex-row justify-between'>
-                            <FaXTwitter className='text-2xl' />
-                            <FaYoutube  className='text-2xl'/>
-                            <FaLinkedin className='text-2xl'/>
+                            <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
+                                <FaXTwitter className='text-2xl' />
+                            </Suspense>
+                            <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
+                                <FaYoutube className='text-2xl' />
+                            </Suspense>
+                            <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
+                                <FaLinkedin className='text-2xl' />
+                            </Suspense>
                         </div>
                     </div>
                 </div>
@@ -60,7 +86,14 @@ export default function Contact() {
             </div>
         </section>
         <section className='my-8 sm:my-10 md:my-12 lg:my-16'>
-            <img className='block w-full' src={map} alt="google map" />
+            <img 
+                className='block w-full' 
+                src={map} 
+                alt="google map"
+                loading="lazy"
+                width={1280}
+                height={525} 
+            />
         </section>
     </main>
   )

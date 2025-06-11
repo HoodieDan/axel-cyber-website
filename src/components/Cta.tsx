@@ -8,6 +8,7 @@ interface Props{
     children: React.ReactNode;
 }
 
+
 export default function Cta({title, action, children}: Props) {
   const navigate = useNavigate()
 

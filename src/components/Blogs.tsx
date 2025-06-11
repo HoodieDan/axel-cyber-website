@@ -1,6 +1,11 @@
 import { useContextValue } from '@/context'
-import { BsArrowUpRight } from 'react-icons/bs'
+import { lazy, Suspense } from 'react'
 import { useNavigate } from 'react-router-dom'
+
+
+const ArrowUpRight = lazy(() =>
+    import("lucide-react").then(module => ({ default: module.ArrowUpRight }))
+    )
 
 interface Props{
     image: string,
@@ -37,7 +42,9 @@ export default function Blogs({ image, title, description, date, author, topic, 
       <p className='py-2 text-base text-[#797979]'>{author} - {timeStamp}</p>
       <div className='flex justify-between gap-4'>
         <p className='text-xl font-semibold pb-2'>{title}</p>
-        <BsArrowUpRight onClick={handleNavigate} className='text-2xl cursor-pointer' />
+        <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
+          <ArrowUpRight onClick={handleNavigate} className='text-2xl cursor-pointer' />
+        </Suspense>
       </div>
       <p className='text-[#4c5c75] mb-6'>{description}</p>
       <div className='flex flex-row gap-4 items-center'>
