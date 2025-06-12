@@ -107,7 +107,7 @@ export default function BlogPage() {
             }
             getBlog()
         }
-    }, [id])
+    }, [id,blog])
 
   return (
     <main className="w-[90%] max-w-screen-xl mx-auto">

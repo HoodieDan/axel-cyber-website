@@ -5,7 +5,7 @@ import heroImg from "../assets/about-hero.webp"
 import abt1 from "../assets/abt-exl.webp"
 import abt2 from "../assets/abt-exl1.webp"
 
-import abt3 from "../assets/Exclude.webp"
+import abt3 from "../assets/exclude.webp"
 import teamImg from "../assets/teammember.webp"
 import heroImg2 from "../assets/aboutus-image.webp"
 import { useNavigate } from 'react-router-dom';
@@ -107,7 +107,7 @@ export default function Aboutus() {
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1, transition: { duration:0.5,delay: 1.5, ease: "easeInOut" } }} 
-            className='absolute p-4 rounded-2xl bottom-[5%] sm:bottom-[7%] left-[5%] sm:left-[2%] bg-white w-[90%] sm:w-[88%] md:w-[47%] lg:w-[47.7%] xl:w-[60%]'>
+            className='absolute p-4 rounded-2xl bottom-[5%] sm:bottom-[7%] left-[5%] sm:left-[2%] bg-white w-[90%] sm:w-[65%] md:w-[47%] lg:w-[47.7%] xl:w-[60%]'>
             <p className='text-xl xl:text-2xl mb-2 xl:mb-4 font-semibold'>OUR TEAM</p>
             <p className='text-base xl:text-base font-normal text-[#4c5c75]'>
                 Axel Cyber is a Dedicated team of Experts from across the globe comitted to building Solutions that drive Business Efficiency and Growth with AI
@@ -117,14 +117,14 @@ export default function Aboutus() {
             <motion.div 
                 initial={{ opacity: 0, y:20 }}
                 animate={{ opacity: 1,y: 0, transition: { duration:0.5,delay:1.5, ease: "easeInOut" } }}
-                className='text-white p-1 md:p-3 h-[90px] md:h-[75px] lg:h-[107.5px]  w-[92.5px] lg:w-[165px] bg-[linear-gradient(45deg,#0146cc,#012a7a)] rounded-2xl'>
+                className='text-white p-1 md:p-3 h-[90px] md:h-[85px] xl:h-[107.5px]  w-[92.5px] lg:w-[125px] xl:w-[165px] bg-[linear-gradient(45deg,#0146cc,#012a7a)] rounded-2xl'>
                 <p className='text-sm md:text-2xl xl:text-3xl font-semibold mb-0 md:mb-1'>200K+</p>
                 <p className='text-xs font-normal'>People have been using our product daily on a monthly basis</p>
             </motion.div>
             <motion.div 
                 initial={{ opacity: 0, y:20 }}
                 animate={{ opacity: 1,y: 0, transition: { duration:0.5,delay:1.75, ease: "easeInOut" } }}
-                className='text-white p-1 md:p-3 h-[90px] md:h-[65px] md:h-[75px] lg:h-[107.5px] w-[92.5px] lg:w-[165px] bg-[linear-gradient(45deg,#0146cc,#012a7a)] rounded-2xl'>
+                className='text-white p-1 md:p-3 h-[90px] md:h-[85px] xl:h-[107.5px] w-[92.5px] lg:w-[125px] xl:w-[165px] bg-[linear-gradient(45deg,#0146cc,#012a7a)] rounded-2xl'>
                 <p className='text-sm md:text-2xl xl:text-3xl font-semibold mb-0 md:mb-1'>$700K</p>
                 <p className='text-xs font-normal'>Monthly revenue made from Lexxa AI Agency at average</p>
             </motion.div>
