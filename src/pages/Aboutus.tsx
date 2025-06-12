@@ -113,7 +113,7 @@ export default function Aboutus() {
                 Axel Cyber is a Dedicated team of Experts from across the globe comitted to building Solutions that drive Business Efficiency and Growth with AI
             </p>
           </motion.div>
-          <div className='bg-white hidden md:flex flex-row gap-2 xl:gap-4 2xl:gap-6 absolute bottom-0 right-0'>
+          <div className='bg-white hidden md:flex flex-row gap-2 xl:gap-4 2xl:gap-6 absolute bottom-0 right-0 rounded-tl-md'>
             <motion.div 
                 initial={{ opacity: 0, y:20 }}
                 animate={{ opacity: 1,y: 0, transition: { duration:0.5,delay:1.5, ease: "easeInOut" } }}
