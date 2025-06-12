@@ -1,3 +1,4 @@
+import {motion} from "motion/react"
 import { lazy, Suspense } from "react";
 
 
@@ -12,7 +13,12 @@ const ArrowUpRight = lazy(() =>
 )
 export default function AdditionalServices({ service, desc }: Props) {
   return (
-    <div className='flex flex-row justify-between gap-2 items-center py-3 md:py-5 border-b border-[#4c5c75]'>
+    <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{delay:0.25, ease: "easeInOut" }}
+        viewport={{ once: true }} 
+        className='flex flex-row justify-between gap-2 items-center py-3 md:py-5 border-b border-[#4c5c75]'>
         <p className='flex-1 text-base md:text-xl lg:text-2xl font-semibold'>{service}</p>
         <p className='hidden md:block flex-1 text-xs md:text-base text-[#2f2f2f]'>{desc}</p>
         <div className="flex-1 flex justify-end items-center">
@@ -20,6 +26,6 @@ export default function AdditionalServices({ service, desc }: Props) {
             <ArrowUpRight className='shrink-0 text-3xl md:text-5xl' />
           </Suspense>
         </div>
-    </div>
+    </motion.div>
   )
 }

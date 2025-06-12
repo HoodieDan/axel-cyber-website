@@ -1,3 +1,4 @@
+import {motion} from "motion/react"
 import { useContextValue } from '@/context'
 import { lazy, Suspense } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -34,7 +35,12 @@ export default function Blogs({ image, title, description, date, author, topic, 
   }
 
   return (
-    <div className='flex-1 rounded-lg hover:shadow-lg active:shadow-lg transition-all duration-300 ease-linear'>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{delay:0.25, ease: "easeInOut" }}
+      viewport={{ once: true }} 
+      className='flex-1 rounded-lg hover:shadow-lg active:shadow-lg transition-all duration-300 ease-linear'>
       <div className='w-full'>
         <img style={{aspectRatio: "2/1"}} className='block w-full' src={image} alt={title} />
       </div>
@@ -57,6 +63,6 @@ export default function Blogs({ image, title, description, date, author, topic, 
         <p className='text-[#4c5c75]'>{date}</p>
       </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

@@ -1,3 +1,4 @@
+import {motion} from "motion/react"
 import { lazy, Suspense } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -28,7 +29,13 @@ export default function Footer() {
         })
     }
   return (
-    <footer className='w-[90%] max-w-screen-xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12'>
+    <motion.footer
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{delay:0.25, ease: "easeInOut" }}
+        viewport={{ once: true }} 
+        className='w-[90%] max-w-screen-xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12'
+    >
         <div className='relative flex flex-row justify-between border-b-2 border-b-[#3084da] mb-8'>
             <p className='text-2xl w-[250px] 2xl:w-auto font-semibold'>Let's Connects and work together</p>
             <div className="h-[125px] md:h-[150px] lg:h-[200px] 2xl:h-[300px] w-[125px] md:w-[150px] lg:w-[200px] 2xl:w-[400px]">
@@ -72,6 +79,6 @@ export default function Footer() {
                 </div>
             </a>
         </div>
-    </footer>
+    </motion.footer>
   )
 }

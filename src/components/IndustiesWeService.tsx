@@ -1,3 +1,4 @@
+import {motion} from "motion/react"
 import laptop from "../assets/laptop-02.png";
 import publicSector from "../assets/public_sector.webp";
 import energy from "../assets/energy.webp";
@@ -22,11 +23,22 @@ export default function IndustiesWeService() {
                 </p>
             </div>
         </div>
-        <p className="w-auto md:w-[470px] 2xl:w-auto mx-auto text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+        <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{delay:0.25, ease: "easeInOut" }}
+            viewport={{ once: true }} 
+            className="w-auto text-center md:w-[525px] 2xl:w-auto mx-auto text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
             We Use our AI solutions for all industries
-        </p>
-        <div className="flex w-full flex-col lg:flex-row justify-between gap-4 md:gap-6 mb-4 md:mb-6">
-            <div className="filter active:grayscale hover:grayscale transition-all duration-300 ease-linear flex-1 h-auto">
+        </motion.p>
+        <div
+            className="flex w-full flex-col lg:flex-row justify-between gap-4 md:gap-6 mb-4 md:mb-6">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0}}
+                transition={{delay:0.25, ease: "easeInOut" }}
+                viewport={{ once: true }}
+                className="filter active:grayscale hover:grayscale transition-all duration-300 ease-linear flex-1 h-auto">
                 <img 
                     className="block h-full w-full" 
                     src={publicSector} 
@@ -35,8 +47,13 @@ export default function IndustiesWeService() {
                     width={440}
                     height={190}
                 />
-            </div>
-            <div className="filter active:grayscale hover:grayscale transition-all duration-300 ease-linear flex-1 h-auto">
+            </motion.div>
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0}}
+                transition={{delay:0.35, ease: "easeInOut" }}
+                viewport={{ once: true }}
+                className="filter active:grayscale hover:grayscale transition-all duration-300 ease-linear flex-1 h-auto">
                 <img 
                     className="block w-full" 
                     src={energy} 
@@ -45,10 +62,15 @@ export default function IndustiesWeService() {
                     width={440}
                     height={190}
                 />
-            </div>
+            </motion.div>
         </div>
         <div className="flex flex-col lg:flex-row justify-between gap-6 mb-2 md:mb-6">
-            <div className="filter active:grayscale hover:grayscale transition-all duration-300 ease-linear flex-1 h-auto">
+            <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0}}
+                transition={{delay:0.25, ease: "easeInOut" }}
+                viewport={{ once: true }}
+                className="filter active:grayscale hover:grayscale transition-all duration-300 ease-linear flex-1 h-auto">
                 <img 
                     className="block w-full" 
                     src={healthcare} 
@@ -57,8 +79,13 @@ export default function IndustiesWeService() {
                     width={290}
                     height={180}
                 />
-            </div>
-            <div className="filter active:grayscale hover:grayscale transition-all duration-300 ease-linear flex-1 h-auto">
+            </motion.div>
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0}}
+                transition={{delay:0.35, ease: "easeInOut" }}
+                viewport={{ once: true }} 
+                className="filter active:grayscale hover:grayscale transition-all duration-300 ease-linear flex-1 h-auto">
                 <img 
                     className="block w-full" 
                     src={finanacial} 
@@ -67,8 +94,13 @@ export default function IndustiesWeService() {
                     width={290}
                     height={180}
                 />
-            </div>
-            <div className="filter active:grayscale hover:grayscale transition-all duration-300 ease-linear flex-1 h-auto">
+            </motion.div>
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0}}
+                transition={{delay:0.45, ease: "easeInOut" }}
+                viewport={{ once: true }} 
+                className="filter active:grayscale hover:grayscale transition-all duration-300 ease-linear flex-1 h-auto">
                 <img 
                     className="block w-full" 
                     src={engineering} 
@@ -77,7 +109,7 @@ export default function IndustiesWeService() {
                     width={290}
                     height={180}    
                 />
-            </div>
+            </motion.div>
         </div>
     </section>
   )

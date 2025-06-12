@@ -1,3 +1,4 @@
+import {motion} from "motion/react"
 import Hero from "../components/Hero";
 import axios from "axios"
 import { useEffect, useState } from "react";
@@ -84,10 +85,22 @@ export default function Home() {
                         </p>
                     </div>
                 </div>
-                <p className="w-auto md:w-[550px] 2xl:w-auto text-center text-2xl md:text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+                <motion.p 
+                    className="w-auto md:w-[550px] 2xl:w-auto text-center text-2xl md:text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 md:mb-10 lg:mb-12"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{delay:0.25, ease: "easeInOut" }}
+                    viewport={{ once: true }}
+                    >
                     Partner with us and build a better company
-                </p>
-                <div className="md:px-[3%] lg:px-[5%] pb-8 md:pb-10 lg:pb-12 relative rounded-xl bg-[linear-gradient(45deg,#014594,#0181f1)] text-white h-auto md:h-[250px] lg:h-[300px] 2xl:h-[550px]">
+                </motion.p>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{delay:0.25, ease: "easeInOut" }}
+                    viewport={{ once: true }} 
+                    className="md:px-[3%] lg:px-[5%] pb-8 md:pb-10 lg:pb-12 relative rounded-xl bg-[linear-gradient(45deg,#014594,#0181f1)] text-white h-auto md:h-[250px] lg:h-[300px] 2xl:h-[550px]"
+                >
                     <div className="h-[35px] lg:h-[50px] md:w-[175px] lg:w-[250px] absolute -top-[2px] -left-[2px] trapezium hidden md:block"></div>
                     <div className="flex flex-col md:flex-row gap-x-20 lg:gap-x-16 xl:gap-x-20 px-2 sm:px-3 md:px-0 py-6 sm:py-8 md:py-12 lg:py-12 mb-4">
                         <p className="text-xl whitespace-nowrap lg:text-2xl font-semibold md:self-end text-center md:text-start flex-1 md:flex-initial mt-4">
@@ -127,14 +140,14 @@ export default function Home() {
                         />
                         </Suspense>
                     </div>
-                </div>
+                </motion.div>
             </section>
             </div>
             <Suspense fallback={<div className="w-full min-h-[300px] md:min-h-[400px] lg:min-h-[600px] flex justify-center items-center"><span className="inline-block animate-pulse">loading...</span></div>}>
                 <IndustiesWeService />
             </Suspense>
             <div className="w-[90%] max-w-screen-xl mx-auto">
-            <Clientele />
+                <Clientele />
             </div>
             <div className="bg-[#f9f9f9]">
             <section className="w-[90%] max-w-screen-xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12">
@@ -151,27 +164,42 @@ export default function Home() {
                         <p className="text-sm md:text-base 2xl:text-xl">What we offer</p>
                     </div>
                 </div>
-                <p className="w-auto md:w-[450px] 2xl:w-auto mx-auto text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{delay:0.25, ease: "easeInOut" }}
+                    viewport={{ once: true }} 
+                    className="w-auto md:w-[450px] 2xl:w-auto mx-auto text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12"
+                >
                     Tailored Services for your company
-                </p>
-                <p className="text-base sm:text-xl 2xl:w-auto text-[#4c5c75] w-auto md:w-[400px] mx-auto text-center mb-4 sm:mb-6 md:mb-8">
+                </motion.p>
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{delay:0.25, ease: "easeInOut" }}
+                    viewport={{ once: true }}
+                    className="text-base sm:text-xl 2xl:w-auto text-[#4c5c75] w-auto md:w-[400px] mx-auto text-center mb-4 sm:mb-6 md:mb-8">
                     We support you in adapting AI technologies, ensuring a smooth transition in your business
-                </p>
-                <div className="flex flex-col md:flex-row gap-12">
+                </motion.p>
+                <div
+                    className="flex flex-col md:flex-row gap-12">
                     <Suspense fallback={<div className="w-full min-h-[300px] md:min-h-[400px] flex justify-center items-center"><span className="inline-block animate-pulse">loading...</span></div>}>
                         <Service
+                            delay={0.25}
                             topic="AI CHATBOT"
                             title="Chatbot Development"
                             desc="We create, and maintain personalized AI Chatbot for your company for custom solutions of multiple purpose"
                             image="/service11.webp"
                         />
                         <Service
+                            delay={0.35}
                             topic="AUTOMATION"
                             title="AI Automation"
                             desc="We create workflow and Automations, that, are focused on efficiency and improving results while reducing time spent"
                             image="/service2.webp"
                         />
                         <Service
+                            delay={0.45}
                             topic="AGENTICS"
                             title="AI Agents"
                             desc="We create Agentic AI systems can make decisions and take actions without constant human supervision"
@@ -195,16 +223,26 @@ export default function Home() {
                         <p className="leading-none text-sm sm:text-base 2xl:text-xl">ADDITIONAL SERVICES</p>
                     </div>
                 </div>
-                <p className="w-auto md:w-[475px] 2xl:w-auto mx-auto text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{delay:0.25, ease: "easeInOut" }}
+                    viewport={{ once: true }} 
+                    className="w-auto md:w-[475px] 2xl:w-auto mx-auto text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
                     Additional Service we offer for your need
-                </p>
-                <p className="text-xl text-[#4c5c75] w-auto md:w-[425px] 2xl:w-auto mx-auto text-center mb-4 md:mb-6 lg:mb-8">
+                </motion.p>
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{delay:0.25, ease: "easeInOut" }}
+                    viewport={{ once: true }} 
+                    className="text-xl text-[#4c5c75] w-auto md:w-[450px] 2xl:w-auto mx-auto text-center mb-4 md:mb-6 lg:mb-8">
                     We also offer leading solutions in this services. Always get the bonus solutions needed for your
                     company
-                </p>
+                </motion.p>
                 <div>
                     <Suspense fallback={<div className="w-full min-h-[300px] md:min-h-[400px] lg:min-h-[600px] flex justify-center items-center"><span className="inline-block animate-pulse">loading...</span></div>}>
-                        <AdditionalServices
+                        <AdditionalServices                            
                             service="Natural Languge Processing (NLP)"
                             desc="We deliver instant, intelligent customer support and engagement 24/7. Our AI chatbots understand context, handle complex queries, and scale effortlessly across platforms."
                         />
@@ -228,7 +266,7 @@ export default function Home() {
                     <div className="flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img 
                             className="shrink-0 text-base 2xl:text-xl" 
-                            src={"/user.png"} 
+                            src={"/users.png"} 
                             alt="user" 
                             loading="lazy"
                             width={16}
@@ -237,10 +275,23 @@ export default function Home() {
                         <p className="leading-none text-sm sm:text-base 2xl:text-xl">BLOGS</p>
                     </div>
                 </div>
-                <p className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-3">Latest Blogs & Resources</p>
-                <p className="text-base md:text-xl text-[#4c5c75] mb-6 w-[350px] 2xl:w-[650px]">
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{delay:0.25, ease: "easeInOut" }}
+                    viewport={{ once: true }} 
+                    className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-3"
+                >
+                    Latest Blogs & Resources
+                </motion.p>
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{delay:0.25, ease: "easeInOut" }}
+                    viewport={{ once: true }} 
+                    className="text-base md:text-xl text-[#4c5c75] mb-6 w-[350px] 2xl:w-[650px]">
                     Stay Informed on Developments in AI and our insights on problem solving with AI
-                </p>
+                </motion.p>
                 <div className={`flex flex-col md:flex-row ${articles.length == 0 && !loading ? "justify-center items-center border border-[#4c5c75] rounded-md" : "justify-between items-center"} gap-6 min-h-[380px]`}>
                     {
                         loading ?
@@ -288,9 +339,14 @@ export default function Home() {
                         <p className="text-sm sm:text-base 2xl:text-xl">CASE STUDY</p>
                     </div>
                 </div>
-                <p className="w-auto md:w-[475px] 2xl:w-auto mx-auto text-center text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+                <motion.p 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{delay:0.25, ease: "easeInOut" }}
+                    viewport={{ once: true }}
+                    className="w-auto md:w-[475px] 2xl:w-auto mx-auto text-center text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
                     Check out a few of our AI Solutions
-                </p>
+                </motion.p>
                 <Suspense fallback={<div className="w-full h-[400px] flex justify-center items-center"><span className="inline-block animate-pulse" />loading....</div>}>
                     <HomeLazySwiper />
                 </Suspense>

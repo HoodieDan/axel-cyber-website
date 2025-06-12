@@ -1,8 +1,14 @@
+import { motion } from "motion/react"
 import { Menu, X } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "/axel-logo.webp";
 import { useState } from "react"; 
 import { useLocation } from "react-router-dom";
+
+const itemVariants = {
+  hidden: { opacity: 0, y: -50 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 export default function Header() {
   const navigate = useNavigate()
@@ -26,8 +32,12 @@ export default function Header() {
             Introducing Lexxa AI Chatbot extension: Fast and Efficient Virtual AI  <Link className="underline hover:no-underline " to='/about'>Learn more</Link>
         </p>
         <div className='w-[90%] max-w-screen-xl mx-auto relative mt-4 flex justify-between items-center'>
-            <Link to='/'>
-              <img 
+              <motion.a 
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease:"easeOut"}}
+                href="/">
+              <img
                 src={Logo} 
                 className='block w-[150px] h-[45px] md:w-[185px] md:h-[54px]'
                 alt="axel cyber logo" 
@@ -35,30 +45,117 @@ export default function Header() {
                 height={45}
                 loading="eager"
                 fetchPriority="high" 
-              />        
-            </Link>
-            <ul className='list-none text-sm sm:flex hidden flex-row space-x-4 md:space-x-6 lg:space-x-8 xl:space-x-10 text-[#4c5c75]'>
-                <li className={`text-sm text-[#4c5c75] hover:scale-105 transition-transform duration-300 ease-in-out ${location.pathname === '/services'? 'scale-105' : 'scale-100'} md:text-base`}><Link to="/services">Services</Link></li>
-                <li className={`text-sm text-[#4c5c75] hover:scale-105 transition-transform duration-300 ease-in-out ${location.pathname === '/casestudy'? 'scale-105' : 'scale-100'} md:text-base`}><Link to="/casestudy">Case study</Link></li>
-                <li className={`text-sm text-[#4c5c75] hover:scale-105 transition-transform duration-300 ease-in-out ${location.pathname === '/solutions'? 'scale-105' : 'scale-100'} md:text-base`}><Link to="/solutions">Solutions</Link></li>
-                <li className='relative text-[#4c5c75] group text-sm md:text-base'>
+              />
+              </motion.a>        
+            <motion.ul 
+              initial="hidden"
+              animate="show"
+              variants={{
+              hidden: {},
+              show: {
+                transition: {
+                  staggerChildren: 0.2, 
+                  delayChildren: 0.2,   
+                  },
+                 },
+               }}
+              className='list-none text-sm sm:flex hidden flex-row space-x-4 md:space-x-6 lg:space-x-8 xl:space-x-10 text-[#4c5c75]'>
+                <motion.li
+                  variants={itemVariants}
+                  className={`text-sm text-[#4c5c75] hover:scale-105 transition-transform duration-300 ease-in-out ${location.pathname === '/services'? 'scale-105' : 'scale-100'} md:text-base`}
+                  >
+                    <Link to="/services">Services</Link>
+                  </motion.li>
+                <motion.li
+                  variants={itemVariants}
+                  className={`text-sm text-[#4c5c75] hover:scale-105 transition-transform duration-300 ease-in-out ${location.pathname === '/casestudy'? 'scale-105' : 'scale-100'} md:text-base`}
+                  >
+                    <Link to="/casestudy">Case study</Link>
+                </motion.li>
+                <motion.li
+                  variants={itemVariants}
+                  className={`text-sm text-[#4c5c75] hover:scale-105 transition-transform duration-300 ease-in-out ${location.pathname === '/solutions'? 'scale-105' : 'scale-100'} md:text-base`}
+                >
+                  <Link to="/solutions">Solutions</Link>
+                </motion.li>
+                <motion.li
+                  variants={itemVariants} 
+                  className='relative text-[#4c5c75] group text-sm md:text-base'
+                >
                     <span className="group-hover:scale-105 transition-transform duration-300 ease-in-out">Company</span>
                     <ul className='hidden group-hover:flex shadow-md list-none z-80 absolute top-[110%] left-0 bg-white text-black py-6 flex-col space-y-3 rounded-lg text-lg'>
                         <li className={`pl-4 pr-24 whitespace-nowrap font-semibold hover:opacity-65 ${location.pathname === "/about" && 'opacity-65'}  transition-opactiy duration-300 ease-in-out`}><Link to="/about">About Us</Link></li>
                         <li className={`pl-4 pr-24 font-semibold hover:opacity-65 ${location.pathname === "/career" && 'opacity-65'} transition-opacity duration-300 ease-in-out`}><Link to="/career">Career</Link></li>
                         <li className={`pl-4 pr-24 font-semibold hover:opacity-65 ${location.pathname === "/blog" && 'opacity-65'}  transition-opacity duration-300 ease-in-out`}><Link to="/blog">Blogs</Link></li>
                     </ul>
-                </li>
-            </ul>
-            <button 
+                </motion.li>
+            </motion.ul>
+            <div className="hidden lg:block w-[125px] h-auto">
+            <motion.button
+              initial={{
+                width: "40px",
+                height: "40px",
+                 borderRadius: "999px",
+                }}
+              animate={{
+                height: "40px",
+                width: "125px",
+                borderRadius: "8px",
+              }}
+              transition={{
+                duration: 0.6,
+                ease: [0.4, 0, 0.2, 1],
+              }}
               onClick={() => navigate('/contact')}
-              className='outline-none w-[110px] md:w-[90px] sm:h-[25px] lg:h-[40px] 2xl:h-[64px] lg:w-[125px] 2xl:w-[250px] rounded-md text-white bg-[linear-gradient(45deg,#0146cc,#012d82)] hover:bg-[linear-gradient(45deg,#025aff,#0146cc)] text-sm  md:text-base sm:block hidden transition-all duration-500 ease-linear cursor-pointer'>
-                Book a meeting
-            </button>
-            <div className='text-2xl sm:hidden block cursor-pointer' onClick={() => setMenuOpen(!menuOpen)}>
+              className='outline-none text-white whitespace-nowrap bg-[linear-gradient(45deg,#0146cc,#012d82)] hover:bg-[linear-gradient(45deg,#025aff,#0146cc)] text-sm  md:text-base sm:block hidden transition-all duration-500 ease-linear cursor-pointer'
+              >
+                <motion.span
+                  initial={{opacity:0}}
+                  animate={{opacity:1}}
+                  transition={{delay:0.75, duration:0.5}}
+                >
+                  Book a meeting
+                </motion.span>
+                
+            </motion.button>
+            </div>
+            <div className="block lg:hidden w-[100px] h-auto">
+            <motion.button
+              initial={{
+                width: "32px",
+                height: "32px",
+                borderRadius: "50%",
+                }}
+              animate={{
+                height: "32px",
+                width: "100px",
+                borderRadius: "8px",
+              }}
+              transition={{
+                duration: 0.6,
+                ease: [0.4, 0, 0.2, 1],
+              }}
+              
+              onClick={() => navigate('/contact')}
+              className='outline-none text-white whitespace-nowrap bg-[linear-gradient(45deg,#0146cc,#012d82)] hover:bg-[linear-gradient(45deg,#025aff,#0146cc)] text-xs  md:text-base sm:block hidden transition-all duration-500 ease-linear cursor-pointer'
+              >
+                <motion.span
+                  initial={{opacity:0}}
+                  animate={{opacity:1}}
+                  transition={{delay:0.75, duration:0.5}}
+                >
+                  Book a meeting
+                </motion.span>  
+            </motion.button>
+            </div>
+            <motion.div 
+              initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6,delay:0.3,ease:"easeOut"}}
+              className='text-2xl sm:hidden block cursor-pointer' onClick={() => setMenuOpen(!menuOpen)}>
                 <Menu className={`${menuOpen ? "hidden" : "block"}`}/>
                 <X className={`${!menuOpen ? "hidden" : "block"}`}/>
-            </div>
+            </motion.div>
             {
               menuOpen 
               &&
@@ -81,7 +178,6 @@ export default function Header() {
             </div>
     }
         </div>
-
       </nav>
     </header>
   )
