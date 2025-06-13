@@ -1,9 +1,13 @@
-import caseimage1 from "../assets/caseimage4.png"
-import caseimage2 from "../assets/caseimage2.png"
-import caseimage3 from "../assets/caseimage3.png"
-import { FaArrowRightLong } from "react-icons/fa6";
+import caseimage1 from "../assets/caseimage4.webp"
+import caseimage2 from "../assets/caseimage2.webp"
+import caseimage3 from "../assets/caseimage3.webp"
 import Cta from '@/components/Cta';
-import { HiArrowNarrowRight } from 'react-icons/hi';
+import { lazy, Suspense } from "react";
+
+
+const FaArrowRightLong = lazy(() => import("lucide-react").then(module => ({ default: module.MoveRight  })))
+const HiArrowNarrowRight = lazy(() => import("lucide-react").then(module => ({ default: module.MoveUpRight  })))
+
 
 export default function CaseStudy() {
   return (
@@ -12,25 +16,50 @@ export default function CaseStudy() {
             <div className='flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 bg-white mb-4 md:mb-6'>
                 <div className='flex-1 relative'>
                     <p className='absolute top-4 md:top-6 left-0 text-3xl sm:text-4xl md:text-5xl font-semibold'>Prompt Plumber AI</p>
-                    <img className='w-full h-full block' src={caseimage1} alt="case study image" />
+                    <img 
+                        className='w-full h-full block' 
+                        src={caseimage1} 
+                        alt="case study image" 
+                        loading="eager"
+                        fetchPriority="high"
+                        width={608}
+                        height={860}
+                    />
                 </div>
                 <div className='flex flex-col flex-1'>
                     <p className='text-xl my-4 md:my-6 flex flex-row gap-2 items-center'>
                         <span>UI design</span>
-                        <FaArrowRightLong />
+                        <Suspense fallback={<span className="w-3 h-3 inline-block animate-pulse bg-gray-300 rounded-full" />}>
+                            <FaArrowRightLong />
+                        </Suspense>
                         <span>Product strategy</span>
-                        <FaArrowRightLong />
+                        <Suspense fallback={<span className="w-3 h-3 inline-block animate-pulse bg-gray-300 rounded-full" />}>
+                            <FaArrowRightLong />
+                        </Suspense>
                         <span>Prototyping</span>
                     </p>
                     <p className='text-xl mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
                         A prompt engineering platform that allows for Beginners and intermediate level prompt Engineers and AI
                         enthusiasts to create very effective prompts that get them thier expacted outcomes using  Popular Large Language Model
                     </p>
-                    <img className="flex-1" src={caseimage2} alt="case study image" />
+                    <img 
+                        className="flex-1" 
+                        src={caseimage2} alt="case study image" 
+                        loading="lazy"
+                        width={608}
+                        height={620}
+                    />
                 </div>
             </div>
             <div>
-                <img className='aspect-[16/12] lg:aspect-[16/9] w-full h-full block' src={caseimage3} alt="case study image" />
+                <img 
+                    className='aspect-[16/12] lg:aspect-[16/9] w-full h-full block' 
+                    src={caseimage3} 
+                    alt="case study image" 
+                    loading="lazy"
+                    width={1200}
+                    height={720}
+                />
             </div>
         </section>
         <section className='h-[550px] 2xl:h-[900px] flex flex-col md:flex-row gap-8'>
@@ -44,7 +73,10 @@ export default function CaseStudy() {
             title="Secure your company's future by Partnering with Axel Cyber" 
             action='Book a call'
         >
-            <HiArrowNarrowRight className='inline' />
+            <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
+                <HiArrowNarrowRight className='inline' />    
+            </Suspense>
+        
         </Cta>
     </main>
   )

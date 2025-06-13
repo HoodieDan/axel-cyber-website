@@ -1,6 +1,8 @@
 export default {
   important: true,
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}"],
   theme: { 
     extend: {
       'trapezium': 'polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%)',

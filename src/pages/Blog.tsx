@@ -1,14 +1,12 @@
 import Cta from '../components/Cta'
-import { HiArrowNarrowRight } from "react-icons/hi";
-import { IoIosSearch } from "react-icons/io"
-// import coverPic from "../assets/coverpic.png"
 import avatar from "../assets/Avatar.png"
 import BlogsComp from '@/components/BlogsComp';
-// import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useContextValue } from '@/context';
 import axios from 'axios';
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, lazy, Suspense, useEffect, useState } from 'react';
 
+const HiArrowNarrowRight = lazy(() => import("lucide-react").then(module => ({ default: module.MoveRight })))
+const IoIosSearch = lazy(() => import("lucide-react").then(module => ({ default: module.Search })))
 
 export default function Blog() {
     const endpoint = "https://veoc-tech-cms.vercel.app/api/article"
@@ -67,7 +65,7 @@ export default function Blog() {
 
     useEffect(()=>{
         fetchArticles()
-    },[])
+    },[articles])
 
   return (
     <main className='w-[90%] max-w-screen-xl mx-auto'>
@@ -81,7 +79,9 @@ export default function Blog() {
                     onChange={handleSearch}
                     placeholder='search'
                 />
-                <IoIosSearch className='absolute text-2xl left-3 top-[50%] -translate-y-[50%]' />
+                <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
+                    <IoIosSearch className='absolute h-6 w-6 left-3 top-[50%] -translate-y-[50%]' />
+                </Suspense>
             </div>
         </div>
         <div className='overflow-scroll lg:overflow-hidden md:w-full mb-4 md:mb-6 lg:mb-10 flex rounded-tl-full rounded-bl-full md:rounded-full flex-row px-2 md:px-2 py-1 md:py-2 justify-between items-center bg-[#e3e7ea] '>
@@ -125,30 +125,13 @@ export default function Blog() {
                     </div>
                 )
             }
-        {/* <div className='flex flex-row justify-between items-center py-6 md:py-8 lg:py-10'>
-            <div className='flex flex-row gap-2 items-center'>
-                <FaArrowLeft className='text-[#475467]' />
-                <p className='text-base sm:text-xl text-[#475467]'>Previous</p>
-            </div>
-            <div className='hidden sm:flex flex-row gap-2 items-center items-center'>
-                <p className='h-[32px] w-[32px] flex justify-center items-center bg-[#e3edff] text-black rounded-md'>1</p>
-                <p className='h-[32px] w-[32px] flex justify-center items-center rounded-md text-[#475467]'>2</p>
-                <p className='h-[32px] w-[32px] flex justify-center items-center rounded-md text-[#475467]'>3</p>
-                <p className='h-[32px] w-[32px] flex justify-center items-center rounded-md text-[#475467]'>...</p>
-                <p className='h-[32px] w-[32px] flex justify-center items-center rounded-md text-[#475467]'>8</p>
-                <p className='h-[32px] w-[32px] flex justify-center items-center rounded-md text-[#475467]'>9</p>
-                <p className='h-[32px] w-[32px] flex justify-center items-center rounded-md text-[#475467]'>10</p>
-            </div>
-            <div className='flex flex-row gap-2 items-center'>
-                <p className='text-base sm:text-xl text-[#475467]'>Next</p>
-                <FaArrowRight className='text-[#475467]' />
-            </div>
-        </div> */}
         <Cta 
             title="Secure your company's future by Partnering with Axel Cyber" 
             action='Book a call'
         >
-            <HiArrowNarrowRight className='inline' />
+            <Suspense fallback={<span className="w-3 h-3 inline-block animate-pulse bg-gray-300 rounded-full" />}>
+                <HiArrowNarrowRight className='inline' />
+            </Suspense>
         </Cta>
     </main>
   )
