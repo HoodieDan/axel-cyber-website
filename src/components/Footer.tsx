@@ -55,7 +55,7 @@ export default function Footer() {
         <div className='flex flex-col md:flex-row gap-6 items-start md:items-center'>
             <a
                 href="mailto:info@axelcyber.com"
-                className="hover:opacity-85 active:opacity-85 w-[225px] h-[45px] rounded-2xl flex flex-row items-center justify-center gap-2 border-[1.5px] text-[#404040] border-[#404040] transition-opacity duration-300 ease-in-out cursor-pointer"
+                className="hover:opacity-85 active:opacity-85 px-8 py-2.5 rounded-2xl flex flex-row items-center justify-center gap-2 border-[1.5px] text-[#404040] border-[#404040] transition-opacity duration-300 ease-in-out cursor-pointer"
             >
                 <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
                     <MdEmail />
@@ -63,7 +63,7 @@ export default function Footer() {
                 <p>info@axelcyber.com</p>
             </a> 
             <a target="_blank"  href="https://www.instagram.com/axelcyberltd">
-                <div className='hover:opacity-85 active:opacity-85 w-[145px] h-[45px] rounded-2xl flex flex-row items-center justify-center gap-2 border-[1.5px] text-[#404040] border-[#404040] transition-opacity duration-300 ease-in-out cursor-pointer'>
+                <div className='hover:opacity-85 active:opacity-85 px-8 py-2.5 rounded-2xl flex flex-row items-center justify-center gap-2 border-[1.5px] text-[#404040] border-[#404040] transition-opacity duration-300 ease-in-out cursor-pointer'>
                     <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
                         <CiInstagram aria-hidden="true" focusable="false" />         
                     </Suspense>
@@ -71,7 +71,7 @@ export default function Footer() {
                 </div>
             </a>
             <a target="_blank" href="https://www.twitter.com/axelcyberltd">
-                <div className='hover:opacity-85 active:opacity-85 w-[145px] h-[45px] rounded-2xl flex flex-row items-center justify-center gap-2 border-[1.5px] text-[#404040] border-[#404040] transition-opacity duration-300 ease-in-out cursor-pointer'>
+                <div className='hover:opacity-85 active:opacity-85 px-8 py-2.5 rounded-2xl flex flex-row items-center justify-center gap-2 border-[1.5px] text-[#404040] border-[#404040] transition-opacity duration-300 ease-in-out cursor-pointer'>
                     <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
                         <FaXTwitter />
                     </Suspense>

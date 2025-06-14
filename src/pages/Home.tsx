@@ -107,7 +107,7 @@ export default function Home() {
                             We offer leading <br /> solutions such as:
                         </p>
                         <div>
-                            <p className="text-center mb-6 lg:mb-8 text-base md:text-xl">
+                            <p className="text-center 2xl:text-start mb-6 lg:mb-8 text-base md:text-xl">
                                 Building high-impact applications grounded in your proprietary data
                             </p>
                             <button className="w-full md:w-auto bg-white rounded-md px-4 lg:px-6 py-2 lg:py-3 text-black hover:opacity-80 active:opacity-85 transition-all duration-300 ease-linear cursor-pointer">
@@ -228,7 +228,7 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{delay:0.25, ease: "easeInOut" }}
                     viewport={{ once: true }} 
-                    className="w-auto md:w-[475px] 2xl:w-auto mx-auto text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+                    className="w-auto md:w-[475px] 2xl:w-auto mx-auto text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl vfont-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
                     Additional Service we offer for your need
                 </motion.p>
                 <motion.p

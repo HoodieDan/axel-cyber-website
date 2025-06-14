@@ -99,6 +99,10 @@ function AiBenefit({title,icon,desc}:AiBenefitProps){
     return (
         <div className='relative rounded-2xl flex-1'>
             <div className="absolute top-0 right-0 w-10 h-10 bg-white rounded-bl-[12px]"></div>
+            <div className="absolute top-0 right-10 w-10 h-10 bg-white z-10"></div>
+            <div className="absolute top-0 right-10 w-10 h-10 bg-[#033dae] rounded-tr-[12px] z-20"></div>
+            <div className="absolute top-10 right-0 w-10 h-10 bg-white z-10"></div>
+            <div className="absolute top-10 right-0 w-10 h-10 bg-[#033dae] rounded-tr-[12px] z-20"></div>
             <div className='h-full px-8 md:px-10 lg:px-12 pt-10 md:pt-12 lg:pt-14 xl:pt-16 pb-8 sm:pb-12 lg:pb-16 flex flex-col items-center gap-4 bg-[linear-gradient(45deg,#032D7F,#0241BA)] rounded-2xl rounded-2xl'>
                 <img 
                     src={icon} 
@@ -154,8 +158,8 @@ export default function Services() {
     const [index,setIndex] = useState(0)
     const navigate = useNavigate()
   return (
-    <main className='w-[90%] max-w-screen-xl mx-auto'>
-        <section className="service-section relative mt-6 mb-48 sm:mt-8 sm:mb-40 md:mt-10 md:mb-32 lg:mt-12 lg:mb-24 bg-white">
+    <main>
+        <section className="w-[90%] max-w-screen-xl mx-auto service-section relative mt-6 mb-48 sm:mt-8 sm:mb-40 md:mt-10 md:mb-32 lg:mt-12 lg:mb-24 bg-white">
             <img  
                 src={serviceHeroImg} 
                 alt="hero image" 
@@ -183,7 +187,7 @@ export default function Services() {
                     navigate("/contact")
                     window.scrollTo({top: 0, behavior: "smooth"})
                 }}
-                className="mx-auto block w-[200px] h-[50px] text-black text-base md:text-xl font-semibold rounded-full bg-white hover:bg-transparent active:bg-transparent hover:border-2 active:border-2 hover:border-white active:border-white hover:text-white active:text-white transition-all duration-300 ease-linear cursor-pointer">
+                className="mx-auto block px-6 py-2 text-black text-base md:text-xl font-semibold rounded-full bg-white hover:bg-transparent active:bg-transparent hover:border-2 active:border-2 hover:border-white active:border-white hover:text-white active:text-white transition-all duration-300 ease-linear cursor-pointer">
                 Request a Demo
                 {" "}
                 <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
@@ -239,7 +243,8 @@ export default function Services() {
                 </div>
             </div>
         </section>
-        <section className='bg-[#f9f9f9] py-6 sm:py-8 md:py-10 lg:py-12'>
+        <section className='bg-[#f9f9f9]'>
+            <div className='w-[90%] max-w-screen-xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12'>
             <div className='flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10'>
                 <div className='flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center justify-center border-2 border-[#e1e5e7]'>
                     <img 
@@ -269,8 +274,9 @@ export default function Services() {
                 icon={solution[index].icon}
                 list={solution[index].list}
             />
+            </div>
         </section>
-        <section className='py-6 sm:py-8 md:py-10 lg:py-12'>
+        <section className='w-[90%] max-w-screen-xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12'>
             <div className='flex justify-center mb-8 lg:mb-10'>
                 <div className='flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
                     <img 
@@ -310,7 +316,8 @@ export default function Services() {
                 />
             </div>
         </section>
-        <section className='bg-[#f9f9f9] py-6 sm:py-8 md:py-10 lg:py-12'>
+        <section className='bg-[#f9f9f9] mb-6 md:mb-8 lg:mb-10 xl:mb-12'>
+            <div className='w-[90%] max-w-screen-xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12'>
             <div className='flex justify-center mb-6 sm:mb-8 md:mb-10 lg:mb-14'>
                 <div className='flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
                     <img 
@@ -342,8 +349,9 @@ export default function Services() {
                     Deploy Cohere privately for maximum control, security, and compliance. Virtual Private Cloud (VPC) by ensuring strict governance and compliance, also on- premises to keep all data within your systems, with no external exposure.
                 </p>
             </div>
+            </div>
         </section>
-        <section className='bg-[#f9f9f9] py-6 sm:py-8 md:py-10 lg:py-12'>
+        <section className='w-[90%] max-w-screen-xl mx-auto bg-[#f9f9f9] py-6 sm:py-8 md:py-10 lg:py-12'>
             <div className='flex justify-center mb-6 sm:mb-8 md:mb-10 lg:mb-14'>
                 <div className='flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
                     <img 
@@ -394,12 +402,14 @@ export default function Services() {
                 </SwiperSlide>
             </Swiper>
         </section>
+        <section className='w-[90%] max-w-screen-xl mx-auto'>
         <Cta
             title="Ready to put AI to work?" 
             action='Request a Demo'
         >
             <ArrowUpRight className='inline' />
         </Cta>
+        </section>
     </main>
   )
 }

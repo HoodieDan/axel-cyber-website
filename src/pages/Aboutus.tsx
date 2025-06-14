@@ -117,14 +117,14 @@ export default function Aboutus() {
             <motion.div 
                 initial={{ opacity: 0, y:20 }}
                 animate={{ opacity: 1,y: 0, transition: { duration:0.5,delay:1.5, ease: "easeInOut" } }}
-                className='text-white p-1 md:p-3 h-[90px] md:h-[85px] xl:h-[102.5px]  w-[92.5px] lg:w-[125px] xl:w-[150px] bg-[linear-gradient(45deg,#0146cc,#012a7a)] rounded-2xl'>
+                className='text-white p-1 md:p-3 h-[90px] md:h-[85px] xl:h-[102.5px] 2xl:h-[150px]  w-[92.5px] lg:w-[125px] xl:w-[150px] 2xl:w-[175px] bg-[linear-gradient(45deg,#0146cc,#012a7a)] rounded-2xl'>
                 <p className='text-sm md:text-2xl xl:text-3xl font-semibold mb-0 md:mb-1'>200K+</p>
                 <p className='text-xs font-normal'>People have been using our product daily on a monthly basis</p>
             </motion.div>
             <motion.div 
                 initial={{ opacity: 0, y:20 }}
                 animate={{ opacity: 1,y: 0, transition: { duration:0.5,delay:1.75, ease: "easeInOut" } }}
-                className='text-white p-1 md:p-3 h-[90px] md:h-[85px] xl:h-[102.5px] w-[92.5px] lg:w-[125px] xl:w-[150px] bg-[linear-gradient(45deg,#0146cc,#012a7a)] rounded-2xl'>
+                className='text-white p-1 md:p-3 h-[90px] md:h-[85px] xl:h-[102.5px] 2xl:h-[150px] w-[92.5px] lg:w-[125px] xl:w-[150px] 2xl:w-[175px] bg-[linear-gradient(45deg,#0146cc,#012a7a)] rounded-2xl'>
                 <p className='text-sm md:text-2xl xl:text-3xl font-semibold mb-0 md:mb-1'>$700K</p>
                 <p className='text-xs font-normal'>Monthly revenue made from Lexxa AI Agency at average</p>
             </motion.div>
@@ -303,7 +303,7 @@ export default function Aboutus() {
                     whileInView={{ opacity: 1, y:0}}
                     transition={{delay:0.75,duration:0.5, ease: "easeInOut" }}
                     viewport={{ once: true }} 
-                    className='hidden lg:block absolute bottom-0 right-0 bg-white w-[50%] xl:w-[45%]'>
+                    className='hidden lg:block absolute bottom-0 right-0 bg-white w-[50%] xl:w-[45%] 2xl:w-[47.5%]'>
                     <p className='text-2xl xl:text-3xl font-semibold mb-3 xl:mb-2'>We're driven by cutting-edge research</p>
                     <p className='text-base xl:text-xl font-normal text-[#4c5c75] mb-4'>
                         At Lexxa, we live at the forefront of ML/AI research to brong the latest advencments in language AI to our platform, and make your company grow with this

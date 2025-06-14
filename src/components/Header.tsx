@@ -28,9 +28,9 @@ export default function Header() {
   return (
     <header>
       <nav>
-        <p className='px-[5%] bg-[#566edc] text-center py-1 text-white text-sm md:text-base'>
+        {/* <p className='px-[5%] bg-[#566edc] text-center py-1 text-white text-sm md:text-base'>
             Introducing Lexxa AI Chatbot extension: Fast and Efficient Virtual AI  <Link className="underline hover:no-underline " to='/about'>Learn more</Link>
-        </p>
+        </p> */}
         <div className='w-[90%] max-w-screen-xl mx-auto relative mt-4 flex justify-between items-center'>
               <motion.a 
                 initial={{ opacity: 0, y: -50 }}
@@ -90,7 +90,7 @@ export default function Header() {
                     </ul>
                 </motion.li>
             </motion.ul>
-            <div className="hidden lg:block w-[125px] h-auto">
+            <div className="hidden lg:block 2xl:hidden w-[125px] h-auto">
             <motion.button
               initial={{
                 width: "40px",
@@ -100,6 +100,35 @@ export default function Header() {
               animate={{
                 height: "40px",
                 width: "125px",
+                borderRadius: "8px",
+              }}
+              transition={{
+                duration: 0.6,
+                ease: [0.4, 0, 0.2, 1],
+              }}
+              onClick={() => navigate('/contact')}
+              className='outline-none text-white whitespace-nowrap bg-[linear-gradient(45deg,#0146cc,#012d82)] hover:bg-[linear-gradient(45deg,#025aff,#0146cc)] text-sm  md:text-base sm:block hidden transition-all duration-500 ease-linear cursor-pointer'
+              >
+                <motion.span
+                  initial={{opacity:0}}
+                  animate={{opacity:1}}
+                  transition={{delay:0.75, duration:0.5}}
+                >
+                  Book a meeting
+                </motion.span>
+                
+            </motion.button>
+            </div>
+            <div className="hidden 2xl:block w-[225px] h-auto">
+            <motion.button
+              initial={{
+                width: "48px",
+                height: "48px",
+                 borderRadius: "999px",
+                }}
+              animate={{
+                height: "48px",
+                width: "225px",
                 borderRadius: "8px",
               }}
               transition={{

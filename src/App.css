@@ -151,7 +151,7 @@
 
     body {
         @apply bg-background text-foreground;
-
+        
     }
 
     img {
@@ -187,6 +187,10 @@
     background-repeat: no-repeat;
 }
 
+div#root{
+    max-width: 1536px;
+    margin: 0 auto;
+}
 .trapezium {
     width: 250px;
     height: 50px;
@@ -217,9 +221,9 @@ body {
     height: 250px !important;
 }
 
-@media screen and (min-width: 2559px) {
+@media screen and (min-width: 1560px) {
     .service-swipper.swiper {
-        height: 450px !important;
+        height: 350px !important;
     }
     
 }
@@ -464,5 +468,10 @@ body {
 @media screen and (min-width: 1024px) {
     .about-hero-img{
         aspect-ratio: 3/1.06
+    }
+} 
+@media screen and (min-width: 1536px) {
+    .about-hero-img{
+        aspect-ratio: 3/1.25
     }
 } 
