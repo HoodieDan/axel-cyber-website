@@ -65,7 +65,7 @@ export default function Blog() {
 
     useEffect(()=>{
         fetchArticles()
-    },[articles])
+    },[])
 
   return (
     <main className='w-[90%] max-w-screen-xl mx-auto'>
@@ -73,7 +73,7 @@ export default function Blog() {
             <p className='text-2xl md:text-3xl lg:text-4xl font-semibold'>Latest Articles Blog</p>
             <div className='relative w-full md:w-[300px]'>
                 <input 
-                    className='w-full py-2 pr-2 md:py-3 md:pr-3 text-xl leading-none pl-6 md:pl-10 rounded-md border border-[#0046cc]' 
+                    className='w-full py-2 pr-2 md:py-3 md:pr-3 text-xl leading-none pl-10 rounded-md border border-[#0046cc]' 
                     type='text'
                     value={keyword}
                     onChange={handleSearch}
@@ -130,7 +130,7 @@ export default function Blog() {
             action='Book a call'
         >
             <Suspense fallback={<span className="w-3 h-3 inline-block animate-pulse bg-gray-300 rounded-full" />}>
-                <HiArrowNarrowRight className='inline' />
+                <HiArrowNarrowRight className='inline size-4' />
             </Suspense>
         </Cta>
     </main>

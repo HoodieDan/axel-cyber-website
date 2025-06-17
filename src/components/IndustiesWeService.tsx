@@ -1,6 +1,8 @@
 import {motion} from "motion/react"
 import laptop from "../assets/laptop-02.png";
 import publicSector from "../assets/public_sector.webp";
+import publicMob from "../assets/public-service-mobile.svg"
+import energyMob from "../assets/energy-mobile.svg"
 import energy from "../assets/energy.webp";
 import healthcare from "../assets/health_center.webp"; 
 import finanacial from "../assets/financial_services.webp";
@@ -28,7 +30,7 @@ export default function IndustiesWeService() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{delay:0.25, ease: "easeInOut" }}
             viewport={{ once: true }} 
-            className="w-auto text-center md:w-[525px] 2xl:w-auto mx-auto text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+            className="w-auto text-center md:w-[525px] 2xl:w-auto mx-auto text-center text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
             We Use our AI solutions for all industries
         </motion.p>
         <div
@@ -40,8 +42,16 @@ export default function IndustiesWeService() {
                 viewport={{ once: true }}
                 className="filter active:grayscale hover:grayscale transition-all duration-300 ease-linear flex-1 h-auto">
                 <img 
-                    className="block h-full w-full" 
+                    className="hidden lg:block h-full w-full" 
                     src={publicSector} 
+                    alt="public sector" 
+                    loading="lazy"
+                    width={440}
+                    height={190}
+                />
+                <img 
+                    className="block lg:hidden h-full w-full" 
+                    src={publicMob} 
                     alt="public sector" 
                     loading="lazy"
                     width={440}
@@ -55,8 +65,16 @@ export default function IndustiesWeService() {
                 viewport={{ once: true }}
                 className="filter active:grayscale hover:grayscale transition-all duration-300 ease-linear flex-1 h-auto">
                 <img 
-                    className="block w-full" 
+                    className="hidden lg:block w-full h-full" 
                     src={energy} 
+                    alt="energy" 
+                    loading="lazy"
+                    width={440}
+                    height={190}
+                />
+                <img 
+                    className="block lg:hidden w-full h-full" 
+                    src={energyMob} 
                     alt="energy" 
                     loading="lazy"
                     width={440}
