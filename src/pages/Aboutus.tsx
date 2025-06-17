@@ -165,7 +165,7 @@ export default function Aboutus() {
                 <p className='text-xs font-normal'>Monthly revenue made from Lexxa AI Agency at average</p>
             </div>
         </motion.div>
-        <section className='w-[90%] max-w-screen-xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12'>
+        <section className='w-[90%] max-w-screen-xl mx-auto py-12'>
              <div className='flex justify-center mb-8 lg:mb-10'>
                  <div className='flex rounded-lg flex-row py-2 px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
                     <img 
@@ -184,7 +184,7 @@ export default function Aboutus() {
                 transition={{delay:0.25, ease: "easeInOut" }}
                 viewport={{ once: true }} 
                 className='w-auto md:w-[550px] text-center text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-10 lg:mb-12'>
-                 Meet the team behind Lexxa
+                Meet the team behind Lexxa
              </motion.p>
              <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
                 <TeamMember
@@ -311,18 +311,18 @@ export default function Aboutus() {
                     <div className='flex flex-row gap-6'>
                         <button
                             onClick={() => handleNavigation('/solutions')}  
-                            className='h-[50px] 2xl:h-[75px] w-[160px] 2xl:w-[285px] text-white rounded-xl text-base flex flex-row items-center justify-center gap-1  bg-[linear-gradient(45deg,#0146cc,#012d82)] active:by-none hover:bg-none active:bg-white hover:bg-white hover:text-[#0146cc] active:text-[#0146cc] hover:border-2 active:border-2 hover:border-[#0146cc] active:border-[#0146cc] transition-all duration-300 ease-linear cursor-pointer'>
+                            className='py-2 px-6 text-white rounded-xl text-base flex flex-row items-center justify-center gap-1  bg-[linear-gradient(45deg,#0146cc,#012d82)] hover:opacity-80 active:opacity transition-all duration-300 ease-linear cursor-pointer'>
                             Check Our Work
                             <Suspense fallback={<span className="w-3 h-3 inline-block animate-pulse bg-gray-300 rounded-full" />}>
-                                <RiArrowRightSLine />
+                                <RiArrowRightSLine className='size-4'/>
                             </Suspense>
                         </button>
                         <button 
                             onClick={() => handleNavigation('/contact')}
-                            className='h-[50px] 2xl:h-[87px] w-[180px] 2xl:w-[330px] text-black text-base border border-[#0081f1] rounded-xl flex flex-row items-center justify-center gap-1 bg-[#edf1fa] active:bg-[#0081f1] hover:bg-[#0081f1] active:border-0 hover:border-0 active:text-white hover:text-white transition-all duration-300 ease-linear cursor-pointer'>
+                            className='py-2 px-6 text-black text-base border border-[#0081f1] rounded-xl flex flex-row items-center justify-center gap-1 bg-[#edf1fa] hover:bg-white active:bg-white transition-all duration-300 ease-linear cursor-pointer'>
                             Discuss Your Project
                             <Suspense fallback={<span className="w-3 h-3 inline-block animate-pulse bg-gray-300 rounded-full" />}>
-                                <BsArrowUpRight />
+                                <BsArrowUpRight  className='size-4'/>
                             </Suspense>
                         </button>
                     </div>
@@ -342,21 +342,21 @@ export default function Aboutus() {
                         <button  className='flex justify-center items-center flex-1 p-2 md:p-3 text-white rounded-xl text-sm md:text-base flex flex-row items-center gap-1  bg-[linear-gradient(45deg,#0146cc,#012d82)]'>
                             Check Our Work
                             <Suspense fallback={<span className="w-3 h-3 inline-block animate-pulse bg-gray-300 rounded-full" />}>
-                                <RiArrowRightSLine />
+                                <RiArrowRightSLine className='-translate-y-[5%] size-4'/>
                             </Suspense>
                         </button>
                         <button className='flex justify-center items-center flex-1 text-sm md:text-base p-2 md:p-3 text-black text-base border border-[#0081f1] rounded-xl flex flex-row items-center gap-1 bg-[#edf1fa]'>
                             Discuss Your Project
                             <Suspense fallback={<span className="w-3 h-3 inline-block animate-pulse bg-gray-300 rounded-full" />}>
-                                <BsArrowUpRight />
+                                <BsArrowUpRight  className='size-4'/>
                             </Suspense>
                         </button>
                     </div>
             </motion.div>
         </section>
         </div>
-        <section className='w-[90%] max-w-screen-xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12'>
-            <div className='flex justify-start mb-4 sm:mb-6 md:mb-8 lg:mb-10'>
+        <section className='w-[90%] max-w-screen-xl mx-auto py-10 lg:py-12'>
+            <div className='flex justify-center md:justify-start mb-4 sm:mb-6 md:mb-8 lg:mb-10'>
                 <div className='flex rounded-lg flex-row py-1 md:py-2 px-2 md:px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
                     <img 
                         className='shrink-0' 
@@ -376,7 +376,7 @@ export default function Aboutus() {
                         whileInView={{ opacity: 1,y:0}}
                         transition={{delay:0.25,duration:0.5, ease: "easeInOut" }}
                         viewport={{ once: true }}  
-                        className='text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:w-[70%] 2xl:w-[80%] text-black font-semibold mb-2 md:mb-4 lg:mb-6'>
+                        className='text-center md:text-start text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:w-[70%] 2xl:w-[80%] text-black font-semibold mb-2 md:mb-4 lg:mb-6'>
                         Cultivating AI & Machine Learning solutions to power the evolution for your company culture
                     </motion.p>
                     <motion.p
@@ -384,7 +384,7 @@ export default function Aboutus() {
                         whileInView={{ opacity: 1,y:0}}
                         transition={{delay:0.25,duration:0.5, ease: "easeInOut" }}
                         viewport={{ once: true }}  
-                        className='text-base md:text-xl font-normal text-[#4c5c75]'>
+                        className='text-center md:text-start text-base md:text-xl font-normal text-[#4c5c75]'>
                         We are AI solution Designers and ML/AI engineers, thinkers, and champions who are passionate about exploring the potential of language AI to make our world a better
                         place. With diverse experience and perspectives, we work trogether to bring advancements in language AI to developers everywhere.
                     </motion.p>
@@ -395,7 +395,7 @@ export default function Aboutus() {
                         whileInView={{ opacity: 1,y:0}}
                         transition={{delay:0.25,duration:0.5, ease: "easeInOut" }}
                         viewport={{ once: true }} 
-                        className='w-full relative pb-4 border-b border-black flex justify-center items-center'>
+                        className='w-full relative pb-4 border-b border-black flex justify-end md:justify-center items-center'>
                         <p className='text-[#14388f] text-2xl md:text-3xl lg:text-4xl absolute left-0 top-[50%] -translate-y-[50%]'>5+</p>
                         <p className='text-base md:text-xl font-normal'>Countries worked in</p>
                     </motion.div>
@@ -404,7 +404,7 @@ export default function Aboutus() {
                         whileInView={{ opacity: 1,y:0}}
                         transition={{delay:0.25,duration:0.5, ease: "easeInOut" }}
                         viewport={{ once: true }} 
-                        className='relative pb-4 border-b border-black flex justify-center items-center'>
+                        className='relative pb-4 border-b border-black flex justify-end md:justify-center items-center'>
                         <p className='text-[#14388f] text-2xl md:text-3xl lg:text-4xl absolute left-0 top-[50%] -translate-y-[50%]'>12</p>
                         <p className='text-base md:text-xl font-normal'>Years of experience</p>
                     </motion.div>
@@ -413,7 +413,7 @@ export default function Aboutus() {
                         whileInView={{ opacity: 1,y:0}}
                         transition={{delay:0.25,duration:0.5, ease: "easeInOut" }}
                         viewport={{ once: true }}
-                        className='relative pb-4 border-b border-black flex justify-center items-center'>
+                        className='relative pb-4 border-b border-black flex justify-end md:justify-center items-center'>
                         <p className='text-[#14388f] text-2xl md:text-3xl lg:text-4xl absolute left-0 top-[50%] -translate-y-[50%]'>30</p>
                         <p className='text-base md:text-xl font-normal'>Experienced team members</p>
                     </motion.div>
@@ -422,7 +422,7 @@ export default function Aboutus() {
                         whileInView={{ opacity: 1,y:0}}
                         transition={{delay:0.25,duration:0.5, ease: "easeInOut" }}
                         viewport={{ once: true }}
-                        className='relative pb-4 border-b border-black flex justify-center items-center'>
+                        className='relative pb-4 border-b border-black flex justify-end md:justify-center items-center'>
                         <p className='text-[#14388f] text-2xl md:text-3xl lg:text-4xl absolute left-0 top-[50%] -translate-y-[50%]'>180+</p>
                         <p className='text-base md:text-xl font-normal'>Clients worked for</p>
                     </motion.div>
@@ -431,7 +431,7 @@ export default function Aboutus() {
                         whileInView={{ opacity: 1,y:0}}
                         transition={{delay:0.25,duration:0.5, ease: "easeInOut" }}
                         viewport={{ once: true }}
-                        className='relative pb-4 border-b border-black flex justify-center items-center'>
+                        className='relative pb-4 border-b border-black flex justify-end md:justify-center items-center'>
                         <p className='text-[#14388f] text-2xl md:text-3xl lg:text-4xl absolute left-0 top-[50%] -translate-y-[50%]'>5.1k+</p>
                         <p className='text-base md:text-xl font-normal'>Screens completed</p>
                     </motion.div>
@@ -440,7 +440,7 @@ export default function Aboutus() {
                         whileInView={{ opacity: 1,y:0}}
                         transition={{delay:0.25,duration:0.5, ease: "easeInOut" }}
                         viewport={{ once: true }}
-                        className='relative pb-4 border-b border-black flex justify-center items-center'>
+                        className='relative pb-4 border-b border-black flex justify-end md:justify-center items-center'>
                         <p className='text-[#14388f] text-2xl md:text-3xl lg:text-4xl absolute left-0 top-[50%] -translate-y-[50%]'>$31k+</p>
                         <p className='text-base md:text-xl font-normal'>Screens completed</p>
                     </motion.div>
@@ -454,7 +454,7 @@ export default function Aboutus() {
             action='Request a Demo'
         >
             <Suspense fallback={<span className="w-3 h-3 inline-block animate-pulse bg-gray-300 rounded-full" />}>
-                <BsArrowUpRight className='inline' />
+                <BsArrowUpRight className='inline size-4' />
             </Suspense>
         </Cta>
         </div>

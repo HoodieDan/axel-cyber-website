@@ -103,7 +103,7 @@ function AiBenefit({title,icon,desc}:AiBenefitProps){
             <div className="absolute top-0 right-10 w-10 h-10 bg-[#033dae] rounded-tr-[12px] z-20"></div>
             <div className="absolute top-10 right-0 w-10 h-10 bg-white z-10"></div>
             <div className="absolute top-10 right-0 w-10 h-10 bg-[#033dae] rounded-tr-[12px] z-20"></div>
-            <div className='h-full px-8 md:px-10 lg:px-12 pt-10 md:pt-12 lg:pt-14 xl:pt-16 pb-8 sm:pb-12 lg:pb-16 flex flex-col items-center gap-4 bg-[linear-gradient(45deg,#032D7F,#0241BA)] rounded-2xl rounded-2xl'>
+            <div className='h-full px-12 pt-10 md:pt-12 lg:pt-14 xl:pt-16 pb-12 lg:pb-16 flex flex-col items-center gap-4 bg-[linear-gradient(45deg,#032D7F,#0241BA)] rounded-2xl rounded-2xl'>
                 <img 
                     src={icon} 
                     alt="icon" 
@@ -111,8 +111,8 @@ function AiBenefit({title,icon,desc}:AiBenefitProps){
                     width={34}
                     height={40}
                 />
-                <p className='text-xl text-center text-white fontsemibold'>{title}</p>
-                <p className='text-xs text-center text-[#d5d5d5]'>{desc}</p>
+                <p className='text-2xl text-center text-white fontsemibold'>{title}</p>
+                <p className='text-base text-center text-[#d5d5d5]'>{desc}</p>
             </div>
         </div>
 
@@ -122,8 +122,8 @@ function AiBenefit({title,icon,desc}:AiBenefitProps){
 
 function Testimonial({name,position,content,profilePic,companyLogo}:TestimonialProps){
     return (
-        <div className='bg-[linear-gradient(45deg,#053899,#0f0255)] w-full shrink-0 p-2 md:p-4 rounded-2xl flex'>
-            <div className='flex-1 flex flex-col justify-between gap-4 md:gap-6'>
+        <div className='bg-[linear-gradient(45deg,#053899,#0f0255)] w-full shrink-0 p-0 sm:p-2 md:p-4 rounded-xl sm:rounded-2xl flex'>
+            <div className='flex-1 hidden sm:flex flex-col justify-between gap-4 md:gap-6'>
                 <img 
                     className='self-start' 
                     src={companyLogo} 
@@ -148,7 +148,21 @@ function Testimonial({name,position,content,profilePic,companyLogo}:TestimonialP
                 </div>
             </div>
             <div className='flex-1'>
-                <p className='rounded-2xl text-xs sm:text-base lg:text-xl px-2 lg:px-4 py-3 lg:py-4 xl:py-6 bg-[#262728] text-white'>{content}</p>
+                <p className='h-auto sm:h-full text-xs sm:text-base rounded-tl-xl rounded-tr-xl sm:rounded-2xl lg:text-xl px-2 lg:px-4 py-3 lg:py-4 xl:py-6 bg-[#262728] text-white'>{content}</p>
+                <div className='rounded-bl-xl rounded-br-xl px-2 py-4 flex sm:hidden flex-row gap-2 md:gap-4 lg:gap-6 items-start sm:items-center bg-[#262728]'>
+                    <img 
+                        src={profilePic} 
+                        alt="profile pic" 
+                        className='w-[32px] lg:w-[48px] h-[32px] lg:h-[48px] rounded-ful'
+                        loading='lazy'
+                        width={48}
+                        height={48}
+                    />
+                    <div className='text-white'>
+                        <p className='text-base sm:text-xl font-semibold'>{name}</p>
+                        <p className='text-xs sm:text-sm text-[#a1a1a1]'>{position}</p>
+                    </div>
+                </div>
             </div>
         </div>
     )
@@ -159,7 +173,7 @@ export default function Services() {
     const navigate = useNavigate()
   return (
     <main>
-        <section className="w-[90%] max-w-screen-xl mx-auto service-section relative mt-6 mb-48 sm:mt-8 sm:mb-40 md:mt-10 md:mb-32 lg:mt-12 lg:mb-24 bg-white">
+        <section className="w-[90%] max-w-screen-xl mx-auto service-section relative mb-60 mt-10 sm:mb-40 md:mt-10 md:mb-32 lg:mt-12 lg:mb-24 bg-white">
             <img  
                 src={serviceHeroImg} 
                 alt="hero image" 
@@ -180,8 +194,10 @@ export default function Services() {
                 fetchPriority='high'  
             />
             <div className='absolute left-[50%] -translate-x-[50%] top-[50%] -translate-y-[50%] w-[85%] sm:w-auto'>
-            <p className='mx-auto text-white text-xl md:text-2xl lg:text-3xl font-semibold w-full md:w-[200px] lg:w-[425px] 2xl:w-auto text-center mb-4 lg:mb-8'>Unlocking new efficiencies across Major International sectors</p>
-            <p className='text-center text-white text-sm md:text-xl mb-6 md:mb-10'>At Axel Cyber we have a focus on delivering Maximum Impact using with a focus on Aiding Humans and Organizations with our expertise in Artificial Intelligence Consulting and Integration</p>
+            <p className='mx-auto text-white text-2xl lg:text-3xl font-semibold w-full md:w-[200px] lg:w-[425px] 2xl:w-auto text-center mb-4 lg:mb-8'>Unlocking New Efficiencies Across The Financial Sector</p>
+            <p className='text-center text-white text-sm md:text-xl mb-6 md:mb-10'>
+                Cohere connects the dots in your data to deliver real-time intelligence that drives growth, mitigates risk, and bring your team to focus
+            </p>
             <button 
                 onClick={() => {
                     navigate("/contact")
@@ -191,45 +207,50 @@ export default function Services() {
                 Request a Demo
                 {" "}
                 <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
-                    <ArrowUpRight className='inline' />
+                    <ArrowUpRight className='inline size-4' />
                 </Suspense>
             </button>
             </div>
-            <div className="w-[85%] md:w-[70%] absolute top-[100%] -translate-y-[5%] md:-translate-y-[50%] left-[50%] -translate-x-[50%] bg-white py-5 rounded-md shadow-lg">
+            <div className="w-[85%] md:w-[70%] absolute top-[100%] -translate-y-[20%] md:-translate-y-[50%] left-[50%] -translate-x-[50%] bg-white py-5 rounded-md shadow-lg">
                 <p className='text-center font-semibold text-xl text-black mb-4 justify-items-center '>Trusted by Industry Leaders:</p>
-                <div className="grid grid-cols-2 sm:grid-cols-6 px-8">
-                    <img 
-                        src={ibm} 
-                        alt="ibm" 
-                        loading='lazy'
-                        width={90}
-                        height={24}
-                    />
-                    <img 
-                        src={hulu} 
-                        alt="hulu" 
-                        loading='lazy'
-                        width={90}
-                        height={24}
-                    />
+                <div className="grid grid-cols-2 sm:grid-cols-6 gap-6 px-8">
                     <img 
                         src={goldfrapp} 
+                        alt="ibm"
+                        className='w-[100px] h-[25px]'
+                        loading='lazy'
+                        width={90}
+                        height={24}
+                    />
+                    <img 
+                        src={pencil} 
+                        alt="hulu"
+                        className='w-[100px] h-[25px]'
+                        loading='lazy'
+                        width={90}
+                        height={24}
+                    />
+                    <img 
+                        src={volume} 
                         alt="goldfrapp" 
                         loading='lazy'
+                        className='w-[100px] h-[25px]'
                         width={90}
                         height={24}
                         />
                     <img 
-                        src={pencil} 
+                        src={ibm} 
                         alt="pencil" 
                         loading='lazy'
+                        className='w-[100px] h-[25px]'
                         width={90}
                         height={24}    
                         />
                     <img 
-                        src={volume} 
+                        src={hulu} 
                         alt="volume" 
                         loading='lazy'
+                        className='w-[100px] h-[25px]'
                         width={90}
                         height={24}
                         />
@@ -237,14 +258,15 @@ export default function Services() {
                         src={information} 
                         alt="information" 
                         loading='lazy'
+                        className='w-[100px] h-[25px]'
                         width={90}
                         height={24}
                         />
                 </div>
             </div>
         </section>
-        <section className='bg-[#f9f9f9]'>
-            <div className='w-[90%] max-w-screen-xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12'>
+        <section className='bg-[#ffffff]'>
+            <div className='w-[90%] max-w-screen-xl mx-auto pb-10 pt-6 sm:py-8 md:py-10 lg:py-12'>
             <div className='flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10'>
                 <div className='flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center justify-center border-2 border-[#e1e5e7]'>
                     <img 
@@ -258,7 +280,7 @@ export default function Services() {
                     <p className='text-sm sm:text-base 2xl:text-xl' >CAPBILITIES</p>
                 </div>
             </div>
-            <p className='w-auto md:w-[600px] 2xl:w-auto text-center text-2xl md:text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
+            <p className='w-auto md:w-[600px] 2xl:w-auto text-center text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
                 Our AI-powered Assistant solutions for your business
             </p>
             <div className='mb-4 md:mb-6 lg:mb-10 flex rounded-md lg:rounded-xl flex-row px-2 py-2 gap-4 md:gap-0 md:justify-between items-center bg-[#e3e7ea] w-full md:w-auto overflow-x-auto md:overflow-x-hidden'>
@@ -276,7 +298,7 @@ export default function Services() {
             />
             </div>
         </section>
-        <section className='w-[90%] max-w-screen-xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12'>
+        <section className='w-[90%] max-w-screen-xl mx-auto py-10 sm:py-8 md:py-10 lg:py-12'>
             <div className='flex justify-center mb-8 lg:mb-10'>
                 <div className='flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
                     <img 
@@ -290,7 +312,7 @@ export default function Services() {
                     <p className='text-sm sm:text-base 2xl:text-xl'>BENEFITS</p>
                 </div>
             </div>
-            <p className='w-auto md:w-[500px] 2xl:w-auto text-center text-2xl md:text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-10 lg:mb-12'>
+            <p className='w-auto md:w-[500px] 2xl:w-auto text-center text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-10 lg:mb-12'>
                 Enterprise-grade AI Benefits
             </p>
             <div className='flex flex-col md:flex-row gap-6'>
@@ -316,8 +338,8 @@ export default function Services() {
                 />
             </div>
         </section>
-        <section className='bg-[#f9f9f9] mb-6 md:mb-8 lg:mb-10 xl:mb-12'>
-            <div className='w-[90%] max-w-screen-xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12'>
+        <section className='bg-[#f9f9f9] mb-8 lg:mb-10 xl:mb-12'>
+            <div className='w-[90%] max-w-screen-xl mx-auto py-10 lg:py-12'>
             <div className='flex justify-center mb-6 sm:mb-8 md:mb-10 lg:mb-14'>
                 <div className='flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
                     <img 
@@ -342,17 +364,17 @@ export default function Services() {
                 />
             </div>
             <div className='flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-12'>
-                <p className='flex-1 text-xl md:text-2xl lg:text-3xl font-semibold'>
+                <p className='flex-1 text-2xl lg:text-3xl font-semibold'>
                     Private Deploymwents for Ultimate Security and Data Sovereignty 
                 </p>
-                <p className='text-sm lg:text-base text-[#4c5c57] flex-[1.5]'>
+                <p className='text-base text-[#4c5c57] flex-[1.5]'>
                     Deploy Cohere privately for maximum control, security, and compliance. Virtual Private Cloud (VPC) by ensuring strict governance and compliance, also on- premises to keep all data within your systems, with no external exposure.
                 </p>
             </div>
             </div>
         </section>
-        <section className='w-[90%] max-w-screen-xl mx-auto bg-[#f9f9f9] py-6 sm:py-8 md:py-10 lg:py-12'>
-            <div className='flex justify-center mb-6 sm:mb-8 md:mb-10 lg:mb-14'>
+        <section className='w-[90%] max-w-screen-xl mx-auto bg-[#f9f9f9] py-10 lg:py-12'>
+            <div className='flex justify-center mb-12 lg:mb-16'>
                 <div className='flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
                     <img 
                         className='shrink-0' 
@@ -404,10 +426,10 @@ export default function Services() {
         </section>
         <section className='w-[90%] max-w-screen-xl mx-auto'>
         <Cta
-            title="Ready to put AI to work?" 
+            title="Secure your compsny's future by patnering wuth Axel cyber" 
             action='Request a Demo'
         >
-            <ArrowUpRight className='inline' />
+            <ArrowUpRight className='inline size-4 ' />
         </Cta>
         </section>
     </main>

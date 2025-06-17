@@ -262,6 +262,11 @@ body {
     }
 }
 
+@media screen and (max-width: 1025px) {
+    .service-swipper.swiper {
+        height: 150px !important;
+    }
+}
 
 .service-swipper .swiper-slide-active {
     transform: translateX(0%) !important;
@@ -321,7 +326,7 @@ body {
 
 @media screen and (max-width: 426px) {
     .service-swipper.swiper {
-        height: 200px !important;
+        height: 175px !important;
     }
 
     .service-swipper .swiper-slide-prev+.swiper-slide-active {
@@ -379,6 +384,13 @@ body {
     margin-left: 50px !important;
 }
 
+@media screen and (max-width: 768px) {
+    .service-swipper .swiper-pagination {
+        margin-left: 25px !important;
+    }
+    
+}
+
 @media (min-width: 640px) {
     .swiper-pagination-bullet {
         width: 35px !important;
@@ -405,7 +417,7 @@ body {
 .swiper-rtl .swiper-button-next {
     left: auto !important;
     right: 7% !important;
-    top: 95% !important;
+    top: 92.5% !important;
 }
 
 @media screen and (min-width: 2559px) {
@@ -416,20 +428,24 @@ body {
     
 }
 
+
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+    right: 0.325% !important;
+    top: 92.5% !important;
+    left: auto;
+}
+
 @media (min-width: 640px) {
 
     .swiper-button-prev,
     .swiper-rtl .swiper-button-next {
         right: 5% !important;
+        top: 92.5% !important
     }
-
-}
-
-.swiper-button-next,
-.swiper-rtl .swiper-button-prev {
-    right: 0.325% !important;
-    top: 95% !important;
-    left: auto;
+    .swiper-button-next, .swiper-rtl .swiper-button-prev {
+        top: 92.5% !important;
+    }
 }
 
 .swiper-button-prev:after,

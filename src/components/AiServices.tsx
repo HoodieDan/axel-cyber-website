@@ -36,7 +36,7 @@ export default function AiServices({ title, image, list,icon }: AiServicesProps)
                 </ul>
                 <button 
                     onClick={handleNavigate}
-                    className='hidden w-[100px] lg:w-[120px] 2xl:w-[208px] h-[32px] lg:h-[40px] 2xl:h-[86px] text-white rounded-xl text-sm sm:text-base sm:flex flex-row items-center justify-center gap-1 bg-[linear-gradient(45deg,#032D7F,#0241BA)] active:bg-none hover:bg-none active:bg-white hover:bg-white active:border-2 hover:border-2 active:border-[#032D7F] hover:border-[#032D7F] hover:text-[#032D7F] active:text-[#032D7F] transition-all duration-300 ease-linear cursor-pointer leading-none'>
+                    className='hidden py-2 px-6 text-white rounded-xl text-sm sm:text-base sm:flex flex-row items-center justify-center gap-1 bg-[linear-gradient(45deg,#032D7F,#0241BA)] active:bg-none hover:bg-none active:bg-white hover:bg-white active:border-2 hover:border-2 active:border-[#032D7F] hover:border-[#032D7F] hover:text-[#032D7F] active:text-[#032D7F] transition-all duration-300 ease-linear cursor-pointer leading-none'>
                     <span>Reach Out</span> 
                     <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
                         <ChevronRight />
@@ -61,9 +61,9 @@ export default function AiServices({ title, image, list,icon }: AiServicesProps)
             </ul>
             <button 
                 onClick={handleNavigate}
-                className='block sm:hidden w-[100px] lg:w-[120px] 2xl:w-[208px] h-[32px] lg:h-[40px] 2xl:h-[86px] text-white rounded-xl text-sm sm:text-base flex flex-row items-center justify-center gap-1 bg-[linear-gradient(45deg,#032D7F,#0241BA)] active:bg-none hover:bg-none active:bg-white hover:bg-white active:border-2 hover:border-2 active:border-[#032D7F] hover:border-[#032D7F] hover:text-[#032D7F] active:text-[#032D7F] transition-all duration-300 ease-linear cursor-pointer leading-none'>
+                className='block sm:hidden px-4 py-2 text-white rounded-xl text-sm sm:text-base flex flex-row items-center justify-center gap-1 bg-[linear-gradient(45deg,#032D7F,#0241BA)] active:bg-none hover:bg-none active:bg-white hover:bg-white active:border-2 hover:border-2 active:border-[#032D7F] hover:border-[#032D7F] hover:text-[#032D7F] active:text-[#032D7F] transition-all duration-300 ease-linear cursor-pointer leading-none'>
                 Reach Out 
-                <ChevronRight />
+                <ChevronRight className='size-5' />
             </button>
             </div>
         </div>

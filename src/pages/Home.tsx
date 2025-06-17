@@ -70,7 +70,7 @@ export default function Home() {
         <main>
             <Hero />
             <div className="bg-[#f9f9f9]">
-            <section className="w-[90%] max-w-screen-xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12">
+            <section className="max-w-screen-xl mx-auto pt-6 pb-10 sm:py-8 md:py-10 lg:py-12">
                 <div className="flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10">
                     <div className="flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img 
@@ -86,7 +86,7 @@ export default function Home() {
                     </div>
                 </div>
                 <motion.p 
-                    className="w-auto md:w-[550px] 2xl:w-auto text-center text-2xl md:text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 md:mb-10 lg:mb-12"
+                    className="px-[5%] md:px-0 w-auto md:w-[550px] 2xl:w-auto text-center text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 md:mb-10 lg:mb-12"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{delay:0.25, ease: "easeInOut" }}
@@ -99,18 +99,18 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{delay:0.25, ease: "easeInOut" }}
                     viewport={{ once: true }} 
-                    className="md:px-[3%] lg:px-[5%] pb-8 md:pb-10 lg:pb-12 relative rounded-xl bg-[linear-gradient(45deg,#014594,#0181f1)] text-white h-auto md:h-[250px] lg:h-[300px] 2xl:h-[550px]"
+                    className="px-[5%] pb-8 md:pb-10 lg:pb-12 relative bg-[linear-gradient(45deg,#014594,#0181f1)] text-white h-auto md:h-[250px] lg:h-[300px] 2xl:h-[550px]"
                 >
                     <div className="h-[35px] lg:h-[50px] md:w-[175px] lg:w-[250px] absolute -top-[2px] -left-[2px] trapezium hidden md:block"></div>
-                    <div className="flex flex-col md:flex-row gap-x-20 lg:gap-x-16 xl:gap-x-20 px-2 sm:px-3 md:px-0 py-6 sm:py-8 md:py-12 lg:py-12 mb-4">
-                        <p className="text-xl whitespace-nowrap lg:text-2xl font-semibold md:self-end text-center md:text-start flex-1 md:flex-initial mt-4">
+                    <div className="flex flex-col md:flex-row gap-x-20 lg:gap-x-16 xl:gap-x-20 pt-12 pb-8 sm:py-10 md:py-14 lg:py-12 mb-4">
+                        <p className="whitespace-nowrap text-2xl font-semibold md:self-end text-center md:text-start flex-1 md:flex-initial mt-4 mb-3">
                             We offer leading <br /> solutions such as:
                         </p>
                         <div>
                             <p className="text-center 2xl:text-start mb-6 lg:mb-8 text-base md:text-xl">
                                 Building high-impact applications grounded in your proprietary data
                             </p>
-                            <button className="w-full md:w-auto bg-white rounded-md px-4 lg:px-6 py-2 lg:py-3 text-black hover:opacity-80 active:opacity-85 transition-all duration-300 ease-linear cursor-pointer">
+                            <button className="w-full md:w-auto bg-white rounded-md px-4 lg:px-6 py-4 text-black hover:opacity-80 active:opacity-85 transition-all duration-300 ease-linear cursor-pointer">
                                 Gets Started
                             </button>
                         </div>
@@ -150,7 +150,7 @@ export default function Home() {
                 <Clientele />
             </div>
             <div className="bg-[#f9f9f9]">
-            <section className="w-[90%] max-w-screen-xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12">
+            <section className="w-[90%] max-w-screen-xl mx-auto pt-10 pb-6 sm:py-8 md:py-10 lg:py-12">
                 <div className="flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10">
                     <div className="flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img 
@@ -169,7 +169,7 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{delay:0.25, ease: "easeInOut" }}
                     viewport={{ once: true }} 
-                    className="w-auto md:w-[450px] 2xl:w-auto mx-auto text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12"
+                    className="w-auto md:w-[450px] 2xl:w-auto mx-auto text-center text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12"
                 >
                     Tailored Services for your company
                 </motion.p>
@@ -228,7 +228,7 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{delay:0.25, ease: "easeInOut" }}
                     viewport={{ once: true }} 
-                    className="w-auto md:w-[475px] 2xl:w-auto mx-auto text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl vfont-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+                    className="w-auto md:w-[475px] 2xl:w-auto mx-auto text-center text-3xl lg:text-4xl xl:text-5xl vfont-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
                     Additional Service we offer for your need
                 </motion.p>
                 <motion.p
@@ -262,7 +262,7 @@ export default function Home() {
                 </div>
             </section>
             <section className="w-[90%] max-w-screen-xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12">
-                <div className="flex justify-start mb-4 sm:mb-6 md:mb-8 lg:mb-10">
+                <div className="flex justify-center md:justify-start mb-4 sm:mb-6 md:mb-8 lg:mb-10">
                     <div className="flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img 
                             className="shrink-0 text-base 2xl:text-xl" 
@@ -280,7 +280,7 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{delay:0.25, ease: "easeInOut" }}
                     viewport={{ once: true }} 
-                    className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-3"
+                    className="text-3xl lg:text-4xl font-semibold mb-3 text-center md:text-start"
                 >
                     Latest Blogs & Resources
                 </motion.p>
@@ -289,7 +289,7 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{delay:0.25, ease: "easeInOut" }}
                     viewport={{ once: true }} 
-                    className="text-base md:text-xl text-[#4c5c75] mb-6 w-[350px] 2xl:w-[650px]">
+                    className="text-base md:text-xl text-[#4c5c75] mb-6 w-[350px] 2xl:w-[650px] text-center md:text-center">
                     Stay Informed on Developments in AI and our insights on problem solving with AI
                 </motion.p>
                 <div className={`flex flex-col md:flex-row ${articles.length == 0 && !loading ? "justify-center items-center border border-[#4c5c75] rounded-md" : "justify-between items-center"} gap-6 min-h-[380px]`}>
@@ -355,7 +355,7 @@ export default function Home() {
                 <Suspense fallback={<div className="w-full min-h-[300px] flex justify-center items-center"><span className="inline-block animate-pulse">loading...</span></div>}>
                     <Cta title="Secure your company's furture by Partering with Axel Cyber" action="Book a call">
                         <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
-                            <HiArrowNarrowRight  className="inline" />
+                            <HiArrowNarrowRight  className="inline size-4" />
                         </Suspense>
                     </Cta>
                 </Suspense>
