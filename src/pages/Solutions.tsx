@@ -108,7 +108,7 @@ export default function Solutions() {
                     height={345}
                 
                 />
-                <p className='hidden md:block text-base md:text-xl absolute -bottom-1.5 left-[26%] md:w-[200px] lg:w-[375px] 2xl:w-[700px]'>
+                <p className='hidden md:block text-base md:text-xl absolute -bottom-1.5 2xl:-bottom-6 left-[26%] md:w-[200px] lg:w-[375px] 2xl:w-[500px]'>
                     Witness some of the great works we've done for our amazing clients around the world, with great design story
                 </p>
             </div>

@@ -417,7 +417,7 @@ body {
 .swiper-rtl .swiper-button-next {
     left: auto !important;
     right: 7% !important;
-    top: 92.5% !important;
+    top: 95% !important;
 }
 
 @media screen and (min-width: 2559px) {
@@ -432,7 +432,7 @@ body {
 .swiper-button-next,
 .swiper-rtl .swiper-button-prev {
     right: 0.325% !important;
-    top: 92.5% !important;
+    top: 95% !important;
     left: auto;
 }
 
@@ -441,10 +441,10 @@ body {
     .swiper-button-prev,
     .swiper-rtl .swiper-button-next {
         right: 5% !important;
-        top: 92.5% !important
+        /* top: 92.5% !important */
     }
     .swiper-button-next, .swiper-rtl .swiper-button-prev {
-        top: 92.5% !important;
+        /* top: 92.5% !important; */
     }
 }
 
