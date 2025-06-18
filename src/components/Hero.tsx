@@ -30,7 +30,7 @@ export default function Hero() {
     
   return (
     <section className='w-[90%] max-w-screen-xl mx-auto mt-8 mb-12 sm:my-10 md:my-12 lg:my-16 flex flex-col md:flex-row justify-between items-center gap-x-6 lg:gap-x-10 gap-y-8'>
-        <div className='flex-1'>
+        <div className='flex-1 xl:w-1/2'>
             <motion.p
                 initial="hidden"
                 animate="show"
@@ -43,7 +43,7 @@ export default function Hero() {
                         },
                     },
                 }} 
-                className='flex flex-row gap-2 justify-center md:justify-start text-[#3084da] text-3xl  md:text-4xl lg:text-5xl xl:text-6xl 3xl:text-4xl font-bold'
+                className='flex flex-row gap-2 justify-center md:justify-start text-[#3084da] text-3xl  md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-5xl font-bold'
             >
                <motion.p variants={itemsVariants}>The</motion.p> 
                <motion.p variants={itemsVariants} > AI Solution</motion.p> 
@@ -61,7 +61,7 @@ export default function Hero() {
                         },
                     },
                 }} 
-                className='flex gap-2 justify-center md:justify-start mb-3 md:mb-4 lg:mb-6 text-3xl  md:text-4xl lg:text-5xl xl:text-6xl 3xl:text-4xl font-bold text-black'
+                className='flex gap-2 justify-center md:justify-start mb-3 md:mb-4 lg:mb-6 text-3xl  md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-5xl font-bold text-black'
                 >
                 <motion.p variants={itemsVariants}>That</motion.p> 
                 <motion.p variants={itemsVariants}>Delivers</motion.p> 
@@ -114,13 +114,13 @@ export default function Hero() {
                 <p className="text-[#4c5c75] text-base">Join certified soluitons experts by xyz companies</p>
             </div>
         </div>
-        <div className='flex-1 w-full'>
+        <div className='flex-1 w-full xl:w-1/2'>
             <div className='w-full h-full relative'>
                 <motion.div
                     initial={{opacity:0,x:-30, y:-30}}
                     animate={{opacity:1, x:0, y:0, transition:{duration:0.5,delay:1,ease:"easeInOut"}}} 
-                    className='absolute top-0 left-0 z-10 h-[38.5%] w-[39%] text-white bg-[linear-gradient(45deg,#0146cc,#012d82)] rounded-3xl px-6 3xl:px-3 py-4 3xl:py-2 justify-center flex flex-col'>
-                    <p className='text-3xl md:text-5xl leading-none lg:text-7xl 3xl:text-5xl font-semibold'>11+</p>
+                    className='absolute top-0 left-0 z-10 h-[38.5%] w-[39%] text-white bg-[linear-gradient(45deg,#0146cc,#012d82)] rounded-3xl px-6 2xl:px-3 py-4 2xl:py-2 justify-center flex flex-col'>
+                    <p className='text-3xl md:text-5xl leading-none lg:text-7xl 2xl:text-5xl font-semibold'>11+</p>
                     <p className='text-xs'>
                         Years plus of experience in solving probelms with AI and Machnice Learning Solutions
                     </p>
@@ -135,6 +135,7 @@ export default function Hero() {
                     height={455}
                     loading="eager" 
                     fetchPriority="high"
+                    style={{willChange: "transform"}}
                     />
                 <motion.div
                     initial={{opacity:0,x:30, y:30}}

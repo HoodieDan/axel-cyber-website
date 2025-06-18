@@ -4,6 +4,7 @@ import axios from "axios"
 import { useEffect, useState } from "react";
 import { useContextValue } from "@/context";
 import { lazy, Suspense} from "react"; 
+import Solution from "../components/Solution"
 
 const HiArrowNarrowRight = lazy(()=>
     import("lucide-react").then(mod => ({default: mod.MoveRight}))
@@ -15,7 +16,7 @@ const Service = lazy(() => import("../components/Service"));
 const Cta = lazy(() => import("../components/Cta"));
 const Blogs = lazy(() => import("../components/Blogs"));
 const Clientele = lazy(() => import("../components/Clientele"));
-const Solution = lazy(() => import("../components/Solution"));
+
 
 const calculateReadingTime = (text: string, wordPerMinute: number = 200): string =>{
     if(!text) return "0 min read"
@@ -27,14 +28,13 @@ const calculateReadingTime = (text: string, wordPerMinute: number = 200): string
 export default function Home() {
     const endpoint = "https://veoc-tech-cms.vercel.app/api/article"
     const {articles, setArticles} = useContextValue()
-    const [loading, setLoading] = useState<boolean>(false)
+    const [loading, setLoading] = useState<boolean>(true)
 
     const getArticles = async () => {
-        setLoading(true)
         try {
             const response = await axios.get(endpoint)
-            setLoading(false)
             setArticles(response.data.articles)
+            setLoading(false)
             sessionStorage.setItem("articles", JSON.stringify(response.data.articles))
         } catch (error) {
             setLoading(false)
@@ -57,14 +57,7 @@ export default function Home() {
     }
 
     useEffect(()=>{
-        const handleScroll = () => {
-            getArticles()
-            window.removeEventListener("scroll", handleScroll)
-        }
-        window.addEventListener("scroll", handleScroll)
-        return ()=>{
-            window.removeEventListener("scroll", handleScroll)
-        }
+        getArticles()
     },[])
     return (
         <main>
@@ -116,7 +109,6 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="px-2 sm:px-3 md:px-0 md:absolute md:left-[3%] lg:left-[5%] md:top-[65%] w-full md:w-[94%] lg:w-[90%] flex flex-col md:flex-row justify-between gap-4 lg:gap-6">
-                        <Suspense fallback={<div className="w-full min-h-[300px] md:min-h-[400px] lg:min-h-[600px] flex justify-center items-center"><span className="inline-block animate-pulse">loading...</span></div>}>
                         <Solution
                             title="Scalable"
                             description="From proof of concept to full production with compressed, entreprise-focused models"
@@ -138,7 +130,6 @@ export default function Home() {
                             description="By combining AI tools and integrating them with your current systems"
                             imgUrl="/seamless.webp"
                         />
-                        </Suspense>
                     </div>
                 </motion.div>
             </section>

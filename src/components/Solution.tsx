@@ -6,7 +6,7 @@ interface Props{
 
 export default function Solution({title, description,imgUrl}: Props) {
   return (
-    <div className='bg-[#0a0332] flex-1 rounded-xl pt-6 pb-16 2xl:pb-10 px-12 md:px-14 lg:px-16'>
+    <div className='bg-[#0a0332] flex-1 rounded-xl pt-6 pb-16 2xl:pb-10 px-12 md:px-14 xl:px-12 2xl:px-8 lg:px-16'>
         <div className="flex justify-center">
           <img 
             src={imgUrl} 

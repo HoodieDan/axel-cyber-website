@@ -11,7 +11,7 @@ const IoIosSearch = lazy(() => import("lucide-react").then(module => ({ default:
 export default function Blog() {
     const endpoint = "https://veoc-tech-cms.vercel.app/api/article"
     const {articles, setArticles} = useContextValue()
-    const [loading,setLoading] = useState<boolean>(false)
+    const [loading,setLoading] = useState<boolean>(true)
     const [keyword,setKeyWord] = useState<string>("")
 
     const handleSearch = (e: ChangeEvent<(HTMLInputElement)>) => {
@@ -39,7 +39,6 @@ export default function Blog() {
 
     const fetchArticles = async () => {
         try{
-            setLoading(true)
             const response = await axios.get(endpoint)
             setLoading(false)
             if(response.status === 200){

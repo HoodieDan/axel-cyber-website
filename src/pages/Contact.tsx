@@ -81,7 +81,9 @@ export default function Contact() {
                     <input className='block mb-4 pb-1 border-t-0 border-l-0 border-r-0 border-b-2 border-[#c0c0c0]' type="text" />
                     <label className='block text-black text-xl' htmlFor="">Message</label>
                     <textarea className='block mb-8 pb-1 border-t-0 border-l-0 border-r-0 border-b-2 border-[#c0c0c0]' name="" id="" cols={30} rows={10}></textarea>
-                    <button className='bg-[linear-gradient(135deg,#002366,#0046cc)] hover:bg-none active:bg-none hover:border-2 active:border-2 hover:border-[#002366] active:border-[#002366] w-[140px] h-[40px] rounded-md text-white hover:text-[#002366] active:text-[#002366] cursor-pointer trnasition-all duration-300 ease-linear'>Send a message</button>
+                    <button className='bg-[linear-gradient(135deg,#002366,#0046cc)] py-3 px-8 acitive:opacity-85 hover:opacity-85 rounded-md text-white cursor-pointer trnasition-all duration-300 ease-linear'>
+                        Send a message
+                    </button>
                 </form>
             </div>
         </section>
