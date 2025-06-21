@@ -29,7 +29,7 @@ export default function Contact() {
                 width={1280}
                 height={450} 
             />
-            <p className='absolute -bottom-1 sm:bottom-2 right-[17.5%] sm:right-[25%] text-sm sm:text-xl text-[#566edc] font-semibold'>Contact us</p>
+            <p className='absolute -bottom-1  right-[17.5%]  md:right-[21%] lg:right-[20%] text-sm sm:text-xl md:text-2xl lg:text-3xl text-[#566edc] font-semibold'>Contact us</p>
         </section>
         <section className='my-8 sm:my-10 md:my-12 lg:my-16 flex flex-col md:flex-row  gap-6 sm:gap-8 md:gap-12 lg:gap-16'>
             <div className='flex-1'>
@@ -41,21 +41,21 @@ export default function Contact() {
                 <div className='grid grid-cols-1 md:grid-cols-2 justify-between gap-8 lg:gap-10'>
                     <div>
                         <p className='text-xl md:text-2xl font-semibold mb-2 md:mb-4'>Call center</p>
-                        <p className='text-xs md:text-base'>+44 800 900 1122</p>
-                        <p className='text-xs md:text-base'>+234 894 566 1234</p>
+                        <p className='text-xs md:text-base mb-2 md:mb-4 no-underline'>+44 800 900 1122</p>
+                        <p className='text-xs md:text-base no-underline'>+234 894 566 1234</p>
                     </div>
                     <div className='md:justify-self-end'>
                         <p className='text-xl md:text-2xl font-semibold mb-2 md:mb-4 md:pr-4'>Our Location</p>
-                        <p className='text-xs md:text-base'>Plot 800, Lagos</p>
-                        <p className='text-xs md:text-base'>1st Avenue Street.</p>
+                        <p className='text-xs md:text-base mb-2 md:mb-4 no-underline'>Plot 800, Lagos</p>
+                        <p className='text-xs md:text-base no-underline'>1st Avenue Street.</p>
                     </div>
                     <div>
                         <p className='text-xl md:text-2xl font-semibold mb-2 md:mb-4'>Email</p>
-                        <p className='text-xs md:text-base'>axel.cyber@gmail.com</p>
+                        <p className='text-xs md:text-base no-underline'>axel.cyber@gmail.com</p>
                     </div>
                     <div className='md:justify-self-end'>
                         <p className='text-xl md:text-2xl font-semibold mb-2 md:mb-4'>Social Network</p>
-                    <div className='flex flex-row justify-between'>
+                    <div className='flex flex-row  gap-2 md:justify-between'>
                             <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
                                 <FaXTwitter className='text-2xl' />
                             </Suspense>

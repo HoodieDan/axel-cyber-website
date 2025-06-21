@@ -393,7 +393,7 @@ export default function Services() {
                 spaceBetween={50}
                 navigation
                 pagination={{ clickable: true }}
-                className='service-swipper flex flex-row gap-6'
+                className='service-swipper flex flex-row gap-3 md:gap-6'
             >
                 <SwiperSlide>
                 <Testimonial 

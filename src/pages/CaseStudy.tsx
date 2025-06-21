@@ -16,7 +16,7 @@ export default function CaseStudy() {
         <section className='bg-[#fafafa] pb-4 md:pb-6 pt-16 lg:pt-20 lg:pb-8'>
             <div className='flex flex-col md:flex-row gap-8 md:gap-10 bg-white mb-4 md:mb-6'>
                 <div className='flex-1 lg:flex-[1.15] relative'>
-                    <p className='absolute top-4 md:top-6 left-0 text-4xl lg:text-5xl 2xl:text-4xl font-semibold'>Prompt Plumber AI</p>
+                    <p className='absolute top-4 md:top-6 left-0 text-3xl sm:text-4xl lg:text-5xl 2xl:text-4xl font-semibold'>Prompt Plumber AI</p>
                     <img 
                         className='w-full h-full hidden sm:block' 
                         src={caseimage1} 

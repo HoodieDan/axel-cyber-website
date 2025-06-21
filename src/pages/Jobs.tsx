@@ -167,7 +167,7 @@ export default function Jobs() {
               <div className='my-4 md:my-6 lg:my-8 relative'>
                 <p className='absolute left-4 md:left-6 lg:left-8 top-[50%] -translate-y-[50%] text-sm md:text-base font-semibold'>Location:</p>
                 <input 
-                  className='h-full w-full py-3 md:py-4 pl-20 md:pl-24 lg:pl-28 text-base md:text-xl' 
+                  className='h-full w-full py-3 md:py-4 pl-20 md:pl-24 lg:pl-28 text-base md:text-xl text-black' 
                   type='text' 
                   placeholder='City, area' 
                   value={location}
@@ -209,7 +209,7 @@ export default function Jobs() {
             <div className='my-4 md:my-6 lg:my-8 relative'>
               <p className='absolute left-4 md:left-6 lg:left-8 top-[50%] -translate-y-[50%] text-sm md:text-base font-semibold'>Roles:</p>
               <input 
-                className='h-full w-full py-3 md:py-4 pl-14 md:pl-18 lg:pl-20 text-base md:text-xl' 
+                className='h-full w-full py-3 md:py-4 pl-14 md:pl-18 lg:pl-20 text-base md:text-xl text-black' 
                 type='text' 
                 placeholder='Job title, position'
                 value={position}
