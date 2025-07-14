@@ -65,13 +65,13 @@ export default function Blog() {
                 for(let i = 0; i < numOfPages; i++){
                     paginatedArticles.push(articles.slice(i * 6, (i + 1) * 6))
                 }
-                console.log(paginatedArticles)
                 setArticles([...paginatedArticles])
                 setLoading(false)
                 sessionStorage.setItem("articles", JSON.stringify([...paginatedArticles]))
 
             }else{
                 setArticles([])
+                setLoading(false)
             }
         }catch(err){
             setLoading(false)
