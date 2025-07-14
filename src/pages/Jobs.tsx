@@ -1,4 +1,4 @@
-import { ChangeEvent, lazy, Suspense, useEffect, useState } from 'react'
+import { ChangeEvent, KeyboardEvent, lazy, Suspense, useEffect, useState } from 'react'
 import dayjs from 'dayjs';
 import axios from 'axios';
 
@@ -26,7 +26,7 @@ interface jobsType{
 
 
 export default function Jobs() {
-  const endpoint = "https://veoc-tech-cms.vercel.app/api/job"
+  const endpoint = "https://axel-cyber.vercel.app/api/job"
   const [loading,setLoading] = useState(false)
   const [jobs,setJobs] = useState<jobsType[]>([])
   const [location,setLocation] = useState("")
@@ -37,20 +37,21 @@ export default function Jobs() {
 
   const handleChange = (e : ChangeEvent<HTMLInputElement>) => {
       const value = e.target.value
-      setLocation(value)
-      const filteredJobs = jobs.filter((job: any)=>{
-        return job.location.includes(value)
-      })
-      setJobs(filteredJobs)
+      setLocation(value) 
+      // const filteredJobs = jobs.filter((job: any)=>{
+      //   return job.location.includes(value)
+      // })
+      // setJobs(filteredJobs)
   }
 
   const handleChange2 = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
     setPosition(value)
-    const filteredJobs = jobs.filter((job: any)=>{
-      return job.title.includes(value)
-    })
-    setJobs(filteredJobs)
+    // const filteredJobs = jobs.filter((job: any)=>{
+    //   return job.title.includes(value)
+    // })
+
+    // setJobs(filteredJobs)
   }
 
   const fetchJobs = async() => {
@@ -95,9 +96,11 @@ export default function Jobs() {
 
   const JobVacnacy = ({role, desc,location,time}:{role:string,desc:string,location: string, time: string}) => {
     return (
-      <div onClick={()=>setStage(3)} className='p-2 md:p-3 lg:p-4 shadow-md border border-[#bababa] hover:border-[#0081f1] bg-white md:bg-[#f1f2f4] rounded-md transition-all duration-300 ease-linear'>
+      <div onClick={()=>{setStage(3); setCvFileName(null)}} className='p-2 md:p-3 lg:p-4 shadow-md border border-[#bababa] hover:border-[#0081f1] bg-white md:bg-[#f1f2f4] rounded-md transition-all duration-300 ease-linear'>
         <p className='text-xl text-[#032d7f] mb-2 md:mb-3 lg:mb-4'>{role}</p>
-        <p className='text-base text-[#222222] pb-4 md:pb-6 lg:pb-8 border-b border-b-[#e9e9e9]'>{desc}</p>
+        <p className='text-base text-[#222222] pb-4 md:pb-6 lg:pb-8 border-b border-b-[#e9e9e9]'
+          dangerouslySetInnerHTML={{__html: desc}}
+        />
         <div className='flex flex-row justify-between items-center my-2 md:my-3 lg:my-4'>
           <p className='text-black font-semibold text-base md:text-xl'>Location</p>
           <p className='text-base text-[#222222] text-sm md:text-base'>{location}</p>
@@ -114,9 +117,9 @@ export default function Jobs() {
         <div className='flex flex-row gap-2 sm:gap-4 md:gap-6 lg:gap-8 justify-between items-center leading-none'>
           <div onClick={()=>setStage(1)} className='group flex flex-row gap-2 items-center transition-all duration-300 ease-linear cursor-pointer'>
             <p 
-              className={`leading-none text-white text-xs md:text-sm h-[16px] md:h-[20px] w-[16px] md:w-[20px] rounded-full flex justify-center items-center ${stage === 1 ? 'bg-[#002366]' : stage > 1 && location ? 'bg-[#008000]' :'bg-[#727272]'} ${stage=== 1 && 'group-hover:bg-[#002366]'}`}>
+              className={`leading-none text-white text-xs md:text-sm h-[16px] md:h-[20px] w-[16px] md:w-[20px] rounded-full flex justify-center items-center ${stage === 1 ? 'bg-[#002366]' : stage > 1 ? 'bg-[#008000]' :'bg-[#727272]'} ${stage=== 1 && 'group-hover:bg-[#002366]'}`}>
               {
-                stage > 1 && location ? 
+                stage > 1 ? 
                   <Suspense fallback={<span className="w-3 h-3 inline-block animate-pulse bg-gray-300 rounded-full" />}>
                     <IoCheckmarkOutline className='text-white h-3 md:w-4 h-3 md:h-4' />  
                   </Suspense>
@@ -127,9 +130,7 @@ export default function Jobs() {
           </div>
           <div className='flex-1 h-[1px] md:h-[1.5px] bg-[#727272]'></div>
           <div onClick={()=>{
-            if(location !== ""){
               setStage(2)
-            }
             }} className='group flex flex-row gap-2 items-center transition-all duration-300 ease-linear cursor-pointer'>
             <p className={`leading-none text-white text-xs md:text-sm h-[16px] md:h-[20px] w-[16px] md:w-[20px] rounded-full flex justify-center items-center ${stage === 2 ? 'bg-[#002366]': stage > 2 ? 'bg-[#008000]' : 'bg-[#727272]'} ${ stage > 2 && "group-hover:bg-[#002366]"}`}>
               {
@@ -145,10 +146,12 @@ export default function Jobs() {
             </p>
           </div>
           <div className='flex-1 h-[1px] md:h-[1.5px] bg-[#727272]'></div>
-          <div onClick={()=>{
-            setStage(3)
-            setCvFileName(null)
-            }} className='group flex flex-row gap-2 items-center transition-all duration-300 ease-linear cursor-pointer'>
+          <div 
+            // onClick={()=>{
+            // setStage(3)
+            // setCvFileName(null)
+            // }} 
+            className='group flex flex-row gap-2 items-center transition-all duration-300 ease-linear cursor-pointer'>
             <p className={`leading-none text-white text-xs md:text-sm h-[16px] md:h-[20px] w-[16px] md:w-[20px] rounded-full flex justify-center items-center ${stage === 3 ? "bg-[#002366]" : stage > 3 ? 'bg-[#008000]' :'bg-[#727272]'} ${ stage > 3 && "group-hover:bg-[#002366]"}"`}>
               {
                 stage > 3 ? 
@@ -172,6 +175,12 @@ export default function Jobs() {
                   placeholder='City, area' 
                   value={location}
                   onChange={handleChange}
+                  onKeyDown={ (e:KeyboardEvent<HTMLInputElement> ) =>{
+                      if(e.key === "Enter"){
+                        setStage(2)
+                      }
+                  }
+                }
                   />
                   <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
                     <IoLocationOutline className='absolute h-5 w-5 md:w-7 md:h-7 right-2 md:right-4 md:right-6 lg:right-8 top-[50%] -translate-y-[50%]' />   
@@ -225,7 +234,11 @@ export default function Jobs() {
                 ) : jobs.length > 0 ? (
                   <div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8'>
                     {
-                      jobs.map((job: any, index: number) => {
+                      jobs.filter((job: any)=>{
+                        return stage > 1 && position.trim() !== ""
+                        ? job.title.toLowerCase().includes(position.toLowerCase()) 
+                        : job.location.toLowerCase().includes(location.toLowerCase())
+                      }).map((job: any, index: number) => {
                         return (
                           <JobVacnacy 
                             key={index}

@@ -10,9 +10,9 @@ import engineering from "../assets/engineering.webp";
 
 export default function IndustiesWeService() {
   return (
-    <section className="w-[90%] max-w-screen-xl mx-auto mt-4 md:mt-36 lg:mt-28 py-6 sm:py-8 md:py-10 lg:py-12">
+    <section className="px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto mt-4 md:mt-60 lg::mt-54 py-6 sm:py-8 md:py-10 lg:py-12">
         <div className="flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10">
-            <div className="flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]">
+            <div className="flex rounded-lg flex-row p-2 gap-2 items-center border-2 border-[#e1e5e7]">
                 <img 
                     src={laptop} 
                     alt="laptop" 
@@ -20,7 +20,7 @@ export default function IndustiesWeService() {
                     height={16}
                     loading="lazy"    
                 />
-                <p className="text-sm sm:text-base 2xl:text-xl">
+                <p className="text-sm leading-none">
                     SOME INDUSTRIES WE SERVICE 
                 </p>
             </div>
@@ -30,8 +30,8 @@ export default function IndustiesWeService() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{delay:0.25, ease: "easeInOut" }}
             viewport={{ once: true }} 
-            className="w-auto text-center md:w-[525px] 2xl:w-auto mx-auto text-center text-3xl lg:text-4xl xl:text-5xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
-            We Use our AI solutions for all industries
+            className="text-center mx-auto text-center text-3xl lg:text-4xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+            We Use our AI solutions<br /> for all industries
         </motion.p>
         <div
             className="flex w-full flex-col lg:flex-row justify-between gap-4 md:gap-6 mb-4 md:mb-6">

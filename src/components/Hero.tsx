@@ -29,7 +29,7 @@ export default function Hero() {
     }
     
   return (
-    <section className='w-[90%] max-w-screen-xl mx-auto mt-8 mb-12 sm:my-10 md:my-12 lg:my-16 flex flex-col md:flex-row justify-between items-center gap-x-6 lg:gap-x-10 gap-y-8'>
+    <section className='px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto mt-8 mb-12 sm:my-10 md:my-12 lg:my-16 flex flex-col md:flex-row justify-between items-center gap-x-4 lg:gap-x-8 gap-y-6'>
         <div className='flex-1 xl:w-1/2'>
             <motion.p
                 initial="hidden"
@@ -43,11 +43,11 @@ export default function Hero() {
                         },
                     },
                 }} 
-                className='flex flex-row gap-2 justify-center md:justify-start text-[#3084da] text-3xl  md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-5xl font-bold'
+                className='flex flex-row gap-2 justify-center md:justify-start text-[#0143c2] text-3xl  md:text-4xl lg:text-5xl font-bold'
             >
-               <motion.p variants={itemsVariants}>The</motion.p> 
-               <motion.p variants={itemsVariants} > AI Solution</motion.p> 
-               <motion.p variants={itemsVariants}> Partner</motion.p> 
+               <motion.p variants={itemsVariants} className="leading-none">The</motion.p> 
+               <motion.p variants={itemsVariants} className="leading-none"> AI Solution</motion.p> 
+               <motion.p variants={itemsVariants} className="leading-none"> Partner</motion.p> 
             </motion.p>
             <motion.p
                 initial="hidden"
@@ -61,16 +61,16 @@ export default function Hero() {
                         },
                     },
                 }} 
-                className='flex gap-2 justify-center md:justify-start mb-3 md:mb-4 lg:mb-6 text-3xl  md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-5xl font-bold text-black'
+                className='flex gap-2 justify-center md:justify-start mb-2 md:mb-3 lg:mb-5  text-3xl md:text-4xl lg:text-5xl font-bold text-black'
                 >
-                <motion.p variants={itemsVariants}>That</motion.p> 
-                <motion.p variants={itemsVariants}>Delivers</motion.p> 
-                <motion.p variants={itemsVariants}>Excellence</motion.p>
+                <motion.p variants={itemsVariants} className="leading-none">That</motion.p> 
+                <motion.p variants={itemsVariants} className="leading-none">Delivers</motion.p> 
+                <motion.p variants={itemsVariants} className="leading-none">Excellence</motion.p>
             </motion.p>
             <motion.p
                 initial={{opacity:0}}
                 animate={{opacity:1, transition:{duration:0.5,delay:0.5,ease:"easeInOut"}}} 
-                className='font-normal text-center md:text-left mb-6 md:mb-8 lg:mb-10 text-base md:text-xl lg:text-2xl 3xl:text-xl font-normal text-black w-auto md:w-[90%]'>
+                className='font-normal text-center md:text-left mb-2 md:mb-4 lg:mb-6 text-base lg:text-xl font-normal text-black w-auto md:w-[90%]'>
                 Axel Cyber is Dedicated team of Experts from acrosss the globe commited to building Solutions that Business Effficency and Growth with AI   
             </motion.p>
             <motion.div
@@ -85,7 +85,7 @@ export default function Hero() {
                         },
                     },
                 }} 
-                className='flex flex-col md:flex-row gap-4 md:gap-6 3xl:gap-4 mb-6 md:mb-8 lg:mb-10'>
+                className='flex flex-col md:flex-row gap-4 md:gap-6 mb-2 md:mb-4 lg:mb-6'>
                 <motion.button
                     variants={itemsVariants}
                     onClick={() => handleNavigation("/casestudy")} 
@@ -111,7 +111,7 @@ export default function Hero() {
                     <img className='w-[20px] h-[20px] -translate-x-2' src={face3} alt="" />
                     <img className='w-[20px] h-[20px] -translate-x-3' src={face4} alt="" />
                 </div>
-                <p className="text-[#4c5c75] text-base">Join certified soluitons experts by xyz companies</p>
+                <p className="text-[#4c5c75] text-sm font-semibold">Join certified soluitons experts by xyz companies</p>
             </div>
         </div>
         <div className='flex-1 w-full xl:w-1/2'>
@@ -119,16 +119,16 @@ export default function Hero() {
                 <motion.div
                     initial={{opacity:0,x:-30, y:-30}}
                     animate={{opacity:1, x:0, y:0, transition:{duration:0.5,delay:1,ease:"easeInOut"}}} 
-                    className='absolute top-0 left-0 z-10 h-[38.5%] w-[39%] text-white bg-[linear-gradient(45deg,#0146cc,#012d82)] rounded-3xl px-6 2xl:px-3 py-4 2xl:py-2 justify-center flex flex-col'>
-                    <p className='text-3xl md:text-5xl leading-none lg:text-7xl 2xl:text-5xl font-semibold'>11+</p>
-                    <p className='text-xs'>
+                    className='absolute top-0 left-0 z-10 h-[38.5%] w-[39%] text-white bg-[linear-gradient(45deg,#0146cc,#012d82)] rounded-3xl px-3 md:px-4 lg:px-6 2xl:px-3 py-2 md:py-3 lg:py-4 2xl:py-2 justify-center flex flex-col'>
+                    <p className='text-3xl md:text-4xl leading-none lg:text-5xl font-semibold mb-2 md:mb-3 leading-none'>11+</p>
+                    <p className='text-sm md:text-base leading-none'>
                         Years plus of experience in solving probelms with AI and Machnice Learning Solutions
                     </p>
                 </motion.div>
                 <motion.img
                     initial={{opacity:0}}
                     animate={{opacity:1, transition:{duration:0.5,delay:0.5,ease:"easeInOut"}}}
-                    className='h-full w-full block 3xl:min-h-[675px]' 
+                    className='h-full w-full block' 
                     src={heroImg} 
                     alt="hero image" 
                     width={500}
@@ -140,9 +140,9 @@ export default function Hero() {
                 <motion.div
                     initial={{opacity:0,x:30, y:30}}
                     animate={{opacity:1, x:0, y:0, transition:{duration:0.5,delay:1,ease:"easeInOut"}}}  
-                    className='absolute bottom-0 right-0 z-10 h-[38.5%] w-[39%] text-white bg-[linear-gradient(45deg,#0146cc,#012d82)] rounded-3xl p-4 2xl:p-3 flex flex-col justify-center items-start'>
-                    <p className='text-3xl xl:text-4xl font-semibold'>5+</p>
-                    <p className='text-xs'>
+                    className='absolute bottom-0 right-0 z-10 h-[38.5%] w-[39%] text-white bg-[linear-gradient(45deg,#0146cc,#012d82)] rounded-3xl px-3 md:px-4 lg:px-6 2xl:px-3 py-2 md:py-3 lg:py-4 2xl:py-2 flex flex-col justify-center items-start'>
+                    <p className='text-3xl md:text-4xl lg:text-5xl font-semibold mb-2 md:mb-3 leading-none'>5+</p>
+                    <p className='text-sm md:text-base leading-none'>
                         Continents serviced by our international team
                     </p>
                 </motion.div>

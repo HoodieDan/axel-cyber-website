@@ -1,7 +1,6 @@
 import { motion } from "motion/react"
 import { Menu, X } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
-import Logo from "/axel-logo.webp";
 import { useState } from "react"; 
 import { useLocation } from "react-router-dom";
 
@@ -28,17 +27,14 @@ export default function Header() {
   return (
     <header>
       <nav>
-        {/* <p className='px-[5%] bg-[#566edc] text-center py-1 text-white text-sm md:text-base'>
-            Introducing Lexxa AI Chatbot extension: Fast and Efficient Virtual AI  <Link className="underline hover:no-underline " to='/about'>Learn more</Link>
-        </p> */}
-        <div className='w-[90%] max-w-screen-xl mx-auto relative mt-4 flex justify-between items-center'>
+        <div className='px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto relative my-2 flex justify-between items-center'>
               <motion.a 
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease:"easeOut"}}
                 href="/">
               <img
-                src={Logo} 
+                src="/axel-logo.svg" 
                 className='block w-[150px] h-[45px] md:w-[185px] md:h-[54px]'
                 alt="axel cyber logo" 
                 width={150}
@@ -68,9 +64,9 @@ export default function Header() {
                   </motion.li>
                 <motion.li
                   variants={itemVariants}
-                  className={`text-sm text-[#4c5c75] hover:scale-105 transition-transform duration-300 ease-in-out ${location.pathname === '/casestudy'? 'scale-105' : 'scale-100'} md:text-base`}
+                  className={`text-sm text-[#4c5c75] hover:scale-105 transition-transform duration-300 ease-in-out ${location.pathname === '/ai-works'? 'scale-105' : 'scale-100'} md:text-base`}
                   >
-                    <Link to="/casestudy">Case study</Link>
+                    <Link to="/ai-works">Case study</Link>
                 </motion.li>
                 <motion.li
                   variants={itemVariants}
@@ -188,21 +184,29 @@ export default function Header() {
             {
               menuOpen 
               &&
-            <div className="absolute top-[100%] left-0 w-full z-10">
+            <div className="shadow-xl absolute top-[100%] left-0 w-full z-10">
                 <div className="sm:hidden block bg-white shadow-md rounded-lg px-[5%]">
                     <ul className='list-none text-[#4c5c75]'>
                         <li className="py-2 text-base border-b border-b-[#0081f1]"><Link onClick={handleCloseMenu} to="/services">Services</Link></li>
                         <li className="py-2 text-base border-b border-b-[#0081f1]"><Link onClick={handleCloseMenu} to="/casestudy">Case study</Link></li>
                         <li className="py-2 text-base border-b border-b-[#0081f1]"><Link onClick={handleCloseMenu} to="/solutions">Solutions</Link></li>
                         <li onClick={() => setSubMenuOpen(!subMenu)} className='group text-base'>
-                            <a href="#" className={`py-2 block ${subMenu && "border-b border-b-[#0081f1]" }`}>Company</a>
-                            <ul className={`${subMenu ? "block" : "hidden"} group-active:flex group-hover:flex list-none bg-white text-black pt-2 flex-col rounded-lg text-lg`}>
+                            <a href="#" className={`py-2 block border-b border-b-[#0081f1]`}>Company</a>
+                            <ul className={`${subMenu ? "block" : "hidden"} group-active:flex group-hover:flex list-none bg-white text-black flex-col rounded-lg text-lg`}>
                               <li className='pl-4 py-1 whitespace-nowrap border-b border-b-[#0081f1]'><Link onClick={handleCloseMenu} to="/about">About Us</Link></li>
                               <li className='pl-4 py-1 border-b border-b-[#0081f1]'><Link onClick={handleCloseMenu} to="/career">Career</Link></li>
                               <li className='pl-4 py-1'><Link onClick={handleCloseMenu} to="/blog">Blogs</Link></li>
                             </ul>
                         </li>
                     </ul>
+                    <button
+                      onClick={() => navigate('/contact')}
+                      className='w-full rounded-md py-2 mt-10 mb-4 outline-none text-white whitespace-nowrap bg-[linear-gradient(45deg,#0146cc,#012d82)] hover:bg-[linear-gradient(45deg,#025aff,#0146cc)] text-sm  md:text-base transition-all duration-500 ease-linear cursor-pointer'
+                    >
+                      <span>
+                        Book a meeting
+                      </span>
+                    </button>
                 </div>
             </div>
     }

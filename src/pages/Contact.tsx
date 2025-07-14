@@ -1,13 +1,40 @@
 import heroImg from "../assets/contactHeroImg.webp"
 import map from "../assets/map.webp"
 import axelCyer from "../assets/axel-cyber-transparent-logo.webp"
-import { lazy, Suspense } from "react";
+import { ChangeEvent, FormEvent, lazy, Suspense, useState } from "react";
 
 const FaXTwitter = lazy(() => import("lucide-react").then(module => ({ default: module.Twitter })))
 const FaYoutube = lazy(() => import("lucide-react").then(module => ({ default: module.Youtube })))
 const FaLinkedin = lazy(() => import("lucide-react").then(module => ({ default: module.Linkedin })))
 
 export default function Contact() {
+    const [formObj, setFormObj] = useState({
+        fullName: "",
+        email: "",
+        subject: "",
+        message: ""
+    })
+    const { fullName, email, subject, message } = formObj;
+
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;   
+        setFormObj(prev => ({
+            ...prev,
+            [name]: value
+        }))
+    }
+
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        const subject = encodeURIComponent(`${formObj.subject} from ${formObj.fullName}`);
+        const body = encodeURIComponent(formObj.message)
+        const email = 'info@axelcyber.com';
+
+        const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+
+        window.location.href = mailtoLink;
+    }
+
   return (
     <main className="w-[90%] max-w-screen-xl mx-auto">
         <section className='relative my-8 sm:my-10 md:my-12 lg:my-16'>
@@ -36,7 +63,7 @@ export default function Contact() {
                 <div className='flex rounded-lg flex-row py-2 px-4 gap-2 items-center border border-[#e1e5e7] inline-block'>
                     <p className='text-xs'>Get in Touch</p>
                 </div>
-                <p className='text-4xl font-semibold pr-0 w-auto lg:w-[400px] my-4 md:my-6 lg:my-8'>We are always readsy to help you answer your questions</p>
+                <p className='text-4xl font-semibold pr-0 w-auto lg:w-[400px] my-4 md:my-6 lg:my-8'>We are always ready to help you answer your questions</p>
                 <p className='text-base text-[#646464] mb-6 md:mb-8 lg:mb-12'>At Lexxa, we live at the forefront of ML/AI research to bring the latest advancements in language AI to our platform.</p>
                 <div className='grid grid-cols-1 md:grid-cols-2 justify-between gap-8 lg:gap-10'>
                     <div>
@@ -72,16 +99,47 @@ export default function Contact() {
             <div className='rounded-xl flex-1 bg-[#f1f2f4] py-4 sm:py-6 md:py-8 lg:py-10 px-4 md:px-6 lg:px-8'>
                 <p className='text-3xl font-semibold mb-4 md:mb-6'>Get in Touch</p>
                 <p className='text-[#646464] mb-4 md:mb-6'>Define your goals and indentify areas where AI can add value to your business</p>
-                <form action="">
+                <form onSubmit={handleSubmit}>
                     <label className='block text-black text-xl' htmlFor="">Full name</label>
-                    <input className='block mb-4 pb-1 border-t-0 border-l-0 border-r-0 border-b-2 border-[#c0c0c0]' type="text" />
+                    <input 
+                        className='block text-black mb-4 pb-1 border-t-0 border-l-0 border-r-0 border-b-2 border-[#c0c0c0]' 
+                        type="text"
+                        name="fullName"
+                        value={fullName}
+                        onChange={handleChange}
+                    />
                     <label className='block text-black text-xl' htmlFor="">Email</label>
-                    <input className='block mb-4 pb-1 border-t-0 border-l-0 border-r-0 border-b-2 border-[#c0c0c0]' type="email" />
+                    <input 
+                        className='block text-black mb-4 pb-1 border-t-0 border-l-0 border-r-0 border-b-2 border-[#c0c0c0]' 
+                        type="email" 
+                        name="email"
+                        value={email}
+                        onChange={handleChange}
+                        />
                     <label className='block text-black text-xl' htmlFor="">Subject</label>
-                    <input className='block mb-4 pb-1 border-t-0 border-l-0 border-r-0 border-b-2 border-[#c0c0c0]' type="text" />
+                    <input 
+                        className='block text-black mb-4 pb-1 border-t-0 border-l-0 border-r-0 border-b-2 border-[#c0c0c0]' 
+                        type="text" 
+                        name="subject"
+                        value={subject}
+                        onChange={handleChange}
+                    />
                     <label className='block text-black text-xl' htmlFor="">Message</label>
-                    <textarea className='block mb-8 pb-1 border-t-0 border-l-0 border-r-0 border-b-2 border-[#c0c0c0]' name="" id="" cols={30} rows={10}></textarea>
-                    <button className='bg-[linear-gradient(135deg,#002366,#0046cc)] py-3 px-8 acitive:opacity-85 hover:opacity-85 rounded-md text-white cursor-pointer trnasition-all duration-300 ease-linear'>
+                    <textarea 
+                        className='block text-black mb-8 pb-1 border-t-0 border-l-0 border-r-0 border-b-2 border-[#c0c0c0]'
+                        name="message"
+                        value={message}
+                        onChange={handleChange} 
+                        id="" 
+                        cols={30} 
+                        rows={10}
+
+                    >
+                    </textarea>
+                    <button
+                        type="submit"
+                        className='bg-[linear-gradient(135deg,#002366,#0046cc)] py-3 px-8 acitive:opacity-85 hover:opacity-85 rounded-md text-white cursor-pointer trnasition-all duration-300 ease-linear'
+                    >
                         Send a message
                     </button>
                 </form>

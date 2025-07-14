@@ -41,10 +41,10 @@ export default function Blogs({ image, title, description, date, author, topic, 
       transition={{delay:0.25, ease: "easeInOut" }}
       viewport={{ once: true }} 
       className='flex-1 rounded-lg hover:shadow-lg active:shadow-lg transition-all duration-300 ease-linear'>
-      <div className='w-full'>
-        <img style={{aspectRatio: "2/1"}} className='block w-full' src={image} alt={title} />
+      <div className='w-full aspect-[2/1]'>
+        <img className='block w-full h-full object-cover rounded-xl' src={image} alt={title} />
       </div>
-      <div className='px-2 pb-2'>
+      <div className='px-4 pb-4'>
       <p className='py-2 text-base text-[#797979]'>{author} - {timeStamp}</p>
       <div className='flex justify-between gap-4'>
         <p className='text-xl font-semibold pb-2'>{title}</p>
@@ -56,7 +56,7 @@ export default function Blogs({ image, title, description, date, author, topic, 
       <div className='flex flex-row gap-4 items-center'>
         {
           topicArray.map((item, index) => (
-            <p key={index} className='px-4 py-1 rounded-md text-white bg-[linear-gradient(456deg,#014594,#0181f1)]'>{item}</p>
+            <p key={index} className='px-3 py-1 rounded-md text-white bg-[linear-gradient(456deg,#014594,#0181f1)]'>{item}</p>
           ))
         }
         

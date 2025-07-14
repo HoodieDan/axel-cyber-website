@@ -3,25 +3,43 @@ import avatar from "../assets/Avatar.png"
 import BlogsComp from '@/components/BlogsComp';
 import { useContextValue } from '@/context';
 import axios from 'axios';
-import { ChangeEvent, lazy, Suspense, useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
+import BlogHeroComp from '@/components/BlogHeroComp';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 const HiArrowNarrowRight = lazy(() => import("lucide-react").then(module => ({ default: module.MoveRight })))
-const IoIosSearch = lazy(() => import("lucide-react").then(module => ({ default: module.Search })))
+
 
 export default function Blog() {
-    const endpoint = "https://veoc-tech-cms.vercel.app/api/article"
-    const {articles, setArticles} = useContextValue()
+    const endpoint = "https://axel-cyber.vercel.app/api/article"
+    const {articles, setArticles,currentIndex, setCurrentIndex} = useContextValue()
     const [loading,setLoading] = useState<boolean>(true)
-    const [keyword,setKeyWord] = useState<string>("")
+    
 
-    const handleSearch = (e: ChangeEvent<(HTMLInputElement)>) => {
-        const value = e.target.value
-        setKeyWord(value)
-        const filteredArticles = articles.filter((article:any)=>{
-            return article.title.toLowerCase().includes(value.toLowerCase())
-        })
-        setArticles(filteredArticles)
-    }
+    const colorArray =  [
+        {
+            bg:"#f9f5ff",
+            color: "#6941c6"
+        }, 
+        {
+            bg: "#eef4ff",
+            color: "#3538cd"
+        },
+        {
+            bg: "#fdf2fa",
+            color: "#c11574"
+        }
+    ]
+
+
+    // const handleSearch = (e: ChangeEvent<(HTMLInputElement)>) => {
+    //     const value = e.target.value
+    //     setKeyWord(value)
+    //     const filteredArticles = articles.filter((article:any)=>{
+    //         return article.title.toLowerCase().includes(value.toLowerCase())
+    //     })
+    //     setArticles(filteredArticles)
+    // }
 
     const SkeletonLoader = () => {
         return (
@@ -40,10 +58,18 @@ export default function Blog() {
     const fetchArticles = async () => {
         try{
             const response = await axios.get(endpoint)
-            setLoading(false)
             if(response.status === 200){
-                setArticles(response.data.articles)
-                sessionStorage.setItem("articles", JSON.stringify(response.data.articles))
+                const articles = response.data.articles
+                const numOfPages = Math.ceil(articles.length / 6)
+                const paginatedArticles = []
+                for(let i = 0; i < numOfPages; i++){
+                    paginatedArticles.push(articles.slice(i * 6, (i + 1) * 6))
+                }
+                console.log(paginatedArticles)
+                setArticles([...paginatedArticles])
+                setLoading(false)
+                sessionStorage.setItem("articles", JSON.stringify([...paginatedArticles]))
+
             }else{
                 setArticles([])
             }
@@ -67,23 +93,75 @@ export default function Blog() {
     },[])
 
   return (
-    <main className='w-[90%] max-w-screen-xl mx-auto'>
-        <div className='py-4 my-6 lg:my-8 xl:my-10 flex flex-col md:flex-row  justify-between gap-2 md:items-center'>
-            <p className='text-2xl md:text-3xl lg:text-4xl font-semibold'>Latest Articles Blog</p>
-            <div className='relative w-full md:w-[300px]'>
-                <input 
-                    className='w-full py-2 pr-2 md:py-3 md:pr-3 text-xl leading-none pl-10 rounded-md border border-[#0046cc]' 
-                    type='text'
-                    value={keyword}
-                    onChange={handleSearch}
-                    placeholder='search'
-                />
-                <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
-                    <IoIosSearch className='absolute h-6 w-6 left-3 top-[50%] -translate-y-[50%]' />
-                </Suspense>
+    <>
+    <BlogHeroComp />
+    <section className='w-[90%] max-w-screen-xl mx-auto'>
+        <p className='text-base text-black text-xl'>What we do</p>
+        <p className='text-3xl font-semibold mb-3'>Popular Articles</p>
+        <div className="flex flex-col md:flex-row gap-6 md:gap-8 mb-8 lg:mb-16">
+            {
+                loading
+                ? <SkeletonLoader />
+                : articles.length > 0
+                ? (
+                    <div className='flex-1'>
+                        <img 
+                            src={articles[0][0].coverImage}
+                            alt="popular article"
+                            width={400}
+                            height={300}
+                            className='w-full object-cover aspect-[2/2.25] sm:aspect-[3/2.30] rounded-3xl block'
+                        />
+                        <p className='py-2 text-2xl font-semibold'>{articles[0][0].title}</p>
+                        {
+                            articles[0][0].tags.split(", ").map((tag,index )=>{
+                                const number = index % colorArray.length
+                                return (
+                                    <p key={index} className='inline px-2 py-1 rounded-full text-base font-semibold' style={{backgroundColor: colorArray[number].bg, color: colorArray[number].color}}>{tag}</p>
+                                )
+                            })
+                        }
+                    </div>
+                )
+                : <></>
+            }
+            <div className='flex-[1.25] flex flex-col gap-4 lg:gap-6'>
+                {
+                    !loading && articles[0].slice(1, 4).map((article, index) => {
+                        return (
+                            <div key={index} className='flex flex-col sm:flex-row gap-6'>
+                                <div className='flex-1'>
+                                    <img 
+                                        src={article.coverImage}
+                                        alt="articleimage"
+                                        className='aspect-[3/1] sm:aspect-[1/1] rounded-lg sm:rounded-none w-full h-full object-cover'
+                                        width={150}
+                                        height={150}
+                                    />
+                                </div>
+                                <div className='flex-[1.65]'>
+                                    <p className='text-3xl mb-3 font-semibold'>{article.title}</p>
+                                    <p className='text-xl text-[#727272] mb-4'>{article.content[0].paragraphText.substring(0,200)}...</p>
+                                    {
+                                        article.tags.split(", ").map((tag, index) => {
+                                            const number = index % colorArray.length
+                                            return (
+                                                <p key={index} className='inline px-2 py-1 rounded-full text-base font-semibold' style={{backgroundColor: colorArray[number].bg, color: colorArray[number].color}}>{tag}</p>
+                                            )
+                                        })
+                                    }
+
+                                </div>
+                            </div>
+                        )
+                    })
+                }
             </div>
         </div>
-        <div className='overflow-scroll lg:overflow-hidden md:w-full mb-4 md:mb-6 lg:mb-10 flex rounded-tl-full rounded-bl-full md:rounded-full flex-row px-2 md:px-2 py-1 md:py-2 justify-between items-center bg-[#e3e7ea] '>
+    </section>
+    <main className='w-[90%] max-w-screen-xl mx-auto'>
+        <p className='text-3xl font-semibold mb-4 lg:mb-6'>Latest Articles Blog</p>
+        <div className='overflow-scroll lg:overflow-hidden md:w-full mb-4 md:mb-6 lg:mb-10 flex rounded-tl-full rounded-bl-full md:rounded-full flex-row px-2 md:px-1.5 py-1 md:py-1.5 justify-between items-center bg-[#e3e7ea] '>
             <p className='cursor-pointer shrink-0 md:flex-1 text-center rounded-full hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] p-2 md:p-3 text-xs hover:text-white text-[#4c5c75]'>Financial Services Sector</p>
             <p className='cursor-pointer shrink-0 md:flex-1 text-center rounded-full hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] p-2 md:p-3 text-xs hover:text-white text-[#4c5c75]'>Healthcare and Med Sciences Sector </p>
             <p className='cursor-pointer shrink-0 md:flex-1 text-center rounded-full hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] p-2 md:p-3 text-xs hover:text-white text-[#4c5c75]'>Manufacturing Sector</p>
@@ -98,9 +176,9 @@ export default function Blog() {
                         <SkeletonLoader />
                     </div>
                 ) : articles.length > 0 ? (
-                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 pb-8 lg:pb-14 border-b-2 border-b-[#e4e7ec]'>
                     {
-                    articles.map((article:any, index:number) => {
+                    articles[currentIndex].slice(0,6).map((article:any, index:number) => {
                         return (
                             <BlogsComp 
                                 key={index}
@@ -124,6 +202,57 @@ export default function Blog() {
                     </div>
                 )
             }
+        <div className='flex flex-row justify-between items-center pt-4 pb-12'>
+            <div
+                onClick={() => {
+                    if(currentIndex > 0) {
+                        setCurrentIndex(currentIndex - 1)
+                    }
+                }} 
+                className={`flex flex-row gap-1 sm:gap-2 items-center cursor-pointer ${currentIndex > 0 ? "text-[#032d7f]" : "text-[#667085]"}`}
+                >
+                <ArrowLeft className='size-5 sm:size-7' />
+                <span className='text-base sm:text-xl font-semibold'>Previous</span>
+            </div>
+            <div className='hidden sm:flex flex-row gap-2 items-center'>
+                {
+                    articles.map((_,index)=>{
+                        return (
+                            <span 
+                                key={index}
+                                onClick={() => setCurrentIndex(index)} 
+                                className='flex justify-center items-center py-2 px-4 rounded-md text-[#667085] text-base font-semibold cursor-pointer hover:bg-[#e3edff] hover:text-[#002366]'>
+                                {index + 1}
+                            </span>
+                        )
+                    })
+                }
+            </div>
+            <div className='flex sm:hidden flex-row gap-2 items-cetner'>
+                {
+                    articles.map((_,index)=>{
+                        return (
+                            <span 
+                                key={index} 
+                                onClick={() => setCurrentIndex(index)}
+                                className='flex justify-center items-center py-2 px-4 rounded-md text-[#667085] text-base font-semibold cursor-pointer hover:bg-[#e3edff] hover:text-[#002366]'>
+                                {index + 1}
+                            </span>
+                        )
+                    })
+                }
+            </div>
+            <div
+                onClick={() => {
+                    if(currentIndex < articles.length - 1) {
+                        setCurrentIndex(currentIndex + 1)
+                    }
+                }}
+                className={`flex flex-row gap-1 sm:gap-2 items-center cursor-pointer ${currentIndex === articles.length - 1 ? "text-[#667085]" : "text-[#032d7f]"}`}>
+                <span className='text-base sm:text-xl font-semibold'>Next</span>
+                <ArrowRight className='size-5 sm:size-7' />
+            </div>
+        </div>
         <Cta 
             title="Secure your company's future by Partnering with Axel Cyber" 
             action='Book a call'
@@ -133,5 +262,6 @@ export default function Blog() {
             </Suspense>
         </Cta>
     </main>
+    </>
   )
 }
