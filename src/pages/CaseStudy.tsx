@@ -12,7 +12,7 @@ const HiArrowNarrowRight = lazy(() => import("lucide-react").then(module => ({ d
 
 export default function CaseStudy() {
   return (
-    <main className="w-[90%] max-w-screen-xl mx-auto">
+    <main className="px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto">
         <section className='bg-[#fafafa] pb-4 md:pb-6 pt-16 lg:pt-20 lg:pb-8'>
             <div className='flex flex-col md:flex-row gap-8 md:gap-10 bg-white mb-4 md:mb-6'>
                 <div className='flex-1 lg:flex-[1.15] relative'>
@@ -72,7 +72,7 @@ export default function CaseStudy() {
                 />
             </div>
         </section>
-        <section className='pb-6 md:pb-10 lg:pb-14 h-[1200px] md:h-[550px] 2xl:h-[900px] flex flex-col md:flex-row gap-8'>
+        <section className='pb-6 md:pb-10 lg:pb-20 xl:pb-40 h-[1200px] md:h-[550px] 2xl:h-[900px] flex flex-col md:flex-row gap-8'>
             <div className='flex-[1.5] md:flex-1 rounded-2xl bg-[linear-gradient(90deg,#012772,#0046cc)]'></div>
             <div className='flex-1 flex flex-col gap-8'>
                 <div className='flex-1 rounded-2xl bg-[linear-gradient(90deg,#012772,#0046cc)]'></div>
@@ -80,7 +80,7 @@ export default function CaseStudy() {
             </div>
         </section>
         <Cta 
-            title="Secure your company's future by Partnering with Axel Cyber" 
+            title={<>Secure your company's future by<br /> Partnering with Axel Cyber</>}
             action='Book a call'
         >
             <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>

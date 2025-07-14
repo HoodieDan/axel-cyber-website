@@ -1,22 +1,11 @@
 import {motion} from "motion/react"
 import { lazy, Suspense } from "react";
-import { useNavigate } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import { Mail, Instagram, Linkedin } from "lucide-react";
 const BsArrowDownRight = lazy(() =>
     import("lucide-react").then(module => ({ default: module.MoveDownRight }))
 )
 
-const CiInstagram = lazy(() =>
-    import("lucide-react").then(module => ({ default: module.Instagram }))
-)
-
-const FaXTwitter = lazy(() =>
-    import("lucide-react").then(module => ({ default: module.Twitter }))
-)
-
-const MdEmail = lazy(() =>
-    import("lucide-react").then(module => ({ default: module.Mail }))
-)
 
 export default function Footer() {
     const navigate = useNavigate()
@@ -37,7 +26,7 @@ export default function Footer() {
         className='w-[90%] max-w-screen-xl mx-auto py-10 lg:py-12'
     >
         <div className='relative flex flex-row justify-between border-b-2 border-b-[#3084da] mb-8'>
-            <p className='text-2xl 2xl:w-auto font-semibold'>Let's Connects and<br/> work together</p>
+            <p className='text-2xl lg:text-3xl xl:text-4xl font-medium'>Let's connects and<br/> work together</p>
             <div className="h-[125px] md:h-[150px] lg:h-[200px] 2xl:h-[300px] w-[125px] md:w-[150px] lg:w-[200px] 2xl:w-[400px]">
                 <div className="relative translate-y-[32.5%] md:translate-y-[25%] h-full w-full">
                     <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
@@ -55,25 +44,25 @@ export default function Footer() {
         <div className='flex flex-col md:flex-row gap-6 items-start md:items-center'>
             <a
                 href="mailto:info@axelcyber.com"
-                className="hover:opacity-85 active:opacity-85 px-8 py-2.5 rounded-3xl flex flex-row items-center justify-center gap-2 border-[1.5px] text-[#404040] border-[#404040] transition-opacity duration-300 ease-in-out cursor-pointer"
+                className="hover:opacity-85 active:opacity-85 px-6 py-2 rounded-xl flex flex-row items-center justify-center gap-2 border-[1.5px] text-[#404040] border-[#404040] transition-opacity duration-300 ease-in-out cursor-pointer"
             >
                 <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
-                    <MdEmail />
+                    <Mail className="size-4" />
                 </Suspense>
                 <p>info@axelcyber.com</p>
             </a> 
             <a target="_blank"  href="https://www.instagram.com/axelcyberltd">
-                <div className='hover:opacity-85 active:opacity-85 px-8 py-2.5 rounded-3xl flex flex-row items-center justify-center gap-2 border-[1.5px] text-[#404040] border-[#404040] transition-opacity duration-300 ease-in-out cursor-pointer'>
+                <div className='hover:opacity-85 active:opacity-85 px-6 py-2 rounded-xl flex flex-row items-center justify-center gap-2 border-[1.5px] text-[#404040] border-[#404040] transition-opacity duration-300 ease-in-out cursor-pointer'>
                     <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
-                        <CiInstagram aria-hidden="true" focusable="false" />         
+                        <Instagram aria-hidden="true" focusable="false" className="size-4" />         
                     </Suspense>
                     <p>axelcyberltd</p>
                 </div>
             </a>
             <a target="_blank" href="https://www.twitter.com/axelcyberltd">
-                <div className='hover:opacity-85 active:opacity-85 px-8 py-2.5 rounded-3xl flex flex-row items-center justify-center gap-2 border-[1.5px] text-[#404040] border-[#404040] transition-opacity duration-300 ease-in-out cursor-pointer'>
+                <div className='hover:opacity-85 active:opacity-85 px-6 py-2 rounded-xl flex flex-row items-center justify-center gap-2 border-[1.5px] text-[#404040] border-[#404040] transition-opacity duration-300 ease-in-out cursor-pointer'>
                     <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
-                        <FaXTwitter />
+                        <Linkedin aria-hidden="true" focusable="false" className="size-4" />
                     </Suspense>
                     <p>lexxadesigns</p>
                 </div>

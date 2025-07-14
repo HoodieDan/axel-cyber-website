@@ -173,7 +173,7 @@ export default function Services() {
     const navigate = useNavigate()
   return (
     <main>
-        <section className="w-[90%] max-w-screen-xl mx-auto service-section relative mb-60 mt-10 sm:mb-40 md:mt-10 md:mb-32 lg:mt-12 lg:mb-24 bg-white">
+        <section className="px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto service-section relative mb-60 mt-10 sm:mb-40 md:mt-10 md:mb-32 lg:mt-12 lg:mb-24 bg-white">
             <img  
                 src={serviceHeroImg} 
                 alt="hero image" 
@@ -203,21 +203,21 @@ export default function Services() {
                     navigate("/contact")
                     window.scrollTo({top: 0, behavior: "smooth"})
                 }}
-                className="mx-auto block px-6 py-2 text-black text-base md:text-xl font-semibold rounded-full bg-white hover:bg-transparent active:bg-transparent hover:border-2 active:border-2 hover:border-white active:border-white hover:text-white active:text-white transition-all duration-300 ease-linear cursor-pointer">
+                className="mx-auto block px-6 py-3 text-black text-base font-semibold rounded-2xl bg-white hover:bg-transparent active:bg-transparent hover:border-2 active:border-2 hover:border-white active:border-white hover:text-white active:text-white transition-all duration-300 ease-linear cursor-pointer">
                 Request a Demo
                 {" "}
                 <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
-                    <ArrowUpRight className='inline size-4' />
+                    <ArrowUpRight className='inline size-4 ml-2' />
                 </Suspense>
             </button>
             </div>
-            <div className="w-[85%] md:w-[70%] absolute top-[100%] -translate-y-[20%] md:-translate-y-[50%] left-[50%] -translate-x-[50%] bg-white py-5 rounded-md shadow-lg">
-                <p className='text-center font-semibold text-xl text-black mb-4 justify-items-center '>Trusted by Industry Leaders:</p>
-                <div className="grid grid-cols-2 sm:grid-cols-6 gap-6 px-8">
+            <div className="w-[85%] md:w-[70%] absolute top-[100%] -translate-y-[20%] md:-translate-y-[50%] left-[50%] -translate-x-[50%] bg-white pb-5 pt-7 rounded-md shadow-lg">
+                <p className='text-center font-bold text-base text-black mb-4 justify-items-center '>Trusted by Industry Leaders:</p>
+                <div className="grid grid-cols-2 sm:grid-cols-6 gap-6 px-8 lg:px-20">
                     <img 
                         src={goldfrapp} 
                         alt="ibm"
-                        className='w-[100px] h-[25px]'
+                        className='w-[75px] h-[20px]'
                         loading='lazy'
                         width={90}
                         height={24}
@@ -225,7 +225,7 @@ export default function Services() {
                     <img 
                         src={pencil} 
                         alt="hulu"
-                        className='w-[100px] h-[25px]'
+                        className='w-[75px] h-[20px]'
                         loading='lazy'
                         width={90}
                         height={24}
@@ -234,54 +234,54 @@ export default function Services() {
                         src={volume} 
                         alt="goldfrapp" 
                         loading='lazy'
-                        className='w-[100px] h-[25px]'
+                        className='w-[75px] h-[20px]'
                         width={90}
                         height={24}
-                        />
-                    <img 
-                        src={ibm} 
-                        alt="pencil" 
-                        loading='lazy'
-                        className='w-[100px] h-[25px]'
-                        width={90}
-                        height={24}    
-                        />
-                    <img 
-                        src={hulu} 
-                        alt="volume" 
-                        loading='lazy'
-                        className='w-[100px] h-[25px]'
-                        width={90}
-                        height={24}
-                        />
+                    />
                     <img 
                         src={information} 
                         alt="information" 
                         loading='lazy'
-                        className='w-[100px] h-[25px]'
+                        className='w-[75px] h-[20px]'
                         width={90}
                         height={24}
-                        />
+                    />
+                    <img 
+                        src={ibm} 
+                        alt="pencil" 
+                        loading='lazy'
+                        className='w-[75px] h-[16px]'
+                        width={90}
+                        height={24}    
+                    />
+                    <img 
+                        src={hulu} 
+                        alt="volume" 
+                        loading='lazy'
+                        className='w-[75px] h-[16px]'
+                        width={90}
+                        height={24}
+                    />
                 </div>
             </div>
         </section>
         <section className='bg-[#ffffff]'>
-            <div className='w-[90%] max-w-screen-xl mx-auto pb-10 pt-6 sm:py-8 md:py-10 lg:py-12'>
+            <div className='px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto pb-10 pt-6 sm:py-8 md:py-10 lg:py-12'>
             <div className='flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10'>
-                <div className='flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center justify-center border-2 border-[#e1e5e7]'>
+                <div className='flex rounded-lg flex-row p-2 gap-2 items-center justify-center border-2 border-[#e1e5e7]'>
                     <img 
                         className='shrink-0 text-base 2xl:text-xl' 
                         src={"/stars.png"} 
                         alt="stars" 
                         loading='lazy'
-                        width={24}
-                        height={24}    
+                        width={16}
+                        height={16}    
                     />
-                    <p className='text-sm sm:text-base 2xl:text-xl' >CAPBILITIES</p>
+                    <p className='text-sm leading-none' >CAPBILITIES</p>
                 </div>
             </div>
-            <p className='w-auto md:w-[600px] 2xl:w-auto text-center text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
-                Our AI-powered Assistant solutions for your business
+            <p className='text-center text-3xl lg:text-4xl mx-auto font-bold mb-6 sm:mb-8 md:mb-10 lg:mb-12'>
+                Our AI-powered Assistant<br /> solutions for your business
             </p>
             <div className='mb-4 md:mb-6 lg:mb-10 flex rounded-md lg:rounded-xl flex-row px-2 py-2 gap-4 md:gap-0 md:justify-between items-center bg-[#e3e7ea] w-full md:w-auto overflow-x-auto md:overflow-x-hidden'>
                 <p onClick={()=>setIndex(0)} className={`shrink-0 ${index == 0 ? "bg-[linear-gradient(45deg,#032D7F,#0241BA)] text-white" : "bg-transparent"} md:flex-1 text-center rounded-md active:bg-[linear-gradient(45deg,#032D7F,#0241BA)] hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] py-2 px-2 text-xs md:text-sm hover:text-white text-[#4c5c75] cursor-pointer`}>Boost Operational Efficiency</p>
@@ -298,7 +298,7 @@ export default function Services() {
             />
             </div>
         </section>
-        <section className='w-[90%] max-w-screen-xl mx-auto py-10 sm:py-8 md:py-10 lg:py-12'>
+        <section className='px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto py-10 sm:py-8 md:py-10 lg:py-12'>
             <div className='flex justify-center mb-8 lg:mb-10'>
                 <div className='flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
                     <img 
@@ -306,14 +306,14 @@ export default function Services() {
                         src={laptop} 
                         alt="laptop" 
                         loading='lazy'
-                        width={24}
-                        height={24}
+                        width={16}
+                        height={16}
                         />
-                    <p className='text-sm sm:text-base 2xl:text-xl'>BENEFITS</p>
+                    <p className='text-sm'>BENEFITS</p>
                 </div>
             </div>
-            <p className='w-auto md:w-[500px] 2xl:w-auto text-center text-3xl mx-auto lg:text-4xl xl:text-5xl font-bold mb-10 lg:mb-12'>
-                Enterprise-grade AI Benefits
+            <p className='text-center text-3xl lg:text-4xl font-bold mb-10 lg:mb-12'>
+                Enterprise-grade AI<br /> Benefits
             </p>
             <div className='flex flex-col md:flex-row gap-6'>
                 <AiBenefit 
@@ -339,18 +339,18 @@ export default function Services() {
             </div>
         </section>
         <section className='bg-[#f9f9f9] mb-8 lg:mb-10 xl:mb-12'>
-            <div className='w-[90%] max-w-screen-xl mx-auto py-10 lg:py-12'>
+            <div className='px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto py-10 lg:py-12'>
             <div className='flex justify-center mb-6 sm:mb-8 md:mb-10 lg:mb-14'>
-                <div className='flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
+                <div className='flex rounded-lg flex-row p-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
                     <img 
                         className='shrink-0' 
                         src={"/stars.png"} 
                         alt="stars" 
                         loading='lazy'
-                        width={24}
-                        height={24}
+                        width={16}
+                        height={16}
                         />
-                    <p className='text-sm sm:text-base 2xl:text-xl'>DEPLOYMENT OPTIONS</p>
+                    <p className='text-sm'>DEPLOYMENT OPTIONS</p>
                 </div>
             </div>
             <div className='mb-4 md:mb-6 lg:mb-10'>
@@ -373,9 +373,9 @@ export default function Services() {
             </div>
             </div>
         </section>
-        <section className='w-[90%] max-w-screen-xl mx-auto bg-[#f9f9f9] py-10 lg:py-12'>
+        <section className='px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto bg-[#f9f9f9] py-10 lg:py-12'>
             <div className='flex justify-center mb-12 lg:mb-16'>
-                <div className='flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
+                <div className='flex rounded-lg flex-row p-2 gap-2 items-center border-2 border-[#e1e5e7]'>
                     <img 
                         className='shrink-0' 
                         src={"/stars.png"} 
@@ -384,7 +384,7 @@ export default function Services() {
                         width={24}
                         height={24}
                         />
-                    <p className='text-sm sm:text-base 2xl:text-xl'>CUSTOMER STORIES</p>
+                    <p className='text-sm'>CUSTOMER STORIES</p>
                 </div>
             </div>
             <Swiper 
@@ -426,10 +426,10 @@ export default function Services() {
         </section>
         <section className='w-[90%] max-w-screen-xl mx-auto'>
         <Cta
-            title="Secure your compsny's future by patnering wuth Axel cyber" 
+            title={<>Secure your compsny's future by<br />patnering wuth Axel cyber</>} 
             action='Request a Demo'
         >
-            <ArrowUpRight className='inline size-4 ' />
+            <ArrowUpRight className='inline size-4' />
         </Cta>
         </section>
     </main>

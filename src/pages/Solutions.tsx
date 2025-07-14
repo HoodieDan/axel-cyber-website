@@ -11,7 +11,7 @@ import rocket from "../assets/rocket.png"
 import Cta from '@/components/Cta';
 import AiServices from "@/components/AiServices";
 import { lazy, Suspense, useRef, useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 
 const IoIosArrowDroprightCircle = lazy(() =>
     import("lucide-react").then(module => ({ default: module.ChevronRight  }))
@@ -21,6 +21,7 @@ const HiArrowNarrowRight = lazy(() =>
 )
 
 export default function Solutions() {
+    const navigate = useNavigate()
     const paraRef = useRef<HTMLParagraphElement>(null)
     const [index, setIndex] = useState(0)
     const solution = [
@@ -70,7 +71,15 @@ export default function Solutions() {
                     height={525}    
                 />
                 <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
-                    <div className="absolute bottom-0 right-0 flex justify-center items-center h-16 w-16 bg-[#080f44] rounded-full">
+                    <div
+                        onClick={() => {
+                            navigate("/case-study");
+                            window.scrollTo({
+                                top: 0,
+                                behavior: 'smooth'
+                            })
+                        }}
+                        className="absolute bottom-0 right-0 flex justify-center items-center h-16 w-16 bg-[#080f44] rounded-full">
                         <IoIosArrowDroprightCircle className='h-12 w-12 cursor-pointer text-white' />
                     </div>
             
@@ -80,10 +89,10 @@ export default function Solutions() {
     }
 
   return (
-    <main className="w-[90%] max-w-screen-xl mx-auto">
+    <main className="px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto">
         <section className="bg-white py-10 lg:py-12">
-            <p className='text-center md:text-start text-3xl lg:text-4xl xl:text-5xl font-semibold my-6 md:my-8 w-auto lg:w-[600px] xl:w-[950px] 2xl:w-auto'>
-                We Are Commited To Creating The Future Of Artifiicial Intelligence
+            <p className='text-center md:text-start text-3xl lg:text-4xl font-semibold my-6 md:my-8 w-auto'>
+                We Are Commited To Creating The Future Of<br /> Artifiicial Intelligence
             </p>
             <p className='mb-4 block md:hidden text-base'>
                 Witness some of the great works we've done for our amazing clients around the world, with great design story
@@ -115,7 +124,7 @@ export default function Solutions() {
         </section>
         <section className="bg-[#fafafa] py-6 sm:py-8 md:py-10 lg:py-12">
             <div className="flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10">
-                <div className="flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]">
+                <div className="flex rounded-lg flex-row p-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]">
                     <img 
                         className="shrink-0" 
                         src={"/stars.png"} 
@@ -124,17 +133,17 @@ export default function Solutions() {
                         width={16}
                         height={16}
                     />
-                    <p className="text-sm md:text-base 2xl:text-xl">CAPABILITIES</p>
+                    <p className="text-sm">CAPABILITIES</p>
                 </div>
             </div>
-            <p ref={paraRef} className="text-center text-3xl lg:text-4xl font-semibold md:w-[375px] lg:w-[450px] 2xl:w-auto mx-auto mb-4 sm:mb-6 md:mb-8 lg:mb-10" >Here's how Axel Cyber can solve your company's Problems</p>
+            <p ref={paraRef} className="text-center text-3xl lg:text-4xl font-semibold mx-auto mb-4 sm:mb-6 md:mb-8 lg:mb-10" >Here's how Axel Cyber can<br /> solve your company's Problems</p>
             <AiServices 
                 title={solution[index].title}
                 image={solution[index].image}
                 icon={solution[index].icon}
                 list= {solution[index].list}
             />
-            <div className="overflow-x-scroll sm:overflow-x-none mt-6 md:mt-8 lg:mt-10 flex flex-row gap-4 justify-start sm:justify-center items-center">
+            <div className="overflow-auto mt-6 md:mt-8 lg:mt-10 flex flex-row gap-4 justify-start sm:justify-center items-center">
                 <div className="shrink-0 group w-auto cursor-pointer" onClick={() =>{
                     paraRef.current?.scrollIntoView({ behavior: "smooth" })
                     if(index == 0) return
@@ -169,7 +178,7 @@ export default function Solutions() {
         </section>
         <section className="bg-white py-6 sm:py-8 md:py-10 lg:py-12 lg:pb-14">
             <div className="flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10">
-                <div className="flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]">
+                <div className="flex rounded-lg flex-row p-2 gap-2 items-center border-2 border-[#e1e5e7]">
                     <img 
                         className="shrink-0" 
                         src={"/stars.png"} 
@@ -178,7 +187,7 @@ export default function Solutions() {
                         width={16}
                         height={16}    
                     />
-                    <p className="text-sm md:text-base 2xl:text-xl">What we offer</p>
+                    <p className="text-sm leading-none">What we offer</p>
                 </div>
             </div>
             <p className='text-center text-2xl md:text-3xl font-semibold md:w-[350px] 2xl:w-auto mx-auto mb-4 sm:mb-6 md:mb-8 lg:mb-10'>The best solutions for the best Companies</p>

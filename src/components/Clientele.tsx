@@ -19,8 +19,8 @@ export default function Clientele() {
   return (
     <section className='py-6 sm:py-8 md:py-10 lg:py-12 flex flex-col md:flex-row gap-6 md:gap-0'>
         <div className='flex-1'>
-          <div className='flex justify-center md:justify-start mb-4 sm:mb-6 md:mb-8 lg:mb-10'>
-            <div className='flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7] 2xl:text-xl'>
+          <div className='flex justify-center md:justify-start mb-4 sm:mb-4 md:mb-6'>
+            <div className='flex rounded-lg flex-row p-2 gap-2 items-center border-2 border-[#e1e5e7]'>
               <img 
                 src={"/users.png"} 
                 alt="user" 
@@ -28,7 +28,7 @@ export default function Clientele() {
                 width={16}
                 height={16}
               />
-              <p>OUR CLIENTS</p>
+              <p className="text-sm leading-none">OUR CLIENTS</p>
             </div>
           </div>
           <motion.p
@@ -36,22 +36,22 @@ export default function Clientele() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.25, ease: "easeInOut" }}
             viewport={{ once: true }} 
-            className='w-auto lg:w-[400px] 2xl:w-auto text-[#002366] text-2xl md:text-3xl font-semibold'>
-            Several companies have trusted Axel Cybel for thier solutions
+            className='text-[#002366] text-2xl md:text-4xl font-semibold'>
+            Several companies have<br /> trusted Axel Cybel for thier<br /> solutions
           </motion.p>
-          <div className='hidden md:block mt-6 sm:mt-8 md:mt-10 lg:mt-12'>
+          <div className='hidden md:block mt-4 sm:mt-6 md:mt-8'>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35, ease: "easeInOut" }}
             viewport={{ once: true }}
-            className='mb-4 text-base text-[#666666] w-auto lg:w-[300px] 2xl:w-auto'>
-            <Suspense fallback={<span className="w-3 h-3 inline-block animate-pulse bg-gray-300 rounded-full" />}>
-               <FaQuoteLeft  className='fill-current text-xs inline rotate-180 -translate-y-1 size-3'/>
-            </Suspense>{" "}Working with us will unlock results that your deserves to experience
+            className='mb-2 text-base text-[#666666] '>
+            <Suspense fallback={<span className="w-2 h-2 inline-block animate-pulse bg-gray-300 rounded-full" />}>
+               <FaQuoteLeft  className='fill-current text-xs inline rotate-180 -translate-y-1 size-2'/>
+            </Suspense>{" "}Working with us will unlock results that<br /> your deserves to experience
             {" "}
             <Suspense fallback={<span className="w-3 h-3 inline-block animate-pulse bg-gray-300 rounded-full" />}>
-              <FaQuoteRight className='size-3 fill-current text-xs inline -translate-y-1' />
+              <FaQuoteRight className='size-2 fill-current text-xs inline -translate-y-1' />
             </Suspense>
           </motion.p>
           <motion.p
@@ -66,7 +66,7 @@ export default function Clientele() {
           </motion.p>
           </div>
         </div>
-        <div className='flex-1 grid grid-cols-2 md:grid-cols-3 content-around gap-6 md:gap-0'>
+        <div className='flex-1 grid grid-cols-2 md:grid-cols-3 content-around gap-4 md:gap-0'>
           <motion.img
             initial={{ scale: 0}}
             whileInView={{ scale: 1}}

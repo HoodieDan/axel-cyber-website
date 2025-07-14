@@ -82,7 +82,7 @@ function App() {
                             } 
                         />
                         <Route 
-                            path="/solutions" 
+                            path="/ai-works" 
                             element={
                             <Suspense fallback={<div></div>}>
                                 <Solutions />
@@ -90,7 +90,7 @@ function App() {
                             } 
                         />
                         <Route 
-                            path="/casestudy" 
+                            path="/case-study" 
                             element={
                                 <Suspense fallback={<div></div>}>
                                     <CaseStudy />

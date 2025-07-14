@@ -46,7 +46,7 @@ export default function BlogPage() {
             color: "#c11574"
         }
     ]
-    const endpoint = "https://veoc-tech-cms.vercel.app/api/article"
+    const endpoint = "https://axel-cyber.vercel.app/api/article"
     const { id } = useParams()
     const navigate = useNavigate()
     const [blog, setBlog] = useState<Blog>({
@@ -107,7 +107,7 @@ export default function BlogPage() {
             }
             getBlog()
         }
-    }, [id,blog])
+    }, [id])
 
   return (
     <main className="w-[90%] max-w-screen-xl mx-auto">

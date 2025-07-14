@@ -4,8 +4,8 @@ import { createContext, useContext, useState } from "react";
 interface ContextType {
     activeIndex: number,
     setActiveIndex: (index: number) => void,
-    articles: articleObj[],
-    setArticles: (articles: articleObj[]) => void
+    articles: articleObj[][],
+    setArticles: (articles: articleObj[][]) => void
 }
 
 const context = createContext<ContextType | undefined>(undefined)
@@ -34,7 +34,7 @@ interface articleObj{
 export const ContextProvider = ({children}: ContextProviderProps) => {
    
     const [activeIndex, setActiveIndex] = useState<number>(0);
-    const [articles, setArticles] = useState<articleObj[]>([])
+    const [articles, setArticles] = useState<articleObj[][]>([])
 
     return (
         <context.Provider value={{activeIndex, setActiveIndex,articles, setArticles}}>

@@ -4,7 +4,7 @@ import leftbottom from "../assets/leftbottom.png"
 import righttop from "../assets/righttop.png"
 import { useNavigate } from 'react-router-dom';
 interface Props{
-    title: string;
+    title: React.ReactNode,
     action: string;
     children: React.ReactNode;
 }
@@ -31,11 +31,11 @@ export default function Cta({title, action, children}: Props) {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{delay:0.25, ease: "easeInOut" }}
               viewport={{ once: true }} 
-              className="flex flex-col gap-4 items-center">
-            <p className='p-[10%] text-base sm:text-xl md:text-2xl lg:text-3xl text-center w-auto md:w-[450px] 2xl:w-auto font-semibold'>{title}</p>
+              className="flex flex-col gap-4 lg:gap-8 items-center">
+            <p className='text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center font-medium'>{title}</p>
             <button
               onClick={() => handleNavigation("/contact")} 
-              className='flex items-center gap-2 py-4 md:py-3 px-4 md:px-6 lg:px-8 bg-white text-black rounded-md hover:opacity-85 transition-all duration-300 ease-linear cursor-pointer'>
+              className='flex items-center gap-2 py-4 md:py-3 px-2 md:px-4 lg:px-6 bg-white text-black rounded-md hover:opacity-85 transition-all duration-300 ease-linear cursor-pointer'>
               {action}
               {" "}{children}
             </button>
