@@ -3,7 +3,7 @@ import avatar from "../assets/Avatar.png"
 import BlogsComp from '@/components/BlogsComp';
 import { useContextValue } from '@/context';
 import axios from 'axios';
-import { ChangeEvent, lazy, Suspense, useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import BlogHeroComp from '@/components/BlogHeroComp';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
@@ -14,7 +14,6 @@ export default function Blog() {
     const endpoint = "https://axel-cyber.vercel.app/api/article"
     const {articles, setArticles} = useContextValue()
     const [loading,setLoading] = useState<boolean>(true)
-    const [keyword,setKeyWord] = useState<string>("")
     const [activeIndex, setActiveIndex] = useState<number>(0)
     
 
@@ -34,14 +33,14 @@ export default function Blog() {
     ]
 
 
-    const handleSearch = (e: ChangeEvent<(HTMLInputElement)>) => {
-        const value = e.target.value
-        setKeyWord(value)
-        const filteredArticles = articles.filter((article:any)=>{
-            return article.title.toLowerCase().includes(value.toLowerCase())
-        })
-        setArticles(filteredArticles)
-    }
+    // const handleSearch = (e: ChangeEvent<(HTMLInputElement)>) => {
+    //     const value = e.target.value
+    //     setKeyWord(value)
+    //     const filteredArticles = articles.filter((article:any)=>{
+    //         return article.title.toLowerCase().includes(value.toLowerCase())
+    //     })
+    //     setArticles(filteredArticles)
+    // }
 
     const SkeletonLoader = () => {
         return (

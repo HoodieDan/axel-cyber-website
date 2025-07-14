@@ -1,6 +1,6 @@
 import {motion} from "motion/react"
 import { lazy, Suspense } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Mail, Instagram, Linkedin } from "lucide-react";
 const BsArrowDownRight = lazy(() =>
     import("lucide-react").then(module => ({ default: module.MoveDownRight }))

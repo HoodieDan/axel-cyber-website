@@ -1,7 +1,6 @@
 import { motion } from "motion/react"
 import { Menu, X } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
-import Logo from "/axel-logo.webp";
 import { useState } from "react"; 
 import { useLocation } from "react-router-dom";
 
