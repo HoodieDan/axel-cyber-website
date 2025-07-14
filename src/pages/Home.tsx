@@ -33,9 +33,15 @@ export default function Home() {
     const getArticles = async () => {
         try {
             const response = await axios.get(endpoint)
-            setArticles(response.data.articles)
-            setLoading(false)
-            sessionStorage.setItem("articles", JSON.stringify(response.data.articles))
+            const articles = response.data.articles
+                const numOfPages = Math.ceil(articles.length / 6)
+                const paginatedArticles = []
+                for(let i = 0; i < numOfPages; i++){
+                    paginatedArticles.push(articles.slice(i * 6, (i + 1) * 6))
+                }
+                setArticles([...paginatedArticles])
+                setLoading(false)
+                sessionStorage.setItem("articles", JSON.stringify([...paginatedArticles]))
         } catch (error) {
             setLoading(false)
             console.error("Error fetching articles:", error);
@@ -297,7 +303,7 @@ export default function Home() {
                         : articles.length > 0 ?
                         <Suspense fallback={<div className="w-full min-h-[300px] md:min-h-[400px] flex justify-center items-center"><span className="inline-block animate-pulse">loading...</span></div>}>
                         {
-                        articles[0].slice(0,3).map(({author,title,coverImage,description,date,tags,content, _id},idx)=>{
+                        articles[0].length > 0 && articles[0].slice(0,3).map(({author,title,coverImage,description,date,tags,content, _id},idx)=>{
                             return (
                                 <Blogs
                                     key={idx}
