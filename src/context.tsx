@@ -5,7 +5,9 @@ interface ContextType {
     activeIndex: number,
     setActiveIndex: (index: number) => void,
     articles: articleObj[][],
-    setArticles: (articles: articleObj[][]) => void
+    setArticles: (articles: articleObj[][]) => void,
+    currentIndex: number,
+    setCurrentIndex: (index: number) => void
 }
 
 const context = createContext<ContextType | undefined>(undefined)
@@ -35,9 +37,9 @@ export const ContextProvider = ({children}: ContextProviderProps) => {
    
     const [activeIndex, setActiveIndex] = useState<number>(0);
     const [articles, setArticles] = useState<articleObj[][]>([])
-
+    const [currentIndex, setCurrentIndex] = useState<number>(0)
     return (
-        <context.Provider value={{activeIndex, setActiveIndex,articles, setArticles}}>
+        <context.Provider value={{activeIndex, setActiveIndex,articles, setArticles, currentIndex, setCurrentIndex}}>
             {children}
         </context.Provider>
     )

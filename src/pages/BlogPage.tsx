@@ -29,7 +29,7 @@ interface Blog {
 }
 
 export default function BlogPage() {
-    const {setActiveIndex,activeIndex,articles} = useContextValue()
+    const {setActiveIndex,activeIndex,articles, currentIndex} = useContextValue()
     const [loading,setLoading] = useState<boolean>(false)
     let number = 0
     const colorArray =  [
@@ -101,7 +101,7 @@ export default function BlogPage() {
 
     useEffect(() => {
         if(id){
-            const index = articles.findIndex((item) => item._id === id)
+            const index = articles[currentIndex].findIndex((item) => item._id === id)
             if(index !== -1){
                 setActiveIndex(index)
             }
@@ -125,7 +125,7 @@ export default function BlogPage() {
             <p className="text-center text-[#0081f1] font-semibold mb-2 md:mb-4 lg:mb-6 leading-none">
                 {`Published ${blog.date}`}
             </p>
-            <p className="text-xl md:text-2xl lg:text-4xl text-center font-semibold font-semibold mb-6 md:mb-8 lg:mb-10 leading-none">
+            <p className ="text-xl md:text-2xl lg:text-4xl text-center font-semibold font-semibold mb-6 md:mb-8 lg:mb-10 leading-none">
                 {blog.title}
             </p>
             <p className="text-base mb-6 md:mb-8 lg:mb-10 text-center leading-none">
@@ -268,7 +268,7 @@ export default function BlogPage() {
             <p className="text-xl md:text-2xl lg:text-3xl text-black mb-2 md:mb-4 lg:mb-6 font-semibold">Keep Reading</p>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8'>
                 {
-                    articles
+                    articles[currentIndex]
                     .map((item,index)=>{
                         if(index <= activeIndex || number == 2) return null
                         number++
@@ -288,24 +288,6 @@ export default function BlogPage() {
                         )
                     }) 
                 }
-                {/* <BlogsComp 
-                    coverPic={coverPic}
-                    title='Introducing Lexxa:Best AI agency in africa'
-                    profilePic={avatar2}
-                    name='Esther Ebere'
-                    date='12th June 2021'
-                    time='3 mins read'
-                    topics={['Manufacturing', 'Finance', 'Energy']}
-                />
-                <BlogsComp 
-                    coverPic={coverPic}
-                    title='Introducing Lexxa:Best AI agency in africa'
-                    profilePic={avatar2}
-                    name='Esther Ebere'
-                    date='12th June 2021'
-                    time='3 mins read'
-                    topics={['Manufacturing', 'Finance', 'Energy']}
-                /> */}
             </div>
         </section>
         </>

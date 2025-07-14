@@ -12,9 +12,8 @@ const HiArrowNarrowRight = lazy(() => import("lucide-react").then(module => ({ d
 
 export default function Blog() {
     const endpoint = "https://axel-cyber.vercel.app/api/article"
-    const {articles, setArticles} = useContextValue()
+    const {articles, setArticles,currentIndex, setCurrentIndex} = useContextValue()
     const [loading,setLoading] = useState<boolean>(true)
-    const [activeIndex, setActiveIndex] = useState<number>(0)
     
 
     const colorArray =  [
@@ -179,7 +178,7 @@ export default function Blog() {
                 ) : articles.length > 0 ? (
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 pb-8 lg:pb-14 border-b-2 border-b-[#e4e7ec]'>
                     {
-                    articles[activeIndex].slice(0,6).map((article:any, index:number) => {
+                    articles[currentIndex].slice(0,6).map((article:any, index:number) => {
                         return (
                             <BlogsComp 
                                 key={index}
@@ -206,11 +205,11 @@ export default function Blog() {
         <div className='flex flex-row justify-between items-center pt-4 pb-12'>
             <div
                 onClick={() => {
-                    if(activeIndex > 0) {
-                        setActiveIndex(activeIndex - 1)
+                    if(currentIndex > 0) {
+                        setCurrentIndex(currentIndex - 1)
                     }
                 }} 
-                className={`flex flex-row gap-1 sm:gap-2 items-center cursor-pointer ${activeIndex > 0 ? "text-[#032d7f]" : "text-[#667085]"}`}
+                className={`flex flex-row gap-1 sm:gap-2 items-center cursor-pointer ${currentIndex > 0 ? "text-[#032d7f]" : "text-[#667085]"}`}
                 >
                 <ArrowLeft className='size-5 sm:size-7' />
                 <span className='text-base sm:text-xl font-semibold'>Previous</span>
@@ -221,7 +220,7 @@ export default function Blog() {
                         return (
                             <span 
                                 key={index}
-                                onClick={() => setActiveIndex(index)} 
+                                onClick={() => setCurrentIndex(index)} 
                                 className='flex justify-center items-center py-2 px-4 rounded-md text-[#667085] text-base font-semibold cursor-pointer hover:bg-[#e3edff] hover:text-[#002366]'>
                                 {index + 1}
                             </span>
@@ -235,7 +234,7 @@ export default function Blog() {
                         return (
                             <span 
                                 key={index} 
-                                onClick={() => setActiveIndex(index)}
+                                onClick={() => setCurrentIndex(index)}
                                 className='flex justify-center items-center py-2 px-4 rounded-md text-[#667085] text-base font-semibold cursor-pointer hover:bg-[#e3edff] hover:text-[#002366]'>
                                 {index + 1}
                             </span>
@@ -245,11 +244,11 @@ export default function Blog() {
             </div>
             <div
                 onClick={() => {
-                    if(activeIndex < articles.length - 1) {
-                        setActiveIndex(activeIndex + 1)
+                    if(currentIndex < articles.length - 1) {
+                        setCurrentIndex(currentIndex + 1)
                     }
                 }}
-                className={`flex flex-row gap-1 sm:gap-2 items-center cursor-pointer ${activeIndex === articles.length - 1 ? "text-[#667085]" : "text-[#032d7f]"}`}>
+                className={`flex flex-row gap-1 sm:gap-2 items-center cursor-pointer ${currentIndex === articles.length - 1 ? "text-[#667085]" : "text-[#032d7f]"}`}>
                 <span className='text-base sm:text-xl font-semibold'>Next</span>
                 <ArrowRight className='size-5 sm:size-7' />
             </div>

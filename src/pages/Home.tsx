@@ -297,7 +297,7 @@ export default function Home() {
                         : articles.length > 0 ?
                         <Suspense fallback={<div className="w-full min-h-[300px] md:min-h-[400px] flex justify-center items-center"><span className="inline-block animate-pulse">loading...</span></div>}>
                         {
-                        articles.slice(0,3).map(({author,title,coverImage,description,date,tags,content, _id},idx)=>{
+                        articles[0].slice(0,3).map(({author,title,coverImage,description,date,tags,content, _id},idx)=>{
                             return (
                                 <Blogs
                                     key={idx}
