@@ -29,7 +29,7 @@ export default function Hero() {
     }
     
   return (
-    <section className='px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto mt-8 mb-12 sm:my-10 md:my-12 lg:my-16 flex flex-col md:flex-row justify-between items-center gap-x-4 lg:gap-x-8 gap-y-6'>
+    <section className='px-[5%] 2xl:px-0 mx-auto mt-8 mb-12 sm:my-10 md:my-12 lg:my-16 flex flex-col md:flex-row justify-between items-center gap-x-4 lg:gap-x-8 gap-y-6'>
         <div className='flex-1 xl:w-1/2'>
             <motion.p
                 initial="hidden"

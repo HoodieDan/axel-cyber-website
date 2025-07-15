@@ -12,7 +12,7 @@ const HiArrowNarrowRight = lazy(() => import("lucide-react").then(module => ({ d
 
 export default function CaseStudy() {
   return (
-    <main className="px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto">
+    <main className="px-[5%] 2xl:px-0 mx-auto">
         <section className='bg-[#fafafa] pb-4 md:pb-6 pt-16 lg:pt-20 lg:pb-8'>
             <div className='flex flex-col md:flex-row gap-8 md:gap-10 bg-white mb-4 md:mb-6'>
                 <div className='flex-1 lg:flex-[1.15] relative'>

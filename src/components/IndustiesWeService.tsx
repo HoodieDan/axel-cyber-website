@@ -10,7 +10,7 @@ import engineering from "../assets/engineering.webp";
 
 export default function IndustiesWeService() {
   return (
-    <section className="px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto mt-4 md:mt-60 lg::mt-54 py-6 sm:py-8 md:py-10 lg:py-12">
+    <section className="px-[5%] 2xl:px-0 w-full mx-auto mt-4 md:mt-60 lg::mt-54 py-6 sm:py-8 md:py-10 lg:py-12">
         <div className="flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10">
             <div className="flex rounded-lg flex-row p-2 gap-2 items-center border-2 border-[#e1e5e7]">
                 <img 

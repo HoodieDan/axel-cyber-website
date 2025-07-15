@@ -191,6 +191,14 @@ div#root{
     max-width: 1536px;
     margin: 0 auto;
 }
+
+@media screen and (min-width: 2000px) {
+    div#root{
+        max-width: 1920px ;
+    }
+}
+
+
 .trapezium {
     width: 250px;
     height: 50px;
@@ -226,6 +234,12 @@ body {
         height: 350px !important;
     }
     
+}
+
+@media screen and (min-width: 1800px) {
+    .service-swipper.swiper {
+        height: 500px !important;
+    }
 }
 
 .home-swiper .swiper-wrapper,

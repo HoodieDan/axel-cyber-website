@@ -95,7 +95,7 @@ export default function Blog() {
   return (
     <>
     <BlogHeroComp />
-    <section className='w-[90%] max-w-screen-xl mx-auto'>
+    <section className='px-[5%] 2xl:px-0 mx-auto'>
         <p className='text-base text-black text-xl'>What we do</p>
         <p className='text-3xl font-semibold mb-3'>Popular Articles</p>
         <div className="flex flex-col md:flex-row gap-6 md:gap-8 mb-8 lg:mb-16">
@@ -159,7 +159,7 @@ export default function Blog() {
             </div>
         </div>
     </section>
-    <main className='w-[90%] max-w-screen-xl mx-auto'>
+    <main className='px-[5%] 2xl:px-0 mx-auto'>
         <p className='text-3xl font-semibold mb-4 lg:mb-6'>Latest Articles Blog</p>
         <div className='overflow-scroll lg:overflow-hidden md:w-full mb-4 md:mb-6 lg:mb-10 flex rounded-tl-full rounded-bl-full md:rounded-full flex-row px-2 md:px-1.5 py-1 md:py-1.5 justify-between items-center bg-[#e3e7ea] '>
             <p className='cursor-pointer shrink-0 md:flex-1 text-center rounded-full hover:bg-[linear-gradient(45deg,#032D7F,#0241BA)] p-2 md:p-3 text-xs hover:text-white text-[#4c5c75]'>Financial Services Sector</p>

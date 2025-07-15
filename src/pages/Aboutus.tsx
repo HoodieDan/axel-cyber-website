@@ -60,7 +60,7 @@ export default function Aboutus() {
 
   return (
     <main>
-        <section  className='px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto my-8'>
+        <section  className='px-[5%] 2xl:px-0 mx-auto my-8'>
             <div className='block md:hidden bg-white mb-4'>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
@@ -76,7 +76,7 @@ export default function Aboutus() {
                 </motion.p>
             </div>
         </section>
-        <section className='px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto relative my-8 sm:my-10 md:my-12 lg:my-16'>
+        <section className='px-[5%] 2xl:px-0 mx-auto relative my-8 sm:my-10 md:my-12 lg:my-16'>
           <div className='hidden md:block absolute top-0 left-[5%] bg-white w-[40%] rounded-br-2xl pr-2 xl:pr-4 pt-0 lg:pt-6'>
             <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -91,7 +91,7 @@ export default function Aboutus() {
                 Axel Cyber
             </motion.p>
           </div>
-          <div className='flex w-[80%] md:w-auto gap-[5%] sm:gap-2 md:gap-4 xl:gap-6 absolute top-[5%] md:top-[7%] right-[10%] md:right-[7%]'>
+          <div className='flex w-[80%] md:w-auto gap-[5%] sm:gap-2 md:gap-4 xl:gap-6 absolute top-[5%] md:top-[7%] right-[10%] 2xl:right-[5%] md:right-[7%]'>
              <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1, transition: { duration:0.5,delay:1, ease: "easeInOut" } }} 
@@ -107,13 +107,13 @@ export default function Aboutus() {
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1, transition: { duration:0.5,delay: 1.5, ease: "easeInOut" } }} 
-            className='absolute p-4 rounded-2xl bottom-[5%] md:bottom-[7%] left-[10%] md:left-[7%] bg-white w-[80%] md:w-[60%] md:w-[47%] lg:w-[47.7%] xl:w-[60%]'>
+            className='absolute p-4 rounded-2xl bottom-[5%] md:bottom-[7%] left-[10%] md:left-[7%] 2xl:left-[5%] bg-white w-[80%] md:w-[60%] md:w-[47%] lg:w-[47.7%] xl:w-[60%]'>
             <p className='text-xl xl:text-2xl mb-2 xl:mb-4 font-semibold'>OUR TEAM</p>
             <p className='text-base xl:text-base font-normal text-[#4c5c75]'>
                 Axel Cyber is a Dedicated team of Experts from across the globe comitted to building Solutions that drive Business Efficiency and Growth with AI
             </p>
           </motion.div>
-          <div className='bg-white hidden md:flex flex-row gap-2 xl:gap-4 2xl:gap-6 absolute bottom-0 right-[5%] rounded-tl-md'>
+          <div className='bg-white hidden md:flex flex-row gap-2 xl:gap-4 2xl:gap-6 absolute bottom-0 right-[5%] 2xl:right-[3%] rounded-tl-md'>
             <motion.div 
                 initial={{ opacity: 0, y:20 }}
                 animate={{ opacity: 1,y: 0, transition: { duration:0.5,delay:1.5, ease: "easeInOut" } }}
@@ -155,7 +155,7 @@ export default function Aboutus() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1,y:0, transition: { duration: 0.5,delay:0.25, ease: "easeInOut" }}}
             viewport={{ once: true }}
-            className='px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto bg-white flex md:hidden flex-row gap-4'>
+            className='px-[5%] 2xl:px-0 mx-auto bg-white flex md:hidden flex-row gap-4'>
             <div className='flex-1 text-white px-3 py-3 h-[120px] w-[185px] bg-[linear-gradient(45deg,#0146cc,#012a7a)] rounded-2xl'>
                 <p className='text-4xl font-semibold'>200k+</p>
                 <p className='text-base font-normal'>People have been using our product daily on a monthly basis</p>
@@ -165,7 +165,7 @@ export default function Aboutus() {
                 <p className='text-base font-normal'>Monthly revenue made from Lexxa AI Agency at average</p>
             </div>
         </motion.div>
-        <section className='px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto py-12'>
+        <section className='px-[5%] 2xl:px-0 mx-auto py-12'>
              <div className='flex justify-center mb-8 lg:mb-10'>
                  <div className='flex rounded-lg flex-row p-2 gap-2 items-center border-2 border-[#e1e5e7]'>
                     <img 
@@ -230,7 +230,7 @@ export default function Aboutus() {
             </div>
         </section>
         <div className='bg-[#f9f9f9]'>   
-        <section className='px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12'>
+        <section className='px-[5%] 2xl:px-0 mx-auto py-6 sm:py-8 md:py-10 lg:py-12'>
             <div className='flex justify-center mb-8 lg:mb-10'>
                 <div className='flex rounded-lg flex-row py-2 px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
                     <img 
@@ -355,7 +355,7 @@ export default function Aboutus() {
             </motion.div>
         </section>
         </div>
-        <section className='px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto py-10 lg:py-12'>
+        <section className='px-[5%] 2xl:px-0 mx-auto py-10 lg:py-12'>
             <div className='flex justify-center md:justify-start mb-4 sm:mb-6 md:mb-8 lg:mb-10'>
                 <div className='flex rounded-lg flex-row p-2 gap-2 items-center border-2 border-[#e1e5e7]'>
                     <img 
@@ -447,7 +447,7 @@ export default function Aboutus() {
                 </div>
             </div>  
         </section>
-        <div className='px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto'>
+        <div className='px-[5%] 2xl:px-0 mx-auto'>
         <Clientele />
         <Cta 
             title="Secure your compay's future by Partnering with Axel Cyber" 
