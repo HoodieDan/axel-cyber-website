@@ -27,7 +27,7 @@ export default function Header() {
   return (
     <header>
       <nav>
-        <div className='px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto relative my-2 flex justify-between items-center'>
+        <div className='px-[5%] 2xl:px-0  mx-auto relative my-2 flex justify-between items-center'>
               <motion.a 
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}

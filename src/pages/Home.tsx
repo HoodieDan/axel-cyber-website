@@ -69,7 +69,7 @@ export default function Home() {
         <main>
             <Hero />
             <div className="bg-[#f9f9f9]">
-            <section className="md:px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto pt-6 pb-8 sm:py-6 md:py-8 lg:py-10">
+            <section className="md:px-[5%] 2xl:px-0 mx-auto pt-6 pb-8 sm:py-6 md:py-8 lg:py-10">
                 <div className="flex justify-center mb-4 sm:mb-4 md:mb-6 lg:mb-8">
                     <div className="flex rounded-lg flex-row p-2 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img 
@@ -98,10 +98,10 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{delay:0.25, ease: "easeInOut" }}
                     viewport={{ once: true }} 
-                    className="px-[5%] pb-8 md:pb-10 lg:pb-12 relative bg-[linear-gradient(135deg,#0250E6,#0046CC)] text-white h-auto md:h-[250px] lg:h-[350px] xl:h-[460px] 2xl:h-[600px]"
+                    className="div-height px-[5%] pb-8 md:pb-10 lg:pb-12 relative bg-[linear-gradient(135deg,#0250E6,#0046CC)] text-white h-auto md:h-[250px] lg:h-[350px] xl:h-[460px] 2xl:h-[750px]"
                 >
                     <div className="h-[35px] lg:h-[50px] md:w-[175px] lg:w-[250px] absolute -top-[2px] -left-[2px] trapezium hidden md:block"></div>
-                    <div className="flex flex-col md:flex-row gap-x-24 md:gap-x-64 pt-12 pb-8 sm:py-10 md:py-14 lg:py-16 mb-4">
+                    <div className="flex flex-col md:flex-row gap-x-24 md:gap-x-64 pt-12 pb-8 sm:py-10 md:py-14 lg:py-16 2xl:py-12 mb-4">
                         <p className="whitespace-nowrap text-xl md:text-2xl font-semibold md:self-end text-center md:text-start flex-1 md:flex-initial mt-4 mb-3">
                             We offer leading <br /> solutions such as:
                         </p>
@@ -261,7 +261,7 @@ export default function Home() {
                     </Suspense>
                 </div>
             </section>
-            <section className="px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12">
+            <section className="px-[5%] 2xl:px-0 mx-auto py-6 sm:py-8 md:py-10 lg:py-12">
                 <div className="flex justify-center md:justify-start mb-4 sm:mb-6 md:mb-8 lg:mb-10">
                     <div className="flex rounded-lg flex-row p-2 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img 
@@ -325,7 +325,7 @@ export default function Home() {
                     }
                 </div>
             </section>
-            <section className="px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto py-6 sm:py-8 md:py-10 lg:py-12">
+            <section className="px-[5%] 2xl:px-0 mx-auto py-6 sm:py-8 md:py-10 lg:py-12">
                 <div className="flex justify-center mb-6 md:mb-8 lg:mb-10">
                     <div className="flex rounded-lg flex-row p-2 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img 
@@ -351,7 +351,7 @@ export default function Home() {
                     <HomeLazySwiper />
                 </Suspense>
             </section>
-            <div className="px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto">
+            <div className="px-[5%] 2xl:px-0 mx-auto">
                 <Suspense fallback={<div className="w-full min-h-[300px] flex justify-center items-center"><span className="inline-block animate-pulse">loading...</span></div>}>
                     <Cta 
                         title={<>Secure your company's furture by<br /> Partering with Axel Cyber</>} 

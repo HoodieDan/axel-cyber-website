@@ -113,7 +113,7 @@ export default function Jobs() {
 
   return (
     <main className='bg-[#f9f9f9]'>
-      <section className={`w-full md:w-[90%] max-w-screen-xl mx-auto bg-white shadow-lg px-4 md:px-6 lg:px-8 py-6 md:Py-8 lg:py-10 my-10 md:my-12 lg:my-14`}>
+      <section className={`w-full px-[5%] 2xl:px-0 mx-auto bg-white shadow-lg py-6 md:py-8 lg:py-10 my-10 md:my-12 lg:my-14`}>
         <div className='flex flex-row gap-2 sm:gap-4 md:gap-6 lg:gap-8 justify-between items-center leading-none'>
           <div onClick={()=>setStage(1)} className='group flex flex-row gap-2 items-center transition-all duration-300 ease-linear cursor-pointer'>
             <p 

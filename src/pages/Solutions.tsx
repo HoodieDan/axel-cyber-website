@@ -89,7 +89,7 @@ export default function Solutions() {
     }
 
   return (
-    <main className="px-[5%] 2xl:px-0 max-w-screen-2xl mx-auto">
+    <main className="px-[5%] 2xl:px-0 mx-auto">
         <section className="bg-white py-10 lg:py-12">
             <p className='text-center md:text-start text-3xl lg:text-4xl font-semibold my-6 md:my-8 w-auto'>
                 We Are Commited To Creating The Future Of<br /> Artifiicial Intelligence
@@ -117,7 +117,7 @@ export default function Solutions() {
                     height={345}
                 
                 />
-                <p className='hidden md:block text-base md:text-xl absolute -bottom-1.5 2xl:-bottom-6 left-[26%] md:w-[200px] lg:w-[375px] 2xl:w-[500px]'>
+                <p className='hidden md:block text-base md:text-xl absolute -bottom-1.5 2xl:-bottom-6 left-[26%] md:w-[200px] lg:w-[375px] 2xl:w-[600px]'>
                     Witness some of the great works we've done for our amazing clients around the world, with great design story
                 </p>
             </div>
