@@ -188,7 +188,7 @@ export default function Header() {
                 <div className="sm:hidden block bg-white shadow-md rounded-lg px-[5%]">
                     <ul className='list-none text-[#4c5c75]'>
                         <li className="py-2 text-base border-b border-b-[#0081f1]"><Link onClick={handleCloseMenu} to="/services">Services</Link></li>
-                        <li className="py-2 text-base border-b border-b-[#0081f1]"><Link onClick={handleCloseMenu} to="/casestudy">Case study</Link></li>
+                        <li className="py-2 text-base border-b border-b-[#0081f1]"><Link onClick={handleCloseMenu} to="/ai-works">Case study</Link></li>
                         <li className="py-2 text-base border-b border-b-[#0081f1]"><Link onClick={handleCloseMenu} to="/solutions">Solutions</Link></li>
                         <li onClick={() => setSubMenuOpen(!subMenu)} className='group text-base'>
                             <a href="#" className={`py-2 block border-b border-b-[#0081f1]`}>Company</a>
