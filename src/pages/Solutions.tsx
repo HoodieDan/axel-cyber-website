@@ -61,9 +61,9 @@ export default function Solutions() {
 
     const Project = ({img}:{img: string}) =>{
         return (
-            <div className='relative h-auto'>
+            <div className='relative aspect-[4/4.65]'>
                 <img 
-                    className="w-full" 
+                    className="h-full w-full object-fit" 
                     src={img} 
                     alt="project image" 
                     loading="lazy"
@@ -79,8 +79,8 @@ export default function Solutions() {
                                 behavior: 'smooth'
                             })
                         }}
-                        className="absolute bottom-0 right-0 flex justify-center items-center h-16 w-16 bg-[#080f44] rounded-full">
-                        <IoIosArrowDroprightCircle className='h-12 w-12 cursor-pointer text-white' />
+                        className="absolute bottom-0 right-0 flex justify-center items-center size-16 sm:size-26 lg:size-16 bg-[#080f44] rounded-full">
+                        <IoIosArrowDroprightCircle className='size-12 sm:size-20 lg:size-10 cursor-pointer text-white' />
                     </div>
             
                 </Suspense>
@@ -191,7 +191,7 @@ export default function Solutions() {
                 </div>
             </div>
             <p className='text-center text-2xl md:text-3xl font-semibold md:w-[350px] 2xl:w-auto mx-auto mb-4 sm:mb-6 md:mb-8 lg:mb-10'>The best solutions for the best Companies</p>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10'>
                 <Project 
                     img={solution1}
                 />
