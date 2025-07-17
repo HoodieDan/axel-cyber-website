@@ -173,7 +173,7 @@ export default function Services() {
     const navigate = useNavigate()
   return (
     <main>
-        <section className="px-[5%] 2xl:px-0 mx-auto service-section relative mb-60 mt-10 sm:mb-40 md:mt-10 md:mb-32 lg:mt-12 lg:mb-24 bg-white">
+        <section className="px-[5%] mx-auto service-section relative mb-60 mt-10 sm:mb-40 md:mt-10 md:mb-32 lg:mt-12 lg:mb-24 bg-white">
             <img  
                 src={serviceHeroImg} 
                 alt="hero image" 
@@ -266,7 +266,7 @@ export default function Services() {
             </div>
         </section>
         <section className='bg-[#ffffff]'>
-            <div className='px-[5%] 2xl:px-0 mx-auto pb-10 pt-6 sm:py-8 md:py-10 lg:py-12'>
+            <div className='px-[5%] mx-auto pb-10 pt-6 sm:py-8 md:py-10 lg:py-12'>
             <div className='flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10'>
                 <div className='flex rounded-lg flex-row p-2 gap-2 items-center justify-center border-2 border-[#e1e5e7]'>
                     <img 
@@ -298,7 +298,7 @@ export default function Services() {
             />
             </div>
         </section>
-        <section className='px-[5%] 2xl:px-0 mx-auto py-10 sm:py-8 md:py-10 lg:py-12'>
+        <section className='px-[5%] mx-auto py-10 sm:py-8 md:py-10 lg:py-12'>
             <div className='flex justify-center mb-8 lg:mb-10'>
                 <div className='flex rounded-lg flex-row py-1 sm:py-2 px-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
                     <img 
@@ -339,7 +339,7 @@ export default function Services() {
             </div>
         </section>
         <section className='bg-[#f9f9f9] mb-8 lg:mb-10 xl:mb-12'>
-            <div className='px-[5%] 2xl:px-0  mx-auto py-10 lg:py-12'>
+            <div className='px-[5%] mx-auto py-10 lg:py-12'>
             <div className='flex justify-center mb-6 sm:mb-8 md:mb-10 lg:mb-14'>
                 <div className='flex rounded-lg flex-row p-2 sm:px-4 gap-2 items-center border-2 border-[#e1e5e7]'>
                     <img 
@@ -373,7 +373,7 @@ export default function Services() {
             </div>
             </div>
         </section>
-        <section className='px-[5%] 2xl:px-0 mx-auto bg-[#f9f9f9] py-10 lg:py-12'>
+        <section className='px-[5%] mx-auto bg-[#f9f9f9] py-10 lg:py-12'>
             <div className='flex justify-center mb-12 lg:mb-16'>
                 <div className='flex rounded-lg flex-row p-2 gap-2 items-center border-2 border-[#e1e5e7]'>
                     <img 
@@ -424,7 +424,7 @@ export default function Services() {
                 </SwiperSlide>
             </Swiper>
         </section>
-        <section className='px-[5%] 2xl:px-0 mx-auto'>
+        <section className='px-[5%] mx-auto'>
         <Cta
             title={<>Secure your compsny's future by<br />patnering wuth Axel cyber</>} 
             action='Request a Demo'

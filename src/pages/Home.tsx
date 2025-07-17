@@ -69,7 +69,7 @@ export default function Home() {
         <main>
             <Hero />
             <div className="bg-[#f9f9f9]">
-            <section className="md:px-[5%] 2xl:px-0 mx-auto pt-6 pb-8 sm:py-6 md:py-8 lg:py-10">
+            <section className="md:px-[5%] mx-auto pt-6 pb-8 sm:py-6 md:py-8 lg:py-10">
                 <div className="flex justify-center mb-4 sm:mb-4 md:mb-6 lg:mb-8">
                     <div className="flex rounded-lg flex-row p-2 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img 
@@ -146,11 +146,11 @@ export default function Home() {
             <Suspense fallback={<div className="w-full min-h-[300px] md:min-h-[400px] lg:min-h-[600px] flex justify-center items-center"><span className="inline-block animate-pulse">loading...</span></div>}>
                 <IndustiesWeService />
             </Suspense>
-            <div className="px-[5%] 2xl:px-0 mx-auto">
+            <div className="px-[5%] mx-auto">
                 <Clientele />
             </div>
             <div className="bg-[#f9f9f9]">
-            <section className="px-[5%] 2xl:px-0 mx-auto pt-10 pb-6 sm:py-8 md:py-10 lg:py-12">
+            <section className="px-[5%] mx-auto pt-10 pb-6 sm:py-8 md:py-10 lg:py-12">
                 <div className="flex justify-center mb-4 md:mb-6 lg:mb-8">
                     <div className="flex rounded-lg flex-row p-2 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img 
@@ -209,7 +209,7 @@ export default function Home() {
                 </div>
             </section>
             </div>
-            <section className="px-[5%] 2xl:px-0 mx-auto py-6 sm:py-8 md:py-10 lg:py-12">
+            <section className="px-[5%] mx-auto py-6 sm:py-8 md:py-10 lg:py-12">
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -261,7 +261,7 @@ export default function Home() {
                     </Suspense>
                 </div>
             </section>
-            <section className="px-[5%] 2xl:px-0 mx-auto py-6 sm:py-8 md:py-10 lg:py-12">
+            <section className="px-[5%] mx-auto py-6 sm:py-8 md:py-10 lg:py-12">
                 <div className="flex justify-center md:justify-start mb-4 sm:mb-6 md:mb-8 lg:mb-10">
                     <div className="flex rounded-lg flex-row p-2 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img 
@@ -325,7 +325,7 @@ export default function Home() {
                     }
                 </div>
             </section>
-            <section className="px-[5%] 2xl:px-0 mx-auto py-6 sm:py-8 md:py-10 lg:py-12">
+            <section className="px-[5%] mx-auto py-6 sm:py-8 md:py-10 lg:py-12">
                 <div className="flex justify-center mb-6 md:mb-8 lg:mb-10">
                     <div className="flex rounded-lg flex-row p-2 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img 
@@ -351,7 +351,7 @@ export default function Home() {
                     <HomeLazySwiper />
                 </Suspense>
             </section>
-            <div className="px-[5%] 2xl:px-0 mx-auto">
+            <div className="px-[5%] mx-auto">
                 <Suspense fallback={<div className="w-full min-h-[300px] flex justify-center items-center"><span className="inline-block animate-pulse">loading...</span></div>}>
                     <Cta 
                         title={<>Secure your company's furture by<br /> Partering with Axel Cyber</>} 

@@ -23,7 +23,7 @@ export default function Footer() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{delay:0.25, ease: "easeInOut" }}
         viewport={{ once: true }} 
-        className='px-[5%] 2xl:px-0 mx-auto py-10 lg:py-12 w-full'
+        className='px-[5%] mx-auto py-10 lg:py-12 w-full'
     >
         <div className='relative flex flex-row justify-between border-b-2 border-b-[#3084da] mb-8'>
             <p className='text-2xl lg:text-3xl xl:text-4xl font-medium'>Let's connects and<br/> work together</p>

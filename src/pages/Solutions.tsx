@@ -89,7 +89,7 @@ export default function Solutions() {
     }
 
   return (
-    <main className="px-[5%] 2xl:px-0 mx-auto">
+    <main className="px-[5%] mx-auto">
         <section className="bg-white py-10 lg:py-12">
             <p className='text-center md:text-start text-3xl lg:text-4xl font-semibold my-6 md:my-8 w-auto'>
                 We Are Commited To Creating The Future Of<br /> Artifiicial Intelligence

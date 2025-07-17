@@ -36,7 +36,7 @@ export default function Contact() {
     }
 
   return (
-    <main className="px-[5%] 2xl:px-0 mx-auto">
+    <main className="px-[5%] mx-auto">
         <section className='relative my-8 sm:my-10 md:my-12 lg:my-16'>
             <img 
                 src={axelCyer} 

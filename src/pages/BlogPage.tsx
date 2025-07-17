@@ -110,7 +110,7 @@ export default function BlogPage() {
     }, [id])
 
   return (
-    <main className="px-[5%] 2xl:px-0 mx-auto">
+    <main className="px-[5%] mx-auto">
         {
             !loading 
         ?
