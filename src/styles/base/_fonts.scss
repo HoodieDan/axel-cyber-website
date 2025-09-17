@@ -1,15 +1,160 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
-
 @font-face {
-    font-family: "Cabinet Grotesk Variable";
-    src: url("https://db.onlinewebfonts.com/t/63e7e31dbe7aa38c7c04b413ef841103.eot");
-    src: url("https://db.onlinewebfonts.com/t/63e7e31dbe7aa38c7c04b413ef841103.eot?#iefix")format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/63e7e31dbe7aa38c7c04b413ef841103.woff2")format("woff2"),
-    url("https://db.onlinewebfonts.com/t/63e7e31dbe7aa38c7c04b413ef841103.woff")format("woff"),
-    url("https://db.onlinewebfonts.com/t/63e7e31dbe7aa38c7c04b413ef841103.ttf")format("truetype"),
-    url("https://db.onlinewebfonts.com/t/63e7e31dbe7aa38c7c04b413ef841103.svg#Cabinet Grotesk Variable")format("svg");
+    font-family: 'TT Hoves Pro Trial Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TT Hoves Pro Trial Regular'), url('/fonts/tt-hoves-pro-trial/TT Hoves Pro Trial Regular.woff') format('woff');
 }
 
-*{
-    font-family: "Cabinet Grotesk Variable", sans-serif;
+@font-face {
+    font-family: 'TT Hoves Pro Trial Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TT Hoves Pro Trial Italic'), url('/fonts/tt-hoves-pro-trial/TT Hoves Pro Trial Italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'TT Hoves Pro Trial Hairline';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TT Hoves Pro Trial Hairline'), url('/fonts/tt-hoves-pro-trial/TT Hoves Pro Trial Hairline.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'TT Hoves Pro Trial Hairline Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TT Hoves Pro Trial Hairline Italic'), url('/fonts/tt-hoves-pro-trial/TT Hoves Pro Trial Hairline Italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'TT Hoves Pro Trial Thin';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TT Hoves Pro Trial Thin'), url('/fonts/tt-hoves-pro-trial/TT Hoves Pro Trial Thin.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'TT Hoves Pro Trial Thin Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TT Hoves Pro Trial Thin Italic'), url('/fonts/tt-hoves-pro-trial/TT Hoves Pro Trial Thin Italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'TT Hoves Pro Trial ExtraLight';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TT Hoves Pro Trial ExtraLight'), url('/fonts/tt-hoves-pro-trial/TT Hoves Pro Trial ExtraLight.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'TT Hoves Pro Trial ExtraLight Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TT Hoves Pro Trial ExtraLight Italic'), url('/fonts/tt-hoves-pro-trial/TT Hoves Pro Trial ExtraLight Italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'TT Hoves Pro Trial Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TT Hoves Pro Trial Light'), url('/fonts/tt-hoves-pro-trial/TT Hoves Pro Trial Light.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'TT Hoves Pro Trial Light Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TT Hoves Pro Trial Light Italic'), url('/fonts/tt-hoves-pro-trial/TT Hoves Pro Trial Light Italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'TT Hoves Pro Trial Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TT Hoves Pro Trial Medium'), url('/fonts/tt-hoves-pro-trial/TT Hoves Pro Trial Medium.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'TT Hoves Pro Trial Medium Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TT Hoves Pro Trial Medium Italic'), url('/fonts/tt-hoves-pro-trial/TT Hoves Pro Trial Medium Italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'TT Hoves Pro Trial DemiBold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TT Hoves Pro Trial DemiBold'), url('/fonts/tt-hoves-pro-trial/TT Hoves Pro Trial DemiBold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'TT Hoves Pro Trial DemiBold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TT Hoves Pro Trial DemiBold Italic'), url('/fonts/tt-hoves-pro-trial/TT Hoves Pro Trial DemiBold Italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'TT Hoves Pro Trial Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TT Hoves Pro Trial Bold'), url('/fonts/tt-hoves-pro-trial/TT Hoves Pro Trial Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'TT Hoves Pro Trial Bold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TT Hoves Pro Trial Bold Italic'), url('/fonts/tt-hoves-pro-trial/TT Hoves Pro Trial Bold Italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'TT Hoves Pro Trial ExtraBold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TT Hoves Pro Trial ExtraBold'), url('/fonts/tt-hoves-pro-trial/TT Hoves Pro Trial ExtraBold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'TT Hoves Pro Trial ExtraBold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TT Hoves Pro Trial ExtraBold Italic'), url('/fonts/tt-hoves-pro-trial/TT Hoves Pro Trial ExtraBold Italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'TT Hoves Pro Trial Black';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TT Hoves Pro Trial Black'), url('/fonts/tt-hoves-pro-trial/TT Hoves Pro Trial Black.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'TT Hoves Pro Trial Black Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TT Hoves Pro Trial Black Italic'), url('/fonts/tt-hoves-pro-trial/TT Hoves Pro Trial Black Italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'TT Hoves Pro Trial Variable Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TT Hoves Pro Trial Variable Regular'), url('/fonts/tt-hoves-pro-trial/TT Hoves Pro Trial Variable.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'TT Hoves Pro Bold Outline';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TT Hoves Pro Bold Outline'), url('/fonts/tt-hoves-pro-trial/TT Hoves Pro Bold Outline Trial.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'TT Hoves Pro Bold Outline Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TT Hoves Pro Bold Outline Italic'), url('/fonts/tt-hoves-pro-trial/TT Hoves Pro Bold Outline Trial Italic.woff') format('woff');
 }

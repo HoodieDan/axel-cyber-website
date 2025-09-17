@@ -86,6 +86,9 @@
 }
 
 @theme inline {
+    --font-tt-hoves: "TT Hoves Pro Trial Variable Regular";
+    --font-figtree: "Figtree", sans-serif;
+
     --color-background: var(--background);
     --color-foreground: var(--foreground);
     --color-card: var(--card);
@@ -151,7 +154,7 @@
 
     body {
         @apply bg-background text-foreground;
-        
+
     }
 
     img {
@@ -187,14 +190,14 @@
     background-repeat: no-repeat;
 }
 
-div#root{
+div#root {
     max-width: 1536px;
     margin: 0 auto;
 }
 
 @media screen and (min-width: 2000px) {
-    div#root{
-        max-width: 1950px ;
+    div#root {
+        max-width: 1950px;
     }
 }
 
@@ -233,7 +236,7 @@ body {
     .service-swipper.swiper {
         height: 350px !important;
     }
-    
+
 }
 
 @media screen and (min-width: 1800px) {
@@ -257,7 +260,7 @@ body {
 .home-swiper .swiper-slide {
     margin-right: 0px !important;
     width: 90% !important;
-    height: 90% !important ;
+    height: 90% !important;
 }
 
 .service-swipper .swiper-slide {
@@ -402,7 +405,7 @@ body {
     .service-swipper .swiper-pagination {
         margin-left: 25px !important;
     }
-    
+
 }
 
 @media (min-width: 640px) {
@@ -423,6 +426,7 @@ body {
         height: 5px !important;
     }
 }
+
 .swiper-pagination-bullet-active {
     background: linear-gradient(90deg, #B860ff 0%, #077adf 86%) !important;
 }
@@ -435,11 +439,12 @@ body {
 }
 
 @media screen and (min-width: 2559px) {
+
     .swiper-button-prev,
     .swiper-button-next {
         transform: scale(2.0) !important;
     }
-    
+
 }
 
 
@@ -457,7 +462,9 @@ body {
         right: 5% !important;
         /* top: 92.5% !important */
     }
-    .swiper-button-next, .swiper-rtl .swiper-button-prev {
+
+    .swiper-button-next,
+    .swiper-rtl .swiper-button-prev {
         /* top: 92.5% !important; */
     }
 }
@@ -477,7 +484,7 @@ body {
     border-image-slice: 1;
     border-width: 2px;
     border-image-source: linear-gradient(to right, #022366, #0046cc);
-  }
+}
 
 /* @media screen and (max-width: 767px) {
     .service-section{
@@ -487,21 +494,24 @@ body {
     
 } */
 
-.about-hero-img{
+.about-hero-img {
     aspect-ratio: 3 / 1.30;
 }
+
 @media screen and (min-width: 640px) {
-    .about-hero-img{
+    .about-hero-img {
         aspect-ratio: 3 / 1.5;
     }
 }
+
 @media screen and (min-width: 1024px) {
-    .about-hero-img{
+    .about-hero-img {
         aspect-ratio: 3/1.06
     }
-} 
+}
+
 @media screen and (min-width: 1536px) {
-    .about-hero-img{
+    .about-hero-img {
         aspect-ratio: 3/1.25
     }
-} 
+}
