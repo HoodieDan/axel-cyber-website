@@ -242,8 +242,9 @@ export default function Solutions() {
                         <p className="text-sm leading-none">OUR PROJECTS</p>
                     </div>
                 </div>
-                <p className="text-center text-2xl md:text-3xl font-semibold md:w-[350px] 2xl:w-auto mx-auto mb-4 sm:mb-6 md:mb-8 lg:mb-10">
-                    The best solutions for the best Companies
+                <p className="text-center md:text-5xl text-3xl font-medium font-tt-hoves mx-auto mb-8 md:mb-16">
+                    The Best AI solutions in
+                    <br /> Record Time
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
                     {ourProjects.map((project, index) => (
