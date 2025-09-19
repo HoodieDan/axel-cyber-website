@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { useContextValue } from "@/context";
 import axios from "axios";
 import { motion } from "motion/react";
@@ -64,7 +65,7 @@ export default function Home() {
         <main>
             <Hero />
             <div className="bg-[#f9f9f9]">
-                <section className="md:px-[5%] mx-auto pt-6 pb-8 sm:py-6 md:py-8 lg:py-10">
+                <section className="md:px-[5%] mx-auto pt-6 pb-8 sm:py-8 md:py-20">
                     <div className="flex justify-center mb-4 sm:mb-4 md:mb-6 lg:mb-8">
                         <div className="flex rounded-lg flex-row p-2 gap-2 items-center border-2 border-[#e1e5e7]">
                             <img src="/stars.png" alt="stars" loading="lazy" width={16} height={16} />
@@ -72,7 +73,7 @@ export default function Home() {
                         </div>
                     </div>
                     <motion.p
-                        className="px-[5%] md:px-0 text-center text-3xl mx-auto lg:text-4xl font-bold mb-6 sm:mb-8 md:mb-10 lg:mb-12"
+                        className="px-[5%] md:px-0 text-center text-3xl mx-auto lg:text-5xl font-tt-hoves font-medium mb-6 sm:mb-8 md:mb-10 lg:mb-12"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.25, ease: "easeInOut" }}
@@ -86,7 +87,7 @@ export default function Home() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.25, ease: "easeInOut" }}
                         viewport={{ once: true }}
-                        className="div-height px-[5%] pb-8 md:pb-10 lg:pb-12 relative bg-[linear-gradient(135deg,#0250E6,#0046CC)] text-white h-auto md:h-[250px] lg:h-[350px] xl:h-[460px] 2xl:h-[750px]"
+                        className="div-height hidden px-[5%] pb-8 md:pb-10 lg:pb-12 relative bg-[linear-gradient(135deg,#0250E6,#0046CC)] text-white h-auto md:h-[250px] lg:h-[350px] xl:h-[460px] 2xl:h-[750px]"
                     >
                         <div className="h-[35px] lg:h-[50px] md:w-[175px] lg:w-[250px] absolute -top-[2px] -left-[2px] trapezium hidden md:block"></div>
                         <div className="flex flex-col md:flex-row gap-x-24 md:gap-x-64 pt-12 pb-8 sm:py-10 md:py-14 lg:py-16 2xl:py-12 mb-4">
@@ -129,6 +130,56 @@ export default function Home() {
                                 description="By combining AI tools and integrating them with your current systems"
                                 imgUrl="/seamless.webp"
                             />
+                        </div>
+                    </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.25, ease: "easeInOut" }}
+                        viewport={{ once: true }}
+                        className="text-white md:bg-[url(/src/assets/top-right-vector-bg.png)] bg-linear-to-b from-[#0250E6] to-[#0046CC] bg-no-repeat bg-contain md:pt-20 md:py-0 py-14 md:px-20 px-[5%]"
+                    >
+                        <div className="flex flex-col gap-20">
+                            <div className="flex md:flex-row flex-col md:items-end items-center md:gap-45.5 gap-4">
+                                <h4 className="md:text-right text-center">
+                                    We offer leading
+                                    <br /> solutions such as:
+                                </h4>
+
+                                <div className="flex flex-col md:gap-12 gap-5">
+                                    <h5 className="md:text-right text-center">
+                                        Build high-impact solutions grounded in
+                                        <br /> your proprietary data and assuring
+                                        <br /> maximum security
+                                    </h5>
+                                    <Button className="h-12.5 px-12.5 md:w-fit bg-white hover:bg-white/90 text-black">
+                                        Get Started
+                                    </Button>
+                                </div>
+                            </div>
+
+                            <div className="grid md:grid-cols-4 gap-5">
+                                <Solution
+                                    title="Scalable"
+                                    description="From proof of concept to full production with compressed, entreprise-focused models"
+                                    imgUrl="/scalable.webp"
+                                />
+                                <Solution
+                                    title="Accurate"
+                                    description="Fine-tune with retrieval-augmented generation (RAG) for verifiable outputs"
+                                    imgUrl="/accurate.webp"
+                                ></Solution>
+                                <Solution
+                                    title="Secure"
+                                    description="Enterprise-grade security access controls, and private deployment options"
+                                    imgUrl="/secure.webp"
+                                />
+                                <Solution
+                                    title="Seamless Integration"
+                                    description="By combining AI tools and integrating them with your current systems"
+                                    imgUrl="/seamless.webp"
+                                />
+                            </div>
                         </div>
                     </motion.div>
                 </section>

@@ -65,7 +65,7 @@ export default function Hero() {
                             },
                         },
                     }}
-                    className="flex gap-2 justify-center md:justify-start mb-2 md:mb-3 lg:mb-5 text-3xl md:text-[3.125rem] font-tt-hoves text-black"
+                    className="flex gap-2 justify-center md:justify-start mb-4 md:mb-6 text-3xl md:text-[3.125rem] font-tt-hoves text-black"
                 >
                     <motion.p variants={itemsVariants} className="leading-none">
                         That
@@ -80,11 +80,11 @@ export default function Hero() {
                 <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.5, ease: "easeInOut" } }}
-                    className="font-normal text-center md:text-left mb-2 md:mb-4 lg:mb-6 text-base lg:text-xl text-black"
+                    className="font-normal text-center md:text-left mb-4 md:mb-6 text-base lg:text-xl text-black"
                 >
                     Axel Cyber is Dedicated team of Experts from acrosss the globe
-                    <br /> commited to building Solutions that Business Effficency
-                    <br /> and Growth with AI
+                    <br className="md:inline hidden" /> commited to building Solutions that Business Effficency
+                    <br className="md:inline hidden" /> and Growth with AI
                 </motion.p>
                 <motion.div
                     initial="hidden"
@@ -121,7 +121,7 @@ export default function Hero() {
                     </motion.button>
                 </motion.div>
                 <div className="flex flex-row items-center gap-4.5">
-                    <div className="flex flex-row items-center -space-x-1">
+                    <div className="flex flex-row items-center -space-x-1 shrink-0">
                         <img className="size-6" src={face1} alt="" />
                         <img className="size-6" src={face2} alt="" />
                         <img className="size-6" src={face3} alt="" />
@@ -139,8 +139,8 @@ export default function Hero() {
                     animate={{ opacity: 1, x: 0, y: 0, transition: { duration: 0.5, delay: 1, ease: "easeInOut" } }}
                     className="absolute top-0 left-0 z-10 h-[38.5%] w-[39%] text-white font-medium bg-[linear-gradient(45deg,#0146cc,#012d82)] rounded-3xl px-3 md:px-4 lg:px-6 2xl:px-3 py-2 md:py-3 lg:py-4 2xl:py-2 justify-center flex flex-col"
                 >
-                    <p className="text-[50px] leading-none font-figtree mb-2 md:mb-3">11+</p>
-                    <p className="text-sm leading-none">
+                    <p className="md:text-[50px] text-xl leading-none font-figtree font-medium mb-2 md:mb-3">11+</p>
+                    <p className="md:text-sm text-xs leading-none">
                         Years plus of experience in solving probelms with AI and Machnice Learning Solutions
                     </p>
                 </motion.div>
@@ -161,8 +161,8 @@ export default function Hero() {
                     animate={{ opacity: 1, x: 0, y: 0, transition: { duration: 0.5, delay: 1, ease: "easeInOut" } }}
                     className="absolute bottom-0 right-0 z-10 h-[38.5%] w-[39%] text-white font-medium bg-[linear-gradient(45deg,#0146cc,#012d82)] rounded-3xl px-3 md:px-4 lg:px-6 2xl:px-3 py-2 md:py-3 lg:py-4 2xl:py-2 flex flex-col justify-center items-start"
                 >
-                    <p className="text-[50px] font-figtree mb-2 md:mb-3 leading-none">5+</p>
-                    <p className="text-sm leading-none">Continents serviced by our international team</p>
+                    <p className="md:text-[50px] text-xl font-figtree font-medium mb-2 md:mb-3 leading-none">5+</p>
+                    <p className="md:text-sm text-xs leading-none">Continents serviced by our international team</p>
                 </motion.div>
             </div>
         </section>
