@@ -1,11 +1,18 @@
 $color-white: #FFF;
 $color-black: #000;
 $color-gray: #C0C0C0;
-
 $font-inter: "Inter Tight";
+$font-instrument: "Instrument Sans", sans-serif;
+$font-tt-hoves: "TT Hoves Pro Trial Variable Regular", sans-serif;
 $font-cabinet: "Cabinet Grotesk Variable";
-
 $ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 $ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
-
-$z-indexes: ('modal', 'nav', 'logo', 'hamburger', 'aside', 'content', 'bg');
+$z-indexes: (
+    'modal',
+    'nav',
+    'logo',
+    'hamburger',
+    'aside',
+    'content',
+    'bg'
+);
