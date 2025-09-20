@@ -1,93 +1,128 @@
-import caseimage1 from "../assets/caseimage4.webp"
-import caseimage2 from "../assets/caseimage2.webp"
-import caseimage3 from "../assets/caseimage3.webp"
-import caseimage4 from "../assets/caseimage-mobile.svg"
-import Cta from '@/components/Cta';
-import { lazy, Suspense } from "react";
+import HeadOfClaims from "@/assets/head-of-claims.png";
+import Cta from "@/components/Cta";
+import { Button } from "@/components/ui/button";
+import { ourProjects } from "@/lib/data";
+import { cn } from "@/lib/utils";
+import { MoveUpRight } from "lucide-react";
+import { lazy, Suspense, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
-
-const FaArrowRightLong = lazy(() => import("lucide-react").then(module => ({ default: module.MoveRight  })))
-const HiArrowNarrowRight = lazy(() => import("lucide-react").then(module => ({ default: module.MoveUpRight  })))
-
+const HiArrowNarrowRight = lazy(() => import("lucide-react").then((module) => ({ default: module.MoveUpRight })));
 
 export default function CaseStudy() {
-  return (
-    <main className="px-[5%] mx-auto">
-        <section className='bg-[#fafafa] pb-4 md:pb-6 pt-16 lg:pt-20 lg:pb-8'>
-            <div className='flex flex-col md:flex-row gap-8 md:gap-10 bg-white mb-4 md:mb-6'>
-                <div className='flex-1 lg:flex-[1.15] relative'>
-                    <p className='absolute top-4 md:top-6 left-0 text-3xl sm:text-4xl lg:text-5xl 2xl:text-4xl font-semibold'>Prompt Plumber AI</p>
-                    <img 
-                        className='w-full h-full hidden sm:block' 
-                        src={caseimage1} 
-                        alt="case study image" 
-                        loading="eager"
-                        fetchPriority="high"
-                        width={608}
-                        height={860}
-                    />
-                    <img 
-                        className='w-full h-full block sm:hidden' 
-                        src={caseimage4} 
-                        alt="case study image" 
-                        loading="eager"
-                        fetchPriority="high"
-                        width={400}
-                        height={560}
-                    />
+    const { caseSlug } = useParams();
+    const navigate = useNavigate();
+    const project = ourProjects.find((p) => p.slug === caseSlug);
+
+    useEffect(() => {
+        if (!project) {
+            navigate("/case-study");
+        }
+    }, [project, navigate]);
+
+    if (!project) {
+        return null;
+    }
+
+    return (
+        <main className="px-10">
+            <section className="flex flex-col gap-14 py-10">
+                <div className="grid md:grid-cols-2 gap-10 items-center">
+                    <div className="space-y-2">
+                        <h2 className="text-5xl text-[#052377] font-semibold uppercase">{project.name}</h2>
+                        <p className="text-2xl">{project.description}</p>
+                    </div>
+                    <div>
+                        <h3 className="text-[2.75rem] text-[#0C28D2] leading-[140%] font-semibold">
+                            THE CHALLENGE AND PROCESS INVOLVED IN CREATING THE SOLUTION
+                        </h3>
+                    </div>
                 </div>
-                <div className='flex flex-col flex-1'>
-                    <p className='text-xl my-4 md:my-6 flex flex-row gap-2 items-center'>
-                        <span className="whitespace-nowrap font-semibold">UI design</span>
-                        <Suspense fallback={<span className="w-3 h-3 inline-block animate-pulse bg-gray-300 rounded-full" />}>
-                            <FaArrowRightLong />
-                        </Suspense>
-                        <span className="whitespace-nowrap font-semibold">Product strategy</span>
-                        <Suspense fallback={<span className="w-3 h-3 inline-block animate-pulse bg-gray-300 rounded-full" />}>
-                            <FaArrowRightLong />
-                        </Suspense>
-                        <span className="whitespace-nowrap font-semibold">Prototyping</span>
-                    </p>
-                    <p className='text-xl mb-10 lg:mb-12'>
-                        A prompt engineering platform that allows for Beginners and intermediate level prompt Engineers and AI
-                        enthusiasts to create very effective prompts that get them thier expacted outcomes using  Popular Large Language Model
-                    </p>
-                    <img 
-                        className="flex-1" 
-                        src={caseimage2} alt="case study image" 
-                        loading="lazy"
-                        width={608}
-                        height={620}
-                    />
+
+                <div className="grid md:grid-cols-2 gap-10 items-center">
+                    <div
+                        className={cn("grid grid-cols-2 gap-2", {
+                            "grid-cols-1": project.layout === "tablet",
+                        })}
+                    >
+                        {project.showcase.map((image, index) => (
+                            <figure key={index} className={cn({ "first:col-span-2": project.layout === "desktop" })}>
+                                <img src={image} alt="" className="size-full objectcover" />
+                            </figure>
+                        ))}
+                    </div>
+                    <div className="flex flex-col gap-2">
+                        {project.process.map(({ Icon, description, name }, index) => (
+                            <div
+                                key={name + index}
+                                className="flex items-start gap-10 bg-linear-to-b from-0% from-[#002366] to-100% to-[#0046CC] text-white rounded-2xl px-8 py-6"
+                            >
+                                <div className="h-9.5 px-4 py-2.5 flex items-center gap-2.5 bg-white rounded-3xl text-black">
+                                    <span className="text-base font-medium">{name}</span>
+                                    <Icon className="size-4" />
+                                </div>
+                                <p className="text-base font-medium">{description}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </div>
-            <div>
-                <img 
-                    className='aspect-[16/12] lg:aspect-[16/9] w-full h-full block' 
-                    src={caseimage3} 
-                    alt="case study image" 
-                    loading="lazy"
-                    width={1200}
-                    height={720}
-                />
-            </div>
-        </section>
-        <section className='pb-6 md:pb-10 lg:pb-20 xl:pb-40 h-[1200px] md:h-[550px] 2xl:h-[900px] flex flex-col md:flex-row gap-8'>
-            <div className='flex-[1.5] md:flex-1 rounded-2xl bg-[linear-gradient(90deg,#012772,#0046cc)]'></div>
-            <div className='flex-1 flex flex-col gap-8'>
-                <div className='flex-1 rounded-2xl bg-[linear-gradient(90deg,#012772,#0046cc)]'></div>
-                <div className='flex-1 rounded-2xl bg-[linear-gradient(90deg,#012772,#0046cc)]'></div>
-            </div>
-        </section>
-        <Cta 
-            title={<>Secure your company's future by<br /> Partnering with Axel Cyber</>}
-            action='Book a call'
-        >
-            <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
-                <HiArrowNarrowRight className='inline size-4' />    
-            </Suspense>
-        
-        </Cta>
-    </main>
-  )
+
+                <div className="grid grid-cols-2 gap-10 items-start">
+                    <div className="flex flex-col gap-2">
+                        <h3 className="text-[2.5rem] text-[#0C28D2] font-semibold">Outcomes</h3>
+                        <p className="text-2xl">{project.outcomes}</p>
+                        <div className="flex items-center gap-0.5 mt-4">
+                            <Button
+                                variant="outline"
+                                className="h-10 rounded-full border-[#0C28D2] text-[#0C28D2] hover:text-[#0C28D2]"
+                            >
+                                Learn More
+                            </Button>
+                            <Button
+                                variant="outline"
+                                className="h-10 rounded-full border-[#0C28D2] text-[#0C28D2] hover:text-[#0C28D2]"
+                            >
+                                <MoveUpRight />
+                            </Button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src={project.timeline} alt="" className="size-full object-cover" />
+                    </div>
+                </div>
+            </section>
+
+            <section className="flex flex-col gap-16 py-20">
+                <h3 className="text-[2.75rem] text-[#0C28D2] text-center font-semibold">WHAT OUR CLIENT SAYS</h3>
+                <div className="flex flex-col gap-10 text-white bg-linear-to-r from-0% from-[#090328] to-100% to-[#0046CC] rounded-4xl px-16 py-21.5">
+                    <h4 className="text-4xl font-medium text-center">
+                        "The delivery of EngageX exceeded expectations. Our L&D clients now see us as a cutting-edge
+                        platform because the system looks modern, the workflow is clear, and the outputs are traceable.
+                        The project positioned us as a serious player in the enterprise training space."
+                    </h4>
+                    <div className="flex flex-col gap-2 items-center">
+                        <img src={HeadOfClaims} alt="" />
+                        <div className="text-center space-y-1">
+                            <h5 className="text-[2rem] font-bold">Henry Charles</h5>
+                            <span className="text-[1.75rem] font-medium text-[#E1E2E9]">Head of Claims, Engage X</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <Cta
+                title={
+                    <>
+                        Secure your company's future by
+                        <br /> Partnering with Axel Cyber
+                    </>
+                }
+                action="Book a call"
+            >
+                <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
+                    <HiArrowNarrowRight className="inline size-4" />
+                </Suspense>
+            </Cta>
+        </main>
+    );
 }

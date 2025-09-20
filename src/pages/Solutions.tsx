@@ -1,6 +1,7 @@
 import AiServices from "@/components/AiServices";
 import Cta from "@/components/Cta";
 import { ourProjects } from "@/lib/data";
+import { IProject } from "@/types";
 import { lazy, Suspense, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ai1 from "../assets/ai1.png";
@@ -8,11 +9,6 @@ import rocket from "../assets/rocket.png";
 import solutionImg from "../assets/solution-img.png";
 import solutionImg2 from "../assets/solution-mobile-hero-img.png";
 
-type IProject = {
-    image: string;
-    name: string;
-    tags: string[];
-};
 interface IProjectProps extends React.ComponentProps<"div"> {
     project: IProject;
 }
@@ -61,7 +57,7 @@ export default function Solutions() {
         },
     ];
 
-    const Project = ({ project: { image, name, tags } }: IProjectProps) => {
+    const Project = ({ project: { image, name, tags, slug } }: IProjectProps) => {
         return (
             <div className="flex flex-col gap-4">
                 <div className="relative">
@@ -78,7 +74,7 @@ export default function Solutions() {
                     >
                         <div
                             onClick={() => {
-                                navigate("/case-study");
+                                navigate("/case-study/" + slug);
                                 window.scrollTo({
                                     top: 0,
                                     behavior: "smooth",
