@@ -72,7 +72,7 @@ export default function Header() {
                                 location.pathname === "/ai-works" ? "scale-105" : "scale-100"
                             } md:text-base`}
                         >
-                            <Link to="/ai-works">Case study</Link>
+                            <Link to="/case-study">Case study</Link>
                         </motion.li>
                         <motion.li
                             variants={itemVariants}

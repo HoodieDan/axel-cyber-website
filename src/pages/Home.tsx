@@ -141,13 +141,13 @@ export default function Home() {
                     >
                         <div className="flex flex-col gap-20">
                             <div className="flex md:flex-row flex-col md:items-end items-center md:gap-45.5 gap-4">
-                                <h4 className="md:text-right text-center">
+                                <h4 className="md:text-left text-center">
                                     We offer leading
                                     <br /> solutions such as:
                                 </h4>
 
                                 <div className="flex flex-col md:gap-12 gap-5">
-                                    <h5 className="md:text-right text-center">
+                                    <h5 className="md:text-left text-center">
                                         Build high-impact solutions grounded in
                                         <br /> your proprietary data and assuring
                                         <br /> maximum security
