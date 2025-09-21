@@ -25,23 +25,23 @@ export default function CaseStudy() {
     }
 
     return (
-        <main className="px-10">
+        <main className="lg:px-10 px-4">
             <section className="flex flex-col gap-14 py-10">
-                <div className="grid md:grid-cols-2 gap-10 items-center">
+                <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 items-center">
                     <div className="space-y-2">
-                        <h2 className="text-5xl text-[#052377] font-semibold uppercase">{project.name}</h2>
-                        <p className="text-2xl">{project.description}</p>
+                        <h2 className="lg:text-5xl text-2xl text-[#052377] font-semibold uppercase">{project.name}</h2>
+                        <p className="lg:text-2xl text-sm">{project.description}</p>
                     </div>
                     <div>
-                        <h3 className="text-[2.75rem] text-[#0C28D2] leading-[140%] font-semibold">
+                        <h3 className="lg:text-[2.75rem] text-base text-[#0C28D2] leading-[140%] font-semibold lg:text-left text-center">
                             THE CHALLENGE AND PROCESS INVOLVED IN CREATING THE SOLUTION
                         </h3>
                     </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-10 items-center">
+                <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 items-center">
                     <div
-                        className={cn("grid grid-cols-2 gap-2", {
+                        className={cn("grid grid-cols-2 gap-2 rounded-2xl overflow-hidden", {
                             "grid-cols-1": project.layout === "tablet",
                         })}
                     >
@@ -55,22 +55,22 @@ export default function CaseStudy() {
                         {project.process.map(({ Icon, description, name }, index) => (
                             <div
                                 key={name + index}
-                                className="flex items-start gap-10 bg-linear-to-b from-0% from-[#002366] to-100% to-[#0046CC] text-white rounded-2xl px-8 py-6"
+                                className="flex items-start lg:gap-10 gap-6 bg-linear-to-b from-0% from-[#002366] to-100% to-[#0046CC] text-white rounded-2xl lg:px-8 lg:py-6 p-4"
                             >
-                                <div className="h-9.5 px-4 py-2.5 flex items-center gap-2.5 bg-white rounded-3xl text-black">
-                                    <span className="text-base font-medium">{name}</span>
-                                    <Icon className="size-4" />
+                                <div className="lg:h-9.5 h-5 lg:px-4 px-2 lg:py-2.5 py-1.5 flex items-center gap-2.5 bg-white rounded-3xl text-black">
+                                    <span className="lg:text-base text-[0.625rem] font-medium">{name}</span>
+                                    <Icon className="lg:size-4 size-2" />
                                 </div>
-                                <p className="text-base font-medium">{description}</p>
+                                <p className="lg:text-base text-[0.625rem] font-medium">{description}</p>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-10 items-start">
+                <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 items-start">
                     <div className="flex flex-col gap-2">
-                        <h3 className="text-[2.5rem] text-[#0C28D2] font-semibold">Outcomes</h3>
-                        <p className="text-2xl">{project.outcomes}</p>
+                        <h3 className="lg:text-[2.5rem] text-2xl text-[#0C28D2] font-semibold">Outcomes</h3>
+                        <p className="lg:text-2xl text-base">{project.outcomes}</p>
                         <div className="flex items-center gap-0.5 mt-4">
                             <Button
                                 variant="outline"
@@ -92,10 +92,10 @@ export default function CaseStudy() {
                 </div>
             </section>
 
-            <section className="flex flex-col gap-16 py-20">
-                <h3 className="text-[2.75rem] text-[#0C28D2] text-center font-semibold">WHAT OUR CLIENT SAYS</h3>
-                <div className="flex flex-col gap-10 text-white bg-linear-to-r from-0% from-[#090328] to-100% to-[#0046CC] rounded-4xl px-16 py-21.5">
-                    <h4 className="text-4xl font-medium text-center">
+            <section className="flex flex-col gap-14 py-20">
+                <h3 className="lg:text-[2.75rem] text-2xl text-[#0C28D2] text-center font-semibold">WHAT OUR CLIENT SAYS</h3>
+                <div className="flex flex-col gap-10 text-white bg-linear-to-r from-0% from-[#090328] to-100% to-[#0046CC] rounded-4xl lg:px-16 px-10 lg:py-21.5 py-16">
+                    <h4 className="lg:text-4xl text-2xl font-medium text-center">
                         "The delivery of EngageX exceeded expectations. Our L&D clients now see us as a cutting-edge
                         platform because the system looks modern, the workflow is clear, and the outputs are traceable.
                         The project positioned us as a serious player in the enterprise training space."
@@ -103,8 +103,8 @@ export default function CaseStudy() {
                     <div className="flex flex-col gap-2 items-center">
                         <img src={HeadOfClaims} alt="" />
                         <div className="text-center space-y-1">
-                            <h5 className="text-[2rem] font-bold">Henry Charles</h5>
-                            <span className="text-[1.75rem] font-medium text-[#E1E2E9]">Head of Claims, Engage X</span>
+                            <h5 className="lg:text-[2rem] text-[1.75rem] font-bold">Henry Charles</h5>
+                            <span className="lg:text-[1.75rem] text-2xl font-medium text-[#E1E2E9]">Head of Claims, Engage X</span>
                         </div>
                     </div>
                 </div>
