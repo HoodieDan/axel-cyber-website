@@ -4,7 +4,9 @@ import { ourProjects } from "@/lib/data";
 import { IProject } from "@/types";
 import { lazy, Suspense, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import AiAgentSolutions from "../assets/ai-agent-solutions.png";
 import ai1 from "../assets/ai1.png";
+import MachineLearningSolutions from "../assets/ai1.webp";
 import rocket from "../assets/rocket.png";
 import solutionImg from "../assets/solution-img.png";
 import solutionImg2 from "../assets/solution-mobile-hero-img.png";
@@ -36,7 +38,7 @@ export default function Solutions() {
         },
         {
             title: "AI Agent Solutions",
-            image: ai1,
+            image: AiAgentSolutions,
             icon: rocket,
             list: [
                 "Delegate complex tasks to autonous systems for efficiency",
@@ -46,7 +48,7 @@ export default function Solutions() {
         },
         {
             title: "Machine Learning Solutions",
-            image: ai1,
+            image: MachineLearningSolutions,
             icon: rocket,
             list: [
                 "Unlock actionable insights form large datasets",
@@ -105,14 +107,14 @@ export default function Solutions() {
     };
 
     return (
-        <main className="mx-auto">
+        <main>
             <section className="bg-white px-[5%] lg:pt-24 pt-12 pb-12 flex flex-col md:gap-12 gap-4">
-                <p className="text-center md:text-5xl text-3xl font-tt-hoves font-medium w-auto">
+                <p className="text-center md:text-5xl text-3xl font-tt-hoves font-medium w-auto leading-15">
                     We are commited to creating the future of Artificial
                     <br /> Intelligence and Human Synergy
                 </p>
                 <p className="mb-4 block md:hidden text-base mt-4">
-                    Witness some of the great works we've done for our amazing clients around the world, with great
+                    View some of the great works we've done for our amazing clients around the world, with a great
                     design story
                 </p>
                 <div className="relative">
@@ -134,10 +136,10 @@ export default function Solutions() {
                         width={1280}
                         height={345}
                     />
-                    <p className="hidden md:block text-xl absolute -bottom-5 left-[27.5%]">
-                        Witness some of the great works we've done
+                    <p className="hidden md:block text-xl absolute -bottom-7 left-[28.5%]">
+                        View some of the great works we've done
                         <br /> for our amazing clients around the world,
-                        <br /> with great design story
+                        <br /> with a great design story
                     </p>
                 </div>
             </section>
@@ -158,7 +160,7 @@ export default function Solutions() {
                 </div>
                 <p
                     ref={paraRef}
-                    className="text-center md:text-5xl text-3xl font-medium font-tt-hoves mx-auto mb-4 sm:mb-6 md:mb-8 lg:mb-10"
+                    className="text-center md:text-5xl text-3xl leading-[120%] font-medium font-tt-hoves mx-auto mb-4 sm:mb-6 md:mb-8 lg:mb-10"
                 >
                     Here's how Axel Cyber can
                     <br /> solve your company's Problems
@@ -185,7 +187,7 @@ export default function Solutions() {
                                 } group-hover:w-full h-full bg-[#3084da] top-0 left-0 transition-all duration-300 ease-linear`}
                             ></div>
                         </div>
-                        <p className=" text-xl text-[#4c5c75]">AI Chatbots Solutions</p>
+                        <p className="text-xl text-[#4c5c75]">AI Chatbots Solutions</p>
                     </div>
                     <div
                         className="shrink-0 group w-auto cursor-pointer"
@@ -238,7 +240,7 @@ export default function Solutions() {
                         <p className="text-sm leading-none">OUR PROJECTS</p>
                     </div>
                 </div>
-                <p className="text-center md:text-5xl text-3xl font-medium font-tt-hoves mx-auto mb-8 md:mb-16">
+                <p className="text-center md:text-5xl text-3xl leading-[120%] font-medium font-tt-hoves mx-auto mb-8 md:mb-16">
                     The Best AI solutions in
                     <br /> Record Time
                 </p>
@@ -248,7 +250,17 @@ export default function Solutions() {
                     ))}
                 </div>
             </section>
-            <Cta title="Secure your Company's future by Partnering with Axel Cyber" action="Book a call">
+
+            <Cta
+                title={
+                    <span>
+                        Secure your Company's future by
+                        <br /> Partnering with Axel Cyber
+                    </span>
+                }
+                action="Book a call"
+                className="px-[5%]"
+            >
                 <Suspense fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}>
                     <HiArrowNarrowRight className="inline size-4" />
                 </Suspense>

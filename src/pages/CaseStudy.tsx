@@ -47,7 +47,7 @@ export default function CaseStudy() {
                     >
                         {project.showcase.map((image, index) => (
                             <figure key={index} className={cn({ "first:col-span-2": project.layout === "desktop" })}>
-                                <img src={image} alt="" className="size-full objectcover" />
+                                <img src={image} alt="" className="size-full" />
                             </figure>
                         ))}
                     </div>
@@ -93,7 +93,9 @@ export default function CaseStudy() {
             </section>
 
             <section className="flex flex-col gap-14 py-20">
-                <h3 className="lg:text-[2.75rem] text-2xl text-[#0C28D2] text-center font-semibold">WHAT OUR CLIENT SAYS</h3>
+                <h3 className="lg:text-[2.75rem] text-2xl text-[#0C28D2] text-center font-semibold">
+                    WHAT OUR CLIENT SAYS
+                </h3>
                 <div className="flex flex-col gap-10 text-white bg-linear-to-r from-0% from-[#090328] to-100% to-[#0046CC] rounded-4xl lg:px-16 px-10 lg:py-21.5 py-16">
                     <h4 className="lg:text-4xl text-2xl font-medium text-center">
                         "The delivery of EngageX exceeded expectations. Our L&D clients now see us as a cutting-edge
@@ -104,7 +106,9 @@ export default function CaseStudy() {
                         <img src={HeadOfClaims} alt="" />
                         <div className="text-center space-y-1">
                             <h5 className="lg:text-[2rem] text-[1.75rem] font-bold">Henry Charles</h5>
-                            <span className="lg:text-[1.75rem] text-2xl font-medium text-[#E1E2E9]">Head of Claims, Engage X</span>
+                            <span className="lg:text-[1.75rem] text-2xl font-medium text-[#E1E2E9]">
+                                Head of Claims, Engage X
+                            </span>
                         </div>
                     </div>
                 </div>
