@@ -1,3 +1,4 @@
+import ArrowRight from "@/components/icons/ArrowRight";
 import { Button } from "@/components/ui/button";
 import { useContextValue } from "@/context";
 import axios from "axios";
@@ -6,7 +7,6 @@ import { lazy, Suspense, useCallback, useEffect, useState } from "react";
 import Hero from "../components/Hero";
 import Solution from "../components/Solution";
 
-const HiArrowNarrowRight = lazy(() => import("lucide-react").then((mod) => ({ default: mod.MoveRight })));
 const HomeLazySwiper = lazy(() => import("../components/HomeLazySwiper"));
 const IndustiesWeService = lazy(() => import("../components/IndustiesWeService"));
 const AdditionalServices = lazy(() => import("../components/AdditionalServices"));
@@ -465,7 +465,7 @@ export default function Home() {
                         <Suspense
                             fallback={<span className="w-5 h-5 inline-block animate-pulse bg-gray-300 rounded-full" />}
                         >
-                            <HiArrowNarrowRight className="inline size-4" />
+                            <ArrowRight className="size-4" />
                         </Suspense>
                     </Cta>
                 </Suspense>
