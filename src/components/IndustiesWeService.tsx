@@ -1,12 +1,12 @@
+import RealEstateImg from "@/assets/real-estate.png";
+import SoftwareImg from "@/assets/software-service.png";
 import { motion } from "motion/react";
 import energyMob from "../assets/energy-mobile.svg";
 import energy from "../assets/energy.webp";
 import engineering from "../assets/engineering.webp";
 import finanacial from "../assets/financial_services.webp";
-import healthcare from "../assets/health_center.webp";
 import laptop from "../assets/laptop-02.png";
 import publicMob from "../assets/public-service-mobile.svg";
-import publicSector from "../assets/public_sector.webp";
 
 export default function IndustiesWeService() {
     return (
@@ -22,7 +22,7 @@ export default function IndustiesWeService() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.25, ease: "easeInOut" }}
                 viewport={{ once: true }}
-                className="text-center mx-auto text-3xl lg:text-4xl font-medium font-tt-hoves mb-6 sm:mb-8 md:mb-10 lg:mb-12"
+                className="text-center mx-auto text-3xl md:text-5xl font-medium font-tt-hoves mb-6 sm:mb-8 md:mb-10 lg:mb-12"
             >
                 We Use our AI solutions
                 <br /> for all industries
@@ -37,8 +37,8 @@ export default function IndustiesWeService() {
                 >
                     <img
                         className="hidden lg:block h-full w-full"
-                        src={publicSector}
-                        alt="public sector"
+                        src={SoftwareImg}
+                        alt="Software service"
                         loading="lazy"
                         width={440}
                         height={190}
@@ -87,8 +87,8 @@ export default function IndustiesWeService() {
                 >
                     <img
                         className="block w-full"
-                        src={healthcare}
-                        alt="healthcare"
+                        src={RealEstateImg}
+                        alt="Real estate"
                         loading="lazy"
                         width={290}
                         height={180}
