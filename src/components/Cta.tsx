@@ -46,7 +46,7 @@ export default function Cta({ title, action, children, className }: ICtaProps) {
                     </p>
                     <Button
                         onClick={() => handleNavigation("/contact")}
-                        className="py-4 md:py-3 px-2 md:px-4 lg:px-6 bg-white text-black rounded-md hover:opacity-85 transition-all duration-300 ease-linear cursor-pointer"
+                        className="h-12 has-[>svg]:px-7 bg-white hover:bg-white text-black rounded-md hover:opacity-85 transition-all duration-300 ease-linear cursor-pointer"
                     >
                         {action} {children}
                     </Button>
