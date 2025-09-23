@@ -197,7 +197,7 @@ export default function Home() {
                 <Clientele />
             </div>
             <div className="bg-[#f9f9f9]">
-                <section className="px-[5%] mx-auto pt-10 pb-6 sm:py-8 md:py-10 lg:py-12">
+                <section className="px-[5%] mx-auto py-6 sm:py-8 md:py-20">
                     <div className="flex justify-center mb-4 md:mb-6 lg:mb-8">
                         <div className="flex rounded-lg flex-row p-2 gap-2 items-center border-2 border-[#e1e5e7]">
                             <img
@@ -208,7 +208,7 @@ export default function Home() {
                                 width={16}
                                 height={16}
                             />
-                            <p className="text-sm leading-none">What we offer</p>
+                            <p className="text-sm leading-none">WHAT WE OFFER</p>
                         </div>
                     </div>
                     <motion.p
@@ -216,7 +216,7 @@ export default function Home() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.25, ease: "easeInOut" }}
                         viewport={{ once: true }}
-                        className="mx-auto text-center text-3xl lg:text-4xl font-semibold mb-4 md:mb-6"
+                        className="mx-auto text-center text-3xl md:text-5xl leading-[120%] font-medium font-tt-hoves mb-4 md:mb-6"
                     >
                         Tailored Services for
                         <br /> your company
@@ -226,7 +226,7 @@ export default function Home() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.25, ease: "easeInOut" }}
                         viewport={{ once: true }}
-                        className="text-base text-[#4c5c75] mx-auto text-center mb-4 sm:mb-6"
+                        className="text-lg text-[#4c5c75] mx-auto text-center mb-8 sm:mb-12"
                     >
                         We support you in adapting AI technologies,
                         <br /> ensuring a smooth transition in your business
@@ -264,13 +264,13 @@ export default function Home() {
                     </div>
                 </section>
             </div>
-            <section className="px-[5%] mx-auto py-6 sm:py-8 md:py-10 lg:py-12">
+            <section className="px-[5%] mx-auto py-6 sm:py-8 md:py-20">
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.25, ease: "easeInOut" }}
                     viewport={{ once: true }}
-                    className="mx-auto text-center text-3xl lg:text-4xl font-semibold mb-4 sm:mb-6 md:mb-8"
+                    className="mx-auto text-center text-3xl md:text-5xl leading-[120%] font-medium font-tt-hoves mb-4 sm:mb-6 md:mb-8"
                 >
                     Additional Service we
                     <br /> offer for your need
@@ -293,10 +293,10 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.25, ease: "easeInOut" }}
                     viewport={{ once: true }}
-                    className="text-base text-[#4c5c75] mx-auto text-center mb-4 md:mb-6"
+                    className="text-lg leading-[180%] text-[#4c5c75] mx-auto text-center mb-4 md:mb-6"
                 >
                     We also offer leading solutions in this services. Always
-                    <br /> get the bonus solutions needed for your company
+                    <br className="md:inline hidden" /> get the bonus solutions needed for your company
                 </motion.p>
                 <div>
                     <Suspense
@@ -307,25 +307,25 @@ export default function Home() {
                         }
                     >
                         <AdditionalServices
-                            service="Natural Languge Processing (NLP)"
-                            desc="We deliver instant, intelligent customer support and engagement 24/7. Our AI chatbots understand context, handle complex queries, and scale effortlessly across platforms."
+                            service="AI Implementation Strategy and Planning"
+                            desc="We help guide Organizations views on AI integration to understand context, handle complex queries, and scale effortlessly across teams and activities."
                         />
                         <AdditionalServices
-                            service="Recommendation Systems"
+                            service="Customizable AI Systems"
                             desc="We streamline repetitive tasks and optimize operations with AI-driven workflows, freeing up your team for higher-value work."
                         />
                         <AdditionalServices
                             service="AI Strategy Consulting"
-                            desc="Our Agentic AI Systems can make decisions and take actions eithout constant human supervision. Deploy smart AI agents that act, learn, and adapt like human assistants."
+                            desc="We help with Identifying and Creating AI systems can make decisions and take actions without constant human supervision and adapting like human assistants."
                         />
                         <AdditionalServices
-                            service="AI Feature Implement"
-                            desc="Integrate AI Features and Engineer sophisticated Artificial Intelligence and AUtomated processes into your company's existing software"
+                            service="AI Feature Implementations"
+                            desc="Integrate AI Features and Engineer sophisticated Artificial Intelligence and Automated processes into your company's existing software/software stacks."
                         />
                     </Suspense>
                 </div>
             </section>
-            <section className="px-[5%] mx-auto py-6 sm:py-8 md:py-10 lg:py-12">
+            <section className="px-[5%] mx-auto py-6 sm:py-8 md:py-20">
                 <div className="flex justify-center md:justify-start mb-4 sm:mb-6 md:mb-8 lg:mb-10">
                     <div className="flex rounded-lg flex-row p-2 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img
@@ -344,7 +344,7 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.25, ease: "easeInOut" }}
                     viewport={{ once: true }}
-                    className="text-3xl lg:text-4xl font-semibold mb-3 text-center md:text-start"
+                    className="text-3xl md:text-5xl font-medium mb-5 text-center md:text-start"
                 >
                     Latest Blogs & Resources
                 </motion.p>
@@ -353,12 +353,13 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.25, ease: "easeInOut" }}
                     viewport={{ once: true }}
-                    className="text-base md:text-xl text-[#4c5c75] mb-6 lg:mb-10 w-[350px] 2xl:w-[650px] text-center md:text-start"
+                    className="text-base md:text-2xl leading-[125%] tracking-[11%] text-[#4c5c75] mb-6 lg:mb-12 text-center md:text-start"
                 >
-                    Stay Informed on Developments in AI and our insights on problem solving with AI
+                    Stay Informed on Developments in AI and
+                    <br /> our insights on problem solving with AI.
                 </motion.p>
                 <div
-                    className={`flex flex-col md:flex-row ${
+                    className={`grid md:grid-cols-3 grid-cols-1 ${
                         articles.length == 0 && !loading
                             ? "justify-center items-center border border-[#4c5c75] rounded-md"
                             : "justify-between items-center"
@@ -409,7 +410,7 @@ export default function Home() {
                     )}
                 </div>
             </section>
-            <section className="px-[5%] mx-auto py-6 sm:py-8 md:py-10 lg:py-12">
+            <section className="px-[5%] mx-auto py-6 sm:py-8 md:py-20">
                 <div className="flex justify-center mb-6 md:mb-8 lg:mb-10">
                     <div className="flex rounded-lg flex-row p-2 gap-2 items-center border-2 border-[#e1e5e7]">
                         <img
@@ -428,7 +429,7 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.25, ease: "easeInOut" }}
                     viewport={{ once: true }}
-                    className=" text-center text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6 sm:mb-8 md:mb-10 lg:mb-14"
+                    className="text-center text-3xl md:text-5xl font-medium font-tt-hoves mb-6 sm:mb-8 md:mb-10 lg:mb-14"
                 >
                     Check out a few of our AI
                     <br /> Solutions

@@ -4,6 +4,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import leftbottom from "../assets/leftbottom.png";
 import righttop from "../assets/righttop.png";
+import { Button } from "./ui/button";
 interface ICtaProps extends Omit<React.ComponentProps<"section">, "title"> {
     title: React.ReactNode;
     action: string;
@@ -38,15 +39,17 @@ export default function Cta({ title, action, children, className }: ICtaProps) {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.25, ease: "easeInOut" }}
                     viewport={{ once: true }}
-                    className="flex flex-col gap-4 lg:gap-8 items-center"
+                    className="flex flex-col gap-8 items-center"
                 >
-                    <p className="text-base md:text-5xl text-center font-medium font-tt-hoves leading-[120%]">{title}</p>
-                    <button
+                    <p className="text-base md:text-5xl text-center font-medium font-tt-hoves leading-[120%]">
+                        {title}
+                    </p>
+                    <Button
                         onClick={() => handleNavigation("/contact")}
-                        className="flex items-center gap-2 py-4 md:py-3 px-2 md:px-4 lg:px-6 bg-white text-black rounded-md hover:opacity-85 transition-all duration-300 ease-linear cursor-pointer"
+                        className="py-4 md:py-3 px-2 md:px-4 lg:px-6 bg-white text-black rounded-md hover:opacity-85 transition-all duration-300 ease-linear cursor-pointer"
                     >
                         {action} {children}
-                    </button>
+                    </Button>
                 </motion.div>
             </div>
         </section>

@@ -14,16 +14,16 @@ const ArrowDownRight = ({ className, ...rest }: IArrowDownRightProps) => {
             <path
                 d="M34.2627 34.8848L69.7863 70.4084"
                 stroke="currentColor"
-                stroke-width="4.56709"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="4.56709"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
             <path
                 d="M40.5225 70.6074L69.7861 70.4085L69.985 41.1449"
                 stroke="currentColor"
-                stroke-width="4.56709"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="4.56709"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
         </svg>
     );
