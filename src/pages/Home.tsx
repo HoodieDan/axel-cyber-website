@@ -87,56 +87,6 @@ export default function Home() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.25, ease: "easeInOut" }}
                         viewport={{ once: true }}
-                        className="div-height hidden px-[5%] pb-8 md:pb-10 lg:pb-12 relative bg-[linear-gradient(135deg,#0250E6,#0046CC)] text-white h-auto md:h-[250px] lg:h-[350px] xl:h-[460px] 2xl:h-[750px]"
-                    >
-                        <div className="h-[35px] lg:h-[50px] md:w-[175px] lg:w-[250px] absolute -top-[2px] -left-[2px] trapezium hidden md:block"></div>
-                        <div className="flex flex-col md:flex-row gap-x-24 md:gap-x-64 pt-12 pb-8 sm:py-10 md:py-14 lg:py-16 2xl:py-12 mb-4">
-                            <p className="whitespace-nowrap text-xl md:text-2xl font-semibold md:self-end text-center md:text-start flex-1 md:flex-initial mt-4 mb-3">
-                                We offer leading <br /> solutions such as:
-                            </p>
-                            <div>
-                                <p className="hidden md:block mb-6 lg:mb-8 text-xl md:text-2xl">
-                                    Building high-impact solutions grounded in
-                                    <br /> your proprietary data and assuring
-                                    <br /> maximum security
-                                </p>
-                                <p className="text-center block md:hidden mb-6 lg:mb-8 text-base md:text-2xl">
-                                    Building high-impact solutions grounded in
-                                    <br /> your proprietary data and assuring maximum security
-                                </p>
-                                <button className="w-full md:w-auto bg-white rounded-md px-4 md:px-8 lg:px-10 py-4 text-black hover:opacity-80 active:opacity-85 transition-all duration-300 ease-linear cursor-pointer">
-                                    Gets Started
-                                </button>
-                            </div>
-                        </div>
-                        <div className="px-2 sm:px-3 md:px-0 md:absolute md:left-[3%] lg:left-[5%] md:top-[65%] w-full md:w-[94%] lg:w-[90%] flex flex-col md:flex-row justify-between gap-4 lg:gap-6">
-                            <Solution
-                                title="Scalable"
-                                description="From proof of concept to full production with compressed, entreprise-focused models"
-                                imgUrl="/scalable.webp"
-                            />
-                            <Solution
-                                title="Accurate"
-                                description="Fine-tune with retrieval-augmented generation (RAG) for verifiable outputs"
-                                imgUrl="/accurate.webp"
-                            ></Solution>
-                            <Solution
-                                title="Secure"
-                                description="Enterprise-grade security access controls, and private deployment options"
-                                imgUrl="/secure.webp"
-                            />
-                            <Solution
-                                title="Maximized Value"
-                                description="By combining AI tools and integrating them with your current systems"
-                                imgUrl="/seamless.webp"
-                            />
-                        </div>
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.25, ease: "easeInOut" }}
-                        viewport={{ once: true }}
                         className="text-white md:bg-[url(/src/assets/top-right-vector-bg.png)] bg-linear-to-b from-[#0250E6] to-[#0046CC] bg-no-repeat bg-contain md:pt-20 md:py-0 py-14 md:px-20 px-[5%]"
                     >
                         <div className="flex flex-col gap-20">
