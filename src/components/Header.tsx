@@ -1,6 +1,7 @@
+import { companyNav, solutionsNav } from "@/lib/data";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { motion } from "motion/react";
 import { useState } from "react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { buttonVariants } from "./ui/button";
@@ -76,11 +77,28 @@ export default function Header() {
                         </motion.li>
                         <motion.li
                             variants={itemVariants}
-                            className={`text-sm text-[#4c5c75] hover:scale-105 transition-transform duration-300 ease-in-out ${
-                                location.pathname === "/solutions" ? "scale-105" : "scale-100"
-                            } md:text-base`}
+                            className="relative text-[#4c5c75] group text-sm md:text-base"
                         >
-                            <Link to="/solutions">Solutions</Link>
+                            <span className="group-hover:scale-105 transition-transform duration-300 ease-in-out">
+                                Solutions
+                            </span>
+                            <div className="hidden group-hover:flex shadow-md z-80 absolute left-0 bottom-0 translate-y-full bg-white text-black w79.5 px-6 py-2 flex-col gap-6 rounded-3xl">
+                                <span className="text-sm text-[#002366] uppercase">Solutions</span>
+
+                                <ul className="list-none flex flex-col gap-5">
+                                    {solutionsNav.map((item) => (
+                                        <li
+                                            key={item.label}
+                                            className={cn(
+                                                "text-lg whitespace-nowrap font-medium hover:opacity-65 transition-opacity duration-300 ease-in-out",
+                                                location.pathname === item.to && "opacity-65",
+                                            )}
+                                        >
+                                            <Link to={item.to}>{item.label}</Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </motion.li>
                         <motion.li
                             variants={itemVariants}
@@ -89,29 +107,23 @@ export default function Header() {
                             <span className="group-hover:scale-105 transition-transform duration-300 ease-in-out">
                                 Company
                             </span>
-                            <ul className="hidden group-hover:flex shadow-md list-none z-80 absolute top-[110%] left-0 bg-white text-black py-6 flex-col space-y-3 rounded-lg text-lg">
-                                <li
-                                    className={`pl-4 pr-24 whitespace-nowrap font-semibold hover:opacity-65 ${
-                                        location.pathname === "/about" && "opacity-65"
-                                    }  transition-opactiy duration-300 ease-in-out`}
-                                >
-                                    <Link to="/about">About Us</Link>
-                                </li>
-                                <li
-                                    className={`pl-4 pr-24 font-semibold hover:opacity-65 ${
-                                        location.pathname === "/career" && "opacity-65"
-                                    } transition-opacity duration-300 ease-in-out`}
-                                >
-                                    <Link to="/career">Career</Link>
-                                </li>
-                                <li
-                                    className={`pl-4 pr-24 font-semibold hover:opacity-65 ${
-                                        location.pathname === "/blog" && "opacity-65"
-                                    }  transition-opacity duration-300 ease-in-out`}
-                                >
-                                    <Link to="/blog">Blogs</Link>
-                                </li>
-                            </ul>
+                            <div className="hidden group-hover:flex shadow-md z-80 absolute left-0 bottom-0 translate-y-full bg-white text-black w-79.5 px-6 py-2 flex-col gap-6 rounded-3xl">
+                                <span className="text-sm text-[#002366]">COMPANY</span>
+
+                                <ul className="list-none flex flex-col gap-5">
+                                    {companyNav.map((item) => (
+                                        <li
+                                            key={item.label}
+                                            className={cn(
+                                                "text-lg whitespace-nowrap font-medium hover:opacity-65 transition-opacity duration-300 ease-in-out",
+                                                location.pathname === item.to && "opacity-65",
+                                            )}
+                                        >
+                                            <Link to={item.to}>{item.label}</Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </motion.li>
                     </motion.ul>
 
@@ -159,25 +171,25 @@ export default function Header() {
                                             Company
                                         </a>
                                         <ul
-                                            className={`${
-                                                subMenu ? "block" : "hidden"
-                                            } group-active:flex group-hover:flex list-none bg-white text-black flex-col rounded-lg text-lg`}
+                                            className={cn(
+                                                "group-active:flex group-hover:flex list-none bg-white text-black flex-col rounded-lg text-lg",
+                                                subMenu ? "block" : "hidden",
+                                            )}
                                         >
-                                            <li className="pl-4 py-1 whitespace-nowrap border-b border-b-[#0081f1]">
-                                                <Link onClick={handleCloseMenu} to="/about">
-                                                    About Us
-                                                </Link>
-                                            </li>
-                                            <li className="pl-4 py-1 border-b border-b-[#0081f1]">
-                                                <Link onClick={handleCloseMenu} to="/career">
-                                                    Career
-                                                </Link>
-                                            </li>
-                                            <li className="pl-4 py-1">
-                                                <Link onClick={handleCloseMenu} to="/blog">
-                                                    Blogs
-                                                </Link>
-                                            </li>
+                                            {companyNav.map((item, index) => (
+                                                <li
+                                                    key={item.label}
+                                                    className={cn(
+                                                        "pl-4 py-1 whitespace-nowrap",
+                                                        index !== companyNav.length - 1 &&
+                                                            "border-b border-b-[#0081f1]",
+                                                    )}
+                                                >
+                                                    <Link onClick={handleCloseMenu} to={item.to}>
+                                                        {item.label}
+                                                    </Link>
+                                                </li>
+                                            ))}
                                         </ul>
                                     </li>
                                 </ul>

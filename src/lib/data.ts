@@ -40,6 +40,21 @@ import GearDot from "@/components/icons/GearDot";
 import OutlineReportProblem from "@/components/icons/OutlineReportProblem";
 import { IProject } from "@/types";
 
+export const companyNav = [
+    { label: "About Us", to: "/about" },
+    { label: "Career", to: "/career" },
+    { label: "Blogs", to: "/blog" },
+    { label: "Resources", to: "" },
+];
+
+export const solutionsNav = [
+    { label: "Outbound Automations", to: "" },
+    { label: "Inbound Automations", to: "" },
+    { label: "Marketing Automations", to: "" },
+    { label: "Proposal Generation Automations", to: "" },
+    { label: "Onboarding & CSM Automations", to: "" },
+];
+
 export const ourProjects: IProject[] = [
     {
         image: claimixImg,
