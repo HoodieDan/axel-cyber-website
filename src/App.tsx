@@ -1,21 +1,20 @@
 import { lazy, Suspense } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router";
-import  Home from "./pages/Home";
 import "./App.css";
 import AppLayout from "./components/layouts/AppLayout";
+import Home from "./pages/Home";
+import ProposalGeneration from "./pages/solutions/ProposalGeneration";
 import "./styles/index.scss";
 
-
-const  Blog = lazy(() => import("./pages/Blog"));
-const  Aboutus  = lazy(() => import("./pages/Aboutus"));
-const IndustriesWeService = lazy(()=> import("./pages/IndustriesWeService"));
-const Services = lazy(()=>import("./pages/Services"));
-const  Contact = lazy(()=>import("./pages/Contact"));
-const BlogPage = lazy(()=> import("./pages/BlogPage"))
-const Solutions = lazy(()=>import("./pages/Solutions"))
-const CaseStudy = lazy(()=>import("./pages/CaseStudy"))
-const Jobs = lazy(()=>import("./pages/Jobs"));
-
+const Blog = lazy(() => import("./pages/Blog"));
+const Aboutus = lazy(() => import("./pages/Aboutus"));
+const IndustriesWeService = lazy(() => import("./pages/IndustriesWeService"));
+const Services = lazy(() => import("./pages/Services"));
+const Contact = lazy(() => import("./pages/Contact"));
+const BlogPage = lazy(() => import("./pages/BlogPage"));
+const CaseStudy = lazy(() => import("./pages/case-study"));
+const Project = lazy(() => import("./pages/case-study/Project"));
+const Jobs = lazy(() => import("./pages/Jobs"));
 
 function App() {
     return (
@@ -23,87 +22,91 @@ function App() {
             <Router>
                 <Routes>
                     <Route path="/" element={<AppLayout />}>
-                        <Route index 
-                            element={<Home />} 
-                        />
-                        <Route 
-                            path="/about" 
+                        <Route index element={<Home />} />
+                        <Route
+                            path="/about"
                             element={
-                            <Suspense fallback={<div></div>}>
-                                <Aboutus />
-                            </Suspense>
-                            } 
+                                <Suspense fallback={<div></div>}>
+                                    <Aboutus />
+                                </Suspense>
+                            }
                         />
-                        <Route path="/services" 
+                        <Route
+                            path="/services"
                             element={
-                            <Suspense fallback={<div></div>}>
-                                <Services />
-                            </Suspense>
-                            } 
+                                <Suspense fallback={<div></div>}>
+                                    <Services />
+                                </Suspense>
+                            }
                         />
-                        <Route 
-                            path="/industries-we-service" 
+                        <Route
+                            path="/industries-we-service"
                             element={
-                            <Suspense fallback={<div></div>}>
-                                <IndustriesWeService />
-                            </Suspense>
-                        } 
+                                <Suspense fallback={<div></div>}>
+                                    <IndustriesWeService />
+                                </Suspense>
+                            }
                         />
-                        <Route 
-                            path="/blog" 
+                        <Route path="solutions">
+                            <Route path="proposal-generation" element={<ProposalGeneration />} />
+                        </Route>
+                        <Route
+                            path="/blog"
                             element={
                                 <Suspense fallback={<div></div>}>
                                     <Blog />
                                 </Suspense>
-                            } 
+                            }
                         />
-                        <Route 
-                            path="/contact" 
+                        <Route
+                            path="/contact"
                             element={
                                 <Suspense fallback={<div></div>}>
                                     <Contact />
                                 </Suspense>
-                            } 
+                            }
                         />
-                        <Route 
-                            path="*" 
+                        <Route
+                            path="/blog/:id"
+                            element={
+                                <Suspense fallback={<div></div>}>
+                                    <BlogPage />
+                                </Suspense>
+                            }
+                        />
+                        <Route path="/case-study">
+                            <Route
+                                index
+                                element={
+                                    <Suspense fallback={<div></div>}>
+                                        <CaseStudy />
+                                    </Suspense>
+                                }
+                            />
+                            <Route
+                                path=":caseSlug"
+                                element={
+                                    <Suspense fallback={<div></div>}>
+                                        <Project />
+                                    </Suspense>
+                                }
+                            />
+                        </Route>
+                        <Route
+                            path="/career"
+                            element={
+                                <Suspense fallback={<div></div>}>
+                                    <Jobs />
+                                </Suspense>
+                            }
+                        />
+                        <Route
+                            path="*"
                             element={
                                 <Suspense fallback={<div></div>}>
                                     <Home />
                                 </Suspense>
                             }
-                        />
-                        <Route 
-                            path="/blog/:id" 
-                            element={
-                                <Suspense fallback={<div></div>}>
-                                    <BlogPage />
-                                </Suspense>
-                            } 
-                        />
-                        <Route 
-                            path="/case-study" 
-                            element={
-                            <Suspense fallback={<div></div>}>
-                                <Solutions />
-                            </Suspense>
-                            } 
-                        />
-                        <Route 
-                            path="/case-study/:caseSlug" 
-                            element={
-                                <Suspense fallback={<div></div>}>
-                                    <CaseStudy />
-                                </Suspense>
-                            } 
-                        />
-                        <Route 
-                            path="/career" 
-                            element={
-                                <Suspense fallback={<div></div>}>
-                                    <Jobs />
-                                </Suspense>
-                            } 
                         />
                     </Route>
                 </Routes>

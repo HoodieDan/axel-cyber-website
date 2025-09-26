@@ -5,7 +5,7 @@ const IWSAboutUs = () => {
     return (
         <section className="flex flex-col md:gap-y-20 gap-y-10 padding-x md:py-[5.5%] py-[10vh] bg-gray-1">
             <div className="md:space-y-10 space-y-5">
-                <div className="flex items-center gap-x-1 mx-auto py-1 px-2 rounded-md border border-gray-2 w-fit">
+                <div className="flex items-center gap-1 mx-auto py-1 px-2 rounded-md border border-gray-2 w-fit">
                     <Sparkle className="size-4 text-light-blue stroke-1" />
                     <p>ABOUT US</p>
                 </div>
