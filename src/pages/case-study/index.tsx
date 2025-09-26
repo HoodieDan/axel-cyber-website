@@ -1,15 +1,15 @@
+import AiAgentSolutions from "@/assets/ai-agent-solutions.png";
+import ai1 from "@/assets/ai1.png";
+import MachineLearningSolutions from "@/assets/ai1.webp";
+import rocket from "@/assets/rocket.png";
+import solutionImg from "@/assets/solution-img.png";
+import solutionImg2 from "@/assets/solution-mobile-hero-img.png";
 import AiServices from "@/components/AiServices";
 import Cta from "@/components/Cta";
 import { ourProjects } from "@/lib/data";
 import { IProject } from "@/types";
 import { lazy, Suspense, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import AiAgentSolutions from "../assets/ai-agent-solutions.png";
-import ai1 from "../assets/ai1.png";
-import MachineLearningSolutions from "../assets/ai1.webp";
-import rocket from "../assets/rocket.png";
-import solutionImg from "../assets/solution-img.png";
-import solutionImg2 from "../assets/solution-mobile-hero-img.png";
 
 interface IProjectProps extends React.ComponentProps<"div"> {
     project: IProject;
@@ -20,7 +20,7 @@ const IoIosArrowDroprightCircle = lazy(() =>
 );
 const HiArrowNarrowRight = lazy(() => import("lucide-react").then((module) => ({ default: module.MoveRight })));
 
-export default function Solutions() {
+export default function CaseStudy() {
     const navigate = useNavigate();
     const paraRef = useRef<HTMLParagraphElement>(null);
     const [index, setIndex] = useState(0);
@@ -109,7 +109,7 @@ export default function Solutions() {
     return (
         <main>
             <section className="bg-white px-[5%] lg:pt-24 pt-12 pb-12 flex flex-col md:gap-12 gap-4">
-                <p className="text-center md:text-5xl text-3xl font-tt-hoves font-medium w-auto leading-15">
+                <p className="text-center md:text-5xl text-3xl font-tt-hoves font-medium w-auto md:leading-15">
                     We are commited to creating the future of Artificial
                     <br /> Intelligence and Human Synergy
                 </p>

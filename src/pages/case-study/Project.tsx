@@ -9,7 +9,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 const HiArrowNarrowRight = lazy(() => import("lucide-react").then((module) => ({ default: module.MoveUpRight })));
 
-export default function CaseStudy() {
+export default function Project() {
     const { caseSlug } = useParams();
     const navigate = useNavigate();
     const project = ourProjects.find((p) => p.slug === caseSlug);
