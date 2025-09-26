@@ -10,6 +10,7 @@ import pencil from "@/assets/pencil.png";
 import VideoImgDesktop from "@/assets/video-img-desktop.png";
 import VideoImgMobile from "@/assets/video-img-mobile.png";
 import volume from "@/assets/volume.png";
+import CTASection from "@/components/CTASection";
 import AddBusiness from "@/components/icons/AddBusiness";
 import ArrowUpRight from "@/components/icons/ArrowUpRight";
 import CheckAll from "@/components/icons/CheckAll";
@@ -232,7 +233,7 @@ const ProposalGeneration = () => {
                         {perfectSalesProblems.slice(3, 5).map(({ description, heading, Icon }, index) => (
                             <div
                                 key={index}
-                                className="md:h-65 flex flex-col gap-5 text-white p-7.5 rounded-xl not-last:bg-linear-to-b not-last:from-[#002366] not-last:to-[#0046CC] last:bg-linear-[40deg,#080323_0%,#0F0255_100%] md:first:w-2/3 md:last:w-1/3"
+                                className="md:h-65 flex flex-col gap-5 text-white p-7.5 rounded-xl not-last:bg-linear-to-b not-last:from-[#002366] not-last:to-[#0046CC] last:bg-linear-[-40deg,#0F0255_0%,#080323_100%] md:first:w-2/3 md:last:w-1/3"
                             >
                                 <Icon className="size-10" />
                                 <div className="space-y-4">
@@ -353,7 +354,7 @@ const ProposalGeneration = () => {
                         {proposalProblems.slice(2, 4).map(({ description, heading, Icon }, index) => (
                             <div
                                 key={index}
-                                className="md:h-65 flex flex-col gap-5 text-white p-7.5 rounded-xl not-last:bg-linear-to-b not-last:from-[#002366] not-last:to-[#0046CC] last:bg-linear-[40deg,#080323_0%,#0F0255_100%] md:first:w-3/5 md:last:w-2/5"
+                                className="md:h-65 flex flex-col gap-5 text-white p-7.5 rounded-xl not-last:bg-linear-to-b not-last:from-[#002366] not-last:to-[#0046CC] last:bg-linear-[-40deg,#0F0255_0%,#080323_100%] md:first:w-3/5 md:last:w-2/5"
                             >
                                 <Icon className="size-10" />
                                 <div className="space-y-4">
@@ -366,29 +367,32 @@ const ProposalGeneration = () => {
                 </div>
             </section>
 
-            <section className="px-[5%] lg:py-24 py-12">
-                <div className="md:bg-[url(/src/assets/vector-44-top.png),url(/src/assets/vector-43-bottom.png),linear-gradient(-48deg,#0046CC,#090328)] bg-[url(/src/assets/vector-44-top-mobile.png),url(/src/assets/vector-43-bottom-mobile.png),linear-gradient(-23deg,#0046CC,#090328)] bg-no-repeat bgbottom bg-position-[top_right,bottom_left] text-white text-center flex flex-col items-center gap-7.5 md:px-30 px-10 py-30 rounded-[1.125rem]">
-                    <h2 className="font-tt-hoves font-medium md:text-5xl text-2xl md:leading-[120%]">
+            <CTASection
+                heading={
+                    <span>
                         Watch a Complete Deal
                         <br /> Happen in Under 5 Minutes
-                    </h2>
-                    <p className="md:text-xl text-sm md:leading-[135%]">
+                    </span>
+                }
+                description={
+                    <span>
                         Ready to see what it looks like when sales momentum never dies? Book
                         <br className="md:inline hidden" /> a live demo and we'll show you exactly how fast your deals
                         could be
                         <br className="md:inline hidden" /> closing and how much sooner you could be getting paid.
-                    </p>
-                    <Link
-                        to=""
-                        className={cn(
-                            buttonVariants(),
-                            "bg-white hover:bg-white/90 text-black md:w-fit w-full h-14 has-[>svg]:px-5",
-                        )}
-                    >
-                        Show Me a Live Deal Closing <ArrowUpRight className="size-4" />
-                    </Link>
-                </div>
-            </section>
+                    </span>
+                }
+            >
+                <Link
+                    to=""
+                    className={cn(
+                        buttonVariants(),
+                        "bg-white hover:bg-white/90 text-black md:w-fit w-full h-14 has-[>svg]:px-5",
+                    )}
+                >
+                    Show Me a Live Deal Closing <ArrowUpRight className="size-4" />
+                </Link>
+            </CTASection>
 
             <section className="px-[5%] lg:py-24 py-12 flex flex-col gap-5">
                 <div className="flex md:flex-row flex-col-reverse items-center md:gap-18.5 gap-10">
