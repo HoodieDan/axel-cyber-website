@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import ProposalGeneration from "./pages/solutions/ProposalGeneration";
 import "./styles/index.scss";
 import Marketing from "./pages/solutions/Marketing";
+import Onboarding from "./pages/solutions/Onboarding";
 
 const Blog = lazy(() => import("./pages/Blog"));
 const Aboutus = lazy(() => import("./pages/Aboutus"));
@@ -51,6 +52,7 @@ function App() {
                         <Route path="solutions">
                             <Route path="proposal-generation" element={<ProposalGeneration />} />
                             <Route path="marketing" element={<Marketing />} />
+                            <Route path="onboarding" element={<Onboarding />} />
                         </Route>
                         <Route
                             path="/blog"
