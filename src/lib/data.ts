@@ -52,7 +52,7 @@ export const solutionsNav = [
     { label: "Inbound Automations", to: "" },
     { label: "Marketing Automations", to: "/solutions/marketing" },
     { label: "Proposal Generation Automations", to: "/solutions/proposal-generation" },
-    { label: "Onboarding & CSM Automations", to: "" },
+    { label: "Onboarding & CSM Automations", to: "/solutions/onboarding" },
 ];
 
 export const ourProjects: IProject[] = [
