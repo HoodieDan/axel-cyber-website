@@ -296,30 +296,46 @@ const ProposalGeneration = () => {
                     </h2>
                 </div>
 
-                <div className="flex flex-col items-center">
+                <div className="isolate flex flex-col items-center">
                     {paymentSteps.map(({ description, heading, image }, index) => (
-                        <div key={index} className="flex nth-[2]:flex-row-reverse items-start gap8 w-9/10">
-                            <div
-                                className={cn("w-1/2 flex items-start justify-end", {
-                                    " justify-start": index === 1,
-                                })}
-                            >
-                                <figure className="w-82.5 h-36.5">
+                        <div key={index} className="group flex items-start gap-8 w-9/10">
+                            <div className="w-1/2 flex items-start justify-end">
+                                <figure
+                                    className={cn("w-82.5 h-36.5", {
+                                        hidden: index === 1,
+                                    })}
+                                >
                                     <img src={image} alt="" className="size-full object-cover" />
                                 </figure>
-                            </div>
-                            <div
-                                className={cn("relative w-1/2 flex items-start gap-8", {
-                                    "flex-row-reverse *:nth-[2]:text-right": index === 1,
-                                })}
-                            >
-                                <div className="shrink-0 size-19 grid place-content-center rounded-full bg-linear-to-b from-[#002366] to-[#0046CC]">
-                                    <span className="text-white text-2xl font-medium">{index + 1}</span>
-                                </div>
-                                <div className="space-y-5">
+                                <div
+                                    className={cn("hidden space-y-5", {
+                                        "block text-right": index === 1,
+                                    })}
+                                >
                                     <h6 className="text-2xl text-[#000F1F] font-medium">{heading}</h6>
                                     <p className="text-xl text-black/60 md:leading-7.5">{description}</p>
                                 </div>
+                            </div>
+
+                            <div className="relative w-1/2 flex items-start gap-8 pb-8 group-last:before:hidden md:before:block before:hidden before:absolute before:left-[calc(var(--index-width)/2)] before:w-[1px] before:h-full before:bg-[#948E8E] before:-z-10 md:[--index-width:calc(var(--spacing)*19)] [--index-width:calc(var(--spacing)*10)]">
+                                <div className="shrink-0 size-(--index-width) grid place-content-center rounded-full bg-linear-to-b from-[#002366] to-[#0046CC]">
+                                    <span className="text-white text-2xl font-medium">{index + 1}</span>
+                                </div>
+                                <div
+                                    className={cn("space-y-5", {
+                                        hidden: index === 1,
+                                    })}
+                                >
+                                    <h6 className="text-2xl text-[#000F1F] font-medium">{heading}</h6>
+                                    <p className="text-xl text-black/60 md:leading-7.5">{description}</p>
+                                </div>
+                                <figure
+                                    className={cn("hidden w-82.5 h-36.5", {
+                                        block: index === 1,
+                                    })}
+                                >
+                                    <img src={image} alt="" className="size-full object-cover" />
+                                </figure>
                             </div>
                         </div>
                     ))}
