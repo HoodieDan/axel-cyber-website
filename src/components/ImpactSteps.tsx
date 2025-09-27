@@ -20,7 +20,7 @@ const ImpactSteps = ({ className, steps }: IImpactStepsProps) => {
                     <figure className="shrink-0 md:h-full h-36.5 md:w-auto w-full">
                         <img src={image} alt="" className="w-full md:h-23/25 h-full object-cover" />
                     </figure>
-                    <div className="relative md:h-full flex items-start md:gap-8 gap-2 group-last:before:hidden md:before:block before:hidden before:absolute before:left-[calc(var(--index-width)/2)] before:w-[1px] before:h-full before:bg-[#948E8E] before:-z-10 md:[--index-width:calc(var(--spacing)*14)] [--index-width:calc(var(--spacing)*10)]">
+                    <div className="relative md:h-full flex items-start md:gap-8 gap-2 group-last:before:hidden md:before:block before:hidden before:absolute before:left-[calc(var(--index-width)/2)] before:w-[1px] before:h-full before:-translate-x-1/2 before:bg-[#948E8E] before:-z-10 md:[--index-width:calc(var(--spacing)*14)] [--index-width:calc(var(--spacing)*10)]">
                         <div className="shrink-0 size-(--index-width) grid place-content-center rounded-full bg-linear-to-b from-[#002366] to-[#0046CC]">
                             <span className="text-white md:text-2xl text-xs font-medium">{index + 1}</span>
                         </div>
