@@ -3,10 +3,11 @@ import { Route, BrowserRouter as Router, Routes } from "react-router";
 import "./App.css";
 import AppLayout from "./components/layouts/AppLayout";
 import Home from "./pages/Home";
-import ProposalGeneration from "./pages/solutions/ProposalGeneration";
-import "./styles/index.scss";
 import Marketing from "./pages/solutions/Marketing";
 import Onboarding from "./pages/solutions/Onboarding";
+import Outbound from "./pages/solutions/Outbound";
+import ProposalGeneration from "./pages/solutions/ProposalGeneration";
+import "./styles/index.scss";
 
 const Blog = lazy(() => import("./pages/Blog"));
 const Aboutus = lazy(() => import("./pages/Aboutus"));
@@ -53,6 +54,7 @@ function App() {
                             <Route path="proposal-generation" element={<ProposalGeneration />} />
                             <Route path="marketing" element={<Marketing />} />
                             <Route path="onboarding" element={<Onboarding />} />
+                            <Route path="outbound" element={<Outbound />} />
                         </Route>
                         <Route
                             path="/blog"

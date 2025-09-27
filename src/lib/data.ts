@@ -48,7 +48,7 @@ export const companyNav = [
 ];
 
 export const solutionsNav = [
-    { label: "Outbound Automations", to: "" },
+    { label: "Outbound Automations", to: "/solutions/outbound" },
     { label: "Inbound Automations", to: "" },
     { label: "Marketing Automations", to: "/solutions/marketing" },
     { label: "Proposal Generation Automations", to: "/solutions/proposal-generation" },
