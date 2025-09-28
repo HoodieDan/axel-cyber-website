@@ -8,7 +8,7 @@ import abt2 from "../assets/abt-exl1.webp"
 import abt3 from "../assets/exclude.webp"
 import teamImg from "../assets/teammember.webp"
 import heroImg2 from "../assets/aboutus-image.webp"
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { lazy, Suspense } from 'react';
 
 
@@ -339,13 +339,13 @@ export default function Aboutus() {
                         At Lexxa, we live at the forefront of ML/AI research to brong the latest advencments in language AI to our platform, and make your company grow with this
                     </p>
                     <div className='flex flex-col sm:flex-row gap-4 md:gap-6'>
-                        <button  className='flex justify-center items-center flex-1 p-2 md:p-3 text-white rounded-xl text-sm md:text-base flex flex-row items-center gap-1  bg-[linear-gradient(45deg,#0146cc,#012d82)]'>
+                        <button  className='flex justify-center items-center flex-1 p-2 md:p-3 text-white rounded-xl text-sm md:text-base flex-row gap-1  bg-[linear-gradient(45deg,#0146cc,#012d82)]'>
                             Check Our Work
                             <Suspense fallback={<span className="w-3 h-3 inline-block animate-pulse bg-gray-300 rounded-full" />}>
                                 <RiArrowRightSLine className='-translate-y-[5%] size-4'/>
                             </Suspense>
                         </button>
-                        <button className='flex justify-center items-center flex-1 text-sm md:text-base p-2 md:p-3 text-black text-base border border-[#0081f1] rounded-xl flex flex-row items-center gap-1 bg-[#edf1fa]'>
+                        <button className='flex justify-center items-center flex-1 text-sm md:text-base p-2 md:p-3 text-black border border-[#0081f1] rounded-xl flex-row gap-1 bg-[#edf1fa]'>
                             Discuss Your Project
                             <Suspense fallback={<span className="w-3 h-3 inline-block animate-pulse bg-gray-300 rounded-full" />}>
                                 <BsArrowUpRight  className='size-4'/>

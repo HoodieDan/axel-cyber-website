@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import leftbottom from "../assets/leftbottom.png";
 import righttop from "../assets/righttop.png";
 import { Button } from "./ui/button";

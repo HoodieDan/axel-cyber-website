@@ -1,6 +1,6 @@
-import { motion } from "motion/react";
+import { motion, Variants } from "motion/react";
 import { Suspense } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import face1 from "../assets/face1.png";
 import face2 from "../assets/face2.png";
 import face3 from "../assets/face3.png";
@@ -8,7 +8,7 @@ import face4 from "../assets/face4.png";
 import ArrowUpRight from "./icons/ArrowUpRight";
 import heroImg from "/hero-img.webp";
 
-const itemsVariants = {
+const itemsVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeInOut" } },
 };

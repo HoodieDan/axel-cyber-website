@@ -30,7 +30,7 @@ import SectionTag from "@/components/SectionTag";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 const problemsWeSolve = [
     {

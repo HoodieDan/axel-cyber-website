@@ -26,7 +26,7 @@ import { buttonVariants } from "@/components/ui/button";
 import WhyUsSteps from "@/components/WhyUsSteps";
 import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 const leadsProblems = [
     {

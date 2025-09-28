@@ -1,12 +1,12 @@
 import { companyNav, solutionsNav } from "@/lib/data";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { motion, Variants } from "motion/react";
 import { useState } from "react";
-import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router";
 import { buttonVariants } from "./ui/button";
 
-const itemVariants = {
+const itemVariants: Variants = {
     hidden: { opacity: 0, y: -50 },
     show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };

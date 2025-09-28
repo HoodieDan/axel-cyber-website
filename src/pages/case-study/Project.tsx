@@ -5,7 +5,7 @@ import { ourProjects } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { MoveUpRight } from "lucide-react";
 import { lazy, Suspense, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router";
 
 const HiArrowNarrowRight = lazy(() => import("lucide-react").then((module) => ({ default: module.MoveUpRight })));
 
