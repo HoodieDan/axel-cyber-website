@@ -11,17 +11,16 @@ import VideoImgDesktop from "@/assets/video-img-desktop.png";
 import VideoImgMobile from "@/assets/video-img-mobile.png";
 import volume from "@/assets/volume.png";
 import CTASection from "@/components/CTASection";
-import AddBusiness from "@/components/icons/AddBusiness";
+import Appointment from "@/components/icons/Appointment";
 import ArrowUpRight from "@/components/icons/ArrowUpRight";
-import CheckAll from "@/components/icons/CheckAll";
+import DataCheck from "@/components/icons/DataCheck";
 import IBMSecure from "@/components/icons/IBMSecure";
 import LightBatch from "@/components/icons/LightBatch";
 import Lightning from "@/components/icons/Lightning";
-import Money from "@/components/icons/Money";
-import Rocket from "@/components/icons/Rocket";
 import Shield from "@/components/icons/Shield";
 import Target from "@/components/icons/Target";
 import Vortex from "@/components/icons/Vortex";
+import WavyWheel from "@/components/icons/WavyWheel";
 import SectionTag from "@/components/SectionTag";
 import { buttonVariants } from "@/components/ui/button";
 import WhyUsSteps from "@/components/WhyUsSteps";
@@ -29,140 +28,111 @@ import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const perfectSalesProblems = [
+const leadsProblems = [
     {
         Icon: Shield,
-        heading: "The Proposal Black Hole",
-        description: `Your prospect is excited and ready to buy, but then you say "I'll send you a proposal tomorrow." By tomorrow, they're talking to your competitors and your deal is suddenly "under review."`,
+        heading: "The Speed Trap",
+        description: `By the time you call that hot lead back, they've already talked to three of your competitors. The fastest responder doesn't just win, they win everything.`,
     },
     {
         Icon: LightBatch,
-        heading: "The Scope Creep Disaster",
+        heading: "The No-Show Nightmare",
         description:
-            "Every salesperson writes proposals differently, leading to confused expectations, endless revisions, and projects that start underwater before they even begin.",
+            "You spend money on ads, time on sales calls, and then stare at empty appointment slots. Every no-show is double the loss because you paid to get them and paid to wait for them.",
     },
     {
         Icon: Vortex,
-        heading: "The Tool Juggling Act",
+        heading: "The Follow-Up Failure",
         description:
-            "Create proposal in Word, send via email, wait for DocuSign, then chase payment through a separate system. Every step is another chance for things to go wrong.",
-    },
-    {
-        Icon: Lightning,
-        heading: "The Cash Flow Nightmare",
-        description:
-            "Even when deals get signed, payment comes weeks later. You're funding the project with your own cash flow while waiting for clients to pay.",
+            "Your team means to call that interested lead back, but then the phone rings, an emergency comes up, and suddenly it's been three days. That lead is long gone.",
     },
     {
         Icon: IBMSecure,
-        heading: "The Operations Scramble",
+        heading: "The Scaling Impossibility",
         description:
-            "Someone signed something, but now what? Your ops team has to manually update the CRM, set up onboarding, and figure out what was actually sold.",
-    },
-];
-
-const proposalProblems = [
-    {
-        Icon: LightBatch,
-        heading: "We Know the Pain",
-        description:
-            "Our team has lived through the frustration of perfect sales calls that died in proposal purgatory. We built the solution we desperately needed.",
-    },
-    {
-        Icon: Vortex,
-        heading: "Industry-Specific Intelligence",
-        description:
-            "Agency teams get retainer templates with clear scope boundaries. MSPs get technical SOWs with proper pricing models. Recruiters get rate cards with built-in deposit collection.",
+            "You want to run more ads and generate more leads, but your team is already drowning trying to handle the current volume. More leads just means more chaos.",
     },
     {
         Icon: Lightning,
-        heading: "Results You Feel Immediately",
-        description:
-            "Most teams see faster deal closure within their first week and improved cash flow within their first month. The difference is immediate and measurable.",
-    },
-    {
-        Icon: IBMSecure,
-        heading: "Your Process, Perfected",
-        description:
-            "We don't change how you sell, we just make it faster and more reliable. Every template reflects your best proposals and protects your margins.",
+        heading: "The Silent Revenue Bleed",
+        description: `You see the leads coming in, but somehow they don't turn into customers. The leak is happening somewhere between "interested" and "showed up," and it's costing you thousands every month.`,
     },
 ];
 
-const smartTeamsBenefits = [
+const smartBusinessesBenefits = [
     {
-        Icon: Rocket,
-        heading: "Strike While the Iron is Hot",
+        Icon: Lightning,
+        heading: "Lightning-Fast Response",
         description:
-            "Generate professional proposals during your sales call, not days later. Your prospect's excitement stays high because there's no waiting period for them to second-guess the decision.",
+            "Your leads get contacted within seconds of expressing interest. Not minutes, not hours. Seconds. While your competitors are still thinking about calling back.",
+    },
+    {
+        Icon: Appointment,
+        heading: "Appointments That Actually Happen",
+        description:
+            "Smart confirmation sequences, helpful reminders, and easy rescheduling options mean your calendar stays full of people who actually show up.",
+    },
+    {
+        Icon: DataCheck,
+        heading: "Nothing Falls Through Cracks",
+        description: `Every lead gets followed up with the right message at the right time until they either convert or clearly say no. No more wondering "what happened to that interested prospect?"`,
     },
     {
         Icon: Target,
-        heading: "Perfect Proposals Every Time",
+        heading: "Your Team Stays Focused",
         description:
-            "Your best pricing, cleanest scope, and strongest terms built into templates. No more underpricing because someone forgot to include a crucial line item.",
+            "Instead of playing phone tag and chasing leads, your team spends time with people who are ready to buy. Better conversations, higher close rates, happier salespeople.",
     },
     {
-        Icon: Money,
-        heading: "Money in the Bank Immediately",
+        Icon: WavyWheel,
+        heading: "Scale Without Stress",
         description:
-            "Collect deposits or full payment the moment contracts are signed. No more waiting weeks for checks or chasing down invoices.",
-    },
-    {
-        Icon: CheckAll,
-        heading: "Everything Flows Seamlessly",
-        description:
-            "Signature triggers payment processing, CRM updates, onboarding emails, and team notifications automatically. Nothing falls through the cracks.",
-    },
-    {
-        Icon: AddBusiness,
-        heading: "Built for Your Business",
-        description:
-            "Whether you're selling agency retainers, IT services, or staffing contracts, every template matches your industry and your best practices.",
+            "Run more ads, generate more leads, and know that every single one will get the attention they deserve. Growth becomes predictable instead of chaotic..",
     },
 ];
 
-const paymentSteps = [
+const contractSteps = [
     {
         image: PaymentStepOneImg,
-        heading: "Create While You Talk",
+        heading: "Instant Contact",
         description:
-            "Pull up our proposal builder during your sales call. Client data auto-populates, pricing comes from your templates, and you're building the contract while discussing the details.",
+            "The moment someone fills out your form or calls your number, our system reaches out immediately through their preferred channel. Text, call, email, whatever works best for that lead.",
     },
     {
         image: PaymentStepTwoImg,
-        heading: "Sign and Pay on the Spot",
+        heading: "Smart Scheduling",
         description:
-            "Send the proposal link immediately. Client reviews, signs electronically, and pays their deposit through embedded Stripe or PayPal. All while the call momentum is still strong.",
+            "We don't just book the appointment, we make sure it happens. Confirmation messages, reminder texts, helpful directions, and easy rescheduling if something comes up.",
     },
     {
         image: PaymentStepThreeImg,
-        heading: "Everything Happens Automatically",
+        heading: "Never Give Up",
         description:
-            "Payment confirmation updates your CRM, triggers onboarding sequences, notifies your delivery team, and starts the project timeline. You focus on the next sales call.",
+            "If someone doesn't respond right away, we follow up intelligently until they either book an appointment or tell us to stop. No lead dies from lack of follow-up ever again.",
     },
 ];
 
 const freeResource = [
-    "6 proven approval acceleration templates",
-    "Objection handling scripts for finance teams",
-    "Stakeholder mapping worksheet",
-    "Follow-up timing strategies",
+    "Confirmation message templates that work",
+    "Reminder sequences that reduce no-shows by 70%",
+    "Day-of nudges that get people in the door",
+    "Easy rescheduling flows for last-minute changes",
 ];
 
-const ProposalGeneration = () => {
+const Inbound = () => {
     return (
         <main>
             <section className="px-[5%] lg:py-24 py-12 flex flex-col gap-10">
                 <div className="flex md:flex-row flex-col items-start gap-8">
                     <h3 className="flex-1 capitalize font-tt-hoves font-medium md:text-5xl text-4xl md:leading-15 text-[#002366]">
-                        Stop Losing Deals to
-                        <br /> Proposal Delays
+                        Stop Watching Your Ad
+                        <br /> money walk away
                     </h3>
                     <div className="flex-1 flex flex-col gap-7.5">
                         <p className="text-xl md:leading-7.5">
-                            You just had the perfect sales call, but now you need to spend two days creating a proposal
-                            while your prospect gets cold and your competitors swoop in. Axel Cyber lets you create,
-                            send, sign, and get paid on the spot, so momentum never dies.
+                            You're paying good money to generate leads, but then they disappear while you're trying to
+                            call them back. Axel Cyber makes sure every lead gets contacted instantly and every
+                            appointment actually happens, so your marketing budget turns into real revenue
                         </p>
                         <div className="flex md:flex-row flex-col gap-4">
                             <Link
@@ -172,10 +142,10 @@ const ProposalGeneration = () => {
                                     "bg-linear-(--gradient-primary) hover:bg-linear-(--gradient-primary-hover) h-13.5 px-5",
                                 )}
                             >
-                                Watch a Deal Close Live
+                                See How We Stop Lead Leakage
                             </Link>
                             <Link to="" className={cn(buttonVariants({ variant: "outline" }), "h-13.5 px-5")}>
-                                Get Your Approval Shortcut Guide
+                                Get Your No-Show Prevention Kit
                             </Link>
                         </div>
                     </div>
@@ -191,8 +161,8 @@ const ProposalGeneration = () => {
                 <div className="flex flex-col gap-6">
                     <SectionTag tag="BENEFITS" />
                     <h2 className="font-tt-hoves font-medium md:text-5xl text-2xl md:leading-[120%] text-[#000F1F] text-center">
-                        Trusted by teams who close deals
-                        <br /> while the iron is still hot
+                        Trusted by businesses where every
+                        <br /> lead counts and every minute matters
                     </h2>
                 </div>
 
@@ -210,14 +180,14 @@ const ProposalGeneration = () => {
                 <div className="flex flex-col gap-6">
                     <SectionTag tag="PROBLEMS" />
                     <h2 className="font-tt-hoves font-medium md:text-5xl text-2xl md:leading-[120%] text-[#000F1F] text-center">
-                        Where Perfect Sales
-                        <br /> Calls Go to Die
+                        Why Your Best Leads Disappear
+                        <br /> (And How Much It's Costing You)
                     </h2>
                 </div>
 
                 <div className="flex flex-col gap-5">
                     <div className="flex md:flex-row flex-col gap-5">
-                        {perfectSalesProblems.slice(0, 3).map(({ description, heading, Icon }, index) => (
+                        {leadsProblems.slice(0, 3).map(({ description, heading, Icon }, index) => (
                             <div
                                 key={index}
                                 className="md:h-65 flex flex-col gap-5 text-white p-7.5 rounded-xl bg-linear-to-b from-[#002366] to-[#0046CC] md:w-1/3"
@@ -231,10 +201,10 @@ const ProposalGeneration = () => {
                         ))}
                     </div>
                     <div className="flex md:flex-row flex-col gap-5">
-                        {perfectSalesProblems.slice(3, 5).map(({ description, heading, Icon }, index) => (
+                        {leadsProblems.slice(3, 5).map(({ description, heading, Icon }, index) => (
                             <div
                                 key={index}
-                                className="md:h-65 flex flex-col gap-5 text-white p-7.5 rounded-xl not-last:bg-linear-to-b not-last:from-[#002366] not-last:to-[#0046CC] last:bg-linear-[-40deg,#0F0255_0%,#080323_100%] md:first:w-2/3 md:last:w-1/3"
+                                className="md:h-65 flex flex-col gap-5 text-white p-7.5 rounded-xl not-last:bg-linear-to-b not-last:from-[#002366] not-last:to-[#0046CC] last:bg-linear-[-40deg,#0F0255_0%,#080323_100%] md:first:w-1/3 md:last:w-2/3"
                             >
                                 <Icon className="size-10" />
                                 <div className="space-y-4">
@@ -251,14 +221,14 @@ const ProposalGeneration = () => {
                 <div className="flex flex-col gap-6">
                     <SectionTag tag="BENEFITS" />
                     <h2 className="font-tt-hoves font-medium md:text-5xl text-2xl md:leading-[120%] text-[#000F1F] text-center">
-                        How Smart Teams Turn
-                        <br /> Every Call Into Cash
+                        How Smart Businesses Turn Every
+                        <br /> Lead Into Revenue
                     </h2>
                 </div>
 
                 <div className="flex flex-col md:gap-8 gap-5">
                     <div className="flex md:flex-row flex-col md:gap-8 gap-5">
-                        {smartTeamsBenefits.slice(0, 3).map(({ description, heading, Icon }, index) => (
+                        {smartBusinessesBenefits.slice(0, 3).map(({ description, heading, Icon }, index) => (
                             <div
                                 key={index}
                                 className="flex flex-col items-center gap-5 text-white md:px-5 px-12 md:py-12 py-20 rounded-xl bg-linear-to-b from-[#002366] to-[#0046CC] md:w-1/3"
@@ -272,7 +242,7 @@ const ProposalGeneration = () => {
                         ))}
                     </div>
                     <div className="flex md:flex-row flex-col md:justify-center md:gap-8 gap-5">
-                        {smartTeamsBenefits.slice(3, 5).map(({ description, heading, Icon }, index) => (
+                        {smartBusinessesBenefits.slice(3, 5).map(({ description, heading, Icon }, index) => (
                             <div
                                 key={index}
                                 className="flex flex-col items-center gap-5 text-white md:px-5 px-12 md:py-12 py-20 rounded-xl bg-linear-to-b from-[#002366] to-[#0046CC] md:w-1/3"
@@ -292,68 +262,27 @@ const ProposalGeneration = () => {
                 <div className="flex flex-col gap-6">
                     <SectionTag tag="WHY US?" />
                     <h2 className="font-tt-hoves font-medium md:text-5xl text-2xl md:leading-[120%] text-[#000F1F] text-center">
-                        From 'Yes' to Payment Received
-                        <br /> in Three Clicks
+                        From 'Submit' Button to Signed
+                        <br /> Contract in Three Steps
                     </h2>
                 </div>
 
-                <WhyUsSteps steps={paymentSteps} />
-            </section>
-
-            <section className="bg-[#F9F9F9] px-[5%] lg:py-24 py-12 flex flex-col md:gap-16 gap-9.5">
-                <div className="flex flex-col gap-6">
-                    <SectionTag tag="PROBLEMS" />
-                    <h2 className="font-tt-hoves font-medium md:text-5xl text-2xl md:leading-[120%] text-[#000F1F] text-center">
-                        Built by People Who've Lost
-                        <br /> Deals to Proposal Delays
-                    </h2>
-                </div>
-
-                <div className="flex flex-col gap-5">
-                    <div className="flex md:flex-row flex-col gap-5">
-                        {proposalProblems.slice(0, 2).map(({ description, heading, Icon }, index) => (
-                            <div
-                                key={index}
-                                className="md:h-65 flex flex-col gap-5 text-white p-7.5 rounded-xl bg-linear-to-b from-[#002366] to-[#0046CC] first:md:w-2/5 last:md:w-3/5"
-                            >
-                                <Icon className="size-10" />
-                                <div className="space-y-4">
-                                    <h6 className="text-xl font-medium">{heading}</h6>
-                                    <p className="leading-5">{description}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="flex md:flex-row flex-col gap-5">
-                        {proposalProblems.slice(2, 4).map(({ description, heading, Icon }, index) => (
-                            <div
-                                key={index}
-                                className="md:h-65 flex flex-col gap-5 text-white p-7.5 rounded-xl not-last:bg-linear-to-b not-last:from-[#002366] not-last:to-[#0046CC] last:bg-linear-[-40deg,#0F0255_0%,#080323_100%] md:first:w-3/5 md:last:w-2/5"
-                            >
-                                <Icon className="size-10" />
-                                <div className="space-y-4">
-                                    <h6 className="text-xl font-medium">{heading}</h6>
-                                    <p className="text-base leading-5">{description}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                <WhyUsSteps steps={contractSteps} />
             </section>
 
             <CTASection
                 heading={
                     <span>
-                        Watch a Complete Deal
-                        <br /> Happen in Under 5 Minutes
+                        Watch Every Lead Turn Into
+                        <br /> Revenue
                     </span>
                 }
                 description={
                     <span>
-                        Ready to see what it looks like when sales momentum never dies? Book
-                        <br className="md:inline hidden" /> a live demo and we'll show you exactly how fast your deals
-                        could be
-                        <br className="md:inline hidden" /> closing and how much sooner you could be getting paid.
+                        Ready to see what happens when every lead gets contacted instantly and every
+                        <br className="md:inline hidden" /> appointment actually happens? Book a demo and we'll show you
+                        exactly how
+                        <br className="md:inline hidden" /> much money you're leaving on the table right now.
                     </span>
                 }
             >
@@ -364,23 +293,23 @@ const ProposalGeneration = () => {
                         "bg-white hover:bg-white/90 text-black md:w-fit w-full h-14 has-[>svg]:px-5",
                     )}
                 >
-                    Show Me a Live Deal Closing <ArrowUpRight className="size-4" />
+                    Show Me My Missing Revenue <ArrowUpRight className="size-4" />
                 </Link>
             </CTASection>
 
-            <section className="px-[5%] lg:py-24 py-12 flex flex-col gap-5">
+            <section className="px-[5%] lg:py-24 py-12">
                 <div className="flex md:flex-row flex-col-reverse items-center md:gap-18.5 gap-10">
                     <div className="flex flex-col gap-9">
                         <div className="flex flex-col gap-6">
                             <div className="flex flex-col">
                                 <SectionTag tag="Free Resource Section" className="mx-0 [&_p]:text-xs" />
                                 <h3 className="font-tt-hoves font-bold text-[#002366] text-[2.5rem] leading-[120%] mt-4 mb-5">
-                                    Free Download: The Approval Acceleration Guide
+                                    Free Download: The No-Show Prevention System
                                 </h3>
                                 <p className="md:leading-[120%] text-[#575757]">
-                                    Stop watching deals die in approval committees. This guide includes the exact email
-                                    templates, Slack messages, and follow-up sequences that keep multi-stakeholder
-                                    approvals moving fast.
+                                    Stop staring at empty appointment slots. This complete system includes proven
+                                    message templates, timing strategies, and automation workflows that ensure your
+                                    customers actually show up when they're supposed to.
                                 </p>
                             </div>
                             <span className="font-tt-hoves">WHAT YOU GET</span>
@@ -403,7 +332,7 @@ const ProposalGeneration = () => {
                                 "bg-linear-(--gradient-primary) hover:bg-linear-(--gradient-primary-hover) md:h-19 h-13 md:px-7.5 px-4 text-2xl w-fit rounded-2xl",
                             )}
                         >
-                            Download Your Free Guide
+                            Download Your Free System
                         </Link>
                     </div>
 
@@ -411,14 +340,9 @@ const ProposalGeneration = () => {
                         <img src={MaleCorporateWoker} alt="" className="size-full object-cover" />
                     </div>
                 </div>
-
-                <p className="md:inline hidden text-xl md:leading-7.5 italic text-center">
-                    Approvals don't have to be deal killers. These templates have helped teams cut approval time from
-                    weeks to days, protecting deals when they're hottest.
-                </p>
             </section>
         </main>
     );
 };
 
-export default ProposalGeneration;
+export default Inbound;

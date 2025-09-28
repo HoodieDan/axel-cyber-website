@@ -8,6 +8,7 @@ import Onboarding from "./pages/solutions/Onboarding";
 import Outbound from "./pages/solutions/Outbound";
 import ProposalGeneration from "./pages/solutions/ProposalGeneration";
 import "./styles/index.scss";
+import Inbound from "./pages/solutions/Inbound";
 
 const Blog = lazy(() => import("./pages/Blog"));
 const Aboutus = lazy(() => import("./pages/Aboutus"));
@@ -55,6 +56,7 @@ function App() {
                             <Route path="marketing" element={<Marketing />} />
                             <Route path="onboarding" element={<Onboarding />} />
                             <Route path="outbound" element={<Outbound />} />
+                            <Route path="inbound" element={<Inbound />} />
                         </Route>
                         <Route
                             path="/blog"
