@@ -14,15 +14,19 @@ const itemVariants = {
 export default function Header() {
     const navigate = useNavigate();
     const [menuOpen, setMenuOpen] = useState(false);
-    const [subMenu, setSubMenuOpen] = useState(false);
+    const [openSubMenu, setOpenSubMenu] = useState<string | null>(null);
     const location = useLocation();
     // console.log(location.pathname);
 
     const handleCloseMenu = () => {
         setMenuOpen(false);
-        if (subMenu) {
-            setSubMenuOpen(false);
+        if (openSubMenu) {
+            setOpenSubMenu(null);
         }
+    };
+
+    const handleSubMenuToggle = (menu: string) => {
+        setOpenSubMenu(openSubMenu === menu ? null : menu);
     };
 
     return (
@@ -161,19 +165,38 @@ export default function Header() {
                                             Case study
                                         </Link>
                                     </li>
-                                    <li className="py-2 text-base border-b border-b-[#0081f1]">
-                                        <Link onClick={handleCloseMenu} to="/solutions">
-                                            Solutions
-                                        </Link>
-                                    </li>
-                                    <li onClick={() => setSubMenuOpen(!subMenu)} className="group text-base">
-                                        <a href="#" className={`py-2 block border-b border-b-[#0081f1]`}>
-                                            Company
-                                        </a>
+
+                                    <li onClick={() => handleSubMenuToggle("solutions")} className="group text-base">
+                                        <span className={`py-2 block border-b border-b-[#0081f1]`}>Solutions</span>
                                         <ul
                                             className={cn(
                                                 "group-active:flex group-hover:flex list-none bg-white text-black flex-col rounded-lg text-lg",
-                                                subMenu ? "block" : "hidden",
+                                                openSubMenu === "solutions" ? "block" : "hidden",
+                                            )}
+                                        >
+                                            {solutionsNav.map((item, index) => (
+                                                <li
+                                                    key={item.label}
+                                                    className={cn(
+                                                        "pl-4 py-1 whitespace-nowrap",
+                                                        index !== solutionsNav.length - 1 &&
+                                                            "border-b border-b-[#0081f1]",
+                                                    )}
+                                                >
+                                                    <Link onClick={handleCloseMenu} to={item.to}>
+                                                        {item.label}
+                                                    </Link>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </li>
+
+                                    <li onClick={() => handleSubMenuToggle("company")} className="group text-base">
+                                        <span className={`py-2 block border-b border-b-[#0081f1]`}>Company</span>
+                                        <ul
+                                            className={cn(
+                                                "group-active:flex group-hover:flex list-none bg-white text-black flex-col rounded-lg text-lg",
+                                                openSubMenu === "company" ? "block" : "hidden",
                                             )}
                                         >
                                             {companyNav.map((item, index) => (
