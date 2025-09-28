@@ -16,3 +16,9 @@ export interface IProject {
     timeline: string;
     layout: "desktop" | "tablet" | "mobile";
 }
+
+export type ISteps = {
+    image: string;
+    heading: string;
+    description: string;
+};

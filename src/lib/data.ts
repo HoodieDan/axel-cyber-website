@@ -49,7 +49,7 @@ export const companyNav = [
 
 export const solutionsNav = [
     { label: "Outbound Automations", to: "/solutions/outbound" },
-    { label: "Inbound Automations", to: "" },
+    { label: "Inbound Automations", to: "/solutions/inbound" },
     { label: "Marketing Automations", to: "/solutions/marketing" },
     { label: "Proposal Generation Automations", to: "/solutions/proposal-generation" },
     { label: "Onboarding & CSM Automations", to: "/solutions/onboarding" },

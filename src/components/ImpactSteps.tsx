@@ -1,10 +1,6 @@
 import { cn } from "@/lib/utils";
+import { ISteps } from "@/types";
 
-type ISteps = {
-    image: string;
-    heading: string;
-    description: string;
-};
 interface IImpactStepsProps extends React.ComponentProps<"div"> {
     steps: ISteps[];
 }
