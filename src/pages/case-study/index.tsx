@@ -111,7 +111,7 @@ export default function CaseStudy() {
             <section className="bg-white px-[5%] lg:pt-24 pt-12 pb-12 flex flex-col md:gap-12 gap-4">
                 <p className="text-center md:text-5xl text-3xl font-tt-hoves font-medium w-auto md:leading-15">
                     We are commited to creating the future of Artificial
-                    <br /> Intelligence and Human Synergy
+                    <br className="md:inline hidden" /> Intelligence and Human Synergy
                 </p>
                 <p className="mb-4 block md:hidden text-base mt-4">
                     View some of the great works we've done for our amazing clients around the world, with a great
@@ -136,10 +136,9 @@ export default function CaseStudy() {
                         width={1280}
                         height={345}
                     />
-                    <p className="hidden md:block text-xl absolute -bottom-7 left-[28.5%]">
-                        View some of the great works we've done
-                        <br /> for our amazing clients around the world,
-                        <br /> with a great design story
+                    <p className="hidden md:block text-xl absolute bottom-0 translate-y-3/10 left-[28.5%] w-3/10">
+                        View some of the great works we've done for our amazing clients around the world, with a great
+                        design story
                     </p>
                 </div>
             </section>
