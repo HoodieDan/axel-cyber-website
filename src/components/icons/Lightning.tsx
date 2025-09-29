@@ -11,13 +11,13 @@ const Lightning = ({ className, ...rest }: ILightningProps) => {
             className={className}
             {...rest}
         >
-            <g clip-path="url(#clip0_5696_8241)">
+            <g clipPath="url(#clip0_5696_8241)">
                 <path
                     d="M20.9289 1.82275L21.3096 14.5646L31.8973 15.9651L19.0718 38.1759L18.6912 25.434L8.10341 24.0335L20.9289 1.82275Z"
                     stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                 />
             </g>
             <defs>
