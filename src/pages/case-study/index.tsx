@@ -9,7 +9,7 @@ import Cta from "@/components/Cta";
 import { ourProjects } from "@/lib/data";
 import { IProject } from "@/types";
 import { lazy, Suspense, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 interface IProjectProps extends React.ComponentProps<"div"> {
     project: IProject;

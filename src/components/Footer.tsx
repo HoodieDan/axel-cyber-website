@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Suspense } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import ArrowDownRight from "./icons/ArrowDownRight";
 import Envelope from "./icons/Envelope";
 import Instagram from "./icons/Instagram";

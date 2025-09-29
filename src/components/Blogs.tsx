@@ -1,7 +1,7 @@
 import { useContextValue } from "@/context";
 import { motion } from "motion/react";
 import { lazy, Suspense } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 const ArrowUpRight = lazy(() => import("lucide-react").then((module) => ({ default: module.ArrowUpRight })));
 

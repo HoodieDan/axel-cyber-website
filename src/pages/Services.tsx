@@ -2,13 +2,14 @@ import AiBenefitBgMobile from "@/assets/ai-benefit-bg-mobile.png";
 import AiBenefitBg from "@/assets/ai-benefit-bg.png";
 import ArrowUpRight from "@/components/icons/ArrowUpRight";
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import type { EmblaCarouselType, EmblaEventType } from "embla-carousel";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
 import ai1 from "../assets/ai1.png";
 import bi1 from "../assets/bi1.webp";
 import bi2 from "../assets/bi2.webp";
@@ -45,6 +46,41 @@ interface TestimonialProps {
     profilePic: string;
     companyLogo: string;
 }
+
+const testimonials = [
+    {
+        name: "Prima Abiola",
+        position: "Founder & CEO Hotels.ng",
+        content:
+            "With Cohere's latest highly secure enterprise LLMs, we aim to provide businesses with powerful and adaptable AI solutions that address specific needs and accelerate the adoption of generative AI globally.",
+        companyLogo: companylogo,
+        profilePic: profilepic,
+    },
+    {
+        name: "Prima Abiola",
+        position: "Founder & CEO Hotels.ng",
+        content:
+            "With Cohere's latest highly secure enterprise LLMs, we aim to provide businesses with powerful and adaptable AI solutions that address specific needs and accelerate the adoption of generative AI globally.",
+        companyLogo: companylogo,
+        profilePic: profilepic,
+    },
+    {
+        name: "Prima Abiola",
+        position: "Founder & CEO Hotels.ng",
+        content:
+            "With Cohere's latest highly secure enterprise LLMs, we aim to provide businesses with powerful and adaptable AI solutions that address specific needs and accelerate the adoption of generative AI globally.",
+        companyLogo: companylogo,
+        profilePic: profilepic,
+    },
+    {
+        name: "Prima Abiola",
+        position: "Founder & CEO Hotels.ng",
+        content:
+            "With Cohere's latest highly secure enterprise LLMs, we aim to provide businesses with powerful and adaptable AI solutions that address specific needs and accelerate the adoption of generative AI globally.",
+        companyLogo: companylogo,
+        profilePic: profilepic,
+    },
+];
 
 const solution = [
     {
@@ -88,6 +124,11 @@ const solution = [
     },
 ];
 
+// Scaling carousel constants
+const TWEEN_FACTOR_BASE = 0.1;
+
+const numberWithinRange = (number: number, min: number, max: number): number => Math.min(Math.max(number, min), max);
+
 function AiBenefit({ title, icon, desc }: AiBenefitProps) {
     return (
         <div className="relative isolate flex items-center md:px-10 px-16 md:h-125 h-86 rounded-3xl">
@@ -109,47 +150,27 @@ function AiBenefit({ title, icon, desc }: AiBenefitProps) {
 
 function Testimonial({ name, position, content, profilePic, companyLogo }: TestimonialProps) {
     return (
-        <div className="bg-[linear-gradient(45deg,#053899,#0f0255)] w-full shrink-0 md:p-6 rounded-xl md:rounded-2xl flex">
-            <div className="flex-1 hidden md:flex flex-col justify-between gap-4 md:gap-6">
-                <img
-                    className="self-start"
-                    src={companyLogo}
-                    alt="company logo"
-                    loading="lazy"
-                    width={70}
-                    height={24}
-                />
-                <div className="flex flex-col md:flex-row gap-2.5 items-start md:items-center">
-                    <img
-                        src={profilePic}
-                        alt="profile pic"
-                        className="w-[32px] lg:w-[48px] h-[32px] lg:h-[48px] rounded-ful"
-                        loading="lazy"
-                        width={48}
-                        height={48}
-                    />
-                    <div className="text-white">
-                        <p className="text-base md:text-lg font-medium">{name}</p>
-                        <p className="text-xs md:text-sm text-[#a1a1a1] font-medium">{position}</p>
+        <div className="testimonial-content md:bg-[linear-gradient(68deg,#053899,#0f0255)] flex md:gap-10 md:pl-8 md:py-6 md:pr-4 p-0 rounded-2xl text-white transition-transform duration-300 ease-out">
+            <div className="md:flex hidden flex-col justify-between shrink-0">
+                <figure className="w-17.5 h-6">
+                    <img src={companyLogo} alt="" className="size-full object-cover" />
+                </figure>
+                <div className="flex items-center gap-2.5">
+                    <img src={profilePic} alt="" className="size-12.5 rounded-full" />
+                    <div className="flex flex-col gap-1.5">
+                        <h6 className="text-lg font-medium">{name}</h6>
+                        <span className="text-[#A1A1A1] text-sm font-medium">{position}</span>
                     </div>
                 </div>
             </div>
-            <div className="flex-1">
-                <p className="h-auto md:h-full text-sm md:text-lg rounded-tl-xl rounded-tr-xl md:rounded-2xl lg:text-xl px-2 lg:px-4 py-3 lg:py-4 xl:py-6 bg-[#262728] text-white">
-                    {content}
-                </p>
-                <div className="rounded-bl-xl rounded-br-xl px-2 py-4 flex md:hidden flex-row gap-2 md:gap-4 lg:gap-6 items-start md:items-center bg-[#262728]">
-                    <img
-                        src={profilePic}
-                        alt="profile pic"
-                        className="w-[32px] lg:w-[48px] h-[32px] lg:h-[48px] rounded-ful"
-                        loading="lazy"
-                        width={48}
-                        height={48}
-                    />
-                    <div className="text-white">
-                        <p className="text-base md:text-xl font-semibold">{name}</p>
-                        <p className="text-xs md:text-sm text-[#a1a1a1]">{position}</p>
+
+            <div className="bg-[#262728] flex flex-col gap-4 px-6 py-8 rounded-2xl">
+                <p className="md:text-xl text-sm">{content}</p>
+                <div className="nd:hidden flex items-center gap-2.5">
+                    <img src={profilePic} alt="" className="size-5 rounded-full" />
+                    <div className="flex flex-col gap-0.5">
+                        <h6 className="text-sm font-medium">{name}</h6>
+                        <span className="text-[#A1A1A1] text-xs font-medium">{position}</span>
                     </div>
                 </div>
             </div>
@@ -157,9 +178,132 @@ function Testimonial({ name, position, content, profilePic, companyLogo }: Testi
     );
 }
 
+// Scaling Testimonials Carousel Component
+function ScalingTestimonialsCarousel() {
+    const [scrollProgress, setScrollProgress] = useState(0);
+    const [emblaApi, setEmblaApi] = useState<EmblaCarouselType>();
+    const tweenFactor = useRef(0);
+    const tweenNodes = useRef<HTMLElement[]>([]);
+
+    const setTweenNodes = useCallback((emblaApi: EmblaCarouselType): void => {
+        tweenNodes.current = emblaApi.slideNodes().map((slideNode) => {
+            return slideNode.querySelector(".testimonial-content") as HTMLElement;
+        });
+    }, []);
+
+    const setTweenFactor = useCallback((emblaApi: EmblaCarouselType) => {
+        tweenFactor.current = TWEEN_FACTOR_BASE * emblaApi.scrollSnapList().length;
+    }, []);
+
+    const tweenScale = useCallback((emblaApi: EmblaCarouselType, eventName?: EmblaEventType) => {
+        const engine = emblaApi.internalEngine();
+        const scrollProgress = emblaApi.scrollProgress();
+        const slidesInView = emblaApi.slidesInView();
+        const isScrollEvent = eventName === "scroll";
+
+        emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
+            let diffToTarget = scrollSnap - scrollProgress;
+            const slidesInSnap = engine.slideRegistry[snapIndex];
+
+            slidesInSnap.forEach((slideIndex) => {
+                if (isScrollEvent && !slidesInView.includes(slideIndex)) return;
+
+                if (engine.options.loop) {
+                    engine.slideLooper.loopPoints.forEach((loopItem) => {
+                        const target = loopItem.target();
+
+                        if (slideIndex === loopItem.index && target !== 0) {
+                            const sign = Math.sign(target);
+
+                            if (sign === -1) {
+                                diffToTarget = scrollSnap - (1 + scrollProgress);
+                            }
+                            if (sign === 1) {
+                                diffToTarget = scrollSnap + (1 - scrollProgress);
+                            }
+                        }
+                    });
+                }
+
+                const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current);
+                const scale = numberWithinRange(tweenValue, 0.8, 1).toString(); // Min scale of 0.8
+                const tweenNode = tweenNodes.current[slideIndex];
+                if (tweenNode) {
+                    tweenNode.style.transform = `scale(${scale})`;
+                }
+            });
+        });
+    }, []);
+
+    const onScroll = useCallback((emblaApi: EmblaCarouselType) => {
+        const progress = Math.max(0, Math.min(1, emblaApi.scrollProgress()));
+        setScrollProgress(progress * 100);
+    }, []);
+
+    useEffect(() => {
+        if (!emblaApi) return;
+
+        setTweenNodes(emblaApi);
+        setTweenFactor(emblaApi);
+        tweenScale(emblaApi);
+        onScroll(emblaApi);
+
+        emblaApi
+            .on("reInit", setTweenNodes)
+            .on("reInit", setTweenFactor)
+            .on("reInit", tweenScale)
+            .on("reInit", onScroll)
+            .on("scroll", tweenScale)
+            .on("scroll", onScroll)
+            .on("slideFocus", tweenScale)
+            .on("slideFocus", onScroll);
+
+        return () => {
+            emblaApi.destroy();
+        };
+    }, [emblaApi, onScroll, setTweenFactor, setTweenNodes, tweenScale]);
+
+    return (
+        <Carousel
+            setApi={setEmblaApi}
+            opts={{
+                align: "center",
+                loop: true,
+            }}
+            className="flex flex-col md:gap-15 gap-6"
+        >
+            <CarouselContent className="-ml-0">
+                {testimonials.map((testimonial, index) => (
+                    <CarouselItem key={index} className="2xl:basis-3/5 xl:basis-11/20 md:basis-1/2 basis-3/4 pl-0">
+                        <Testimonial
+                            name={testimonial.name}
+                            position={testimonial.position}
+                            content={`"${testimonial.content}"`}
+                            companyLogo={testimonial.companyLogo}
+                            profilePic={testimonial.profilePic}
+                        />
+                    </CarouselItem>
+                ))}
+            </CarouselContent>
+
+            <div className="flex items-center justify-between md:px-20">
+                <Progress
+                    value={scrollProgress}
+                    className="w-1/2 h-[3px] bg-[#D9D9D9] *:bg-linear-to-r *:from-[#B860FF] *:from-0% *:to-[#077ADF] *:to-82%"
+                />
+                <div className="flex items-center md:gap-12.5 gap-7.5">
+                    <CarouselPrevious className="static -translate-y-0 bg-transparent border-0 shadow-none size-12 md:[&_svg]:size-6 [&_svg]:text-black" />
+                    <CarouselNext className="static -translate-y-0 bg-transparent border-0 shadow-none size-12 md:[&_svg]:size-6 [&_svg]:text-black" />
+                </div>
+            </div>
+        </Carousel>
+    );
+}
+
 export default function Services() {
     const [index, setIndex] = useState(0);
     const navigate = useNavigate();
+
     return (
         <main>
             <section className="px-[5%] service-section mb-20 mt-10 sm:mb-40 md:mt-10 md:mb-32 lg:mt-12 lg:mb-24 flex flex-col md:-space-y-12.5 -space-y-7">
@@ -313,7 +457,7 @@ export default function Services() {
             </section>
 
             <section className="px-[5%] mx-auto">
-                <div className="bg-[#f9f9f9] pt-6 pb-8 sm:py-8 md:py-20 rounded-3xl overflow-hidden">
+                <div className="bg-[#f9f9f9] pt-6 pb-8 sm:py-8 md:py-20 rounded-3xl">
                     <div className="flex justify-center mb-12 lg:mb-16">
                         <div className="flex rounded-lg flex-row p-2 gap-2 items-center border-2 border-[#e1e5e7]">
                             <img
@@ -327,48 +471,8 @@ export default function Services() {
                             <p className="text-sm">CUSTOMER STORIES</p>
                         </div>
                     </div>
-                    <Swiper
-                        modules={[Navigation, Pagination]}
-                        slidesPerView={1}
-                        spaceBetween={50}
-                        navigation
-                        pagination={{ clickable: true }}
-                        className="service-swipper flex flex-row gap-3 md:gap-6"
-                    >
-                        <SwiperSlide>
-                            <Testimonial
-                                name={"Prima Abiola"}
-                                position={"Founder & CEO Hotels.ng"}
-                                content={
-                                    "“With Cohere's latest highly secure enterprise LLMs, we aim to provide businesses with powerful and adaptable AI solutions that address specific needs and accelerate the adoption of generative AI globally.”"
-                                }
-                                companyLogo={companylogo}
-                                profilePic={profilepic}
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Testimonial
-                                name={"Prima Abiola"}
-                                position={"Founder & CEO Hotels.ng"}
-                                content={
-                                    "“With Cohere's latest highly secure enterprise LLMs, we aim to provide businesses with powerful and adaptable AI solutions that address specific needs and accelerate the adoption of generative AI globally.”"
-                                }
-                                companyLogo={companylogo}
-                                profilePic={profilepic}
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Testimonial
-                                name={"Prima Abiola"}
-                                position={"Founder & CEO Hotels.ng"}
-                                content={
-                                    "“With Cohere's latest highly secure enterprise LLMs, we aim to provide businesses with powerful and adaptable AI solutions that address specific needs and accelerate the adoption of generative AI globally.”"
-                                }
-                                companyLogo={companylogo}
-                                profilePic={profilepic}
-                            />
-                        </SwiperSlide>
-                    </Swiper>
+
+                    <ScalingTestimonialsCarousel />
                 </div>
             </section>
 

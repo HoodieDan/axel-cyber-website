@@ -11,20 +11,20 @@ const ArrowUpRight = ({ className, ...rest }: IArrowUpRightProps) => {
             className={className}
             {...rest}
         >
-            <g clip-path="url(#clip0_1520_3785)">
+            <g clipPath="url(#clip0_1520_3785)">
                 <path
                     d="M4.25 11.25L11.75 3.75"
                     stroke="currentColor"
-                    stroke-width="0.9375"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="0.9375"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                 />
                 <path
                     d="M5.65625 3.75H11.75V9.84375"
                     stroke="currentColor"
-                    stroke-width="0.9375"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="0.9375"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                 />
             </g>
             <defs>

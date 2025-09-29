@@ -14,9 +14,9 @@ const ArrowNarrowUpRight = ({ className, ...rest }: IArrowNarrowUpRightProps) =>
             <path
                 d="M31.8752 65.2102L68.1249 34.7931M68.1249 34.7931L43.1249 32.6059M68.1249 34.7931L65.9376 59.7931"
                 stroke="currentColor"
-                stroke-width="5.91507"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="5.91507"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
         </svg>
     );
