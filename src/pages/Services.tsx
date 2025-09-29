@@ -151,7 +151,7 @@ function AiBenefit({ title, icon, desc }: AiBenefitProps) {
 function Testimonial({ name, position, content, profilePic, companyLogo }: TestimonialProps) {
     return (
         <div className="testimonial-content md:bg-[linear-gradient(68deg,#053899,#0f0255)] flex md:gap-10 md:pl-8 md:py-6 md:pr-4 p-0 rounded-2xl text-white transition-transform duration-300 ease-out">
-            <div className="md:flex hidden flex-col justify-between shrink-0">
+            <div className="flex-2/5 md:flex hidden flex-col justify-between">
                 <figure className="w-17.5 h-6">
                     <img src={companyLogo} alt="" className="size-full object-cover" />
                 </figure>
@@ -164,7 +164,7 @@ function Testimonial({ name, position, content, profilePic, companyLogo }: Testi
                 </div>
             </div>
 
-            <div className="bg-[#262728] flex flex-col gap-4 px-6 py-8 rounded-2xl">
+            <div className="md:flex-3/5 bg-[#262728] flex flex-col gap-4 px-6 py-8 rounded-2xl">
                 <p className="md:text-xl text-sm">{content}</p>
                 <div className="nd:hidden flex items-center gap-2.5">
                     <img src={profilePic} alt="" className="size-5 rounded-full" />

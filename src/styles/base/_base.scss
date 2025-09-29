@@ -15,16 +15,16 @@ body {
     scroll-behavior: smooth;
     height: auto;
     $vw: 100vw;
-    font-size: calc($vw / 1440px * 16px);
+    // font-size: calc($vw / 1440px * 16px);
 
-    @include media('<phone') {
-        font-size: calc($vw / 750px * 18px);
-        overflow-x: hidden;
-    }
+    // @include media('<phone') {
+    //     font-size: calc($vw / 750px * 18px);
+    //     overflow-x: hidden;
+    // }
 
-    @include media('<small') {
-        font-size: calc($vw / 500px * 18px);
-    }
+    // @include media('<small') {
+    //     font-size: calc($vw / 500px * 18px);
+    // }
 }
 
 p {

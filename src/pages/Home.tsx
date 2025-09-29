@@ -65,7 +65,7 @@ export default function Home() {
         <main>
             <Hero />
             <div className="bg-[#f9f9f9]">
-                <section className="md:px-[5%] mx-auto pt-6 pb-8 sm:py-8 md:py-20">
+                <section className="md:px-[5%] mx-auto md:pt-20 pt-8 md:pb-60 pb-8">
                     <div className="flex justify-center mb-4 sm:mb-4 md:mb-6 lg:mb-8">
                         <div className="flex rounded-lg flex-row p-2 gap-2 items-center border-2 border-[#e1e5e7]">
                             <img src="/stars.png" alt="stars" loading="lazy" width={16} height={16} />
@@ -87,20 +87,20 @@ export default function Home() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.25, ease: "easeInOut" }}
                         viewport={{ once: true }}
-                        className="text-white md:bg-[url(/src/assets/top-right-vector-bg.png)] bg-linear-to-b from-[#0250E6] to-[#0046CC] bg-no-repeat bg-contain md:pt-20 md:py-0 py-14 md:px-20 px-[5%]"
+                        className="text-white md:bg-[url(/src/assets/top-right-vector-bg.png)] bg-linear-to-b from-[#0250E6] to-[#0046CC] bg-no-repeat bg-size-[100%_auto] md:h-135 md:py-20 py-14 md:px-20 px-[5%] rounded-3xl"
                     >
                         <div className="flex flex-col gap-20">
                             <div className="flex md:flex-row flex-col md:items-end items-center md:gap-45.5 gap-4">
-                                <h4 className="md:text-left text-center">
+                                <h4 className="md:text-left text-center md:text-4xl text-2xl">
                                     We offer leading
                                     <br /> solutions such as:
                                 </h4>
 
                                 <div className="flex flex-col md:gap-12 gap-5">
-                                    <h5 className="md:text-left text-center">
+                                    <h5 className="md:text-left text-center md:text-3xl text-base">
                                         Build high-impact solutions grounded in
-                                        <br /> your proprietary data and assuring
-                                        <br /> maximum security
+                                        <br className="md:inline hidden" /> your proprietary data and assuring
+                                        <br className="md:inline hidden" /> maximum security
                                     </h5>
                                     <Button className="h-12.5 px-12.5 md:w-fit bg-white hover:bg-white/90 text-black">
                                         Get Started
