@@ -161,7 +161,7 @@ export default function Header() {
                                         </Link>
                                     </li>
                                     <li className="py-2 text-base border-b border-b-[#0081f1]">
-                                        <Link onClick={handleCloseMenu} to="/ai-works">
+                                        <Link onClick={handleCloseMenu} to="/case-study">
                                             Case study
                                         </Link>
                                     </li>

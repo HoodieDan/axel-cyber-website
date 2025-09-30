@@ -11,15 +11,15 @@ export default defineConfig({
         tailwindcss(),
         viteCompression({
             threshold: 10240,
-            algorithm: 'gzip', 
-            ext: '.gz', 
+            algorithm: "gzip",
+            ext: ".gz",
         }),
         viteCompression({
             threshold: 10240,
-            algorithm: 'brotliCompress',
-            ext: '.br',
+            algorithm: "brotliCompress",
+            ext: ".br",
         }),
-        ],
+    ],
     resolve: {
         alias: {
             "@": path.resolve(__dirname, "./src"),
@@ -33,8 +33,11 @@ export default defineConfig({
                     form: ["formik", "yup"],
                     icons: ["lucide-react"],
                     swiper: ["swiper/react", "swiper"],
-                }
-            }
-        }
-    }
+                },
+            },
+        },
+    },
+    server: {
+        allowedHosts: [".ngrok-free.app"],
+    },
 });
