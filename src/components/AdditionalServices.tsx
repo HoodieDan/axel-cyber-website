@@ -13,7 +13,7 @@ export default function AdditionalServices({ service, desc }: Props) {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.25, ease: "easeInOut" }}
             viewport={{ once: true }}
-            className="flex flex-row justify-between gap-34 items-center py-5 border-b border-[#4c5c75]"
+            className="flex flex-row justify-between md:gap-34 gap-6.5 items-center py-5 border-b border-[#4c5c75]"
         >
             <p className="md:flex-1/2 text-lg md:text-[2.5rem] leading-[120%]">{service}</p>
             <p className="md:flex-2/5 hidden md:block text-lg leading-[160%] text-[#2f2f2f]">{desc}</p>

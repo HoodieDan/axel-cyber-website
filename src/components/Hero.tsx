@@ -127,17 +127,17 @@ export default function Hero() {
                         <img className="size-6" src={face3} alt="" />
                         <img className="size-6" src={face4} alt="" />
                     </div>
-                    <p className="text-[#4c5c75] text-base font-medium">
+                    <p className="text-[#4c5c75] md:text-base text-xs font-medium">
                         Join certified solutions experts by Multiple companies
                     </p>
                 </div>
             </div>
 
-            <div className="w-full md:w-141 md:h-128 relative">
+            <div className="w-full md:w-141 md:h-128 h-82.5 relative">
                 <motion.div
                     initial={{ opacity: 0, x: -30, y: -30 }}
                     animate={{ opacity: 1, x: 0, y: 0, transition: { duration: 0.5, delay: 1, ease: "easeInOut" } }}
-                    className="absolute top-0 left-0 z-10 h-[38.5%] w-[39%] text-white font-medium bg-[linear-gradient(45deg,#0146cc,#012d82)] rounded-3xl px-3 md:px-4 lg:px-6 2xl:px-3 py-2 md:py-3 lg:py-4 2xl:py-2 justify-center flex flex-col"
+                    className="absolute top-0 left-0 z-10 h-[38.5%] w-[39%] text-white font-medium bg-[linear-gradient(45deg,#0146cc,#012d82)] rounded-2xl px-3 md:px-4 lg:px-6 2xl:px-3 py-2 md:py-3 lg:py-4 2xl:py-2 justify-center flex flex-col"
                 >
                     <p className="md:text-[50px] text-xl leading-none font-figtree font-medium mb-2 md:mb-3">11+</p>
                     <p className="md:text-sm text-xs leading-none">
@@ -159,7 +159,7 @@ export default function Hero() {
                 <motion.div
                     initial={{ opacity: 0, x: 30, y: 30 }}
                     animate={{ opacity: 1, x: 0, y: 0, transition: { duration: 0.5, delay: 1, ease: "easeInOut" } }}
-                    className="absolute bottom-0 right-0 z-10 h-[38.5%] w-[39%] text-white font-medium bg-[linear-gradient(45deg,#0146cc,#012d82)] rounded-3xl px-3 md:px-4 lg:px-6 2xl:px-3 py-2 md:py-3 lg:py-4 2xl:py-2 flex flex-col justify-center items-start"
+                    className="absolute bottom-0 right-0 z-10 h-[38.5%] w-[39%] text-white font-medium bg-[linear-gradient(45deg,#0146cc,#012d82)] rounded-2xl px-3 md:px-4 lg:px-6 2xl:px-3 py-2 md:py-3 lg:py-4 2xl:py-2 flex flex-col justify-center items-start"
                 >
                     <p className="md:text-[50px] text-xl font-figtree font-medium mb-2 md:mb-3 leading-none">5+</p>
                     <p className="md:text-sm text-xs leading-none">Continents serviced by our international team</p>
