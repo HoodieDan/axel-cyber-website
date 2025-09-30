@@ -208,7 +208,7 @@ export default function Home() {
                                 topic="AGENTICS"
                                 title="AI Agents"
                                 desc="We create Agentic AI systems can make decisions and take actions without constant human supervision"
-                                image="/service3.webp"
+                                image="/service3.png"
                             />
                         </Suspense>
                     </div>
