@@ -90,6 +90,7 @@
 @theme inline {
     --font-tt-hoves: "TT Hoves Pro Trial Variable Regular";
     --font-figtree: "Figtree", sans-serif;
+    --font-instrument: "Instrument Sans", sans-serif;
 
     --color-background: var(--background);
     --color-foreground: var(--foreground);

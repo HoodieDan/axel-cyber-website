@@ -44,7 +44,7 @@ export const companyNav = [
     { label: "About Us", to: "/about" },
     { label: "Career", to: "/career" },
     { label: "Blogs", to: "/blog" },
-    { label: "Resources", to: "" },
+    { label: "Resources", to: "/resources" },
 ];
 
 export const solutionsNav = [

@@ -14,7 +14,7 @@ const SectionTag = ({ className, Icon = Sparkle, tag }: IServiceTag) => {
                 className,
             )}
         >
-            <Icon className="size-4 text-light-blue stroke-1" />
+            <Icon className="shrink-0 size-4 text-light-blue stroke-1" />
             <p className="text-sm text-[#4C5C75] font-medium">{tag}</p>
         </div>
     );
