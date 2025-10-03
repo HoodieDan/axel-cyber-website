@@ -513,6 +513,54 @@ body {
     }
 }
 
+.progress-track {
+    position: relative;
+    overflow: hidden;
+    background: #c1c1c1;
+    border-radius: 9999px
+}
+
+.progress-track {
+    height: 0.25rem
+}
+
+.progress-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #3084da;
+    width: 0%;
+    border-radius: 9999px
+}
+
+.progress-fill.full {
+    width: 100%
+}
+
+.progress-fill.empty {
+    width: 0%
+}
+
+.progress-fill.animate {
+    animation: cs-progress-fill 10s linear forwards
+}
+
+@keyframes cs-progress-fill {
+    from {
+        width: 0%
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+/* support group hover: when parent .group is hovered, show full */
+.group:hover .progress-fill {
+    width: 100%
+}
+
 @utility hide-scrollbar {
     scrollbar-width: none;
     -ms-overflow-style: none;

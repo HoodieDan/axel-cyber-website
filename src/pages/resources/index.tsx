@@ -19,10 +19,7 @@ import { isValidPhoneNumber } from "react-phone-number-input";
 import { z } from "zod";
 
 const ResourcesSchema = z.object({
-    name: z
-        .string()
-        .min(1, "Please enter your name.")
-        .regex(/^[a-z]+$/, "Name should contain only letters."),
+    name: z.string().min(1, "Please enter your name."),
     email: z.email("Please enter a valid email address."),
     phone: z.string().refine(isValidPhoneNumber, "Please enter a valid phone number."),
 });
