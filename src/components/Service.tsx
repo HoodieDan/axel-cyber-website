@@ -25,7 +25,7 @@ export default function Service({ topic, title, desc, image, delay }: Props) {
 
             <div>
                 <img
-                    className="block w-full h-[200px]"
+                    className="size-full object-cover"
                     src={image}
                     alt={title}
                     loading="lazy"
