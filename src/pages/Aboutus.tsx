@@ -1,3 +1,5 @@
+import AvatarGroup from "@/assets/avatar-group.png";
+import OurStoryImg from "@/assets/our-story.png";
 import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 import { lazy, Suspense } from "react";
@@ -218,7 +220,7 @@ export default function Aboutus() {
                                 </p>
                                 <div className="md:text-center md:mx-auto flex flex-col md:gap-1 gap-2">
                                     <span className="md:text-xs text-[0.6rem]">Trusted to get it done</span>
-                                    <img src="/src/assets/avatar-group.png" alt="" />
+                                    <img src={AvatarGroup} alt="" />
                                 </div>
                             </div>
                         </div>
@@ -486,14 +488,14 @@ export default function Aboutus() {
                         </motion.p>
                     </div>
                     <div className="shrink-0">
-                        <img src="/src/assets/our-story.png" alt="" className="size-full object-cover" />
+                        <img src={OurStoryImg} alt="" className="size-full object-cover" />
                     </div>
                 </div>
             </section>
 
             <div className="px-[5%] mx-auto">
                 <Clientele />
-                
+
                 <Cta title="Secure your compay's future by Partnering with Axel Cyber" action="Request a Demo">
                     <Suspense
                         fallback={<span className="w-3 h-3 inline-block animate-pulse bg-gray-300 rounded-full" />}
