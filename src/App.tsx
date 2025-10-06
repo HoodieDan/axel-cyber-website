@@ -3,13 +3,14 @@ import { Route, BrowserRouter as Router, Routes } from "react-router";
 import "./App.css";
 import AppLayout from "./components/layouts/AppLayout";
 import Home from "./pages/Home";
-import Resources from "./pages/resources";
+import FreeResource from "./pages/free-resources";
 import Inbound from "./pages/solutions/Inbound";
 import Marketing from "./pages/solutions/Marketing";
 import Onboarding from "./pages/solutions/Onboarding";
 import Outbound from "./pages/solutions/Outbound";
 import ProposalGeneration from "./pages/solutions/ProposalGeneration";
 import "./styles/index.scss";
+import Resources from "./pages/Resources";
 
 const Blog = lazy(() => import("./pages/Blog"));
 const Aboutus = lazy(() => import("./pages/Aboutus"));
@@ -110,6 +111,7 @@ function App() {
                             }
                         />
                         <Route path="/resources" element={<Resources />} />
+                        <Route path="/free-resource" element={<FreeResource />} />
                         <Route
                             path="*"
                             element={

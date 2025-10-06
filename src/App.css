@@ -91,6 +91,7 @@
     --font-tt-hoves: "TT Hoves Pro Trial Variable Regular";
     --font-figtree: "Figtree", sans-serif;
     --font-instrument: "Instrument Sans", sans-serif;
+    --font-urbanist: "Urbanist", sans-serif;
 
     --color-background: var(--background);
     --color-foreground: var(--foreground);
@@ -568,4 +569,8 @@ body {
     &::-webkit-scrollbar {
         display: none;
     }
+}
+
+@utility md-br {
+    @apply md:inline hidden;
 }
